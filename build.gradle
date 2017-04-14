@@ -1,0 +1,30 @@
+plugins {
+    id 'org.springframework.boot' version '1.4.2.RELEASE'
+}
+
+group 'cn.bestwu.pay'
+version '0.0.1'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+[compileJava, javadoc, compileTestJava]*.options*.encoding = 'UTF-8'
+[compileJava, compileTestJava]*.options*.compilerArgs = ['-Xlint:none', '-Xlint:unchecked']
+
+repositories {
+    mavenCentral()
+}
+configurations {
+    [compile, provided, testCompile]*.exclude group: 'org.codehaus.jackson'
+}
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.hateoas:spring-hateoas'
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
+    compile 'org.codehaus.woodstox:woodstox-core-asl:4.4.1'
+    compile 'cn.bestwu:common-lang:1.0.4'
+
+    testCompile 'cn.bestwu:api-test:1.3.5'
+}
