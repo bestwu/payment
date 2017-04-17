@@ -6,13 +6,16 @@ import cn.bestwu.pay.payment.AbstractPay;
 import cn.bestwu.pay.payment.Order;
 import cn.bestwu.pay.payment.OrderHandler;
 import cn.bestwu.pay.payment.PayException;
-import cn.bestwu.pay.payment.PayMode;
 import cn.bestwu.pay.payment.PayType;
+import com.fasterxml.jackson.databind.type.MapType;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -28,8 +31,10 @@ import org.springframework.web.client.RestTemplate;
 public class Weixinpay extends AbstractPay<WeixinpayProperties> {
 
 
+  private final MapType mapType = TypeFactory.defaultInstance()
+      .constructMapType(HashMap.class, String.class, String.class);
   private RestTemplate restTemplate = new RestTemplate();
-
+  private MappingJackson2XmlHttpMessageConverter messageConverter;
   /**
    * 统一下单地址
    */
@@ -42,8 +47,8 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
 
   @Autowired
   public Weixinpay(WeixinpayProperties properties) {
-    super(properties);
-    HttpMessageConverter<?> messageConverter = new MappingJackson2XmlHttpMessageConverter() {
+    super(WEIXINPAY, properties);
+    messageConverter = new MappingJackson2XmlHttpMessageConverter() {
       @Override
       protected boolean canRead(MediaType mediaType) {
         return true;
@@ -65,7 +70,8 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
    * @param sign 比对的签名结果
    * @return 签名是否正确
    */
-  private boolean verify(Map<String, String> params, String sign) {
+  private boolean verify(Map<String, String> params, String sign)
+      throws UnsupportedEncodingException {
     return getSign(params).equals(sign);
   }
 
@@ -75,7 +81,7 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
    * @param params 参数
    * @return 签名后字符串
    */
-  private String getSign(Map<String, String> params) {
+  private String getSign(Map<String, String> params) throws UnsupportedEncodingException {
     //获取待签名字符串
     List<String> keys = new ArrayList<>(params.keySet());
     Collections.sort(keys);
@@ -95,8 +101,8 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
       }
     }
     //获得签名验证结果
-    String stringSignTemp = prestr + "&key=" + getProperties().getApi_key();
-    return DigestUtils.md5DigestAsHex(stringSignTemp.getBytes()).toUpperCase();
+    String stringSignTemp = prestr + "&key=" + properties.getApi_key();
+    return DigestUtils.md5DigestAsHex(stringSignTemp.getBytes("UTF-8")).toUpperCase();
   }
 
   /**
@@ -105,7 +111,7 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
    * @param map 下单结果
    * @return 客户端调起支付所需信息
    */
-  private Map<String, String> getPayInfo(Map map) {
+  private Map<String, String> getPayInfo(Map map) throws UnsupportedEncodingException {
     Map<String, String> result = new HashMap<>();
     result.put("appid", (String) map.get("appid"));
     result.put("partnerid", (String) map.get("mch_id"));
@@ -119,7 +125,7 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
   }
 
   @Override
-  public Object placeOrder(Order order, PayType payType) {
+  public Object placeOrder(Order order, PayType payType) throws PayException {
     switch (payType) {
       case APP:
         return appPlaceOrder(order);
@@ -137,19 +143,19 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
    * @param order 订单
    * @return 下单结果
    */
-  private String scanCodePlaceOrder(Order order) {
+  private String scanCodePlaceOrder(Order order) throws PayException {
 
     try {
       Map<String, String> params = new HashMap<>();
-      params.put("appid", getProperties().getAppid());
-      params.put("mch_id", getProperties().getMch_id());
+      params.put("appid", properties.getAppid());
+      params.put("mch_id", properties.getMch_id());
       params.put("attach", order.getAttach());
       params.put("body", order.getBody());
       params.put("nonce_str", RandomUtil.nextString2(32));
       params.put("out_trade_no", order.getNo());
       params.put("total_fee", String.valueOf(order.getTotalAmount()));
       params.put("spbill_create_ip", order.getSpbillCreateIp());
-      params.put("notify_url", getNotifyUrl(PayMode.WEIXINPAY));
+      params.put("notify_url", getNotifyUrl());
       params.put("trade_type", "NATIVE");
       params.put("product_id", order.getNo());
 
@@ -186,18 +192,18 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
    * @param order 订单
    * @return 下单结果
    */
-  private Map<String, String> appPlaceOrder(Order order) {
+  private Map<String, String> appPlaceOrder(Order order) throws PayException {
     try {
       Map<String, String> params = new HashMap<>();
-      params.put("appid", getProperties().getAppid());
-      params.put("mch_id", getProperties().getMch_id());
+      params.put("appid", properties.getAppid());
+      params.put("mch_id", properties.getMch_id());
       params.put("device_info", order.getDeviceInfo());
       params.put("nonce_str", RandomUtil.nextString2(32));
       params.put("body", order.getBody());
       params.put("out_trade_no", order.getNo());
       params.put("total_fee", String.valueOf(order.getTotalAmount()));
       params.put("spbill_create_ip", order.getSpbillCreateIp());
-      params.put("notify_url", getNotifyUrl(PayMode.WEIXINPAY));
+      params.put("notify_url", getNotifyUrl());
       params.put("trade_type", "APP");
 
       params.put("sign", getSign(params));
@@ -228,11 +234,11 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
   }
 
   @Override
-  public boolean checkOrder(Order order, OrderHandler orderHandler) {
+  public boolean checkOrder(Order order, OrderHandler orderHandler) throws PayException {
     try {
       Map<String, String> params = new HashMap<>();
-      params.put("appid", getProperties().getAppid());
-      params.put("mch_id", getProperties().getMch_id());
+      params.put("appid", properties.getAppid());
+      params.put("mch_id", properties.getMch_id());
       params.put("out_trade_no", order.getNo());
       params.put("nonce_str", RandomUtil.nextString2(32));
       params.put("sign", getSign(params));
@@ -248,11 +254,11 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
           if ("SUCCESS".equals(entity.get("result_code"))) {
             String mch_id = params.get("mch_id");
             String appid = params.get("appid");
-            if (getProperties().getMch_id().equals(mch_id) && getProperties().getAppid()
+            if (properties.getMch_id().equals(mch_id) && properties.getAppid()
                 .equals(appid)) {
               int total_fee = Integer.parseInt(params.get("total_fee"));
               if (order.getTotalAmount() == total_fee) {
-                orderHandler.complete(order);
+                orderHandler.complete(order, getProvider());
                 return true;
               }
             }
@@ -273,8 +279,10 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
   }
 
   @Override
-  public Object payNotify(Map<String, String> params, OrderHandler orderHandler) {
+  public Object payNotify(HttpServletRequest request, OrderHandler orderHandler) {
     try {
+      HashMap<String, String> params = messageConverter.getObjectMapper()
+          .readValue(request.getInputStream(), mapType);
       if (log.isInfoEnabled()) {
         log.info("微信支付收到的通知：{}", StringUtil.valueOf(params, true));
       }
@@ -284,15 +292,15 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
           if ("SUCCESS".equals(params.get("result_code"))) {
             String mch_id = params.get("mch_id");
             String appid = params.get("appid");
-            if (getProperties().getMch_id().equals(mch_id) && getProperties().getAppid()
+            if (properties.getMch_id().equals(mch_id) && properties.getAppid()
                 .equals(appid)) {
               String out_trade_no = params.get("out_trade_no");
               int total_fee = Integer.parseInt(params.get("total_fee"));
 
               Order order = orderHandler.findByNo(out_trade_no);
               if (order != null && order.getTotalAmount() == total_fee) {
-                if (!order.isComplete()) {
-                  orderHandler.complete(order);
+                if (!order.isCompleted()) {
+                  orderHandler.complete(order, getProvider());
                   return new NotifyResult("SUCCESS");
                 }
               } else {

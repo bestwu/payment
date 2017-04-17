@@ -5,7 +5,6 @@ import cn.bestwu.pay.payment.AbstractPay;
 import cn.bestwu.pay.payment.Order;
 import cn.bestwu.pay.payment.OrderHandler;
 import cn.bestwu.pay.payment.PayException;
-import cn.bestwu.pay.payment.PayMode;
 import cn.bestwu.pay.payment.PayType;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.internal.util.AlipaySignature;
@@ -20,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -33,7 +33,7 @@ public class Alipay extends AbstractPay<AliPayProperties> {
 
   @Autowired
   public Alipay(AliPayProperties properties) {
-    super(properties);
+    super(ALIPAY, properties);
     dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
   }
 
@@ -45,12 +45,12 @@ public class Alipay extends AbstractPay<AliPayProperties> {
    * @throws AlipayApiException AlipayApiException
    */
   public boolean checkSign(Map<String, String> params) throws AlipayApiException {
-    String publicKey = getProperties().getPublicKey();
+    String publicKey = properties.getPublicKey();
     return AlipaySignature.rsaCheckV2(params, publicKey, charset);
   }
 
   @Override
-  public Object placeOrder(Order order, PayType payType) {
+  public Object placeOrder(Order order, PayType payType) throws PayException {
     switch (payType) {
       case APP:
         return appPlaceOrder(order);
@@ -83,13 +83,15 @@ public class Alipay extends AbstractPay<AliPayProperties> {
    *
    * 在支付宝的业务通知中，只有交易通知状态为TRADE_SUCCESS或TRADE_FINISHED时，支付宝才会认定为买家付款成功。
    *
-   * @param params 回调参数
+   * @param request 回调请求
    * @param orderHandler 订单处理类
    * @return 异步通知响应
    */
   @Override
-  public Object payNotify(Map<String, String> params, OrderHandler orderHandler) {
+  public Object payNotify(HttpServletRequest request, OrderHandler orderHandler) {
     try {
+      Map<String, String> params = toParams(request);
+
       if (log.isInfoEnabled()) {
         log.info("alipay异步通知收到的通知：{}", StringUtil.valueOf(params, true));
       }
@@ -98,15 +100,15 @@ public class Alipay extends AbstractPay<AliPayProperties> {
         String seller_id = params.get("seller_id");
         String app_id = params.get("app_id");
         if ("TRADE_SUCCESS".equals(trade_status)) {
-          if (getProperties().getSeller_id()
-              .equals(seller_id) && getProperties().getApp_id().equals(app_id)) {
+          if (properties.getSeller_id()
+              .equals(seller_id) && properties.getApp_id().equals(app_id)) {
             String out_trade_no = params.get("out_trade_no");
             Order order = orderHandler.findByNo(out_trade_no);
             BigDecimal total_amount = new BigDecimal(params.get("trade_status"));
             if (order != null && new BigDecimal(order.getTotalAmount())
                 .equals(total_amount.multiply(BigDecimal.valueOf(100)))) {
-              if (!order.isComplete()) {
-                orderHandler.complete(order);
+              if (!order.isCompleted()) {
+                orderHandler.complete(order, getProvider());
                 return "success";
               }
             } else {
@@ -131,10 +133,10 @@ public class Alipay extends AbstractPay<AliPayProperties> {
    * @param order 订单
    * @return 下单结果
    */
-  private String appPlaceOrder(Order order) {
+  private String appPlaceOrder(Order order) throws PayException {
     try {
-      String privateKey = getProperties().getPrivateKey();
-      String app_id = getProperties().getApp_id();
+      String privateKey = properties.getPrivateKey();
+      String app_id = properties.getApp_id();
       String method = "alipay.trade.app.pay";
       Map<String, String> params = new HashMap<>();
       {//公共参数
@@ -145,10 +147,10 @@ public class Alipay extends AbstractPay<AliPayProperties> {
         params.put("timestamp",
             dateFormat.format(new Date(order.getCurrentTimeMillis())));//2014-07-24 03:07:50
         params.put("version", "1.0");
-        params.put("notify_url", getNotifyUrl(PayMode.ALIPAY));
+        params.put("notify_url", getNotifyUrl());
       }
       {
-        String seller_id = getProperties().getSeller_id();
+        String seller_id = properties.getSeller_id();
         Map<String, String> biz_content = new HashMap<>();
         biz_content.put("subject", order.getSubject());
         biz_content.put("seller_id", seller_id);
@@ -182,7 +184,7 @@ public class Alipay extends AbstractPay<AliPayProperties> {
 
       return orderStr.toString();
     } catch (Exception e) {
-      throw new RuntimeException("下单失败", e);
+      throw new PayException("下单失败", e);
     }
   }
 
@@ -194,7 +196,7 @@ public class Alipay extends AbstractPay<AliPayProperties> {
    * @throws AlipayApiException 验证异常
    */
   public boolean checkClientResult(AliClientResult result) throws AlipayApiException {
-    String publicKey = getProperties().getPublicKey();
+    String publicKey = properties.getPublicKey();
     return AlipaySignature
         .rsaCheck(result.getAlipay_trade_app_pay_response(), result.getSign(), publicKey, charset,
             result.getSign_type());

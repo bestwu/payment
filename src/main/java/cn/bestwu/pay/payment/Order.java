@@ -10,7 +10,7 @@ public interface Order {
   /**
    * @return 订单是否完成
    */
-  boolean isComplete();
+  boolean isCompleted();
 
   /**
    * @return 订单号

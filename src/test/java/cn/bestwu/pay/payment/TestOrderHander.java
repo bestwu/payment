@@ -12,7 +12,7 @@ public class TestOrderHander implements OrderHandler {
   public Order findByNo(String orderNo) {
     return new Order() {
       @Override
-      public boolean isComplete() {
+      public boolean isCompleted() {
         return false;
       }
 
@@ -64,7 +64,7 @@ public class TestOrderHander implements OrderHandler {
   }
 
   @Override
-  public Order complete(Order order) {
+  public Order complete(Order order, String provider) {
     return order;
   }
 }

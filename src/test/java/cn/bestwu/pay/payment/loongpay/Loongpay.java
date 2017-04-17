@@ -18,7 +18,10 @@ import javax.annotation.PostConstruct;
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.stereotype.Component;
 import org.springframework.util.DigestUtils;
 
 /**
@@ -26,18 +29,20 @@ import org.springframework.util.DigestUtils;
  *
  * @author Peter Wu
  */
+@Component
+@EnableConfigurationProperties(LoongpayProperties.class)
 public class Loongpay extends AbstractPay<LoongpayProperties> {
 
   private RSASig rsaSig = new RSASig();
 
   @Autowired
   public Loongpay(LoongpayProperties properties) {
-    super(properties);
+    super("loongpay", properties);
   }
 
   @PostConstruct
   public void init() {
-    rsaSig.setPublicKey(getProperties().getPub());
+    rsaSig.setPublicKey(properties.getPub());
   }
 
   /**
@@ -114,7 +119,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
    */
   private String decode(String msg)
       throws IOException, NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, BadPaddingException, NoSuchProviderException, IllegalBlockSizeException {
-    String pub = getProperties().getPub();
+    String pub = properties.getPub();
     pub = pub.substring(pub.length() - 30, pub.length());
     String decodedString = MCipherDecode.getDecodeString(msg, pub);
     byte[] tempByte = decodedString.getBytes("ISO-8859-1");
@@ -123,56 +128,63 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
 
 
   @Override
-  public Object placeOrder(Order order, PayType payType) {
+  public Object placeOrder(Order order, PayType payType) throws PayException {
     try {
-      String pub = getProperties().getPub();
+      String pub = properties.getPub();
       pub = pub.substring(pub.length() - 30, pub.length());
       String total_amount = new BigDecimal(order.getTotalAmount())
           .divide(new BigDecimal(100), 2, BigDecimal.ROUND_UNNECESSARY).toString();
 
-      String macStr = "MERCHANTID=" + getProperties().getMerchantid() +
-          "&POSID=" + getProperties().getPosid() +
-          "&BRANCHID=" + getProperties().getBranchid() +
+      String attach = order.getAttach();
+      if (attach == null) {
+        attach = "";
+      }
+      String subject = order.getSubject();
+      if (subject == null) {
+        subject = "";
+      }
+      String macStr = "MERCHANTID=" + properties.getMerchantid() +
+          "&POSID=" + properties.getPosid() +
+          "&BRANCHID=" + properties.getBranchid() +
           "&ORDERID=" + order.getNo() +
           "&PAYMENT=" + total_amount +
           "&CURCODE=" + "01" +
-          "&TXCODE=" + getProperties().getTxcode() +
-          "&REMARK1=" + order.getAttach() +
+          "&TXCODE=" + properties.getTxcode() +
+          "&REMARK1=" + attach +
           "&REMARK2=" + "" +
-          "&TYPE=" + getProperties().getType() +
+          "&TYPE=" + properties.getType() +
           "&PUB=" + pub +
           "&GATEWAY=" + "W1" +
           "&CLIENTIP=" + "" +
           "&REGINFO=" + "" +
-          "&PROINFO=" + EscapeUtil.escape(order.getSubject())
+          "&PROINFO=" + EscapeUtil.escape(subject)
           + "&REFERER=" + "";
 
       StringBuilder orderStr = new StringBuilder("https://ibsbjstar.ccb.com.cn/CCBIS/ccbMain?");
-      orderStr.append("MERCHANTID=").append(getProperties().getMerchantid())
-          .append("&POSID=").append(getProperties().getPosid())
-          .append("&BRANCHID=").append(getProperties().getBranchid())
+      orderStr.append("MERCHANTID=").append(properties.getMerchantid())
+          .append("&POSID=").append(properties.getPosid())
+          .append("&BRANCHID=").append(properties.getBranchid())
           .append("&ORDERID=").append(order.getNo())
           .append("&PAYMENT=").append(total_amount)//金额
           .append("&CURCODE=").append("01")
-          .append("&TXCODE=").append(getProperties().getTxcode())
-          .append("&REMARK1=").append(order.getAttach())
+          .append("&TXCODE=").append(properties.getTxcode())
+          .append("&REMARK1=").append(attach)
           .append("&REMARK2=").append("")
-          .append("&TYPE=").append(getProperties().getType())
+          .append("&TYPE=").append(properties.getType())
           .append("&GATEWAY=").append("W1")
           .append("&CLIENTIP=").append("")
           .append("&REGINFO=").append("")
-          .append("&PROINFO=").append(EscapeUtil.escape(order.getSubject()))
+          .append("&PROINFO=").append(EscapeUtil.escape(subject))
           .append("&REFERER=").append("")
-  //			.append(	+"&INSTALLNUM=") .append("")
-  //        .append("&THIRDAPPINFO=").append("")
-  //        .append("&TIMEOUT=").append("");
-  //    String ISSINSCODE="UnionPay";
-          .append("&MAC=").append(DigestUtils.md5DigestAsHex(macStr.getBytes()));
+          //			.append(	+"&INSTALLNUM=") .append("")
+          //        .append("&THIRDAPPINFO=").append("")
+          //        .append("&TIMEOUT=").append("");
+          //    String ISSINSCODE="UnionPay";
+          .append("&MAC=").append(DigestUtils.md5DigestAsHex(macStr.getBytes("UTF-8")));
 
       if (log.isDebugEnabled()) {
         log.debug("订单参数字符串{}", orderStr.toString());
       }
-
       return orderStr.toString();
     } catch (Exception e) {
       throw new PayException("下单失败", e);
@@ -185,8 +197,9 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
   }
 
   @Override
-  public Object payNotify(Map<String, String> params, OrderHandler orderHandler) {
+  public Object payNotify(HttpServletRequest request, OrderHandler orderHandler) {
     try {
+      Map<String, String> params = toParams(request);
       if (log.isInfoEnabled()) {
         log.info("龙支付收到的通知：{}", StringUtil.valueOf(params, true));
       }
@@ -195,7 +208,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
         if ("Y".equalsIgnoreCase(params.get("SUCCESS"))) {
           String POSID = params.get("POSID");
           String BRANCHID = params.get("BRANCHID");
-          if (getProperties().getPosid().equals(POSID) && getProperties().getBranchid()
+          if (properties.getPosid().equals(POSID) && properties.getBranchid()
               .equals(BRANCHID)) {
             //验证成功  更新该订单的支付状态 并把对应的金额添加给用户
             String orderid = params.get("ORDERID");
@@ -204,8 +217,8 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
             long money = (long) (PAYMENT * 100);
             Order order = orderHandler.findByNo(orderid);
             if (order != null && order.getTotalAmount() == money) {
-              if (!order.isComplete()) {
-                orderHandler.complete(order);
+              if (!order.isCompleted()) {
+                orderHandler.complete(order, getProvider());
                 return "success";
               }
             } else {

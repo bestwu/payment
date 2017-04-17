@@ -10,7 +10,7 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
-import sun.misc.BASE64Decoder;
+import org.springframework.util.Base64Utils;
 
 public class MCipherDecode {
 
@@ -26,10 +26,8 @@ public class MCipherDecode {
   }
 
 
-  public static byte[] DecodeBase64String(String base64Src) throws IOException {
-    BASE64Decoder de = new BASE64Decoder();
-    return de.decodeBuffer(base64Src);
-
+  public static byte[] decodeBase64String(String base64Src) {
+    return Base64Utils.decodeFromString(base64Src);
   }
 
   public static String getDecodeString(String urlString, String key)
@@ -37,7 +35,7 @@ public class MCipherDecode {
     key = key.substring(0, 8);
     String tempString = URLDecoder.decode(urlString, "ISO-8859-1");
     String basedString = tempString.replaceAll(",", "+");
-    byte[] tempBytes = DecodeBase64String(basedString);
+    byte[] tempBytes = decodeBase64String(basedString);
     byte[] tempSrcBytes = getSrcBytes(tempBytes, key.getBytes("ISO-8859-1"));
     return new String(tempSrcBytes, "ISO-8859-1");
   }

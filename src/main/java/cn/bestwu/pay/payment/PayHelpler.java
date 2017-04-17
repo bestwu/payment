@@ -1,10 +1,9 @@
 package cn.bestwu.pay.payment;
 
-import cn.bestwu.pay.payment.alipay.Alipay;
-import cn.bestwu.pay.payment.loongpay.Loongpay;
-import cn.bestwu.pay.payment.weixinpay.Weixinpay;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 支付辅助类
@@ -13,106 +12,65 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class PayHelpler {
 
-  @Autowired(required = false)
-  private Weixinpay weixinpay;
-  @Autowired(required = false)
-  private Alipay alipay;
-  @Autowired(required = false)
-  private Loongpay loongpay;
+  private Map<String, AbstractPay<? extends PayProperties>> payProviders = new HashMap<>();
+
+
+  public PayHelpler(List<AbstractPay<? extends PayProperties>> payProviders) {
+    for (AbstractPay<? extends PayProperties> payProvider : payProviders) {
+      this.payProviders.put(payProvider.getProvider(), payProvider);
+    }
+  }
 
   /**
    * 下单
    *
-   * @param payMode 支付方式
+   * @param provider 第三方支付提供方
    * @param order 订单
    * @param payType 支付方式：APP,扫码支付
    * @return 下单结果，客户端调起支付使用的信息
    */
-  public Object placeOrder(PayMode payMode, Order order, PayType payType) {
-    switch (payMode) {
-      case ALIPAY:
-        if (alipay == null) {
-          break;
-        }
-        return alipay.placeOrder(order, payType);
-      case WEIXINPAY:
-        if (weixinpay == null) {
-          break;
-        }
-        return weixinpay.placeOrder(order, payType);
-      case LOONGPAY:
-        if (loongpay == null) {
-          break;
-        }
-        return loongpay.placeOrder(order, payType);
-      case UNIONPAY:
-      default:
-        break;
+  public Object placeOrder(String provider, Order order, PayType payType) throws PayException {
+    AbstractPay<? extends PayProperties> payProvider = payProviders.get(provider);
+    if (payProvider == null) {
+      throw new PayException("不支持的支付方式");
+    } else {
+      return payProvider.placeOrder(order, payType);
     }
-    throw new PayException("不支持的支付方式");
   }
 
   /**
    * 主动查询订单是否支付
    *
-   * @param payMode 支付方式
+   * @param provider 第三方支付提供方
    * @param order 订单
    * @return 是否支付完成
    */
-  public boolean checkOrder(PayMode payMode, Order order, OrderHandler orderHandler) {
-    switch (payMode) {
-      case ALIPAY:
-        if (alipay == null) {
-          break;
-        }
-        return alipay.checkOrder(order, orderHandler);
-      case WEIXINPAY:
-        if (weixinpay == null) {
-          break;
-        }
-        return weixinpay.checkOrder(order, orderHandler);
-      case LOONGPAY:
-        if (loongpay == null) {
-          break;
-        }
-        return loongpay.checkOrder(order, orderHandler);
-      case UNIONPAY:
-      default:
-        break;
+  public boolean checkOrder(String provider, Order order, OrderHandler orderHandler)
+      throws PayException {
+    AbstractPay<? extends PayProperties> payProvider = payProviders.get(provider);
+    if (payProvider == null) {
+      throw new PayException("不支持的支付方式");
+    } else {
+      return payProvider.checkOrder(order, orderHandler);
     }
-    throw new PayException("不支持的支付方式");
   }
 
   /**
    * 异步通知回调
    *
-   * @param payMode 支付方式
-   * @param params 回调参数
+   * @param provider 第三方支付提供方
+   * @param request 回调参数
    * @param orderHandler 订单处理类
    * @return 异步通知响应
    */
-  public Object payNotify(PayMode payMode, Map<String, String> params, OrderHandler orderHandler) {
-    switch (payMode) {
-      case ALIPAY:
-        if (alipay == null) {
-          break;
-        }
-        return alipay.payNotify(params, orderHandler);
-      case WEIXINPAY:
-        if (weixinpay == null) {
-          break;
-        }
-        return weixinpay.payNotify(params, orderHandler);
-      case LOONGPAY:
-        if (loongpay == null) {
-          break;
-        }
-        return loongpay.payNotify(params, orderHandler);
-      case UNIONPAY:
-      default:
-        break;
+  public Object payNotify(String provider, HttpServletRequest request, OrderHandler orderHandler)
+      throws PayException {
+    AbstractPay<? extends PayProperties> payProvider = payProviders.get(provider);
+    if (payProvider == null) {
+      throw new PayException("不支持的支付方式");
+    } else {
+      return payProvider.payNotify(request, orderHandler);
     }
-    throw new PayException("不支持的支付方式");
   }
 
 }

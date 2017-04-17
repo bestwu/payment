@@ -2,11 +2,10 @@ package cn.bestwu.pay.payment;
 
 import cn.bestwu.pay.payment.alipay.AliPayProperties;
 import cn.bestwu.pay.payment.alipay.Alipay;
-import cn.bestwu.pay.payment.loongpay.Loongpay;
-import cn.bestwu.pay.payment.loongpay.LoongpayProperties;
 import cn.bestwu.pay.payment.weixinpay.Weixinpay;
 import cn.bestwu.pay.payment.weixinpay.WeixinpayProperties;
-import java.util.Map;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -14,10 +13,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplicat
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -28,8 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Configuration
 @ConditionalOnWebApplication
 @ConditionalOnBean(OrderHandler.class)
-@EnableConfigurationProperties({WeixinpayProperties.class, AliPayProperties.class,
-    LoongpayProperties.class})
+@EnableConfigurationProperties({WeixinpayProperties.class, AliPayProperties.class})
 public class PayConfiguration {
 
   @ConditionalOnProperty(prefix = "weixinpay", value = "api_key")
@@ -38,11 +34,6 @@ public class PayConfiguration {
     return new Weixinpay(properties);
   }
 
-  @ConditionalOnProperty(prefix = "loongpay", value = "pub")
-  @Bean
-  public Loongpay loongpay(LoongpayProperties properties) {
-    return new Loongpay(properties);
-  }
 
   @ConditionalOnProperty(prefix = "alipay", value = "app_id")
   @Bean
@@ -51,8 +42,8 @@ public class PayConfiguration {
   }
 
   @Bean
-  public PayHelpler payHelpler() {
-    return new PayHelpler();
+  public PayHelpler payHelpler(List<AbstractPay<? extends PayProperties>> payProviders) {
+    return new PayHelpler(payProviders);
   }
 
   /**
@@ -63,7 +54,6 @@ public class PayConfiguration {
   @ConditionalOnWebApplication
   @ConditionalOnBean(OrderHandler.class)
   @RestController
-  @RequestMapping(name = "支付", value = "/pay/notifies")
   public static class PayNotifyController {
 
     private OrderHandler orderHandler;
@@ -75,30 +65,11 @@ public class PayConfiguration {
       this.payHelpler = payHelpler;
     }
 
-    @RequestMapping(name = "alipay异步通知接口", value = "/alipay", method = RequestMethod.POST)
-    public Object alipay(@RequestParam Map<String, String> params) {
-      return payHelpler.payNotify(PayMode.ALIPAY, params, orderHandler);
+    @RequestMapping(name = "支付异步通知接口", value = "/payNotifies/{provider}")
+    public Object payNotify(@PathVariable("provider") String provider, HttpServletRequest request)
+        throws PayException {
+      return payHelpler.payNotify(provider, request, orderHandler);
     }
 
-
-    /**
-     * 微信服务器异步通知页面
-     */
-    @RequestMapping(name = "weixin异步通知接口", value = "/weixin", method = {RequestMethod.POST,
-        RequestMethod.GET})
-    public Object weixin(@RequestBody Map<String, String> params) {
-      return payHelpler.payNotify(PayMode.WEIXINPAY, params, orderHandler);
-    }
-
-
-    /**
-     * 龙支付通知
-     *
-     * @return 结果
-     */
-    @RequestMapping(value = "/loongpay")
-    public Object loongpay(@RequestParam Map<String, String> params) {
-      return payHelpler.payNotify(PayMode.LOONGPAY, params, orderHandler);
-    }
   }
 }

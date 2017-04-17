@@ -19,7 +19,8 @@ public interface OrderHandler {
    * 完成订单
    *
    * @param order 订单
+   * @param provider 第三方支付提供方
    * @return 订单
    */
-  Order complete(Order order);
+  Order complete(Order order, String provider);
 }
