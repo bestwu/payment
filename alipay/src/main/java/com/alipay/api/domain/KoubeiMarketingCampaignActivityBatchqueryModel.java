@@ -14,77 +14,72 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class KoubeiMarketingCampaignActivityBatchqueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5533682983877828172L;
+	private static final long serialVersionUID = 3778779599335871996L;
 
-  /**
-   * 操作人id，必须和operator_type配对存在，不填时默认是商户
-   */
-  @ApiField("operator_id")
-  private String operatorId;
+	/**
+	 * 操作人id，必须和operator_type配对存在，不填时默认是商户
+	 */
+	@ApiField("operator_id")
+	private String operatorId;
 
-  /**
-   * 操作人类型,有以下值可填：MER（外部商户），MER_OPERATOR（外部商户操作员），PROVIDER（外部服务商），PROVIDER_STAFF（外部服务商员工），默认不需要填这个字段，默认为MER
-   */
-  @ApiField("operator_type")
-  private String operatorType;
+	/**
+	 * 操作人类型,有以下值可填：MER（外部商户），MER_OPERATOR（外部商户操作员），PROVIDER（外部服务商），PROVIDER_STAFF（外部服务商员工），默认不需要填这个字段，默认为MER
+	 */
+	@ApiField("operator_type")
+	private String operatorType;
 
-  /**
-   * 页码，默认为1
-   */
-  @ApiField("page_number")
-  private String pageNumber;
+	/**
+	 * 页码，默认为1
+	 */
+	@ApiField("page_number")
+	private String pageNumber;
 
-  /**
-   * 页大小，默认为20
-   */
-  @ApiField("page_size")
-  private String pageSize;
+	/**
+	 * 页大小，默认为20
+	 */
+	@ApiField("page_size")
+	private String pageSize;
 
-  /**
-   * 查询条件
-   */
-  @ApiListField("query_criterias")
-  @ApiField("condition")
-  private List<Condition> queryCriterias;
+	/**
+	 * 查询条件
+	 */
+	@ApiListField("query_criterias")
+	@ApiField("condition")
+	private List<Condition> queryCriterias;
 
-  public String getOperatorId() {
-    return this.operatorId;
-  }
+	public String getOperatorId() {
+		return this.operatorId;
+	}
+	public void setOperatorId(String operatorId) {
+		this.operatorId = operatorId;
+	}
 
-  public void setOperatorId(String operatorId) {
-    this.operatorId = operatorId;
-  }
+	public String getOperatorType() {
+		return this.operatorType;
+	}
+	public void setOperatorType(String operatorType) {
+		this.operatorType = operatorType;
+	}
 
-  public String getOperatorType() {
-    return this.operatorType;
-  }
+	public String getPageNumber() {
+		return this.pageNumber;
+	}
+	public void setPageNumber(String pageNumber) {
+		this.pageNumber = pageNumber;
+	}
 
-  public void setOperatorType(String operatorType) {
-    this.operatorType = operatorType;
-  }
+	public String getPageSize() {
+		return this.pageSize;
+	}
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
 
-  public String getPageNumber() {
-    return this.pageNumber;
-  }
-
-  public void setPageNumber(String pageNumber) {
-    this.pageNumber = pageNumber;
-  }
-
-  public String getPageSize() {
-    return this.pageSize;
-  }
-
-  public void setPageSize(String pageSize) {
-    this.pageSize = pageSize;
-  }
-
-  public List<Condition> getQueryCriterias() {
-    return this.queryCriterias;
-  }
-
-  public void setQueryCriterias(List<Condition> queryCriterias) {
-    this.queryCriterias = queryCriterias;
-  }
+	public List<Condition> getQueryCriterias() {
+		return this.queryCriterias;
+	}
+	public void setQueryCriterias(List<Condition> queryCriterias) {
+		this.queryCriterias = queryCriterias;
+	}
 
 }

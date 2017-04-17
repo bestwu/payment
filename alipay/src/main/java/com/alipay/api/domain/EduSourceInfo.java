@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class EduSourceInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 7558371358962172513L;
+	private static final long serialVersionUID = 5652867973269436516L;
 
-  /**
-   * 供应商的LOGO
-   */
-  @ApiField("logo")
-  private String logo;
+	/**
+	 * 供应商的LOGO
+	 */
+	@ApiField("logo")
+	private String logo;
 
-  /**
-   * 供应商电话
-   */
-  @ApiField("mobile")
-  private String mobile;
+	/**
+	 * 供应商电话
+	 */
+	@ApiField("mobile")
+	private String mobile;
 
-  /**
-   * 供应商名字
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 供应商名字
+	 */
+	@ApiField("name")
+	private String name;
 
-  public String getLogo() {
-    return this.logo;
-  }
+	public String getLogo() {
+		return this.logo;
+	}
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
 
-  public void setLogo(String logo) {
-    this.logo = logo;
-  }
+	public String getMobile() {
+		return this.mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 
-  public String getMobile() {
-    return this.mobile;
-  }
-
-  public void setMobile(String mobile) {
-    this.mobile = mobile;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

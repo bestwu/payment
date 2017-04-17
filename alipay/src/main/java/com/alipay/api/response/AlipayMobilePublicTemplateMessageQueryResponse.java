@@ -6,26 +6,25 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.mobile.public.template.message.query response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-03-24 21:15:53
+ * @since 1.0, 2017-04-07 20:28:01
  */
 public class AlipayMobilePublicTemplateMessageQueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 8642368582386185169L;
+	private static final long serialVersionUID = 6464154236245894784L;
 
-  /**
-   * 结果值
-   */
-  @ApiField("result")
-  private String result;
+	/** 
+	 * 结果值
+	 */
+	@ApiField("result")
+	private String result;
 
-  public void setResult(String result) {
-    this.result = result;
-  }
-
-  public String getResult() {
-    return this.result;
-  }
+	public void setResult(String result) {
+		this.result = result;
+	}
+	public String getResult( ) {
+		return this.result;
+	}
 
 }

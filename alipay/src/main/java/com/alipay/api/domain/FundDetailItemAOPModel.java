@@ -14,22 +14,20 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class FundDetailItemAOPModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8239966484476953964L;
+	private static final long serialVersionUID = 8711717481818835987L;
 
-  /**
-   * 主记录+对应资金明细信息模型列表
-   */
-  @ApiListField("single_fund_detail_item_aopmodel_list")
-  @ApiField("single_fund_detail_item_a_o_p_model")
-  private List<SingleFundDetailItemAOPModel> singleFundDetailItemAopmodelList;
+	/**
+	 * 主记录+对应资金明细信息模型列表
+	 */
+	@ApiListField("single_fund_detail_item_aopmodel_list")
+	@ApiField("single_fund_detail_item_a_o_p_model")
+	private List<SingleFundDetailItemAOPModel> singleFundDetailItemAopmodelList;
 
-  public List<SingleFundDetailItemAOPModel> getSingleFundDetailItemAopmodelList() {
-    return this.singleFundDetailItemAopmodelList;
-  }
-
-  public void setSingleFundDetailItemAopmodelList(
-      List<SingleFundDetailItemAOPModel> singleFundDetailItemAopmodelList) {
-    this.singleFundDetailItemAopmodelList = singleFundDetailItemAopmodelList;
-  }
+	public List<SingleFundDetailItemAOPModel> getSingleFundDetailItemAopmodelList() {
+		return this.singleFundDetailItemAopmodelList;
+	}
+	public void setSingleFundDetailItemAopmodelList(List<SingleFundDetailItemAOPModel> singleFundDetailItemAopmodelList) {
+		this.singleFundDetailItemAopmodelList = singleFundDetailItemAopmodelList;
+	}
 
 }

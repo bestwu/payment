@@ -14,36 +14,34 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class UseRuleInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 2758499186236594831L;
+	private static final long serialVersionUID = 7221495555263595424L;
 
-  /**
-   * 适用门店列表
-   */
-  @ApiListField("suitable_shops")
-  @ApiField("string")
-  private List<String> suitableShops;
+	/**
+	 * 适用门店列表
+	 */
+	@ApiListField("suitable_shops")
+	@ApiField("string")
+	private List<String> suitableShops;
 
-  /**
-   * 核销方式
-   */
-  @ApiListField("use_mode")
-  @ApiField("string")
-  private List<String> useMode;
+	/**
+	 * 核销方式
+	 */
+	@ApiListField("use_mode")
+	@ApiField("string")
+	private List<String> useMode;
 
-  public List<String> getSuitableShops() {
-    return this.suitableShops;
-  }
+	public List<String> getSuitableShops() {
+		return this.suitableShops;
+	}
+	public void setSuitableShops(List<String> suitableShops) {
+		this.suitableShops = suitableShops;
+	}
 
-  public void setSuitableShops(List<String> suitableShops) {
-    this.suitableShops = suitableShops;
-  }
-
-  public List<String> getUseMode() {
-    return this.useMode;
-  }
-
-  public void setUseMode(List<String> useMode) {
-    this.useMode = useMode;
-  }
+	public List<String> getUseMode() {
+		return this.useMode;
+	}
+	public void setUseMode(List<String> useMode) {
+		this.useMode = useMode;
+	}
 
 }

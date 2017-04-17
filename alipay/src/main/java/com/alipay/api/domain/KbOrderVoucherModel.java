@@ -13,132 +13,123 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KbOrderVoucherModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5677616796334465897L;
+	private static final long serialVersionUID = 1886641521528154263L;
 
-  /**
-   * 商品凭证过期时间
-   */
-  @ApiField("expire_date")
-  private Date expireDate;
+	/**
+	 * 商品凭证过期时间
+	 */
+	@ApiField("expire_date")
+	private Date expireDate;
 
-  /**
-   * 商品凭证核销／退款对应的资金流水号
-   */
-  @ApiField("funds_voucher_no")
-  private String fundsVoucherNo;
+	/**
+	 * 商品凭证核销／退款对应的资金流水号
+	 */
+	@ApiField("funds_voucher_no")
+	private String fundsVoucherNo;
 
-  /**
-   * 商品ID
-   */
-  @ApiField("item_id")
-  private String itemId;
+	/**
+	 * 商品ID
+	 */
+	@ApiField("item_id")
+	private String itemId;
 
-  /**
-   * 退款理由，由消费者选择或填写内容，系统退款可以为空。
-   */
-  @ApiField("refund_reason")
-  private String refundReason;
+	/**
+	 * 退款理由，由消费者选择或填写内容，系统退款可以为空。
+	 */
+	@ApiField("refund_reason")
+	private String refundReason;
 
-  /**
-   * 退款类型，ROLE_DAEMON（超期未使用），ROLE_USER（消费者主动）；
-   */
-  @ApiField("refund_type")
-  private String refundType;
+	/**
+	 * 退款类型，ROLE_DAEMON（超期未使用），ROLE_USER（消费者主动）；
+	 */
+	@ApiField("refund_type")
+	private String refundType;
 
-  /**
-   * 商品凭证核销门店ID,核销后会存在该字段
-   */
-  @ApiField("shop_id")
-  private String shopId;
+	/**
+	 * 商品凭证核销门店ID,核销后会存在该字段
+	 */
+	@ApiField("shop_id")
+	private String shopId;
 
-  /**
-   * 状态
-   */
-  @ApiField("status")
-  private String status;
+	/**
+	 * 状态
+	 */
+	@ApiField("status")
+	private String status;
 
-  /**
-   * 商品凭证核销门店外部ID
-   */
-  @ApiField("store_id")
-  private String storeId;
+	/**
+	 * 商品凭证核销门店外部ID
+	 */
+	@ApiField("store_id")
+	private String storeId;
 
-  /**
-   * 商品凭证ID
-   */
-  @ApiField("voucher_id")
-  private String voucherId;
+	/**
+	 * 商品凭证ID
+	 */
+	@ApiField("voucher_id")
+	private String voucherId;
 
-  public Date getExpireDate() {
-    return this.expireDate;
-  }
+	public Date getExpireDate() {
+		return this.expireDate;
+	}
+	public void setExpireDate(Date expireDate) {
+		this.expireDate = expireDate;
+	}
 
-  public void setExpireDate(Date expireDate) {
-    this.expireDate = expireDate;
-  }
+	public String getFundsVoucherNo() {
+		return this.fundsVoucherNo;
+	}
+	public void setFundsVoucherNo(String fundsVoucherNo) {
+		this.fundsVoucherNo = fundsVoucherNo;
+	}
 
-  public String getFundsVoucherNo() {
-    return this.fundsVoucherNo;
-  }
+	public String getItemId() {
+		return this.itemId;
+	}
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
+	}
 
-  public void setFundsVoucherNo(String fundsVoucherNo) {
-    this.fundsVoucherNo = fundsVoucherNo;
-  }
+	public String getRefundReason() {
+		return this.refundReason;
+	}
+	public void setRefundReason(String refundReason) {
+		this.refundReason = refundReason;
+	}
 
-  public String getItemId() {
-    return this.itemId;
-  }
+	public String getRefundType() {
+		return this.refundType;
+	}
+	public void setRefundType(String refundType) {
+		this.refundType = refundType;
+	}
 
-  public void setItemId(String itemId) {
-    this.itemId = itemId;
-  }
+	public String getShopId() {
+		return this.shopId;
+	}
+	public void setShopId(String shopId) {
+		this.shopId = shopId;
+	}
 
-  public String getRefundReason() {
-    return this.refundReason;
-  }
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-  public void setRefundReason(String refundReason) {
-    this.refundReason = refundReason;
-  }
+	public String getStoreId() {
+		return this.storeId;
+	}
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
+	}
 
-  public String getRefundType() {
-    return this.refundType;
-  }
-
-  public void setRefundType(String refundType) {
-    this.refundType = refundType;
-  }
-
-  public String getShopId() {
-    return this.shopId;
-  }
-
-  public void setShopId(String shopId) {
-    this.shopId = shopId;
-  }
-
-  public String getStatus() {
-    return this.status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public String getStoreId() {
-    return this.storeId;
-  }
-
-  public void setStoreId(String storeId) {
-    this.storeId = storeId;
-  }
-
-  public String getVoucherId() {
-    return this.voucherId;
-  }
-
-  public void setVoucherId(String voucherId) {
-    this.voucherId = voucherId;
-  }
+	public String getVoucherId() {
+		return this.voucherId;
+	}
+	public void setVoucherId(String voucherId) {
+		this.voucherId = voucherId;
+	}
 
 }

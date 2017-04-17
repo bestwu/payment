@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiAdvertCommissionAdvchannelBatchqueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3665474593888994647L;
+	private static final long serialVersionUID = 2793253362972282869L;
 
-  /**
-   * 广告ID
-   */
-  @ApiField("adv_id")
-  private String advId;
+	/**
+	 * 广告ID
+	 */
+	@ApiField("adv_id")
+	private String advId;
 
-  /**
-   * 当前页码
-   */
-  @ApiField("page_index")
-  private String pageIndex;
+	/**
+	 * 当前页码
+	 */
+	@ApiField("page_index")
+	private String pageIndex;
 
-  /**
-   * 每页记录数，默认10，最大100
-   */
-  @ApiField("page_size")
-  private String pageSize;
+	/**
+	 * 每页记录数，默认10，最大100
+	 */
+	@ApiField("page_size")
+	private String pageSize;
 
-  public String getAdvId() {
-    return this.advId;
-  }
+	public String getAdvId() {
+		return this.advId;
+	}
+	public void setAdvId(String advId) {
+		this.advId = advId;
+	}
 
-  public void setAdvId(String advId) {
-    this.advId = advId;
-  }
+	public String getPageIndex() {
+		return this.pageIndex;
+	}
+	public void setPageIndex(String pageIndex) {
+		this.pageIndex = pageIndex;
+	}
 
-  public String getPageIndex() {
-    return this.pageIndex;
-  }
-
-  public void setPageIndex(String pageIndex) {
-    this.pageIndex = pageIndex;
-  }
-
-  public String getPageSize() {
-    return this.pageSize;
-  }
-
-  public void setPageSize(String pageSize) {
-    this.pageSize = pageSize;
-  }
+	public String getPageSize() {
+		return this.pageSize;
+	}
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
 
 }

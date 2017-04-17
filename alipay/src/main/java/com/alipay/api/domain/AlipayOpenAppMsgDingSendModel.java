@@ -14,119 +14,111 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayOpenAppMsgDingSendModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8752378733964469243L;
+	private static final long serialVersionUID = 7569768659317163216L;
 
-  /**
-   * 钉钉企业应用ID
-   */
-  @ApiField("agent_id")
-  private String agentId;
+	/**
+	 * 钉钉企业应用ID
+	 */
+	@ApiField("agent_id")
+	private String agentId;
 
-  /**
-   * 消息类型为text时表示消息内容、消息类型为link时表示消息描述
-   */
-  @ApiField("content")
-  private String content;
+	/**
+	 * 消息类型为text时表示消息内容、消息类型为link时表示消息描述
+	 */
+	@ApiField("content")
+	private String content;
 
-  /**
-   * 消息类型为link时的消息点击链接地址
-   */
-  @ApiField("goto_url")
-  private String gotoUrl;
+	/**
+	 * 消息类型为link时的消息点击链接地址
+	 */
+	@ApiField("goto_url")
+	private String gotoUrl;
 
-  /**
-   * 消息类型为link时的图片地址，支持jpg格式图片，大小不超过1MB
-   */
-  @ApiField("image_url")
-  private String imageUrl;
+	/**
+	 * 消息类型为link时的图片地址，支持jpg格式图片，大小不超过1MB
+	 */
+	@ApiField("image_url")
+	private String imageUrl;
 
-  /**
-   * 消息类型，文本为text；链接为link
-   */
-  @ApiField("msg_type")
-  private String msgType;
+	/**
+	 * 消息类型，文本为text；链接为link
+	 */
+	@ApiField("msg_type")
+	private String msgType;
 
-  /**
-   * 接收者，个人为single；部门为department
-   */
-  @ApiField("receiver")
-  private String receiver;
+	/**
+	 * 接收者，个人为single；部门为department
+	 */
+	@ApiField("receiver")
+	private String receiver;
 
-  /**
-   * 消息类型为link时的消息标题
-   */
-  @ApiField("title")
-  private String title;
+	/**
+	 * 消息类型为link时的消息标题
+	 */
+	@ApiField("title")
+	private String title;
 
-  /**
-   * 用户UID列表
-   */
-  @ApiListField("user_ids")
-  @ApiField("string")
-  private List<String> userIds;
+	/**
+	 * 用户UID列表
+	 */
+	@ApiListField("user_ids")
+	@ApiField("string")
+	private List<String> userIds;
 
-  public String getAgentId() {
-    return this.agentId;
-  }
+	public String getAgentId() {
+		return this.agentId;
+	}
+	public void setAgentId(String agentId) {
+		this.agentId = agentId;
+	}
 
-  public void setAgentId(String agentId) {
-    this.agentId = agentId;
-  }
+	public String getContent() {
+		return this.content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 
-  public String getContent() {
-    return this.content;
-  }
+	public String getGotoUrl() {
+		return this.gotoUrl;
+	}
+	public void setGotoUrl(String gotoUrl) {
+		this.gotoUrl = gotoUrl;
+	}
 
-  public void setContent(String content) {
-    this.content = content;
-  }
+	public String getImageUrl() {
+		return this.imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 
-  public String getGotoUrl() {
-    return this.gotoUrl;
-  }
+	public String getMsgType() {
+		return this.msgType;
+	}
+	public void setMsgType(String msgType) {
+		this.msgType = msgType;
+	}
 
-  public void setGotoUrl(String gotoUrl) {
-    this.gotoUrl = gotoUrl;
-  }
+	public String getReceiver() {
+		return this.receiver;
+	}
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
+	}
 
-  public String getImageUrl() {
-    return this.imageUrl;
-  }
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-  public void setImageUrl(String imageUrl) {
-    this.imageUrl = imageUrl;
-  }
-
-  public String getMsgType() {
-    return this.msgType;
-  }
-
-  public void setMsgType(String msgType) {
-    this.msgType = msgType;
-  }
-
-  public String getReceiver() {
-    return this.receiver;
-  }
-
-  public void setReceiver(String receiver) {
-    this.receiver = receiver;
-  }
-
-  public String getTitle() {
-    return this.title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public List<String> getUserIds() {
-    return this.userIds;
-  }
-
-  public void setUserIds(List<String> userIds) {
-    this.userIds = userIds;
-  }
+	public List<String> getUserIds() {
+		return this.userIds;
+	}
+	public void setUserIds(List<String> userIds) {
+		this.userIds = userIds;
+	}
 
 }

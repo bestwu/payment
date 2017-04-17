@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOpenPublicMessageSingleSendModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4359659735126553564L;
+	private static final long serialVersionUID = 8614543772632964378L;
 
-  /**
-   * 消息模板相关参数，其中包括templateId模板ID和context模板上下文
-   */
-  @ApiField("template")
-  private Template template;
+	/**
+	 * 消息模板相关参数，其中包括templateId模板ID和context模板上下文
+	 */
+	@ApiField("template")
+	private Template template;
 
-  /**
-   * 消息接收用户的userid
-   */
-  @ApiField("to_user_id")
-  private String toUserId;
+	/**
+	 * 消息接收用户的userid
+	 */
+	@ApiField("to_user_id")
+	private String toUserId;
 
-  public Template getTemplate() {
-    return this.template;
-  }
+	public Template getTemplate() {
+		return this.template;
+	}
+	public void setTemplate(Template template) {
+		this.template = template;
+	}
 
-  public void setTemplate(Template template) {
-    this.template = template;
-  }
-
-  public String getToUserId() {
-    return this.toUserId;
-  }
-
-  public void setToUserId(String toUserId) {
-    this.toUserId = toUserId;
-  }
+	public String getToUserId() {
+		return this.toUserId;
+	}
+	public void setToUserId(String toUserId) {
+		this.toUserId = toUserId;
+	}
 
 }

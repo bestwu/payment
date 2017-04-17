@@ -14,35 +14,33 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class KoubeiItemDescription extends AlipayObject {
 
-  private static final long serialVersionUID = 4562886599125584797L;
+	private static final long serialVersionUID = 2835339577232516615L;
 
-  /**
-   * 标题下的描述列表，列表类型，每项不得超过100个中文字符,最多10项
-   */
-  @ApiListField("details")
-  @ApiField("string")
-  private List<String> details;
+	/**
+	 * 标题下的描述列表，列表类型，每项不得超过100个中文字符,最多10项
+	 */
+	@ApiListField("details")
+	@ApiField("string")
+	private List<String> details;
 
-  /**
-   * 描述标题，不得超过15个中文字符
-   */
-  @ApiField("title")
-  private String title;
+	/**
+	 * 描述标题，不得超过15个中文字符
+	 */
+	@ApiField("title")
+	private String title;
 
-  public List<String> getDetails() {
-    return this.details;
-  }
+	public List<String> getDetails() {
+		return this.details;
+	}
+	public void setDetails(List<String> details) {
+		this.details = details;
+	}
 
-  public void setDetails(List<String> details) {
-    this.details = details;
-  }
-
-  public String getTitle() {
-    return this.title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 }

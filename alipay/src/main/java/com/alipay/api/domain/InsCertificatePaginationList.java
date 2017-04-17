@@ -14,77 +14,72 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class InsCertificatePaginationList extends AlipayObject {
 
-  private static final long serialVersionUID = 5641151741498834313L;
+	private static final long serialVersionUID = 3281716927575864722L;
 
-  /**
-   * 当前页数
-   */
-  @ApiField("current_page")
-  private Long currentPage;
+	/**
+	 * 当前页数
+	 */
+	@ApiField("current_page")
+	private Long currentPage;
 
-  /**
-   * 结果列表
-   */
-  @ApiListField("list")
-  @ApiField("ins_certificate_api_d_t_o")
-  private List<InsCertificateApiDTO> list;
+	/**
+	 * 结果列表
+	 */
+	@ApiListField("list")
+	@ApiField("ins_certificate_api_d_t_o")
+	private List<InsCertificateApiDTO> list;
 
-  /**
-   * 每页数量
-   */
-  @ApiField("page_size")
-  private Long pageSize;
+	/**
+	 * 每页数量
+	 */
+	@ApiField("page_size")
+	private Long pageSize;
 
-  /**
-   * 总记录数
-   */
-  @ApiField("total_count")
-  private Long totalCount;
+	/**
+	 * 总记录数
+	 */
+	@ApiField("total_count")
+	private Long totalCount;
 
-  /**
-   * 全部页数
-   */
-  @ApiField("total_page_num")
-  private Long totalPageNum;
+	/**
+	 * 全部页数
+	 */
+	@ApiField("total_page_num")
+	private Long totalPageNum;
 
-  public Long getCurrentPage() {
-    return this.currentPage;
-  }
+	public Long getCurrentPage() {
+		return this.currentPage;
+	}
+	public void setCurrentPage(Long currentPage) {
+		this.currentPage = currentPage;
+	}
 
-  public void setCurrentPage(Long currentPage) {
-    this.currentPage = currentPage;
-  }
+	public List<InsCertificateApiDTO> getList() {
+		return this.list;
+	}
+	public void setList(List<InsCertificateApiDTO> list) {
+		this.list = list;
+	}
 
-  public List<InsCertificateApiDTO> getList() {
-    return this.list;
-  }
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
 
-  public void setList(List<InsCertificateApiDTO> list) {
-    this.list = list;
-  }
+	public Long getTotalCount() {
+		return this.totalCount;
+	}
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
 
-  public Long getPageSize() {
-    return this.pageSize;
-  }
-
-  public void setPageSize(Long pageSize) {
-    this.pageSize = pageSize;
-  }
-
-  public Long getTotalCount() {
-    return this.totalCount;
-  }
-
-  public void setTotalCount(Long totalCount) {
-    this.totalCount = totalCount;
-  }
-
-  public Long getTotalPageNum() {
-    return this.totalPageNum;
-  }
-
-  public void setTotalPageNum(Long totalPageNum) {
-    this.totalPageNum = totalPageNum;
-  }
+	public Long getTotalPageNum() {
+		return this.totalPageNum;
+	}
+	public void setTotalPageNum(Long totalPageNum) {
+		this.totalPageNum = totalPageNum;
+	}
 
 }

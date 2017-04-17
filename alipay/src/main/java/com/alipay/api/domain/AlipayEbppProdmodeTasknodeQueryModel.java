@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEbppProdmodeTasknodeQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4456641746574156562L;
+	private static final long serialVersionUID = 4823797779878199438L;
 
-  /**
-   * 任务编号
-   */
-  @ApiField("task_id")
-  private String taskId;
+	/**
+	 * 任务编号
+	 */
+	@ApiField("task_id")
+	private String taskId;
 
-  public String getTaskId() {
-    return this.taskId;
-  }
-
-  public void setTaskId(String taskId) {
-    this.taskId = taskId;
-  }
+	public String getTaskId() {
+		return this.taskId;
+	}
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
 
 }

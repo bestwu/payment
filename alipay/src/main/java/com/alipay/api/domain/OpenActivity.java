@@ -11,93 +11,87 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class OpenActivity extends AlipayObject {
 
-  private static final long serialVersionUID = 4611878573396251593L;
+	private static final long serialVersionUID = 2745876866349881877L;
 
-  /**
-   * 活动结束时间
-   */
-  @ApiField("activity_end_date")
-  private String activityEndDate;
+	/**
+	 * 活动结束时间
+	 */
+	@ApiField("activity_end_date")
+	private String activityEndDate;
 
-  /**
-   * 活动id
-   */
-  @ApiField("activity_id")
-  private String activityId;
+	/**
+	 * 活动id
+	 */
+	@ApiField("activity_id")
+	private String activityId;
 
-  /**
-   * 活动名称
-   */
-  @ApiField("activity_name")
-  private String activityName;
+	/**
+	 * 活动名称
+	 */
+	@ApiField("activity_name")
+	private String activityName;
 
-  /**
-   * 活动开始时间
-   */
-  @ApiField("activity_start_date")
-  private String activityStartDate;
+	/**
+	 * 活动开始时间
+	 */
+	@ApiField("activity_start_date")
+	private String activityStartDate;
 
-  /**
-   * 活动验证状态
-   * 0，未检测
-   * 1，未通过
-   * 2，已通过
-   */
-  @ApiField("activity_status")
-  private String activityStatus;
+	/**
+	 * 活动验证状态
+0，未检测
+1，未通过
+2，已通过
+	 */
+	@ApiField("activity_status")
+	private String activityStatus;
 
-  /**
-   * 门店id
-   */
-  @ApiField("store_id")
-  private String storeId;
+	/**
+	 * 门店id
+	 */
+	@ApiField("store_id")
+	private String storeId;
 
-  public String getActivityEndDate() {
-    return this.activityEndDate;
-  }
+	public String getActivityEndDate() {
+		return this.activityEndDate;
+	}
+	public void setActivityEndDate(String activityEndDate) {
+		this.activityEndDate = activityEndDate;
+	}
 
-  public void setActivityEndDate(String activityEndDate) {
-    this.activityEndDate = activityEndDate;
-  }
+	public String getActivityId() {
+		return this.activityId;
+	}
+	public void setActivityId(String activityId) {
+		this.activityId = activityId;
+	}
 
-  public String getActivityId() {
-    return this.activityId;
-  }
+	public String getActivityName() {
+		return this.activityName;
+	}
+	public void setActivityName(String activityName) {
+		this.activityName = activityName;
+	}
 
-  public void setActivityId(String activityId) {
-    this.activityId = activityId;
-  }
+	public String getActivityStartDate() {
+		return this.activityStartDate;
+	}
+	public void setActivityStartDate(String activityStartDate) {
+		this.activityStartDate = activityStartDate;
+	}
 
-  public String getActivityName() {
-    return this.activityName;
-  }
+	public String getActivityStatus() {
+		return this.activityStatus;
+	}
+	public void setActivityStatus(String activityStatus) {
+		this.activityStatus = activityStatus;
+	}
 
-  public void setActivityName(String activityName) {
-    this.activityName = activityName;
-  }
-
-  public String getActivityStartDate() {
-    return this.activityStartDate;
-  }
-
-  public void setActivityStartDate(String activityStartDate) {
-    this.activityStartDate = activityStartDate;
-  }
-
-  public String getActivityStatus() {
-    return this.activityStatus;
-  }
-
-  public void setActivityStatus(String activityStatus) {
-    this.activityStatus = activityStatus;
-  }
-
-  public String getStoreId() {
-    return this.storeId;
-  }
-
-  public void setStoreId(String storeId) {
-    this.storeId = storeId;
-  }
+	public String getStoreId() {
+		return this.storeId;
+	}
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
+	}
 
 }

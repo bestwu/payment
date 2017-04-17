@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class Text extends AlipayObject {
 
-  private static final long serialVersionUID = 5398479639874582434L;
+	private static final long serialVersionUID = 6779814727623176585L;
 
-  /**
-   * 你好!
-   */
-  @ApiField("content")
-  private String content;
+	/**
+	 * 你好!
+	 */
+	@ApiField("content")
+	private String content;
 
-  public String getContent() {
-    return this.content;
-  }
-
-  public void setContent(String content) {
-    this.content = content;
-  }
+	public String getContent() {
+		return this.content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 
 }

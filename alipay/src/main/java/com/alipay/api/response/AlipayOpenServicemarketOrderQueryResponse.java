@@ -9,83 +9,91 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.open.servicemarket.order.query response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-06-16 21:01:19
+ * @since 1.0, 2017-03-01 16:20:58
  */
 public class AlipayOpenServicemarketOrderQueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 6159891137637385544L;
+	private static final long serialVersionUID = 7348555662346514997L;
 
-  /**
-   * 订购服务商品ID
-   */
-  @ApiField("commodity_id")
-  private String commodityId;
+	/** 
+	 * 订购服务商品ID
+	 */
+	@ApiField("commodity_id")
+	private String commodityId;
 
-  /**
-   * 当前查询页（本接口支持最多查询100条记录）
-   */
-  @ApiField("current_page")
-  private Long currentPage;
+	/** 
+	 * 当前查询页（本接口支持最多查询100条记录）
+	 */
+	@ApiField("current_page")
+	private Long currentPage;
 
-  /**
-   * 订单明细列表
-   */
-  @ApiListField("order_items")
-  @ApiField("order_item")
-  private List<OrderItem> orderItems;
+	/** 
+	 * 订单明细列表
+	 */
+	@ApiListField("order_items")
+	@ApiField("order_item")
+	private List<OrderItem> orderItems;
 
-  /**
-   * MERCHANT_ORDED（待服务商接单）
-   */
-  @ApiField("status")
-  private String status;
+	/** 
+	 * 用于区分同一个服务的不同版本
+	 */
+	@ApiField("specifications")
+	private String specifications;
 
-  /**
-   * 总记录数
-   */
-  @ApiField("total_size")
-  private Long totalSize;
+	/** 
+	 * MERCHANT_ORDED（待服务商接单）
+	 */
+	@ApiField("status")
+	private String status;
 
-  public void setCommodityId(String commodityId) {
-    this.commodityId = commodityId;
-  }
+	/** 
+	 * 总记录数
+	 */
+	@ApiField("total_size")
+	private Long totalSize;
 
-  public String getCommodityId() {
-    return this.commodityId;
-  }
+	public void setCommodityId(String commodityId) {
+		this.commodityId = commodityId;
+	}
+	public String getCommodityId( ) {
+		return this.commodityId;
+	}
 
-  public void setCurrentPage(Long currentPage) {
-    this.currentPage = currentPage;
-  }
+	public void setCurrentPage(Long currentPage) {
+		this.currentPage = currentPage;
+	}
+	public Long getCurrentPage( ) {
+		return this.currentPage;
+	}
 
-  public Long getCurrentPage() {
-    return this.currentPage;
-  }
+	public void setOrderItems(List<OrderItem> orderItems) {
+		this.orderItems = orderItems;
+	}
+	public List<OrderItem> getOrderItems( ) {
+		return this.orderItems;
+	}
 
-  public void setOrderItems(List<OrderItem> orderItems) {
-    this.orderItems = orderItems;
-  }
+	public void setSpecifications(String specifications) {
+		this.specifications = specifications;
+	}
+	public String getSpecifications( ) {
+		return this.specifications;
+	}
 
-  public List<OrderItem> getOrderItems() {
-    return this.orderItems;
-  }
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getStatus( ) {
+		return this.status;
+	}
 
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public String getStatus() {
-    return this.status;
-  }
-
-  public void setTotalSize(Long totalSize) {
-    this.totalSize = totalSize;
-  }
-
-  public Long getTotalSize() {
-    return this.totalSize;
-  }
+	public void setTotalSize(Long totalSize) {
+		this.totalSize = totalSize;
+	}
+	public Long getTotalSize( ) {
+		return this.totalSize;
+	}
 
 }

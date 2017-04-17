@@ -11,90 +11,84 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class BeaconDeviceInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 7622627387425145463L;
+	private static final long serialVersionUID = 8871636557797179227L;
 
-  /**
-   * 设备类型
-   */
-  @ApiField("actiontype")
-  private String actiontype;
+	/**
+	 * 设备类型
+	 */
+	@ApiField("actiontype")
+	private String actiontype;
 
-  /**
-   * 设备是否可用
-   */
-  @ApiField("inuse")
-  private Boolean inuse;
+	/**
+	 * 设备是否可用
+	 */
+	@ApiField("inuse")
+	private Boolean inuse;
 
-  /**
-   * 设备说明
-   */
-  @ApiField("remark")
-  private String remark;
+	/**
+	 * 设备说明
+	 */
+	@ApiField("remark")
+	private String remark;
 
-  /**
-   * 设备序列号
-   */
-  @ApiField("sn")
-  private String sn;
+	/**
+	 * 设备序列号
+	 */
+	@ApiField("sn")
+	private String sn;
 
-  /**
-   * 蓝牙设备关联的模板信息
-   */
-  @ApiField("template")
-  private BeaconTemplate template;
+	/**
+	 * 蓝牙设备关联的模板信息
+	 */
+	@ApiField("template")
+	private BeaconTemplate template;
 
-  /**
-   * 设备ID
-   */
-  @ApiField("uuid")
-  private String uuid;
+	/**
+	 * 设备ID
+	 */
+	@ApiField("uuid")
+	private String uuid;
 
-  public String getActiontype() {
-    return this.actiontype;
-  }
+	public String getActiontype() {
+		return this.actiontype;
+	}
+	public void setActiontype(String actiontype) {
+		this.actiontype = actiontype;
+	}
 
-  public void setActiontype(String actiontype) {
-    this.actiontype = actiontype;
-  }
+	public Boolean getInuse() {
+		return this.inuse;
+	}
+	public void setInuse(Boolean inuse) {
+		this.inuse = inuse;
+	}
 
-  public Boolean getInuse() {
-    return this.inuse;
-  }
+	public String getRemark() {
+		return this.remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 
-  public void setInuse(Boolean inuse) {
-    this.inuse = inuse;
-  }
+	public String getSn() {
+		return this.sn;
+	}
+	public void setSn(String sn) {
+		this.sn = sn;
+	}
 
-  public String getRemark() {
-    return this.remark;
-  }
+	public BeaconTemplate getTemplate() {
+		return this.template;
+	}
+	public void setTemplate(BeaconTemplate template) {
+		this.template = template;
+	}
 
-  public void setRemark(String remark) {
-    this.remark = remark;
-  }
-
-  public String getSn() {
-    return this.sn;
-  }
-
-  public void setSn(String sn) {
-    this.sn = sn;
-  }
-
-  public BeaconTemplate getTemplate() {
-    return this.template;
-  }
-
-  public void setTemplate(BeaconTemplate template) {
-    this.template = template;
-  }
-
-  public String getUuid() {
-    return this.uuid;
-  }
-
-  public void setUuid(String uuid) {
-    this.uuid = uuid;
-  }
+	public String getUuid() {
+		return this.uuid;
+	}
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 
 }

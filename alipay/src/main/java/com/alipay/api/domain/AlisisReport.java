@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlisisReport extends AlipayObject {
 
-  private static final long serialVersionUID = 4333851373855811926L;
+	private static final long serialVersionUID = 3311525783437384353L;
 
-  /**
-   * 报表描述
-   */
-  @ApiField("report_desc")
-  private String reportDesc;
+	/**
+	 * 报表描述
+	 */
+	@ApiField("report_desc")
+	private String reportDesc;
 
-  /**
-   * 报表名称
-   */
-  @ApiField("report_name")
-  private String reportName;
+	/**
+	 * 报表名称
+	 */
+	@ApiField("report_name")
+	private String reportName;
 
-  /**
-   * 报表唯一标识
-   */
-  @ApiField("report_uk")
-  private String reportUk;
+	/**
+	 * 报表唯一标识
+	 */
+	@ApiField("report_uk")
+	private String reportUk;
 
-  public String getReportDesc() {
-    return this.reportDesc;
-  }
+	public String getReportDesc() {
+		return this.reportDesc;
+	}
+	public void setReportDesc(String reportDesc) {
+		this.reportDesc = reportDesc;
+	}
 
-  public void setReportDesc(String reportDesc) {
-    this.reportDesc = reportDesc;
-  }
+	public String getReportName() {
+		return this.reportName;
+	}
+	public void setReportName(String reportName) {
+		this.reportName = reportName;
+	}
 
-  public String getReportName() {
-    return this.reportName;
-  }
-
-  public void setReportName(String reportName) {
-    this.reportName = reportName;
-  }
-
-  public String getReportUk() {
-    return this.reportUk;
-  }
-
-  public void setReportUk(String reportUk) {
-    this.reportUk = reportUk;
-  }
+	public String getReportUk() {
+		return this.reportUk;
+	}
+	public void setReportUk(String reportUk) {
+		this.reportUk = reportUk;
+	}
 
 }

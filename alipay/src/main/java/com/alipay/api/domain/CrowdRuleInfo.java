@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class CrowdRuleInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 7411944498327349814L;
+	private static final long serialVersionUID = 5788534214874475936L;
 
-  /**
-   * 规则描述
-   */
-  @ApiField("ruledesc")
-  private String ruledesc;
+	/**
+	 * 规则描述
+	 */
+	@ApiField("ruledesc")
+	private String ruledesc;
 
-  /**
-   * 规则id
-   */
-  @ApiField("ruleid")
-  private String ruleid;
+	/**
+	 * 规则id
+	 */
+	@ApiField("ruleid")
+	private String ruleid;
 
-  /**
-   * 圈人规则的状态
-   */
-  @ApiField("status")
-  private String status;
+	/**
+	 * 圈人规则的状态
+	 */
+	@ApiField("status")
+	private String status;
 
-  public String getRuledesc() {
-    return this.ruledesc;
-  }
+	public String getRuledesc() {
+		return this.ruledesc;
+	}
+	public void setRuledesc(String ruledesc) {
+		this.ruledesc = ruledesc;
+	}
 
-  public void setRuledesc(String ruledesc) {
-    this.ruledesc = ruledesc;
-  }
+	public String getRuleid() {
+		return this.ruleid;
+	}
+	public void setRuleid(String ruleid) {
+		this.ruleid = ruleid;
+	}
 
-  public String getRuleid() {
-    return this.ruleid;
-  }
-
-  public void setRuleid(String ruleid) {
-    this.ruleid = ruleid;
-  }
-
-  public String getStatus() {
-    return this.status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 }

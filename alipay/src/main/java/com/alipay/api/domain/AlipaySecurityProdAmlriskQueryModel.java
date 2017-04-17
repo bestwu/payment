@@ -14,119 +14,111 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipaySecurityProdAmlriskQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 1734265526278643249L;
+	private static final long serialVersionUID = 8367457812829675744L;
 
-  /**
-   * 办公地址
-   */
-  @ApiField("business_address")
-  private String businessAddress;
+	/**
+	 * 办公地址
+	 */
+	@ApiField("business_address")
+	private String businessAddress;
 
-  /**
-   * 标识该次反洗钱风险分析事件请求的id，商户应保证此id唯一。
-   */
-  @ApiField("event_id")
-  private String eventId;
+	/**
+	 * 标识该次反洗钱风险分析事件请求的id，商户应保证此id唯一。
+	 */
+	@ApiField("event_id")
+	private String eventId;
 
-  /**
-   * 与商户相关个体的信息列表，可以有0个到多个。
-   */
-  @ApiListField("individual_list")
-  @ApiField("individual_info")
-  private List<IndividualInfo> individualList;
+	/**
+	 * 与商户相关个体的信息列表，可以有0个到多个。
+	 */
+	@ApiListField("individual_list")
+	@ApiField("individual_info")
+	private List<IndividualInfo> individualList;
 
-  /**
-   * 公司名称、类型、性质
-   */
-  @ApiField("legal_name")
-  private String legalName;
+	/**
+	 * 公司名称、类型、性质
+	 */
+	@ApiField("legal_name")
+	private String legalName;
 
-  /**
-   * 商户ID
-   */
-  @ApiField("merchant_id")
-  private String merchantId;
+	/**
+	 * 商户ID
+	 */
+	@ApiField("merchant_id")
+	private String merchantId;
 
-  /**
-   * 该商户准入申请的id
-   */
-  @ApiField("order_id")
-  private String orderId;
+	/**
+	 * 该商户准入申请的id
+	 */
+	@ApiField("order_id")
+	private String orderId;
 
-  /**
-   * 公司注册地址
-   */
-  @ApiField("registered_address")
-  private String registeredAddress;
+	/**
+	 * 公司注册地址
+	 */
+	@ApiField("registered_address")
+	private String registeredAddress;
 
-  /**
-   * 公司注册号
-   */
-  @ApiField("registration_number")
-  private String registrationNumber;
+	/**
+	 * 公司注册号
+	 */
+	@ApiField("registration_number")
+	private String registrationNumber;
 
-  public String getBusinessAddress() {
-    return this.businessAddress;
-  }
+	public String getBusinessAddress() {
+		return this.businessAddress;
+	}
+	public void setBusinessAddress(String businessAddress) {
+		this.businessAddress = businessAddress;
+	}
 
-  public void setBusinessAddress(String businessAddress) {
-    this.businessAddress = businessAddress;
-  }
+	public String getEventId() {
+		return this.eventId;
+	}
+	public void setEventId(String eventId) {
+		this.eventId = eventId;
+	}
 
-  public String getEventId() {
-    return this.eventId;
-  }
+	public List<IndividualInfo> getIndividualList() {
+		return this.individualList;
+	}
+	public void setIndividualList(List<IndividualInfo> individualList) {
+		this.individualList = individualList;
+	}
 
-  public void setEventId(String eventId) {
-    this.eventId = eventId;
-  }
+	public String getLegalName() {
+		return this.legalName;
+	}
+	public void setLegalName(String legalName) {
+		this.legalName = legalName;
+	}
 
-  public List<IndividualInfo> getIndividualList() {
-    return this.individualList;
-  }
+	public String getMerchantId() {
+		return this.merchantId;
+	}
+	public void setMerchantId(String merchantId) {
+		this.merchantId = merchantId;
+	}
 
-  public void setIndividualList(List<IndividualInfo> individualList) {
-    this.individualList = individualList;
-  }
+	public String getOrderId() {
+		return this.orderId;
+	}
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
 
-  public String getLegalName() {
-    return this.legalName;
-  }
+	public String getRegisteredAddress() {
+		return this.registeredAddress;
+	}
+	public void setRegisteredAddress(String registeredAddress) {
+		this.registeredAddress = registeredAddress;
+	}
 
-  public void setLegalName(String legalName) {
-    this.legalName = legalName;
-  }
-
-  public String getMerchantId() {
-    return this.merchantId;
-  }
-
-  public void setMerchantId(String merchantId) {
-    this.merchantId = merchantId;
-  }
-
-  public String getOrderId() {
-    return this.orderId;
-  }
-
-  public void setOrderId(String orderId) {
-    this.orderId = orderId;
-  }
-
-  public String getRegisteredAddress() {
-    return this.registeredAddress;
-  }
-
-  public void setRegisteredAddress(String registeredAddress) {
-    this.registeredAddress = registeredAddress;
-  }
-
-  public String getRegistrationNumber() {
-    return this.registrationNumber;
-  }
-
-  public void setRegistrationNumber(String registrationNumber) {
-    this.registrationNumber = registrationNumber;
-  }
+	public String getRegistrationNumber() {
+		return this.registrationNumber;
+	}
+	public void setRegistrationNumber(String registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
 
 }

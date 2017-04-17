@@ -9,27 +9,26 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.mobile.public.std.mock.listsmlist.api response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2015-10-09 17:57:31
+ * @since 1.0, 2017-04-07 20:39:23
  */
 public class AlipayMobilePublicStdMockListsmlistApiResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 3313889471176416567L;
+	private static final long serialVersionUID = 6135713196525592145L;
 
-  /**
-   * 简单对象嵌套List
-   */
-  @ApiListField("list_sm_model_list")
-  @ApiField("list_list_sm_mock_model")
-  private List<ListListSmMockModel> listSmModelList;
+	/** 
+	 * 简单对象嵌套List
+	 */
+	@ApiListField("list_sm_model_list")
+	@ApiField("list_list_sm_mock_model")
+	private List<ListListSmMockModel> listSmModelList;
 
-  public void setListSmModelList(List<ListListSmMockModel> listSmModelList) {
-    this.listSmModelList = listSmModelList;
-  }
-
-  public List<ListListSmMockModel> getListSmModelList() {
-    return this.listSmModelList;
-  }
+	public void setListSmModelList(List<ListListSmMockModel> listSmModelList) {
+		this.listSmModelList = listSmModelList;
+	}
+	public List<ListListSmMockModel> getListSmModelList( ) {
+		return this.listSmModelList;
+	}
 
 }

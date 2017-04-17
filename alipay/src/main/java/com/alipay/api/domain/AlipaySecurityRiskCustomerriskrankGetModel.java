@@ -11,76 +11,71 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipaySecurityRiskCustomerriskrankGetModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5886874738756435248L;
+	private static final long serialVersionUID = 5546753165763529732L;
 
-  /**
-   * 证件号码，除了场景id必填，其他几个参数不能同时为空
-   */
-  @ApiField("card_no")
-  private String cardNo;
+	/**
+	 * 证件号码，除了场景id必填，其他几个参数不能同时为空
+	 */
+	@ApiField("card_no")
+	private String cardNo;
 
-  /**
-   * 证件类型，除了场景id必填，其他几个参数不能同时为空
-   */
-  @ApiField("card_type")
-  private String cardType;
+	/**
+	 * 证件类型，除了场景id必填，其他几个参数不能同时为空
+	 */
+	@ApiField("card_type")
+	private String cardType;
 
-  /**
-   * 手机号，除了场景id必填，其他几个参数不能同时为空
-   */
-  @ApiField("mobile")
-  private String mobile;
+	/**
+	 * 手机号，除了场景id必填，其他几个参数不能同时为空
+	 */
+	@ApiField("mobile")
+	private String mobile;
 
-  /**
-   * 场景id
-   */
-  @ApiField("scene_id")
-  private String sceneId;
+	/**
+	 * 场景id
+	 */
+	@ApiField("scene_id")
+	private String sceneId;
 
-  /**
-   * 支付宝账户id ，除了场景id必填，其他几个参数不能同时为空
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 支付宝账户id ，除了场景id必填，其他几个参数不能同时为空
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getCardNo() {
-    return this.cardNo;
-  }
+	public String getCardNo() {
+		return this.cardNo;
+	}
+	public void setCardNo(String cardNo) {
+		this.cardNo = cardNo;
+	}
 
-  public void setCardNo(String cardNo) {
-    this.cardNo = cardNo;
-  }
+	public String getCardType() {
+		return this.cardType;
+	}
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
+	}
 
-  public String getCardType() {
-    return this.cardType;
-  }
+	public String getMobile() {
+		return this.mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 
-  public void setCardType(String cardType) {
-    this.cardType = cardType;
-  }
+	public String getSceneId() {
+		return this.sceneId;
+	}
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+	}
 
-  public String getMobile() {
-    return this.mobile;
-  }
-
-  public void setMobile(String mobile) {
-    this.mobile = mobile;
-  }
-
-  public String getSceneId() {
-    return this.sceneId;
-  }
-
-  public void setSceneId(String sceneId) {
-    this.sceneId = sceneId;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

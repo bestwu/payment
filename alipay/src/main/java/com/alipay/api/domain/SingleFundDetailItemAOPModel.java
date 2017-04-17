@@ -14,35 +14,33 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class SingleFundDetailItemAOPModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3622944952926267853L;
+	private static final long serialVersionUID = 8339725394247229247L;
 
-  /**
-   * 批次资金明细模型列表
-   */
-  @ApiListField("batch_fund_item_model_list")
-  @ApiField("batch_fund_item_a_o_p_model")
-  private List<BatchFundItemAOPModel> batchFundItemModelList;
+	/**
+	 * 批次资金明细模型列表
+	 */
+	@ApiListField("batch_fund_item_model_list")
+	@ApiField("batch_fund_item_a_o_p_model")
+	private List<BatchFundItemAOPModel> batchFundItemModelList;
 
-  /**
-   * 消费记录主记录
-   */
-  @ApiField("consume_record")
-  private ConsumeRecordAOPModel consumeRecord;
+	/**
+	 * 消费记录主记录
+	 */
+	@ApiField("consume_record")
+	private ConsumeRecordAOPModel consumeRecord;
 
-  public List<BatchFundItemAOPModel> getBatchFundItemModelList() {
-    return this.batchFundItemModelList;
-  }
+	public List<BatchFundItemAOPModel> getBatchFundItemModelList() {
+		return this.batchFundItemModelList;
+	}
+	public void setBatchFundItemModelList(List<BatchFundItemAOPModel> batchFundItemModelList) {
+		this.batchFundItemModelList = batchFundItemModelList;
+	}
 
-  public void setBatchFundItemModelList(List<BatchFundItemAOPModel> batchFundItemModelList) {
-    this.batchFundItemModelList = batchFundItemModelList;
-  }
-
-  public ConsumeRecordAOPModel getConsumeRecord() {
-    return this.consumeRecord;
-  }
-
-  public void setConsumeRecord(ConsumeRecordAOPModel consumeRecord) {
-    this.consumeRecord = consumeRecord;
-  }
+	public ConsumeRecordAOPModel getConsumeRecord() {
+		return this.consumeRecord;
+	}
+	public void setConsumeRecord(ConsumeRecordAOPModel consumeRecord) {
+		this.consumeRecord = consumeRecord;
+	}
 
 }

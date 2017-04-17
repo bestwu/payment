@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOpenPublicLabelModifyModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4722646126549474521L;
+	private static final long serialVersionUID = 3121393445711951692L;
 
-  /**
-   * 要修改的标签id
-   */
-  @ApiField("id")
-  private String id;
+	/**
+	 * 要修改的标签id
+	 */
+	@ApiField("id")
+	private String id;
 
-  /**
-   * 要修改成的标签名
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 要修改成的标签名
+	 */
+	@ApiField("name")
+	private String name;
 
-  public String getId() {
-    return this.id;
-  }
+	public String getId() {
+		return this.id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

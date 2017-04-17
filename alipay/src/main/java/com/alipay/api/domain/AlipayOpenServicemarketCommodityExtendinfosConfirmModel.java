@@ -14,78 +14,73 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayOpenServicemarketCommodityExtendinfosConfirmModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5687818824579925669L;
+	private static final long serialVersionUID = 4173746651724245996L;
 
-  /**
-   * 公服BD审核扩展信息
-   */
-  @ApiListField("commodity_ext_infos")
-  @ApiField("commodity_ext_info_confirm")
-  private List<CommodityExtInfoConfirm> commodityExtInfos;
+	/**
+	 * 公服BD审核扩展信息
+	 */
+	@ApiListField("commodity_ext_infos")
+	@ApiField("commodity_ext_info_confirm")
+	private List<CommodityExtInfoConfirm> commodityExtInfos;
 
-  /**
-   * 服务Id
-   */
-  @ApiField("commodity_id")
-  private String commodityId;
+	/**
+	 * 服务Id
+	 */
+	@ApiField("commodity_id")
+	private String commodityId;
 
-  /**
-   * status 为驳回时 必须输入驳回原因
-   */
-  @ApiField("memo")
-  private String memo;
+	/**
+	 * status 为驳回时 必须输入驳回原因
+	 */
+	@ApiField("memo")
+	private String memo;
 
-  /**
-   * 公服BD审核结果：成功还是失败:
-   * status 【0：表示不通过 ， 1：表示通过】
-   */
-  @ApiField("status")
-  private String status;
+	/**
+	 * 公服BD审核结果：成功还是失败:
+status 【0：表示不通过 ， 1：表示通过】
+	 */
+	@ApiField("status")
+	private String status;
 
-  /**
-   * 用户Id
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 用户Id
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public List<CommodityExtInfoConfirm> getCommodityExtInfos() {
-    return this.commodityExtInfos;
-  }
+	public List<CommodityExtInfoConfirm> getCommodityExtInfos() {
+		return this.commodityExtInfos;
+	}
+	public void setCommodityExtInfos(List<CommodityExtInfoConfirm> commodityExtInfos) {
+		this.commodityExtInfos = commodityExtInfos;
+	}
 
-  public void setCommodityExtInfos(List<CommodityExtInfoConfirm> commodityExtInfos) {
-    this.commodityExtInfos = commodityExtInfos;
-  }
+	public String getCommodityId() {
+		return this.commodityId;
+	}
+	public void setCommodityId(String commodityId) {
+		this.commodityId = commodityId;
+	}
 
-  public String getCommodityId() {
-    return this.commodityId;
-  }
+	public String getMemo() {
+		return this.memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
 
-  public void setCommodityId(String commodityId) {
-    this.commodityId = commodityId;
-  }
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-  public String getMemo() {
-    return this.memo;
-  }
-
-  public void setMemo(String memo) {
-    this.memo = memo;
-  }
-
-  public String getStatus() {
-    return this.status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

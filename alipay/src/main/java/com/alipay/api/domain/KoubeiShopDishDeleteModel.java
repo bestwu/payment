@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiShopDishDeleteModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3179763292857845239L;
+	private static final long serialVersionUID = 5434219998238575288L;
 
-  /**
-   * 菜品id
-   */
-  @ApiField("dish_id")
-  private String dishId;
+	/**
+	 * 菜品id
+	 */
+	@ApiField("dish_id")
+	private String dishId;
 
-  public String getDishId() {
-    return this.dishId;
-  }
-
-  public void setDishId(String dishId) {
-    this.dishId = dishId;
-  }
+	public String getDishId() {
+		return this.dishId;
+	}
+	public void setDishId(String dishId) {
+		this.dishId = dishId;
+	}
 
 }

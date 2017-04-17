@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class CustomerTag extends AlipayObject {
 
-  private static final long serialVersionUID = 1552952588682117677L;
+	private static final long serialVersionUID = 5344917759135917589L;
 
-  /**
-   * 字段名称
-   */
-  @ApiField("col_name")
-  private String colName;
+	/**
+	 * 字段名称
+	 */
+	@ApiField("col_name")
+	private String colName;
 
-  /**
-   * column_type字段类型
-   */
-  @ApiField("column_type")
-  private String columnType;
+	/**
+	 * column_type字段类型
+	 */
+	@ApiField("column_type")
+	private String columnType;
 
-  /**
-   * id
-   */
-  @ApiField("id")
-  private String id;
+	/**
+	 * id
+	 */
+	@ApiField("id")
+	private String id;
 
-  /**
-   * 标签名
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 标签名
+	 */
+	@ApiField("name")
+	private String name;
 
-  public String getColName() {
-    return this.colName;
-  }
+	public String getColName() {
+		return this.colName;
+	}
+	public void setColName(String colName) {
+		this.colName = colName;
+	}
 
-  public void setColName(String colName) {
-    this.colName = colName;
-  }
+	public String getColumnType() {
+		return this.columnType;
+	}
+	public void setColumnType(String columnType) {
+		this.columnType = columnType;
+	}
 
-  public String getColumnType() {
-    return this.columnType;
-  }
+	public String getId() {
+		return this.id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public void setColumnType(String columnType) {
-    this.columnType = columnType;
-  }
-
-  public String getId() {
-    return this.id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

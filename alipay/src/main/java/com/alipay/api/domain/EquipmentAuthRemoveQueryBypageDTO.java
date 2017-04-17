@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class EquipmentAuthRemoveQueryBypageDTO extends AlipayObject {
 
-  private static final long serialVersionUID = 8386718348632455671L;
+	private static final long serialVersionUID = 4355545698192463468L;
 
-  /**
-   * 机具编号
-   */
-  @ApiField("device_id")
-  private String deviceId;
+	/**
+	 * 机具编号
+	 */
+	@ApiField("device_id")
+	private String deviceId;
 
-  /**
-   * 解绑时间
-   */
-  @ApiField("unbind_time")
-  private String unbindTime;
+	/**
+	 * 解绑时间
+	 */
+	@ApiField("unbind_time")
+	private String unbindTime;
 
-  public String getDeviceId() {
-    return this.deviceId;
-  }
+	public String getDeviceId() {
+		return this.deviceId;
+	}
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+	}
 
-  public void setDeviceId(String deviceId) {
-    this.deviceId = deviceId;
-  }
-
-  public String getUnbindTime() {
-    return this.unbindTime;
-  }
-
-  public void setUnbindTime(String unbindTime) {
-    this.unbindTime = unbindTime;
-  }
+	public String getUnbindTime() {
+		return this.unbindTime;
+	}
+	public void setUnbindTime(String unbindTime) {
+		this.unbindTime = unbindTime;
+	}
 
 }

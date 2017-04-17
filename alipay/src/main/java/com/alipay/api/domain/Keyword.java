@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class Keyword extends AlipayObject {
 
-  private static final long serialVersionUID = 2663554567835474281L;
+	private static final long serialVersionUID = 6763236152482574153L;
 
-  /**
-   * 当前文字颜色
-   */
-  @ApiField("color")
-  private String color;
+	/**
+	 * 当前文字颜色
+	 */
+	@ApiField("color")
+	private String color;
 
-  /**
-   * 模板中占位符的值
-   */
-  @ApiField("value")
-  private String value;
+	/**
+	 * 模板中占位符的值
+	 */
+	@ApiField("value")
+	private String value;
 
-  public String getColor() {
-    return this.color;
-  }
+	public String getColor() {
+		return this.color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
 
-  public void setColor(String color) {
-    this.color = color;
-  }
-
-  public String getValue() {
-    return this.value;
-  }
-
-  public void setValue(String value) {
-    this.value = value;
-  }
+	public String getValue() {
+		return this.value;
+	}
+	public void setValue(String value) {
+		this.value = value;
+	}
 
 }

@@ -11,230 +11,214 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOfflineProviderStaffUpdateModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8299399197211456142L;
+	private static final long serialVersionUID = 6514725629644969191L;
 
-  /**
-   * 支付宝账号
-   */
-  @ApiField("alipay_no")
-  private String alipayNo;
+	/**
+	 * 支付宝账号
+	 */
+	@ApiField("alipay_no")
+	private String alipayNo;
 
-  /**
-   * 行业类型
-   */
-  @ApiField("biz_type")
-  private String bizType;
+	/**
+	 * 行业类型
+	 */
+	@ApiField("biz_type")
+	private String bizType;
 
-  /**
-   * 客户端请求IP
-   */
-  @ApiField("client_ip")
-  private String clientIp;
+	/**
+	 * 客户端请求IP
+	 */
+	@ApiField("client_ip")
+	private String clientIp;
 
-  /**
-   * 新增员工的备注信息
-   */
-  @ApiField("description")
-  private String description;
+	/**
+	 * 新增员工的备注信息
+	 */
+	@ApiField("description")
+	private String description;
 
-  /**
-   * 要同步员工的邮箱
-   */
-  @ApiField("email")
-  private String email;
+	/**
+	 * 要同步员工的邮箱
+	 */
+	@ApiField("email")
+	private String email;
 
-  /**
-   * 登录用户的staff_id
-   */
-  @ApiField("login_staff_id")
-  private String loginStaffId;
+	/**
+	 * 登录用户的staff_id
+	 */
+	@ApiField("login_staff_id")
+	private String loginStaffId;
 
-  /**
-   * 服务商pid
-   */
-  @ApiField("merchant_id")
-  private String merchantId;
+	/**
+	 * 服务商pid
+	 */
+	@ApiField("merchant_id")
+	private String merchantId;
 
-  /**
-   * 服务商id的类型
-   */
-  @ApiField("merchant_id_type")
-  private String merchantIdType;
+	/**
+	 * 服务商id的类型
+	 */
+	@ApiField("merchant_id_type")
+	private String merchantIdType;
 
-  /**
-   * 云纵登录人员pid
-   */
-  @ApiField("ope_pid")
-  private String opePid;
+	/**
+	 * 云纵登录人员pid
+	 */
+	@ApiField("ope_pid")
+	private String opePid;
 
-  /**
-   * 同步云纵员工操作类型
-   */
-  @ApiField("operate_type")
-  private String operateType;
+	/**
+	 * 同步云纵员工操作类型
+	 */
+	@ApiField("operate_type")
+	private String operateType;
 
-  /**
-   * 流水号参数
-   */
-  @ApiField("request_id")
-  private String requestId;
+	/**
+	 * 流水号参数
+	 */
+	@ApiField("request_id")
+	private String requestId;
 
-  /**
-   * 角色类型
-   */
-  @ApiField("role_type")
-  private String roleType;
+	/**
+	 * 角色类型
+	 */
+	@ApiField("role_type")
+	private String roleType;
 
-  /**
-   * 修改删除员工的主键id
-   */
-  @ApiField("staff_id")
-  private String staffId;
+	/**
+	 * 修改删除员工的主键id
+	 */
+	@ApiField("staff_id")
+	private String staffId;
 
-  /**
-   * 要同步员工的电话号码
-   */
-  @ApiField("staff_mobile")
-  private String staffMobile;
+	/**
+	 * 要同步员工的电话号码
+	 */
+	@ApiField("staff_mobile")
+	private String staffMobile;
 
-  /**
-   * 新增员工姓名
-   */
-  @ApiField("staff_name")
-  private String staffName;
+	/**
+	 * 新增员工姓名
+	 */
+	@ApiField("staff_name")
+	private String staffName;
 
-  /**
-   * 员工类型
-   */
-  @ApiField("staff_type")
-  private String staffType;
+	/**
+	 * 员工类型
+	 */
+	@ApiField("staff_type")
+	private String staffType;
 
-  public String getAlipayNo() {
-    return this.alipayNo;
-  }
+	public String getAlipayNo() {
+		return this.alipayNo;
+	}
+	public void setAlipayNo(String alipayNo) {
+		this.alipayNo = alipayNo;
+	}
 
-  public void setAlipayNo(String alipayNo) {
-    this.alipayNo = alipayNo;
-  }
+	public String getBizType() {
+		return this.bizType;
+	}
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+	}
 
-  public String getBizType() {
-    return this.bizType;
-  }
+	public String getClientIp() {
+		return this.clientIp;
+	}
+	public void setClientIp(String clientIp) {
+		this.clientIp = clientIp;
+	}
 
-  public void setBizType(String bizType) {
-    this.bizType = bizType;
-  }
+	public String getDescription() {
+		return this.description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-  public String getClientIp() {
-    return this.clientIp;
-  }
+	public String getEmail() {
+		return this.email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-  public void setClientIp(String clientIp) {
-    this.clientIp = clientIp;
-  }
+	public String getLoginStaffId() {
+		return this.loginStaffId;
+	}
+	public void setLoginStaffId(String loginStaffId) {
+		this.loginStaffId = loginStaffId;
+	}
 
-  public String getDescription() {
-    return this.description;
-  }
+	public String getMerchantId() {
+		return this.merchantId;
+	}
+	public void setMerchantId(String merchantId) {
+		this.merchantId = merchantId;
+	}
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+	public String getMerchantIdType() {
+		return this.merchantIdType;
+	}
+	public void setMerchantIdType(String merchantIdType) {
+		this.merchantIdType = merchantIdType;
+	}
 
-  public String getEmail() {
-    return this.email;
-  }
+	public String getOpePid() {
+		return this.opePid;
+	}
+	public void setOpePid(String opePid) {
+		this.opePid = opePid;
+	}
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+	public String getOperateType() {
+		return this.operateType;
+	}
+	public void setOperateType(String operateType) {
+		this.operateType = operateType;
+	}
 
-  public String getLoginStaffId() {
-    return this.loginStaffId;
-  }
+	public String getRequestId() {
+		return this.requestId;
+	}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
-  public void setLoginStaffId(String loginStaffId) {
-    this.loginStaffId = loginStaffId;
-  }
+	public String getRoleType() {
+		return this.roleType;
+	}
+	public void setRoleType(String roleType) {
+		this.roleType = roleType;
+	}
 
-  public String getMerchantId() {
-    return this.merchantId;
-  }
+	public String getStaffId() {
+		return this.staffId;
+	}
+	public void setStaffId(String staffId) {
+		this.staffId = staffId;
+	}
 
-  public void setMerchantId(String merchantId) {
-    this.merchantId = merchantId;
-  }
+	public String getStaffMobile() {
+		return this.staffMobile;
+	}
+	public void setStaffMobile(String staffMobile) {
+		this.staffMobile = staffMobile;
+	}
 
-  public String getMerchantIdType() {
-    return this.merchantIdType;
-  }
+	public String getStaffName() {
+		return this.staffName;
+	}
+	public void setStaffName(String staffName) {
+		this.staffName = staffName;
+	}
 
-  public void setMerchantIdType(String merchantIdType) {
-    this.merchantIdType = merchantIdType;
-  }
-
-  public String getOpePid() {
-    return this.opePid;
-  }
-
-  public void setOpePid(String opePid) {
-    this.opePid = opePid;
-  }
-
-  public String getOperateType() {
-    return this.operateType;
-  }
-
-  public void setOperateType(String operateType) {
-    this.operateType = operateType;
-  }
-
-  public String getRequestId() {
-    return this.requestId;
-  }
-
-  public void setRequestId(String requestId) {
-    this.requestId = requestId;
-  }
-
-  public String getRoleType() {
-    return this.roleType;
-  }
-
-  public void setRoleType(String roleType) {
-    this.roleType = roleType;
-  }
-
-  public String getStaffId() {
-    return this.staffId;
-  }
-
-  public void setStaffId(String staffId) {
-    this.staffId = staffId;
-  }
-
-  public String getStaffMobile() {
-    return this.staffMobile;
-  }
-
-  public void setStaffMobile(String staffMobile) {
-    this.staffMobile = staffMobile;
-  }
-
-  public String getStaffName() {
-    return this.staffName;
-  }
-
-  public void setStaffName(String staffName) {
-    this.staffName = staffName;
-  }
-
-  public String getStaffType() {
-    return this.staffType;
-  }
-
-  public void setStaffType(String staffType) {
-    this.staffType = staffType;
-  }
+	public String getStaffType() {
+		return this.staffType;
+	}
+	public void setStaffType(String staffType) {
+		this.staffType = staffType;
+	}
 
 }

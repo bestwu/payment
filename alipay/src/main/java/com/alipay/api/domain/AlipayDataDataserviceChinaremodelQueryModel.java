@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayDataDataserviceChinaremodelQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3495689918884791735L;
+	private static final long serialVersionUID = 8553543735618948883L;
 
-  /**
-   * 体检记录id
-   */
-  @ApiField("id")
-  private String id;
+	/**
+	 * 体检记录id
+	 */
+	@ApiField("id")
+	private String id;
 
-  /**
-   * 规则id
-   */
-  @ApiField("rule_id")
-  private String ruleId;
+	/**
+	 * 规则id
+	 */
+	@ApiField("rule_id")
+	private String ruleId;
 
-  /**
-   * 交易流水记录id
-   */
-  @ApiField("trans_id")
-  private String transId;
+	/**
+	 * 交易流水记录id
+	 */
+	@ApiField("trans_id")
+	private String transId;
 
-  public String getId() {
-    return this.id;
-  }
+	public String getId() {
+		return this.id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public void setId(String id) {
-    this.id = id;
-  }
+	public String getRuleId() {
+		return this.ruleId;
+	}
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+	}
 
-  public String getRuleId() {
-    return this.ruleId;
-  }
-
-  public void setRuleId(String ruleId) {
-    this.ruleId = ruleId;
-  }
-
-  public String getTransId() {
-    return this.transId;
-  }
-
-  public void setTransId(String transId) {
-    this.transId = transId;
-  }
+	public String getTransId() {
+		return this.transId;
+	}
+	public void setTransId(String transId) {
+		this.transId = transId;
+	}
 
 }

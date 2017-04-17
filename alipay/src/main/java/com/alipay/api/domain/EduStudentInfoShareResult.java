@@ -14,49 +14,46 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class EduStudentInfoShareResult extends AlipayObject {
 
-  private static final long serialVersionUID = 1268376559981559718L;
+	private static final long serialVersionUID = 4177712166986694259L;
 
-  /**
-   * 教育分类
-   */
-  @ApiField("biz_type")
-  private String bizType;
+	/**
+	 * 教育分类
+	 */
+	@ApiField("biz_type")
+	private String bizType;
 
-  /**
-   * 学生详细信息
-   */
-  @ApiListField("student_infos")
-  @ApiField("student_info")
-  private List<StudentInfo> studentInfos;
+	/**
+	 * 学生详细信息
+	 */
+	@ApiListField("student_infos")
+	@ApiField("student_info")
+	private List<StudentInfo> studentInfos;
 
-  /**
-   * 用户的userid
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 用户的userid
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getBizType() {
-    return this.bizType;
-  }
+	public String getBizType() {
+		return this.bizType;
+	}
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+	}
 
-  public void setBizType(String bizType) {
-    this.bizType = bizType;
-  }
+	public List<StudentInfo> getStudentInfos() {
+		return this.studentInfos;
+	}
+	public void setStudentInfos(List<StudentInfo> studentInfos) {
+		this.studentInfos = studentInfos;
+	}
 
-  public List<StudentInfo> getStudentInfos() {
-    return this.studentInfos;
-  }
-
-  public void setStudentInfos(List<StudentInfo> studentInfos) {
-    this.studentInfos = studentInfos;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

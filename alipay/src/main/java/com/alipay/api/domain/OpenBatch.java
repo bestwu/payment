@@ -11,52 +11,49 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class OpenBatch extends AlipayObject {
 
-  private static final long serialVersionUID = 5888596574264529172L;
+	private static final long serialVersionUID = 8682756478226579543L;
 
-  /**
-   * 批次id
-   */
-  @ApiField("batch_id")
-  private String batchId;
+	/**
+	 * 批次id
+	 */
+	@ApiField("batch_id")
+	private String batchId;
 
-  /**
-   * 批次状态
-   * 0，未检测
-   * 1，检测中
-   * 2，未通过
-   * 3，已通过
-   */
-  @ApiField("batch_status")
-  private String batchStatus;
+	/**
+	 * 批次状态
+0，未检测
+1，检测中
+2，未通过
+3，已通过
+	 */
+	@ApiField("batch_status")
+	private String batchStatus;
 
-  /**
-   * 单品数
-   */
-  @ApiField("item_num")
-  private String itemNum;
+	/**
+	 * 单品数
+	 */
+	@ApiField("item_num")
+	private String itemNum;
 
-  public String getBatchId() {
-    return this.batchId;
-  }
+	public String getBatchId() {
+		return this.batchId;
+	}
+	public void setBatchId(String batchId) {
+		this.batchId = batchId;
+	}
 
-  public void setBatchId(String batchId) {
-    this.batchId = batchId;
-  }
+	public String getBatchStatus() {
+		return this.batchStatus;
+	}
+	public void setBatchStatus(String batchStatus) {
+		this.batchStatus = batchStatus;
+	}
 
-  public String getBatchStatus() {
-    return this.batchStatus;
-  }
-
-  public void setBatchStatus(String batchStatus) {
-    this.batchStatus = batchStatus;
-  }
-
-  public String getItemNum() {
-    return this.itemNum;
-  }
-
-  public void setItemNum(String itemNum) {
-    this.itemNum = itemNum;
-  }
+	public String getItemNum() {
+		return this.itemNum;
+	}
+	public void setItemNum(String itemNum) {
+		this.itemNum = itemNum;
+	}
 
 }

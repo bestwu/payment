@@ -8,55 +8,52 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.offline.market.shop.batchquery response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2017-02-07 16:47:19
+ * @since 1.0, 2017-04-07 18:27:29
  */
 public class AlipayOfflineMarketShopBatchqueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 4418646216295956956L;
+	private static final long serialVersionUID = 2582227723552987834L;
 
-  /**
-   * 当前页码
-   */
-  @ApiField("current_pageno")
-  private String currentPageno;
+	/** 
+	 * 当前页码
+	 */
+	@ApiField("current_pageno")
+	private String currentPageno;
 
-  /**
-   * 门店列表ID，逗号分隔
-   */
-  @ApiListField("shop_ids")
-  @ApiField("string")
-  private List<String> shopIds;
+	/** 
+	 * 门店列表ID，逗号分隔
+	 */
+	@ApiListField("shop_ids")
+	@ApiField("string")
+	private List<String> shopIds;
 
-  /**
-   * 总页码数目
-   */
-  @ApiField("total_pageno")
-  private String totalPageno;
+	/** 
+	 * 总页码数目
+	 */
+	@ApiField("total_pageno")
+	private String totalPageno;
 
-  public void setCurrentPageno(String currentPageno) {
-    this.currentPageno = currentPageno;
-  }
+	public void setCurrentPageno(String currentPageno) {
+		this.currentPageno = currentPageno;
+	}
+	public String getCurrentPageno( ) {
+		return this.currentPageno;
+	}
 
-  public String getCurrentPageno() {
-    return this.currentPageno;
-  }
+	public void setShopIds(List<String> shopIds) {
+		this.shopIds = shopIds;
+	}
+	public List<String> getShopIds( ) {
+		return this.shopIds;
+	}
 
-  public void setShopIds(List<String> shopIds) {
-    this.shopIds = shopIds;
-  }
-
-  public List<String> getShopIds() {
-    return this.shopIds;
-  }
-
-  public void setTotalPageno(String totalPageno) {
-    this.totalPageno = totalPageno;
-  }
-
-  public String getTotalPageno() {
-    return this.totalPageno;
-  }
+	public void setTotalPageno(String totalPageno) {
+		this.totalPageno = totalPageno;
+	}
+	public String getTotalPageno( ) {
+		return this.totalPageno;
+	}
 
 }

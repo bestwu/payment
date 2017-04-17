@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KbAdvertDealBillResponse extends AlipayObject {
 
-  private static final long serialVersionUID = 8413355394516839423L;
+	private static final long serialVersionUID = 3215176436828529974L;
 
-  /**
-   * 账单下载地址(为空表示查无账单)
-   */
-  @ApiField("download_url")
-  private String downloadUrl;
+	/**
+	 * 账单下载地址(为空表示查无账单)
+	 */
+	@ApiField("download_url")
+	private String downloadUrl;
 
-  public String getDownloadUrl() {
-    return this.downloadUrl;
-  }
-
-  public void setDownloadUrl(String downloadUrl) {
-    this.downloadUrl = downloadUrl;
-  }
+	public String getDownloadUrl() {
+		return this.downloadUrl;
+	}
+	public void setDownloadUrl(String downloadUrl) {
+		this.downloadUrl = downloadUrl;
+	}
 
 }

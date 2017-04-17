@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ComplextMockModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7461615869155262497L;
+	private static final long serialVersionUID = 6244829481684791256L;
 
-  /**
-   * biz_model
-   */
-  @ApiField("biz_model")
-  private SimpleMockModel bizModel;
+	/**
+	 * biz_model
+	 */
+	@ApiField("biz_model")
+	private SimpleMockModel bizModel;
 
-  /**
-   * 11
-   */
-  @ApiField("biz_num")
-  private Long bizNum;
+	/**
+	 * 11
+	 */
+	@ApiField("biz_num")
+	private Long bizNum;
 
-  /**
-   * 208xxx
-   */
-  @ApiField("biz_type")
-  private String bizType;
+	/**
+	 * 208xxx
+	 */
+	@ApiField("biz_type")
+	private String bizType;
 
-  public SimpleMockModel getBizModel() {
-    return this.bizModel;
-  }
+	public SimpleMockModel getBizModel() {
+		return this.bizModel;
+	}
+	public void setBizModel(SimpleMockModel bizModel) {
+		this.bizModel = bizModel;
+	}
 
-  public void setBizModel(SimpleMockModel bizModel) {
-    this.bizModel = bizModel;
-  }
+	public Long getBizNum() {
+		return this.bizNum;
+	}
+	public void setBizNum(Long bizNum) {
+		this.bizNum = bizNum;
+	}
 
-  public Long getBizNum() {
-    return this.bizNum;
-  }
-
-  public void setBizNum(Long bizNum) {
-    this.bizNum = bizNum;
-  }
-
-  public String getBizType() {
-    return this.bizType;
-  }
-
-  public void setBizType(String bizType) {
-    this.bizType = bizType;
-  }
+	public String getBizType() {
+		return this.bizType;
+	}
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+	}
 
 }

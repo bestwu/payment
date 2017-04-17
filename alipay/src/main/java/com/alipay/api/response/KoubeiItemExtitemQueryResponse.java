@@ -7,26 +7,25 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: koubei.item.extitem.query response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-07-06 10:47:56
  */
 public class KoubeiItemExtitemQueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 3559493274926441229L;
+	private static final long serialVersionUID = 6665443432163482196L;
 
-  /**
-   * 商品信息
-   */
-  @ApiField("extitem")
-  private ExtItem extitem;
+	/** 
+	 * 商品信息
+	 */
+	@ApiField("extitem")
+	private ExtItem extitem;
 
-  public void setExtitem(ExtItem extitem) {
-    this.extitem = extitem;
-  }
-
-  public ExtItem getExtitem() {
-    return this.extitem;
-  }
+	public void setExtitem(ExtItem extitem) {
+		this.extitem = extitem;
+	}
+	public ExtItem getExtitem( ) {
+		return this.extitem;
+	}
 
 }

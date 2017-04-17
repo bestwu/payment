@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayDataDataserviceYuebaolqdDetailQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6737247869485851866L;
+	private static final long serialVersionUID = 7493767668428546714L;
 
-  /**
-   * 服务入参，格式为yyyymmdd
-   */
-  @ApiField("report_date")
-  private String reportDate;
+	/**
+	 * 服务入参，格式为yyyymmdd
+	 */
+	@ApiField("report_date")
+	private String reportDate;
 
-  public String getReportDate() {
-    return this.reportDate;
-  }
-
-  public void setReportDate(String reportDate) {
-    this.reportDate = reportDate;
-  }
+	public String getReportDate() {
+		return this.reportDate;
+	}
+	public void setReportDate(String reportDate) {
+		this.reportDate = reportDate;
+	}
 
 }

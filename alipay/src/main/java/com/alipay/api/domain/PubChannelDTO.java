@@ -11,35 +11,33 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class PubChannelDTO extends AlipayObject {
 
-  private static final long serialVersionUID = 5693173693518797919L;
+	private static final long serialVersionUID = 3646115775639862195L;
 
-  /**
-   * 扩展信息，无需配置
-   */
-  @ApiField("ext_info")
-  private String extInfo;
+	/**
+	 * 扩展信息，无需配置
+	 */
+	@ApiField("ext_info")
+	private String extInfo;
 
-  /**
-   * 1、SHOP_DETAIL:店铺详情页
-   * 2、PAYMENT_RESULT: 支付成功页（支付成功页暂不支持）
-   */
-  @ApiField("pub_channel")
-  private String pubChannel;
+	/**
+	 * 1、SHOP_DETAIL:店铺详情页 
+2、PAYMENT_RESULT: 支付成功页（支付成功页暂不支持）
+	 */
+	@ApiField("pub_channel")
+	private String pubChannel;
 
-  public String getExtInfo() {
-    return this.extInfo;
-  }
+	public String getExtInfo() {
+		return this.extInfo;
+	}
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
+	}
 
-  public void setExtInfo(String extInfo) {
-    this.extInfo = extInfo;
-  }
-
-  public String getPubChannel() {
-    return this.pubChannel;
-  }
-
-  public void setPubChannel(String pubChannel) {
-    this.pubChannel = pubChannel;
-  }
+	public String getPubChannel() {
+		return this.pubChannel;
+	}
+	public void setPubChannel(String pubChannel) {
+		this.pubChannel = pubChannel;
+	}
 
 }

@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOpenPublicLifeMsgRecallModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5187923681575136265L;
+	private static final long serialVersionUID = 4474968674971234922L;
 
-  /**
-   * 消息id
-   */
-  @ApiField("message_id")
-  private String messageId;
+	/**
+	 * 消息id
+	 */
+	@ApiField("message_id")
+	private String messageId;
 
-  public String getMessageId() {
-    return this.messageId;
-  }
-
-  public void setMessageId(String messageId) {
-    this.messageId = messageId;
-  }
+	public String getMessageId() {
+		return this.messageId;
+	}
+	public void setMessageId(String messageId) {
+		this.messageId = messageId;
+	}
 
 }

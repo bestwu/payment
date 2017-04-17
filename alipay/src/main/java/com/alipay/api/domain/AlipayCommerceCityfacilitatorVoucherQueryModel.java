@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayCommerceCityfacilitatorVoucherQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7268727464563351621L;
+	private static final long serialVersionUID = 8782173627674942277L;
 
-  /**
-   * 城市标准码
-   */
-  @ApiField("city_code")
-  private String cityCode;
+	/**
+	 * 城市标准码
+	 */
+	@ApiField("city_code")
+	private String cityCode;
 
-  /**
-   * 8位核销码
-   */
-  @ApiField("ticket_no")
-  private String ticketNo;
+	/**
+	 * 8位核销码
+	 */
+	@ApiField("ticket_no")
+	private String ticketNo;
 
-  /**
-   * 支付宝交易号
-   */
-  @ApiField("trade_no")
-  private String tradeNo;
+	/**
+	 * 支付宝交易号
+	 */
+	@ApiField("trade_no")
+	private String tradeNo;
 
-  public String getCityCode() {
-    return this.cityCode;
-  }
+	public String getCityCode() {
+		return this.cityCode;
+	}
+	public void setCityCode(String cityCode) {
+		this.cityCode = cityCode;
+	}
 
-  public void setCityCode(String cityCode) {
-    this.cityCode = cityCode;
-  }
+	public String getTicketNo() {
+		return this.ticketNo;
+	}
+	public void setTicketNo(String ticketNo) {
+		this.ticketNo = ticketNo;
+	}
 
-  public String getTicketNo() {
-    return this.ticketNo;
-  }
-
-  public void setTicketNo(String ticketNo) {
-    this.ticketNo = ticketNo;
-  }
-
-  public String getTradeNo() {
-    return this.tradeNo;
-  }
-
-  public void setTradeNo(String tradeNo) {
-    this.tradeNo = tradeNo;
-  }
+	public String getTradeNo() {
+		return this.tradeNo;
+	}
+	public void setTradeNo(String tradeNo) {
+		this.tradeNo = tradeNo;
+	}
 
 }

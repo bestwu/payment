@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class EquipmentBindInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 6184898218132542557L;
+	private static final long serialVersionUID = 2821597843216437775L;
 
-  /**
-   * 机具ID
-   */
-  @ApiField("equipment_id")
-  private String equipmentId;
+	/**
+	 * 机具ID
+	 */
+	@ApiField("equipment_id")
+	private String equipmentId;
 
-  /**
-   * 是否绑定门店，T绑定，F不绑定
-   */
-  @ApiField("is_bind_shop")
-  private String isBindShop;
+	/**
+	 * 是否绑定门店，T绑定，F不绑定
+	 */
+	@ApiField("is_bind_shop")
+	private String isBindShop;
 
-  public String getEquipmentId() {
-    return this.equipmentId;
-  }
+	public String getEquipmentId() {
+		return this.equipmentId;
+	}
+	public void setEquipmentId(String equipmentId) {
+		this.equipmentId = equipmentId;
+	}
 
-  public void setEquipmentId(String equipmentId) {
-    this.equipmentId = equipmentId;
-  }
-
-  public String getIsBindShop() {
-    return this.isBindShop;
-  }
-
-  public void setIsBindShop(String isBindShop) {
-    this.isBindShop = isBindShop;
-  }
+	public String getIsBindShop() {
+		return this.isBindShop;
+	}
+	public void setIsBindShop(String isBindShop) {
+		this.isBindShop = isBindShop;
+	}
 
 }

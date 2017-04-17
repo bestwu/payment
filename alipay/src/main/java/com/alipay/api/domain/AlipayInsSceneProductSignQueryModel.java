@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayInsSceneProductSignQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6678372447539193586L;
+	private static final long serialVersionUID = 7162148885747215317L;
 
-  /**
-   * 产品编码
-   */
-  @ApiField("prod_code")
-  private String prodCode;
+	/**
+	 * 产品编码
+	 */
+	@ApiField("prod_code")
+	private String prodCode;
 
-  /**
-   * 支付宝会员ID
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 支付宝会员ID
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getProdCode() {
-    return this.prodCode;
-  }
+	public String getProdCode() {
+		return this.prodCode;
+	}
+	public void setProdCode(String prodCode) {
+		this.prodCode = prodCode;
+	}
 
-  public void setProdCode(String prodCode) {
-    this.prodCode = prodCode;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

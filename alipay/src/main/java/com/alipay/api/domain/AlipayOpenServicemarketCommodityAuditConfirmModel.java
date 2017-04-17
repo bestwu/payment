@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOpenServicemarketCommodityAuditConfirmModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6414733492746645625L;
+	private static final long serialVersionUID = 8697187378539629811L;
 
-  /**
-   * 服务插件ID
-   */
-  @ApiField("commodity_id")
-  private String commodityId;
+	/**
+	 * 服务插件ID
+	 */
+	@ApiField("commodity_id")
+	private String commodityId;
 
-  /**
-   * 用户ID
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 用户ID
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getCommodityId() {
-    return this.commodityId;
-  }
+	public String getCommodityId() {
+		return this.commodityId;
+	}
+	public void setCommodityId(String commodityId) {
+		this.commodityId = commodityId;
+	}
 
-  public void setCommodityId(String commodityId) {
-    this.commodityId = commodityId;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

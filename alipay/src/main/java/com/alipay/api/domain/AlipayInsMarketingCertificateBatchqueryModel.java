@@ -13,174 +13,162 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayInsMarketingCertificateBatchqueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2237953534341769144L;
+	private static final long serialVersionUID = 3213254883922135798L;
 
-  /**
-   * 32
-   */
-  @ApiField("certificate_no")
-  private String certificateNo;
+	/**
+	 * 32
+	 */
+	@ApiField("certificate_no")
+	private String certificateNo;
 
-  /**
-   * 凭证类型
-   */
-  @ApiField("certificate_type")
-  private String certificateType;
+	/**
+	 * 凭证类型
+	 */
+	@ApiField("certificate_type")
+	private String certificateType;
 
-  /**
-   * 当前页码
-   */
-  @ApiField("current_page_no")
-  private Long currentPageNo;
+	/**
+	 * 当前页码
+	 */
+	@ApiField("current_page_no")
+	private Long currentPageNo;
 
-  /**
-   * 生效时间
-   */
-  @ApiField("effect_time")
-  private Date effectTime;
+	/**
+	 * 生效时间
+	 */
+	@ApiField("effect_time")
+	private Date effectTime;
 
-  /**
-   * 机构id
-   */
-  @ApiField("inst_id")
-  private String instId;
+	/**
+	 * 机构id
+	 */
+	@ApiField("inst_id")
+	private String instId;
 
-  /**
-   * 是否失效
-   */
-  @ApiField("is_enabled")
-  private String isEnabled;
+	/**
+	 * 是否失效
+	 */
+	@ApiField("is_enabled")
+	private String isEnabled;
 
-  /**
-   * 订单id
-   */
-  @ApiField("order_id")
-  private String orderId;
+	/**
+	 * 订单id
+	 */
+	@ApiField("order_id")
+	private String orderId;
 
-  /**
-   * 订单来源
-   */
-  @ApiField("order_source")
-  private String orderSource;
+	/**
+	 * 订单来源
+	 */
+	@ApiField("order_source")
+	private String orderSource;
 
-  /**
-   * 外部业务单号
-   */
-  @ApiField("out_biz_no")
-  private String outBizNo;
+	/**
+	 * 外部业务单号
+	 */
+	@ApiField("out_biz_no")
+	private String outBizNo;
 
-  /**
-   * 拥有人uid
-   */
-  @ApiField("owner_uid")
-  private String ownerUid;
+	/**
+	 * 拥有人uid
+	 */
+	@ApiField("owner_uid")
+	private String ownerUid;
 
-  /**
-   * 每页记录数量
-   */
-  @ApiField("page_size")
-  private Long pageSize;
+	/**
+	 * 每页记录数量
+	 */
+	@ApiField("page_size")
+	private Long pageSize;
 
-  /**
-   * 凭证状态
-   */
-  @ApiField("status")
-  private Long status;
+	/**
+	 * 凭证状态
+	 */
+	@ApiField("status")
+	private Long status;
 
-  public String getCertificateNo() {
-    return this.certificateNo;
-  }
+	public String getCertificateNo() {
+		return this.certificateNo;
+	}
+	public void setCertificateNo(String certificateNo) {
+		this.certificateNo = certificateNo;
+	}
 
-  public void setCertificateNo(String certificateNo) {
-    this.certificateNo = certificateNo;
-  }
+	public String getCertificateType() {
+		return this.certificateType;
+	}
+	public void setCertificateType(String certificateType) {
+		this.certificateType = certificateType;
+	}
 
-  public String getCertificateType() {
-    return this.certificateType;
-  }
+	public Long getCurrentPageNo() {
+		return this.currentPageNo;
+	}
+	public void setCurrentPageNo(Long currentPageNo) {
+		this.currentPageNo = currentPageNo;
+	}
 
-  public void setCertificateType(String certificateType) {
-    this.certificateType = certificateType;
-  }
+	public Date getEffectTime() {
+		return this.effectTime;
+	}
+	public void setEffectTime(Date effectTime) {
+		this.effectTime = effectTime;
+	}
 
-  public Long getCurrentPageNo() {
-    return this.currentPageNo;
-  }
+	public String getInstId() {
+		return this.instId;
+	}
+	public void setInstId(String instId) {
+		this.instId = instId;
+	}
 
-  public void setCurrentPageNo(Long currentPageNo) {
-    this.currentPageNo = currentPageNo;
-  }
+	public String getIsEnabled() {
+		return this.isEnabled;
+	}
+	public void setIsEnabled(String isEnabled) {
+		this.isEnabled = isEnabled;
+	}
 
-  public Date getEffectTime() {
-    return this.effectTime;
-  }
+	public String getOrderId() {
+		return this.orderId;
+	}
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
 
-  public void setEffectTime(Date effectTime) {
-    this.effectTime = effectTime;
-  }
+	public String getOrderSource() {
+		return this.orderSource;
+	}
+	public void setOrderSource(String orderSource) {
+		this.orderSource = orderSource;
+	}
 
-  public String getInstId() {
-    return this.instId;
-  }
+	public String getOutBizNo() {
+		return this.outBizNo;
+	}
+	public void setOutBizNo(String outBizNo) {
+		this.outBizNo = outBizNo;
+	}
 
-  public void setInstId(String instId) {
-    this.instId = instId;
-  }
+	public String getOwnerUid() {
+		return this.ownerUid;
+	}
+	public void setOwnerUid(String ownerUid) {
+		this.ownerUid = ownerUid;
+	}
 
-  public String getIsEnabled() {
-    return this.isEnabled;
-  }
+	public Long getPageSize() {
+		return this.pageSize;
+	}
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
 
-  public void setIsEnabled(String isEnabled) {
-    this.isEnabled = isEnabled;
-  }
-
-  public String getOrderId() {
-    return this.orderId;
-  }
-
-  public void setOrderId(String orderId) {
-    this.orderId = orderId;
-  }
-
-  public String getOrderSource() {
-    return this.orderSource;
-  }
-
-  public void setOrderSource(String orderSource) {
-    this.orderSource = orderSource;
-  }
-
-  public String getOutBizNo() {
-    return this.outBizNo;
-  }
-
-  public void setOutBizNo(String outBizNo) {
-    this.outBizNo = outBizNo;
-  }
-
-  public String getOwnerUid() {
-    return this.ownerUid;
-  }
-
-  public void setOwnerUid(String ownerUid) {
-    this.ownerUid = ownerUid;
-  }
-
-  public Long getPageSize() {
-    return this.pageSize;
-  }
-
-  public void setPageSize(Long pageSize) {
-    this.pageSize = pageSize;
-  }
-
-  public Long getStatus() {
-    return this.status;
-  }
-
-  public void setStatus(Long status) {
-    this.status = status;
-  }
+	public Long getStatus() {
+		return this.status;
+	}
+	public void setStatus(Long status) {
+		this.status = status;
+	}
 
 }

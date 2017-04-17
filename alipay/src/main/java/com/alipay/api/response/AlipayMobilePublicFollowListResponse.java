@@ -7,82 +7,77 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.mobile.public.follow.list response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-07-29 19:58:03
  */
 public class AlipayMobilePublicFollowListResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 5258124285811642581L;
+	private static final long serialVersionUID = 1263428838318932426L;
 
-  /**
-   * 返回结果码，如200，标识成功
-   */
-  @ApiField("code")
-  private String code;
+	/** 
+	 * 返回结果码，如200，标识成功
+	 */
+	@ApiField("code")
+	private String code;
 
-  /**
-   * 当前组的值
-   */
-  @ApiField("count")
-  private String count;
+	/** 
+	 * 当前组的值
+	 */
+	@ApiField("count")
+	private String count;
 
-  /**
-   * 用户数据
-   */
-  @ApiField("data")
-  private Data data;
+	/** 
+	 * 用户数据
+	 */
+	@ApiField("data")
+	private Data data;
 
-  /**
-   * 与nextUserId对应，标准Alipay UserId
-   */
-  @ApiField("next_alipay_user_id")
-  private String nextAlipayUserId;
+	/** 
+	 * 与nextUserId对应，标准Alipay UserId
+	 */
+	@ApiField("next_alipay_user_id")
+	private String nextAlipayUserId;
 
-  /**
-   * 查询分组的userid
-   */
-  @ApiField("next_user_id")
-  private String nextUserId;
+	/** 
+	 * 查询分组的userid
+	 */
+	@ApiField("next_user_id")
+	private String nextUserId;
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getCode( ) {
+		return this.code;
+	}
 
-  public String getCode() {
-    return this.code;
-  }
+	public void setCount(String count) {
+		this.count = count;
+	}
+	public String getCount( ) {
+		return this.count;
+	}
 
-  public void setCount(String count) {
-    this.count = count;
-  }
+	public void setData(Data data) {
+		this.data = data;
+	}
+	public Data getData( ) {
+		return this.data;
+	}
 
-  public String getCount() {
-    return this.count;
-  }
+	public void setNextAlipayUserId(String nextAlipayUserId) {
+		this.nextAlipayUserId = nextAlipayUserId;
+	}
+	public String getNextAlipayUserId( ) {
+		return this.nextAlipayUserId;
+	}
 
-  public void setData(Data data) {
-    this.data = data;
-  }
-
-  public Data getData() {
-    return this.data;
-  }
-
-  public void setNextAlipayUserId(String nextAlipayUserId) {
-    this.nextAlipayUserId = nextAlipayUserId;
-  }
-
-  public String getNextAlipayUserId() {
-    return this.nextAlipayUserId;
-  }
-
-  public void setNextUserId(String nextUserId) {
-    this.nextUserId = nextUserId;
-  }
-
-  public String getNextUserId() {
-    return this.nextUserId;
-  }
+	public void setNextUserId(String nextUserId) {
+		this.nextUserId = nextUserId;
+	}
+	public String getNextUserId( ) {
+		return this.nextUserId;
+	}
 
 }

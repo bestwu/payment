@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ConsumeInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 2412255487913985793L;
+	private static final long serialVersionUID = 3157991339799316121L;
 
-  /**
-   * 领取时间
-   */
-  @ApiField("taken_time")
-  private String takenTime;
+	/**
+	 * 领取时间
+	 */
+	@ApiField("taken_time")
+	private String takenTime;
 
-  /**
-   * 用户名
-   */
-  @ApiField("user_name")
-  private String userName;
+	/**
+	 * 用户名
+	 */
+	@ApiField("user_name")
+	private String userName;
 
-  /**
-   * 面额（单位分）
-   */
-  @ApiField("voucher_amt")
-  private String voucherAmt;
+	/**
+	 * 面额（单位分）
+	 */
+	@ApiField("voucher_amt")
+	private String voucherAmt;
 
-  public String getTakenTime() {
-    return this.takenTime;
-  }
+	public String getTakenTime() {
+		return this.takenTime;
+	}
+	public void setTakenTime(String takenTime) {
+		this.takenTime = takenTime;
+	}
 
-  public void setTakenTime(String takenTime) {
-    this.takenTime = takenTime;
-  }
+	public String getUserName() {
+		return this.userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
-  public String getUserName() {
-    return this.userName;
-  }
-
-  public void setUserName(String userName) {
-    this.userName = userName;
-  }
-
-  public String getVoucherAmt() {
-    return this.voucherAmt;
-  }
-
-  public void setVoucherAmt(String voucherAmt) {
-    this.voucherAmt = voucherAmt;
-  }
+	public String getVoucherAmt() {
+		return this.voucherAmt;
+	}
+	public void setVoucherAmt(String voucherAmt) {
+		this.voucherAmt = voucherAmt;
+	}
 
 }

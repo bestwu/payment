@@ -14,21 +14,20 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class ListListSmMockModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4427229468933834896L;
+	private static final long serialVersionUID = 1136412246269539173L;
 
-  /**
-   * 简单模型列表
-   */
-  @ApiListField("list_simple_model_list")
-  @ApiField("simple_mock_model")
-  private List<SimpleMockModel> listSimpleModelList;
+	/**
+	 * 简单模型列表
+	 */
+	@ApiListField("list_simple_model_list")
+	@ApiField("simple_mock_model")
+	private List<SimpleMockModel> listSimpleModelList;
 
-  public List<SimpleMockModel> getListSimpleModelList() {
-    return this.listSimpleModelList;
-  }
-
-  public void setListSimpleModelList(List<SimpleMockModel> listSimpleModelList) {
-    this.listSimpleModelList = listSimpleModelList;
-  }
+	public List<SimpleMockModel> getListSimpleModelList() {
+		return this.listSimpleModelList;
+	}
+	public void setListSimpleModelList(List<SimpleMockModel> listSimpleModelList) {
+		this.listSimpleModelList = listSimpleModelList;
+	}
 
 }

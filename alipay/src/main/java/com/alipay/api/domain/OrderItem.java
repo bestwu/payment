@@ -7,234 +7,244 @@ import com.alipay.api.internal.mapping.ApiField;
  * 订单明细
  *
  * @author auto create
- * @since 1.0, 2016-10-26 17:43:39
+ * @since 1.0, 2017-03-01 16:20:58
  */
 public class OrderItem extends AlipayObject {
 
-  private static final long serialVersionUID = 5885819829386291511L;
+	private static final long serialVersionUID = 8663524756167999958L;
 
-  /**
-   * 店铺所在具体位置
-   */
-  @ApiField("address")
-  private String address;
+	/**
+	 * 店铺所在具体位置
+	 */
+	@ApiField("address")
+	private String address;
 
-  /**
-   * 品牌名称
-   */
-  @ApiField("brand_name")
-  private String brandName;
+	/**
+	 * 品牌名称
+	 */
+	@ApiField("brand_name")
+	private String brandName;
 
-  /**
-   * 店铺品类
-   */
-  @ApiField("category")
-  private String category;
+	/**
+	 * 店铺品类
+	 */
+	@ApiField("category")
+	private String category;
 
-  /**
-   * 店铺所在的市
-   */
-  @ApiField("city")
-  private String city;
+	/**
+	 * 店铺所在的市
+	 */
+	@ApiField("city")
+	private String city;
 
-  /**
-   * 订购的服务商品ID
-   */
-  @ApiField("commodity_id")
-  private String commodityId;
+	/**
+	 * 订购的服务商品ID
+	 */
+	@ApiField("commodity_id")
+	private String commodityId;
 
-  /**
-   * 订单联系人
-   */
-  @ApiField("contacts")
-  private String contacts;
+	/**
+	 * 订单联系人
+	 */
+	@ApiField("contacts")
+	private String contacts;
 
-  /**
-   * 门店创建人(已删除)
-   */
-  @ApiField("creator")
-  private String creator;
+	/**
+	 * 门店创建人(已删除)
+	 */
+	@ApiField("creator")
+	private String creator;
 
-  /**
-   * 过期时间
-   */
-  @ApiField("expire_date")
-  private String expireDate;
+	/**
+	 * 过期时间
+	 */
+	@ApiField("expire_date")
+	private String expireDate;
 
-  /**
-   * 上架时间
-   */
-  @ApiField("online_time")
-  private String onlineTime;
+	/**
+	 * 商户名称
+	 */
+	@ApiField("merchant_name")
+	private String merchantName;
 
-  /**
-   * TO_DO-未实施,DOING-实施中,TO_CONFIRM-待商户确认,DONE-已完成,MERCHANT_REJECTED-商户已回绝,MERCHANT_CANCELLED-商户已取消,ISV_REJECTED-服务商已回绝,ISV_CANCELLED-服务商已取消
-   */
-  @ApiField("order_status")
-  private String orderStatus;
+	/**
+	 * 商户PID
+	 */
+	@ApiField("merchant_pid")
+	private String merchantPid;
 
-  /**
-   * 订单所属人联系方式（手机或者座机）
-   */
-  @ApiField("phone_no")
-  private String phoneNo;
+	/**
+	 * 上架时间
+	 */
+	@ApiField("online_time")
+	private String onlineTime;
 
-  /**
-   * 店铺所在的省份
-   */
-  @ApiField("province")
-  private String province;
+	/**
+	 * TO_DO-未实施,DOING-实施中,TO_CONFIRM-待商户确认,DONE-已完成,MERCHANT_REJECTED-商户已回绝,MERCHANT_CANCELLED-商户已取消,ISV_REJECTED-服务商已回绝,ISV_CANCELLED-服务商已取消
+	 */
+	@ApiField("order_status")
+	private String orderStatus;
 
-  /**
-   * 店铺ID
-   */
-  @ApiField("shop_id")
-  private String shopId;
+	/**
+	 * 订单所属人联系方式（手机或者座机）
+	 */
+	@ApiField("phone_no")
+	private String phoneNo;
 
-  /**
-   * 店铺名称
-   */
-  @ApiField("shop_name")
-  private String shopName;
+	/**
+	 * 店铺所在的省份
+	 */
+	@ApiField("province")
+	private String province;
 
-  /**
-   * 店铺状态（ONLINE--已上架 OFFLINE--未上架 AVAILABLE--已开通 INIT--未开通 EXPIRED--已过期）
-   */
-  @ApiField("shop_status")
-  private String shopStatus;
+	/**
+	 * 店铺ID
+	 */
+	@ApiField("shop_id")
+	private String shopId;
 
-  /**
-   * 待服务商接单
-   */
-  @ApiField("status")
-  private String status;
+	/**
+	 * 店铺名称
+	 */
+	@ApiField("shop_name")
+	private String shopName;
 
-  public String getAddress() {
-    return this.address;
-  }
+	/**
+	 * 店铺状态（ONLINE--已上架 OFFLINE--未上架 AVAILABLE--已开通 INIT--未开通 EXPIRED--已过期）
+	 */
+	@ApiField("shop_status")
+	private String shopStatus;
 
-  public void setAddress(String address) {
-    this.address = address;
-  }
+	/**
+	 * 待服务商接单
+	 */
+	@ApiField("status")
+	private String status;
 
-  public String getBrandName() {
-    return this.brandName;
-  }
+	public String getAddress() {
+		return this.address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-  public void setBrandName(String brandName) {
-    this.brandName = brandName;
-  }
+	public String getBrandName() {
+		return this.brandName;
+	}
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
+	}
 
-  public String getCategory() {
-    return this.category;
-  }
+	public String getCategory() {
+		return this.category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
-  public void setCategory(String category) {
-    this.category = category;
-  }
+	public String getCity() {
+		return this.city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
 
-  public String getCity() {
-    return this.city;
-  }
+	public String getCommodityId() {
+		return this.commodityId;
+	}
+	public void setCommodityId(String commodityId) {
+		this.commodityId = commodityId;
+	}
 
-  public void setCity(String city) {
-    this.city = city;
-  }
+	public String getContacts() {
+		return this.contacts;
+	}
+	public void setContacts(String contacts) {
+		this.contacts = contacts;
+	}
 
-  public String getCommodityId() {
-    return this.commodityId;
-  }
+	public String getCreator() {
+		return this.creator;
+	}
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
 
-  public void setCommodityId(String commodityId) {
-    this.commodityId = commodityId;
-  }
+	public String getExpireDate() {
+		return this.expireDate;
+	}
+	public void setExpireDate(String expireDate) {
+		this.expireDate = expireDate;
+	}
 
-  public String getContacts() {
-    return this.contacts;
-  }
+	public String getMerchantName() {
+		return this.merchantName;
+	}
+	public void setMerchantName(String merchantName) {
+		this.merchantName = merchantName;
+	}
 
-  public void setContacts(String contacts) {
-    this.contacts = contacts;
-  }
+	public String getMerchantPid() {
+		return this.merchantPid;
+	}
+	public void setMerchantPid(String merchantPid) {
+		this.merchantPid = merchantPid;
+	}
 
-  public String getCreator() {
-    return this.creator;
-  }
+	public String getOnlineTime() {
+		return this.onlineTime;
+	}
+	public void setOnlineTime(String onlineTime) {
+		this.onlineTime = onlineTime;
+	}
 
-  public void setCreator(String creator) {
-    this.creator = creator;
-  }
+	public String getOrderStatus() {
+		return this.orderStatus;
+	}
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
 
-  public String getExpireDate() {
-    return this.expireDate;
-  }
+	public String getPhoneNo() {
+		return this.phoneNo;
+	}
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
 
-  public void setExpireDate(String expireDate) {
-    this.expireDate = expireDate;
-  }
+	public String getProvince() {
+		return this.province;
+	}
+	public void setProvince(String province) {
+		this.province = province;
+	}
 
-  public String getOnlineTime() {
-    return this.onlineTime;
-  }
+	public String getShopId() {
+		return this.shopId;
+	}
+	public void setShopId(String shopId) {
+		this.shopId = shopId;
+	}
 
-  public void setOnlineTime(String onlineTime) {
-    this.onlineTime = onlineTime;
-  }
+	public String getShopName() {
+		return this.shopName;
+	}
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
+	}
 
-  public String getOrderStatus() {
-    return this.orderStatus;
-  }
+	public String getShopStatus() {
+		return this.shopStatus;
+	}
+	public void setShopStatus(String shopStatus) {
+		this.shopStatus = shopStatus;
+	}
 
-  public void setOrderStatus(String orderStatus) {
-    this.orderStatus = orderStatus;
-  }
-
-  public String getPhoneNo() {
-    return this.phoneNo;
-  }
-
-  public void setPhoneNo(String phoneNo) {
-    this.phoneNo = phoneNo;
-  }
-
-  public String getProvince() {
-    return this.province;
-  }
-
-  public void setProvince(String province) {
-    this.province = province;
-  }
-
-  public String getShopId() {
-    return this.shopId;
-  }
-
-  public void setShopId(String shopId) {
-    this.shopId = shopId;
-  }
-
-  public String getShopName() {
-    return this.shopName;
-  }
-
-  public void setShopName(String shopName) {
-    this.shopName = shopName;
-  }
-
-  public String getShopStatus() {
-    return this.shopStatus;
-  }
-
-  public void setShopStatus(String shopStatus) {
-    this.shopStatus = shopStatus;
-  }
-
-  public String getStatus() {
-    return this.status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 }

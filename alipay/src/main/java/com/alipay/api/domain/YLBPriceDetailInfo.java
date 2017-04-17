@@ -13,48 +13,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class YLBPriceDetailInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 2534487154946451111L;
+	private static final long serialVersionUID = 8351747426737521377L;
 
-  /**
-   * 余利宝行情日期，格式为yyyy-MM-dd HH:mm:ss
-   */
-  @ApiField("price_date")
-  private Date priceDate;
+	/**
+	 * 余利宝行情日期，格式为yyyy-MM-dd HH:mm:ss
+	 */
+	@ApiField("price_date")
+	private Date priceDate;
 
-  /**
-   * 七日年化收益率（%），精确到小数点后4位
-   */
-  @ApiField("sevendays_yeild_rate")
-  private String sevendaysYeildRate;
+	/**
+	 * 七日年化收益率（%），精确到小数点后4位
+	 */
+	@ApiField("sevendays_yeild_rate")
+	private String sevendaysYeildRate;
 
-  /**
-   * 万份收益金额，单位为元
-   */
-  @ApiField("tenthousand_income")
-  private String tenthousandIncome;
+	/**
+	 * 万份收益金额，单位为元
+	 */
+	@ApiField("tenthousand_income")
+	private String tenthousandIncome;
 
-  public Date getPriceDate() {
-    return this.priceDate;
-  }
+	public Date getPriceDate() {
+		return this.priceDate;
+	}
+	public void setPriceDate(Date priceDate) {
+		this.priceDate = priceDate;
+	}
 
-  public void setPriceDate(Date priceDate) {
-    this.priceDate = priceDate;
-  }
+	public String getSevendaysYeildRate() {
+		return this.sevendaysYeildRate;
+	}
+	public void setSevendaysYeildRate(String sevendaysYeildRate) {
+		this.sevendaysYeildRate = sevendaysYeildRate;
+	}
 
-  public String getSevendaysYeildRate() {
-    return this.sevendaysYeildRate;
-  }
-
-  public void setSevendaysYeildRate(String sevendaysYeildRate) {
-    this.sevendaysYeildRate = sevendaysYeildRate;
-  }
-
-  public String getTenthousandIncome() {
-    return this.tenthousandIncome;
-  }
-
-  public void setTenthousandIncome(String tenthousandIncome) {
-    this.tenthousandIncome = tenthousandIncome;
-  }
+	public String getTenthousandIncome() {
+		return this.tenthousandIncome;
+	}
+	public void setTenthousandIncome(String tenthousandIncome) {
+		this.tenthousandIncome = tenthousandIncome;
+	}
 
 }

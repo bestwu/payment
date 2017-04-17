@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayUserGradeAuthbaseQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5415227713573461462L;
+	private static final long serialVersionUID = 7241719439478456461L;
 
-  /**
-   * 用户的支付宝账户ID
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 用户的支付宝账户ID
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

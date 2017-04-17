@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayZmScoreZrankResult extends AlipayObject {
 
-  private static final long serialVersionUID = 3616135243922911949L;
+	private static final long serialVersionUID = 8314569911486474131L;
 
-  /**
-   * 芝麻分分段 Z0-Z7
-   */
-  @ApiField("zrank")
-  private String zrank;
+	/**
+	 * 芝麻分分段 Z0-Z7
+	 */
+	@ApiField("zrank")
+	private String zrank;
 
-  public String getZrank() {
-    return this.zrank;
-  }
-
-  public void setZrank(String zrank) {
-    this.zrank = zrank;
-  }
+	public String getZrank() {
+		return this.zrank;
+	}
+	public void setZrank(String zrank) {
+		this.zrank = zrank;
+	}
 
 }

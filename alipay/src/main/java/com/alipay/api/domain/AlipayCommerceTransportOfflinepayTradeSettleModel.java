@@ -14,21 +14,20 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayCommerceTransportOfflinepayTradeSettleModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3211964343589733172L;
+	private static final long serialVersionUID = 2553397146315645886L;
 
-  /**
-   * 脱机交易列表
-   */
-  @ApiListField("trade_list")
-  @ApiField("alipay_offline_trade")
-  private List<AlipayOfflineTrade> tradeList;
+	/**
+	 * 脱机交易列表
+	 */
+	@ApiListField("trade_list")
+	@ApiField("alipay_offline_trade")
+	private List<AlipayOfflineTrade> tradeList;
 
-  public List<AlipayOfflineTrade> getTradeList() {
-    return this.tradeList;
-  }
-
-  public void setTradeList(List<AlipayOfflineTrade> tradeList) {
-    this.tradeList = tradeList;
-  }
+	public List<AlipayOfflineTrade> getTradeList() {
+		return this.tradeList;
+	}
+	public void setTradeList(List<AlipayOfflineTrade> tradeList) {
+		this.tradeList = tradeList;
+	}
 
 }

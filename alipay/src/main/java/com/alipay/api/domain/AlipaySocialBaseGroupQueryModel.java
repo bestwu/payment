@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipaySocialBaseGroupQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7538779525922551386L;
+	private static final long serialVersionUID = 6449274954412589468L;
 
-  /**
-   * 群的id
-   */
-  @ApiField("group_id")
-  private String groupId;
+	/**
+	 * 群的id
+	 */
+	@ApiField("group_id")
+	private String groupId;
 
-  public String getGroupId() {
-    return this.groupId;
-  }
-
-  public void setGroupId(String groupId) {
-    this.groupId = groupId;
-  }
+	public String getGroupId() {
+		return this.groupId;
+	}
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
 
 }

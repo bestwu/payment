@@ -11,36 +11,34 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayTradeBatchRefundQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8352581538447212319L;
+	private static final long serialVersionUID = 1876535525712515664L;
 
-  /**
-   * 商户请求批量退款时传递的批次号。
-   * trade_no和batch_no不能同时为空
-   */
-  @ApiField("batch_no")
-  private String batchNo;
+	/**
+	 * 商户请求批量退款时传递的批次号。
+trade_no和batch_no不能同时为空
+	 */
+	@ApiField("batch_no")
+	private String batchNo;
 
-  /**
-   * 退款明细的支付宝交易号。
-   * trade_no和batch_no不能同时为空
-   */
-  @ApiField("trade_no")
-  private String tradeNo;
+	/**
+	 * 退款明细的支付宝交易号。
+trade_no和batch_no不能同时为空
+	 */
+	@ApiField("trade_no")
+	private String tradeNo;
 
-  public String getBatchNo() {
-    return this.batchNo;
-  }
+	public String getBatchNo() {
+		return this.batchNo;
+	}
+	public void setBatchNo(String batchNo) {
+		this.batchNo = batchNo;
+	}
 
-  public void setBatchNo(String batchNo) {
-    this.batchNo = batchNo;
-  }
-
-  public String getTradeNo() {
-    return this.tradeNo;
-  }
-
-  public void setTradeNo(String tradeNo) {
-    this.tradeNo = tradeNo;
-  }
+	public String getTradeNo() {
+		return this.tradeNo;
+	}
+	public void setTradeNo(String tradeNo) {
+		this.tradeNo = tradeNo;
+	}
 
 }

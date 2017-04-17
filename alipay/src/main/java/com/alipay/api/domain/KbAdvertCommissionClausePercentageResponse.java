@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KbAdvertCommissionClausePercentageResponse extends AlipayObject {
 
-  private static final long serialVersionUID = 6371328131757992912L;
+	private static final long serialVersionUID = 5198565773668961748L;
 
-  /**
-   * 分佣比例(100以内精度2位的非负小数)
-   */
-  @ApiField("commission_rate")
-  private String commissionRate;
+	/**
+	 * 分佣比例(100以内精度2位的非负小数)
+	 */
+	@ApiField("commission_rate")
+	private String commissionRate;
 
-  /**
-   * 封顶金额(精度2位的非负小数)
-   */
-  @ApiField("max_limit")
-  private String maxLimit;
+	/**
+	 * 封顶金额(精度2位的非负小数)
+	 */
+	@ApiField("max_limit")
+	private String maxLimit;
 
-  public String getCommissionRate() {
-    return this.commissionRate;
-  }
+	public String getCommissionRate() {
+		return this.commissionRate;
+	}
+	public void setCommissionRate(String commissionRate) {
+		this.commissionRate = commissionRate;
+	}
 
-  public void setCommissionRate(String commissionRate) {
-    this.commissionRate = commissionRate;
-  }
-
-  public String getMaxLimit() {
-    return this.maxLimit;
-  }
-
-  public void setMaxLimit(String maxLimit) {
-    this.maxLimit = maxLimit;
-  }
+	public String getMaxLimit() {
+		return this.maxLimit;
+	}
+	public void setMaxLimit(String maxLimit) {
+		this.maxLimit = maxLimit;
+	}
 
 }

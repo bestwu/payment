@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KbAdvertCommissionClauseQuota extends AlipayObject {
 
-  private static final long serialVersionUID = 2284289989413135959L;
+	private static final long serialVersionUID = 3722556861659371665L;
 
-  /**
-   * 定额结束范围(精度2位的非负小数)
-   */
-  @ApiField("quota_amount_end")
-  private String quotaAmountEnd;
+	/**
+	 * 定额结束范围(精度2位的非负小数)
+	 */
+	@ApiField("quota_amount_end")
+	private String quotaAmountEnd;
 
-  /**
-   * 定额开始范围(精度2位的非负小数)
-   */
-  @ApiField("quota_amount_start")
-  private String quotaAmountStart;
+	/**
+	 * 定额开始范围(精度2位的非负小数)
+	 */
+	@ApiField("quota_amount_start")
+	private String quotaAmountStart;
 
-  public String getQuotaAmountEnd() {
-    return this.quotaAmountEnd;
-  }
+	public String getQuotaAmountEnd() {
+		return this.quotaAmountEnd;
+	}
+	public void setQuotaAmountEnd(String quotaAmountEnd) {
+		this.quotaAmountEnd = quotaAmountEnd;
+	}
 
-  public void setQuotaAmountEnd(String quotaAmountEnd) {
-    this.quotaAmountEnd = quotaAmountEnd;
-  }
-
-  public String getQuotaAmountStart() {
-    return this.quotaAmountStart;
-  }
-
-  public void setQuotaAmountStart(String quotaAmountStart) {
-    this.quotaAmountStart = quotaAmountStart;
-  }
+	public String getQuotaAmountStart() {
+		return this.quotaAmountStart;
+	}
+	public void setQuotaAmountStart(String quotaAmountStart) {
+		this.quotaAmountStart = quotaAmountStart;
+	}
 
 }

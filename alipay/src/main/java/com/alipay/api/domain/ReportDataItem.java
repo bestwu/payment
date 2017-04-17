@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ReportDataItem extends AlipayObject {
 
-  private static final long serialVersionUID = 3599744343648999126L;
+	private static final long serialVersionUID = 7394267987679374178L;
 
-  /**
-   * 表示一行数据，每个对象是一列的数据
-   */
-  @ApiField("row_data")
-  private String rowData;
+	/**
+	 * 表示一行数据，每个对象是一列的数据
+	 */
+	@ApiField("row_data")
+	private String rowData;
 
-  public String getRowData() {
-    return this.rowData;
-  }
-
-  public void setRowData(String rowData) {
-    this.rowData = rowData;
-  }
+	public String getRowData() {
+		return this.rowData;
+	}
+	public void setRowData(String rowData) {
+		this.rowData = rowData;
+	}
 
 }

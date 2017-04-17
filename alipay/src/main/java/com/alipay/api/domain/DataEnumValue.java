@@ -14,49 +14,46 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class DataEnumValue extends AlipayObject {
 
-  private static final long serialVersionUID = 6439573298913871358L;
+	private static final long serialVersionUID = 5887532219178739947L;
 
-  /**
-   * 过滤条件
-   */
-  @ApiListField("filter_tags")
-  @ApiField("filter_tag")
-  private List<FilterTag> filterTags;
+	/**
+	 * 过滤条件
+	 */
+	@ApiListField("filter_tags")
+	@ApiField("filter_tag")
+	private List<FilterTag> filterTags;
 
-  /**
-   * 枚举的展示文本
-   */
-  @ApiField("label")
-  private String label;
+	/**
+	 * 枚举的展示文本
+	 */
+	@ApiField("label")
+	private String label;
 
-  /**
-   * 自定义标签的枚举值
-   */
-  @ApiField("value")
-  private String value;
+	/**
+	 * 自定义标签的枚举值
+	 */
+	@ApiField("value")
+	private String value;
 
-  public List<FilterTag> getFilterTags() {
-    return this.filterTags;
-  }
+	public List<FilterTag> getFilterTags() {
+		return this.filterTags;
+	}
+	public void setFilterTags(List<FilterTag> filterTags) {
+		this.filterTags = filterTags;
+	}
 
-  public void setFilterTags(List<FilterTag> filterTags) {
-    this.filterTags = filterTags;
-  }
+	public String getLabel() {
+		return this.label;
+	}
+	public void setLabel(String label) {
+		this.label = label;
+	}
 
-  public String getLabel() {
-    return this.label;
-  }
-
-  public void setLabel(String label) {
-    this.label = label;
-  }
-
-  public String getValue() {
-    return this.value;
-  }
-
-  public void setValue(String value) {
-    this.value = value;
-  }
+	public String getValue() {
+		return this.value;
+	}
+	public void setValue(String value) {
+		this.value = value;
+	}
 
 }

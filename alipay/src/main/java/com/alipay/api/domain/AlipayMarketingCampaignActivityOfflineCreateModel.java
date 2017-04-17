@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayMarketingCampaignActivityOfflineCreateModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6352977722223626613L;
+	private static final long serialVersionUID = 7252339273439816453L;
 
-  /**
-   * 预算信息
-   */
-  @ApiField("budget")
-  private OpenPromoBudget budget;
+	/**
+	 * 预算信息
+	 */
+	@ApiField("budget")
+	private OpenPromoBudget budget;
 
-  /**
-   * 活动信息
-   */
-  @ApiField("camp")
-  private OpenPromoCamp camp;
+	/**
+	 * 活动信息
+	 */
+	@ApiField("camp")
+	private OpenPromoCamp camp;
 
-  /**
-   * 活动创建单号
-   */
-  @ApiField("out_biz_no")
-  private String outBizNo;
+	/**
+	 * 活动创建单号
+	 */
+	@ApiField("out_biz_no")
+	private String outBizNo;
 
-  /**
-   * 奖品信息
-   */
-  @ApiField("prize")
-  private OpenPromoPrize prize;
+	/**
+	 * 奖品信息
+	 */
+	@ApiField("prize")
+	private OpenPromoPrize prize;
 
-  public OpenPromoBudget getBudget() {
-    return this.budget;
-  }
+	public OpenPromoBudget getBudget() {
+		return this.budget;
+	}
+	public void setBudget(OpenPromoBudget budget) {
+		this.budget = budget;
+	}
 
-  public void setBudget(OpenPromoBudget budget) {
-    this.budget = budget;
-  }
+	public OpenPromoCamp getCamp() {
+		return this.camp;
+	}
+	public void setCamp(OpenPromoCamp camp) {
+		this.camp = camp;
+	}
 
-  public OpenPromoCamp getCamp() {
-    return this.camp;
-  }
+	public String getOutBizNo() {
+		return this.outBizNo;
+	}
+	public void setOutBizNo(String outBizNo) {
+		this.outBizNo = outBizNo;
+	}
 
-  public void setCamp(OpenPromoCamp camp) {
-    this.camp = camp;
-  }
-
-  public String getOutBizNo() {
-    return this.outBizNo;
-  }
-
-  public void setOutBizNo(String outBizNo) {
-    this.outBizNo = outBizNo;
-  }
-
-  public OpenPromoPrize getPrize() {
-    return this.prize;
-  }
-
-  public void setPrize(OpenPromoPrize prize) {
-    this.prize = prize;
-  }
+	public OpenPromoPrize getPrize() {
+		return this.prize;
+	}
+	public void setPrize(OpenPromoPrize prize) {
+		this.prize = prize;
+	}
 
 }

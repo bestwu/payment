@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoCplifeCommunityDetailsQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 1136442417986365917L;
+	private static final long serialVersionUID = 6781581736292627866L;
 
-  /**
-   * 支付宝社区小区统一编号，必须在物业账号名下存在。
-   */
-  @ApiField("community_id")
-  private String communityId;
+	/**
+	 * 支付宝社区小区统一编号，必须在物业账号名下存在。
+	 */
+	@ApiField("community_id")
+	private String communityId;
 
-  public String getCommunityId() {
-    return this.communityId;
-  }
-
-  public void setCommunityId(String communityId) {
-    this.communityId = communityId;
-  }
+	public String getCommunityId() {
+		return this.communityId;
+	}
+	public void setCommunityId(String communityId) {
+		this.communityId = communityId;
+	}
 
 }

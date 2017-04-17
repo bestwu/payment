@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayFundTransThirdpartyRewardQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4776699448486421295L;
+	private static final long serialVersionUID = 3485489594242776939L;
 
-  /**
-   * 场景码，接入时找业务方分配
-   */
-  @ApiField("scene")
-  private String scene;
+	/**
+	 * 场景码，接入时找业务方分配
+	 */
+	@ApiField("scene")
+	private String scene;
 
-  /**
-   * 付款方支付宝UserId
-   */
-  @ApiField("sender_user_id")
-  private String senderUserId;
+	/**
+	 * 付款方支付宝UserId
+	 */
+	@ApiField("sender_user_id")
+	private String senderUserId;
 
-  /**
-   * 打赏单据号
-   */
-  @ApiField("transfer_no")
-  private String transferNo;
+	/**
+	 * 打赏单据号
+	 */
+	@ApiField("transfer_no")
+	private String transferNo;
 
-  public String getScene() {
-    return this.scene;
-  }
+	public String getScene() {
+		return this.scene;
+	}
+	public void setScene(String scene) {
+		this.scene = scene;
+	}
 
-  public void setScene(String scene) {
-    this.scene = scene;
-  }
+	public String getSenderUserId() {
+		return this.senderUserId;
+	}
+	public void setSenderUserId(String senderUserId) {
+		this.senderUserId = senderUserId;
+	}
 
-  public String getSenderUserId() {
-    return this.senderUserId;
-  }
-
-  public void setSenderUserId(String senderUserId) {
-    this.senderUserId = senderUserId;
-  }
-
-  public String getTransferNo() {
-    return this.transferNo;
-  }
-
-  public void setTransferNo(String transferNo) {
-    this.transferNo = transferNo;
-  }
+	public String getTransferNo() {
+		return this.transferNo;
+	}
+	public void setTransferNo(String transferNo) {
+		this.transferNo = transferNo;
+	}
 
 }

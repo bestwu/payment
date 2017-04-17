@@ -9,41 +9,39 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.ebpp.bill.search response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-09-20 14:23:46
+ * @since 1.0, 2017-04-07 17:13:40
  */
 public class AlipayEbppBillSearchResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 3131868733297278216L;
+	private static final long serialVersionUID = 6359367118264919713L;
 
-  /**
-   * 已经缓存的的key
-   */
-  @ApiField("cachekey")
-  private String cachekey;
+	/** 
+	 * 已经缓存的的key
+	 */
+	@ApiField("cachekey")
+	private String cachekey;
 
-  /**
-   * 实时查询欠费单返回对象
-   */
-  @ApiListField("inst_bill_info_list")
-  @ApiField("query_inst_bill_info")
-  private List<QueryInstBillInfo> instBillInfoList;
+	/** 
+	 * 实时查询欠费单返回对象
+	 */
+	@ApiListField("inst_bill_info_list")
+	@ApiField("query_inst_bill_info")
+	private List<QueryInstBillInfo> instBillInfoList;
 
-  public void setCachekey(String cachekey) {
-    this.cachekey = cachekey;
-  }
+	public void setCachekey(String cachekey) {
+		this.cachekey = cachekey;
+	}
+	public String getCachekey( ) {
+		return this.cachekey;
+	}
 
-  public String getCachekey() {
-    return this.cachekey;
-  }
-
-  public void setInstBillInfoList(List<QueryInstBillInfo> instBillInfoList) {
-    this.instBillInfoList = instBillInfoList;
-  }
-
-  public List<QueryInstBillInfo> getInstBillInfoList() {
-    return this.instBillInfoList;
-  }
+	public void setInstBillInfoList(List<QueryInstBillInfo> instBillInfoList) {
+		this.instBillInfoList = instBillInfoList;
+	}
+	public List<QueryInstBillInfo> getInstBillInfoList( ) {
+		return this.instBillInfoList;
+	}
 
 }

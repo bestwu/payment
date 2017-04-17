@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class Template extends AlipayObject {
 
-  private static final long serialVersionUID = 2243413158685578649L;
+	private static final long serialVersionUID = 7723424784945822665L;
 
-  /**
-   * 消息模板上下文，即模板中定义的参数及参数值
-   */
-  @ApiField("context")
-  private Context context;
+	/**
+	 * 消息模板上下文，即模板中定义的参数及参数值
+	 */
+	@ApiField("context")
+	private Context context;
 
-  /**
-   * 消息模板ID
-   */
-  @ApiField("template_id")
-  private String templateId;
+	/**
+	 * 消息模板ID
+	 */
+	@ApiField("template_id")
+	private String templateId;
 
-  public Context getContext() {
-    return this.context;
-  }
+	public Context getContext() {
+		return this.context;
+	}
+	public void setContext(Context context) {
+		this.context = context;
+	}
 
-  public void setContext(Context context) {
-    this.context = context;
-  }
-
-  public String getTemplateId() {
-    return this.templateId;
-  }
-
-  public void setTemplateId(String templateId) {
-    this.templateId = templateId;
-  }
+	public String getTemplateId() {
+		return this.templateId;
+	}
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+	}
 
 }

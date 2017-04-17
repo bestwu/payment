@@ -14,63 +14,59 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayTradeOrderSettleModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7541795212726948542L;
+	private static final long serialVersionUID = 5854615368994118979L;
 
-  /**
-   * 操作员id
-   */
-  @ApiField("operator_id")
-  private String operatorId;
+	/**
+	 * 操作员id
+	 */
+	@ApiField("operator_id")
+	private String operatorId;
 
-  /**
-   * 结算请求流水号 开发者自行生成并保证唯一性
-   */
-  @ApiField("out_request_no")
-  private String outRequestNo;
+	/**
+	 * 结算请求流水号 开发者自行生成并保证唯一性
+	 */
+	@ApiField("out_request_no")
+	private String outRequestNo;
 
-  /**
-   * 分账明细信息
-   */
-  @ApiListField("royalty_parameters")
-  @ApiField("open_api_royalty_detail_info_pojo")
-  private List<OpenApiRoyaltyDetailInfoPojo> royaltyParameters;
+	/**
+	 * 分账明细信息
+	 */
+	@ApiListField("royalty_parameters")
+	@ApiField("open_api_royalty_detail_info_pojo")
+	private List<OpenApiRoyaltyDetailInfoPojo> royaltyParameters;
 
-  /**
-   * 支付宝订单号
-   */
-  @ApiField("trade_no")
-  private String tradeNo;
+	/**
+	 * 支付宝订单号
+	 */
+	@ApiField("trade_no")
+	private String tradeNo;
 
-  public String getOperatorId() {
-    return this.operatorId;
-  }
+	public String getOperatorId() {
+		return this.operatorId;
+	}
+	public void setOperatorId(String operatorId) {
+		this.operatorId = operatorId;
+	}
 
-  public void setOperatorId(String operatorId) {
-    this.operatorId = operatorId;
-  }
+	public String getOutRequestNo() {
+		return this.outRequestNo;
+	}
+	public void setOutRequestNo(String outRequestNo) {
+		this.outRequestNo = outRequestNo;
+	}
 
-  public String getOutRequestNo() {
-    return this.outRequestNo;
-  }
+	public List<OpenApiRoyaltyDetailInfoPojo> getRoyaltyParameters() {
+		return this.royaltyParameters;
+	}
+	public void setRoyaltyParameters(List<OpenApiRoyaltyDetailInfoPojo> royaltyParameters) {
+		this.royaltyParameters = royaltyParameters;
+	}
 
-  public void setOutRequestNo(String outRequestNo) {
-    this.outRequestNo = outRequestNo;
-  }
-
-  public List<OpenApiRoyaltyDetailInfoPojo> getRoyaltyParameters() {
-    return this.royaltyParameters;
-  }
-
-  public void setRoyaltyParameters(List<OpenApiRoyaltyDetailInfoPojo> royaltyParameters) {
-    this.royaltyParameters = royaltyParameters;
-  }
-
-  public String getTradeNo() {
-    return this.tradeNo;
-  }
-
-  public void setTradeNo(String tradeNo) {
-    this.tradeNo = tradeNo;
-  }
+	public String getTradeNo() {
+		return this.tradeNo;
+	}
+	public void setTradeNo(String tradeNo) {
+		this.tradeNo = tradeNo;
+	}
 
 }

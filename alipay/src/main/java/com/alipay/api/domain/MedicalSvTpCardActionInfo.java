@@ -11,49 +11,46 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class MedicalSvTpCardActionInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 3493534346762397246L;
+	private static final long serialVersionUID = 4351721128666996717L;
 
-  /**
-   * 模板消息中行动编码，动态参数信息
-   * 备注：行动点编码根据模板类型定义
-   */
-  @ApiField("action_code")
-  private String actionCode;
+	/**
+	 * 模板消息中行动编码，动态参数信息
+备注：行动点编码根据模板类型定义
+	 */
+	@ApiField("action_code")
+	private String actionCode;
 
-  /**
-   * 模板消息中行动名称,开发者自定义
-   */
-  @ApiField("action_name")
-  private String actionName;
+	/**
+	 * 模板消息中行动名称,开发者自定义
+	 */
+	@ApiField("action_name")
+	private String actionName;
 
-  /**
-   * 模板消息中实际操作链接，开发者自定义
-   */
-  @ApiField("action_url")
-  private String actionUrl;
+	/**
+	 * 模板消息中实际操作链接，开发者自定义
+	 */
+	@ApiField("action_url")
+	private String actionUrl;
 
-  public String getActionCode() {
-    return this.actionCode;
-  }
+	public String getActionCode() {
+		return this.actionCode;
+	}
+	public void setActionCode(String actionCode) {
+		this.actionCode = actionCode;
+	}
 
-  public void setActionCode(String actionCode) {
-    this.actionCode = actionCode;
-  }
+	public String getActionName() {
+		return this.actionName;
+	}
+	public void setActionName(String actionName) {
+		this.actionName = actionName;
+	}
 
-  public String getActionName() {
-    return this.actionName;
-  }
-
-  public void setActionName(String actionName) {
-    this.actionName = actionName;
-  }
-
-  public String getActionUrl() {
-    return this.actionUrl;
-  }
-
-  public void setActionUrl(String actionUrl) {
-    this.actionUrl = actionUrl;
-  }
+	public String getActionUrl() {
+		return this.actionUrl;
+	}
+	public void setActionUrl(String actionUrl) {
+		this.actionUrl = actionUrl;
+	}
 
 }

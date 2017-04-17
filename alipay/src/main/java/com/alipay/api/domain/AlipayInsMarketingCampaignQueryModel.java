@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayInsMarketingCampaignQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3543138265885919427L;
+	private static final long serialVersionUID = 1745428753996711674L;
 
-  /**
-   * 保险营销活动Id
-   */
-  @ApiField("campaign_id")
-  private String campaignId;
+	/**
+	 * 保险营销活动Id
+	 */
+	@ApiField("campaign_id")
+	private String campaignId;
 
-  /**
-   * 请求流水Id
-   */
-  @ApiField("request_id")
-  private String requestId;
+	/**
+	 * 请求流水Id
+	 */
+	@ApiField("request_id")
+	private String requestId;
 
-  public String getCampaignId() {
-    return this.campaignId;
-  }
+	public String getCampaignId() {
+		return this.campaignId;
+	}
+	public void setCampaignId(String campaignId) {
+		this.campaignId = campaignId;
+	}
 
-  public void setCampaignId(String campaignId) {
-    this.campaignId = campaignId;
-  }
-
-  public String getRequestId() {
-    return this.requestId;
-  }
-
-  public void setRequestId(String requestId) {
-    this.requestId = requestId;
-  }
+	public String getRequestId() {
+		return this.requestId;
+	}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 }

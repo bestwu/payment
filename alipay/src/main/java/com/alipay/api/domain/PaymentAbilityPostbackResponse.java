@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class PaymentAbilityPostbackResponse extends AlipayObject {
 
-  private static final long serialVersionUID = 7724323753295586131L;
+	private static final long serialVersionUID = 4721649545166149225L;
 
-  /**
-   * 错误的订单信息
-   */
-  @ApiField("error_order")
-  private String errorOrder;
+	/**
+	 * 错误的订单信息
+	 */
+	@ApiField("error_order")
+	private String errorOrder;
 
-  /**
-   * 成功的订单列表,逗号分隔
-   */
-  @ApiField("order_ids")
-  private String orderIds;
+	/**
+	 * 成功的订单列表,逗号分隔
+	 */
+	@ApiField("order_ids")
+	private String orderIds;
 
-  public String getErrorOrder() {
-    return this.errorOrder;
-  }
+	public String getErrorOrder() {
+		return this.errorOrder;
+	}
+	public void setErrorOrder(String errorOrder) {
+		this.errorOrder = errorOrder;
+	}
 
-  public void setErrorOrder(String errorOrder) {
-    this.errorOrder = errorOrder;
-  }
-
-  public String getOrderIds() {
-    return this.orderIds;
-  }
-
-  public void setOrderIds(String orderIds) {
-    this.orderIds = orderIds;
-  }
+	public String getOrderIds() {
+		return this.orderIds;
+	}
+	public void setOrderIds(String orderIds) {
+		this.orderIds = orderIds;
+	}
 
 }

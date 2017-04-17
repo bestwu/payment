@@ -11,76 +11,71 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ShopCategoryConfigInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 6476791928376666484L;
+	private static final long serialVersionUID = 6221619174343993144L;
 
-  /**
-   * 类目ID
-   */
-  @ApiField("id")
-  private String id;
+	/**
+	 * 类目ID
+	 */
+	@ApiField("id")
+	private String id;
 
-  /**
-   * 是否是叶子节点
-   */
-  @ApiField("is_leaf")
-  private String isLeaf;
+	/**
+	 * 是否是叶子节点
+	 */
+	@ApiField("is_leaf")
+	private String isLeaf;
 
-  /**
-   * 类目层级
-   */
-  @ApiField("level")
-  private String level;
+	/**
+	 * 类目层级
+	 */
+	@ApiField("level")
+	private String level;
 
-  /**
-   * 类目层级路径
-   */
-  @ApiField("link")
-  private String link;
+	/**
+	 * 类目层级路径
+	 */
+	@ApiField("link")
+	private String link;
 
-  /**
-   * 类目名称
-   */
-  @ApiField("nm")
-  private String nm;
+	/**
+	 * 类目名称
+	 */
+	@ApiField("nm")
+	private String nm;
 
-  public String getId() {
-    return this.id;
-  }
+	public String getId() {
+		return this.id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public void setId(String id) {
-    this.id = id;
-  }
+	public String getIsLeaf() {
+		return this.isLeaf;
+	}
+	public void setIsLeaf(String isLeaf) {
+		this.isLeaf = isLeaf;
+	}
 
-  public String getIsLeaf() {
-    return this.isLeaf;
-  }
+	public String getLevel() {
+		return this.level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
 
-  public void setIsLeaf(String isLeaf) {
-    this.isLeaf = isLeaf;
-  }
+	public String getLink() {
+		return this.link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
 
-  public String getLevel() {
-    return this.level;
-  }
-
-  public void setLevel(String level) {
-    this.level = level;
-  }
-
-  public String getLink() {
-    return this.link;
-  }
-
-  public void setLink(String link) {
-    this.link = link;
-  }
-
-  public String getNm() {
-    return this.nm;
-  }
-
-  public void setNm(String nm) {
-    this.nm = nm;
-  }
+	public String getNm() {
+		return this.nm;
+	}
+	public void setNm(String nm) {
+		this.nm = nm;
+	}
 
 }

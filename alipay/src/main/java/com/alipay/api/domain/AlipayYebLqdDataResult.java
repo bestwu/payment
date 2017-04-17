@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayYebLqdDataResult extends AlipayObject {
 
-  private static final long serialVersionUID = 5173463719116876591L;
+	private static final long serialVersionUID = 8874884782381863143L;
 
-  /**
-   * 申购预测，单位:元
-   */
-  @ApiField("predict_purchase_amt")
-  private String predictPurchaseAmt;
+	/**
+	 * 申购预测，单位:元
+	 */
+	@ApiField("predict_purchase_amt")
+	private String predictPurchaseAmt;
 
-  /**
-   * 赎回预测,单位:元
-   */
-  @ApiField("predict_redeem_amt")
-  private String predictRedeemAmt;
+	/**
+	 * 赎回预测,单位:元
+	 */
+	@ApiField("predict_redeem_amt")
+	private String predictRedeemAmt;
 
-  /**
-   * 预测日期，格式为yyyymmdd
-   */
-  @ApiField("target_date")
-  private String targetDate;
+	/**
+	 * 预测日期，格式为yyyymmdd
+	 */
+	@ApiField("target_date")
+	private String targetDate;
 
-  public String getPredictPurchaseAmt() {
-    return this.predictPurchaseAmt;
-  }
+	public String getPredictPurchaseAmt() {
+		return this.predictPurchaseAmt;
+	}
+	public void setPredictPurchaseAmt(String predictPurchaseAmt) {
+		this.predictPurchaseAmt = predictPurchaseAmt;
+	}
 
-  public void setPredictPurchaseAmt(String predictPurchaseAmt) {
-    this.predictPurchaseAmt = predictPurchaseAmt;
-  }
+	public String getPredictRedeemAmt() {
+		return this.predictRedeemAmt;
+	}
+	public void setPredictRedeemAmt(String predictRedeemAmt) {
+		this.predictRedeemAmt = predictRedeemAmt;
+	}
 
-  public String getPredictRedeemAmt() {
-    return this.predictRedeemAmt;
-  }
-
-  public void setPredictRedeemAmt(String predictRedeemAmt) {
-    this.predictRedeemAmt = predictRedeemAmt;
-  }
-
-  public String getTargetDate() {
-    return this.targetDate;
-  }
-
-  public void setTargetDate(String targetDate) {
-    this.targetDate = targetDate;
-  }
+	public String getTargetDate() {
+		return this.targetDate;
+	}
+	public void setTargetDate(String targetDate) {
+		this.targetDate = targetDate;
+	}
 
 }

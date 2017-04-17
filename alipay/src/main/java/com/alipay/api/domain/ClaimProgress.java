@@ -13,34 +13,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ClaimProgress extends AlipayObject {
 
-  private static final long serialVersionUID = 8354164626325178363L;
+	private static final long serialVersionUID = 4425879392816917773L;
 
-  /**
-   * 更新内容
-   */
-  @ApiField("update_content")
-  private String updateContent;
+	/**
+	 * 更新内容
+	 */
+	@ApiField("update_content")
+	private String updateContent;
 
-  /**
-   * 更新时间
-   */
-  @ApiField("update_time")
-  private Date updateTime;
+	/**
+	 * 更新时间
+	 */
+	@ApiField("update_time")
+	private Date updateTime;
 
-  public String getUpdateContent() {
-    return this.updateContent;
-  }
+	public String getUpdateContent() {
+		return this.updateContent;
+	}
+	public void setUpdateContent(String updateContent) {
+		this.updateContent = updateContent;
+	}
 
-  public void setUpdateContent(String updateContent) {
-    this.updateContent = updateContent;
-  }
-
-  public Date getUpdateTime() {
-    return this.updateTime;
-  }
-
-  public void setUpdateTime(Date updateTime) {
-    this.updateTime = updateTime;
-  }
+	public Date getUpdateTime() {
+		return this.updateTime;
+	}
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
 
 }

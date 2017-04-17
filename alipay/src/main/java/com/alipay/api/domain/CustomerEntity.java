@@ -14,77 +14,72 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class CustomerEntity extends AlipayObject {
 
-  private static final long serialVersionUID = 6771752215543936456L;
+	private static final long serialVersionUID = 3766212787436949948L;
 
-  /**
-   * 实体英文名
-   */
-  @ApiField("code")
-  private String code;
+	/**
+	 * 实体英文名
+	 */
+	@ApiField("code")
+	private String code;
 
-  /**
-   * 实体描述
-   */
-  @ApiField("desc")
-  private String desc;
+	/**
+	 * 实体描述
+	 */
+	@ApiField("desc")
+	private String desc;
 
-  /**
-   * 实体id
-   */
-  @ApiField("id")
-  private String id;
+	/**
+	 * 实体id
+	 */
+	@ApiField("id")
+	private String id;
 
-  /**
-   * 实体中文名称
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 实体中文名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  /**
-   * tag列表
-   */
-  @ApiListField("tags")
-  @ApiField("customer_tag")
-  private List<CustomerTag> tags;
+	/**
+	 * tag列表
+	 */
+	@ApiListField("tags")
+	@ApiField("customer_tag")
+	private List<CustomerTag> tags;
 
-  public String getCode() {
-    return this.code;
-  }
+	public String getCode() {
+		return this.code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+	public String getDesc() {
+		return this.desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 
-  public String getDesc() {
-    return this.desc;
-  }
+	public String getId() {
+		return this.id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public void setDesc(String desc) {
-    this.desc = desc;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public String getId() {
-    return this.id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public List<CustomerTag> getTags() {
-    return this.tags;
-  }
-
-  public void setTags(List<CustomerTag> tags) {
-    this.tags = tags;
-  }
+	public List<CustomerTag> getTags() {
+		return this.tags;
+	}
+	public void setTags(List<CustomerTag> tags) {
+		this.tags = tags;
+	}
 
 }

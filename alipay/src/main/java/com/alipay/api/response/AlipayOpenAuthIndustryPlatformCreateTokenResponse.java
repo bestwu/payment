@@ -6,54 +6,51 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.open.auth.industry.platform.create.token response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-05-13 18:02:26
  */
 public class AlipayOpenAuthIndustryPlatformCreateTokenResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 1138826853176319327L;
+	private static final long serialVersionUID = 6382467134644641561L;
 
-  /**
-   * 授权码
-   */
-  @ApiField("auth_code")
-  private String authCode;
+	/** 
+	 * 授权码
+	 */
+	@ApiField("auth_code")
+	private String authCode;
 
-  /**
-   * appid
-   */
-  @ApiField("requst_app_id")
-  private String requstAppId;
+	/** 
+	 * appid
+	 */
+	@ApiField("requst_app_id")
+	private String requstAppId;
 
-  /**
-   * scope
-   */
-  @ApiField("scope")
-  private String scope;
+	/** 
+	 * scope
+	 */
+	@ApiField("scope")
+	private String scope;
 
-  public void setAuthCode(String authCode) {
-    this.authCode = authCode;
-  }
+	public void setAuthCode(String authCode) {
+		this.authCode = authCode;
+	}
+	public String getAuthCode( ) {
+		return this.authCode;
+	}
 
-  public String getAuthCode() {
-    return this.authCode;
-  }
+	public void setRequstAppId(String requstAppId) {
+		this.requstAppId = requstAppId;
+	}
+	public String getRequstAppId( ) {
+		return this.requstAppId;
+	}
 
-  public void setRequstAppId(String requstAppId) {
-    this.requstAppId = requstAppId;
-  }
-
-  public String getRequstAppId() {
-    return this.requstAppId;
-  }
-
-  public void setScope(String scope) {
-    this.scope = scope;
-  }
-
-  public String getScope() {
-    return this.scope;
-  }
+	public void setScope(String scope) {
+		this.scope = scope;
+	}
+	public String getScope( ) {
+		return this.scope;
+	}
 
 }

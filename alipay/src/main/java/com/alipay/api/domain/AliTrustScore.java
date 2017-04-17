@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AliTrustScore extends AlipayObject {
 
-  private static final long serialVersionUID = 7549593185644244942L;
+	private static final long serialVersionUID = 6578574774218648438L;
 
-  /**
-   * 芝麻分
-   */
-  @ApiField("score")
-  private Long score;
+	/**
+	 * 芝麻分
+	 */
+	@ApiField("score")
+	private Long score;
 
-  public Long getScore() {
-    return this.score;
-  }
-
-  public void setScore(Long score) {
-    this.score = score;
-  }
+	public Long getScore() {
+		return this.score;
+	}
+	public void setScore(Long score) {
+		this.score = score;
+	}
 
 }

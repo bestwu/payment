@@ -6,26 +6,25 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.zdatafront.datatransfered.send response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2015-02-10 09:58:54
+ * @since 1.0, 2017-02-17 14:14:15
  */
 public class AlipayZdatafrontDatatransferedSendResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 3641154662757466991L;
+	private static final long serialVersionUID = 7499427998489764815L;
 
-  /**
-   * 表示数据传输是否成功
-   */
-  @ApiField("success")
-  private String success;
+	/** 
+	 * 表示数据传输是否成功
+	 */
+	@ApiField("success")
+	private String success;
 
-  public void setSuccess(String success) {
-    this.success = success;
-  }
-
-  public String getSuccess() {
-    return this.success;
-  }
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+	public String getSuccess( ) {
+		return this.success;
+	}
 
 }

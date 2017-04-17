@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class NewsfeedLabelInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 7821889595373961631L;
+	private static final long serialVersionUID = 5193682663937286971L;
 
-  /**
-   * 根据主谓宾的格式生成动态的标题，此字段为谓语
-   */
-  @ApiField("action")
-  private String action;
+	/**
+	 * 根据主谓宾的格式生成动态的标题，此字段为谓语
+	 */
+	@ApiField("action")
+	private String action;
 
-  /**
-   * label行的跳转链接
-   */
-  @ApiField("scheme")
-  private String scheme;
+	/**
+	 * label行的跳转链接
+	 */
+	@ApiField("scheme")
+	private String scheme;
 
-  /**
-   * 根据主谓宾的格式生成动态的标题，此字段为宾语
-   */
-  @ApiField("target")
-  private String target;
+	/**
+	 * 根据主谓宾的格式生成动态的标题，此字段为宾语
+	 */
+	@ApiField("target")
+	private String target;
 
-  public String getAction() {
-    return this.action;
-  }
+	public String getAction() {
+		return this.action;
+	}
+	public void setAction(String action) {
+		this.action = action;
+	}
 
-  public void setAction(String action) {
-    this.action = action;
-  }
+	public String getScheme() {
+		return this.scheme;
+	}
+	public void setScheme(String scheme) {
+		this.scheme = scheme;
+	}
 
-  public String getScheme() {
-    return this.scheme;
-  }
-
-  public void setScheme(String scheme) {
-    this.scheme = scheme;
-  }
-
-  public String getTarget() {
-    return this.target;
-  }
-
-  public void setTarget(String target) {
-    this.target = target;
-  }
+	public String getTarget() {
+		return this.target;
+	}
+	public void setTarget(String target) {
+		this.target = target;
+	}
 
 }

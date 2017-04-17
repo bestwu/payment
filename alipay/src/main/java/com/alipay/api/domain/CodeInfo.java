@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class CodeInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 4697913372577547124L;
+	private static final long serialVersionUID = 8591114868156667932L;
 
-  /**
-   * 跳转URL，扫码关注服务窗后会直接跳转到此URL
-   */
-  @ApiField("goto_url")
-  private String gotoUrl;
+	/**
+	 * 跳转URL，扫码关注服务窗后会直接跳转到此URL
+	 */
+	@ApiField("goto_url")
+	private String gotoUrl;
 
-  /**
-   * 场景信息
-   */
-  @ApiField("scene")
-  private Scene scene;
+	/**
+	 * 场景信息
+	 */
+	@ApiField("scene")
+	private Scene scene;
 
-  public String getGotoUrl() {
-    return this.gotoUrl;
-  }
+	public String getGotoUrl() {
+		return this.gotoUrl;
+	}
+	public void setGotoUrl(String gotoUrl) {
+		this.gotoUrl = gotoUrl;
+	}
 
-  public void setGotoUrl(String gotoUrl) {
-    this.gotoUrl = gotoUrl;
-  }
-
-  public Scene getScene() {
-    return this.scene;
-  }
-
-  public void setScene(Scene scene) {
-    this.scene = scene;
-  }
+	public Scene getScene() {
+		return this.scene;
+	}
+	public void setScene(Scene scene) {
+		this.scene = scene;
+	}
 
 }

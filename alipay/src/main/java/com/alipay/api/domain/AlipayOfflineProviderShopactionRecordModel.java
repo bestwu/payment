@@ -7,108 +7,116 @@ import com.alipay.api.internal.mapping.ApiField;
  * isv 回传的商户操作行为信息调用接口
  *
  * @author auto create
- * @since 1.0, 2016-10-26 18:05:15
+ * @since 1.0, 2017-03-31 13:28:32
  */
 public class AlipayOfflineProviderShopactionRecordModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7669772674528437365L;
+	private static final long serialVersionUID = 3548618862577265516L;
 
-  /**
-   * json格式，操作详情（根据操作类型不同而不同）（太大的话可能会导致内部处理失败）
-   */
-  @ApiField("action_detail")
-  private String actionDetail;
+	/**
+	 * 详情设置会根据action_type字段类型不同而格式不同，请详细查看开放平台文案，会详细说明如果设置，整体是json结构。
+	 */
+	@ApiField("action_detail")
+	private String actionDetail;
 
-  /**
-   * 本次请求的唯一键（操作实体主键+平台字符串）
-   */
-  @ApiField("action_outer_id")
-  private String actionOuterId;
+	/**
+	 * 每次请求的唯一id，需开发者自行保证此参数值每次请求的唯一性。后续可以通过当前唯一id进行问题排查。
+	 */
+	@ApiField("action_outer_id")
+	private String actionOuterId;
 
-  /**
-   * 操作类型（insert_table/update_table/insert_dish/delete_dish/soldout_dish/modify_dish/modify_shop_status）
-   */
-  @ApiField("action_type")
-  private String actionType;
+	/**
+	 * 支持的操作类型
 
-  /**
-   * 商户行为发生时间 格式：yyyy-MM-dd HH:mm:ss
-   */
-  @ApiField("date_time")
-  private String dateTime;
+1. insert_table(插入桌位)
 
-  /**
-   * 操作实体（实体+操作类型决定一个真正的操作【店铺+新增、座位+修改、店铺+适时状态等等】）
-   */
-  @ApiField("entity")
-  private String entity;
+2. update_table(更新桌位)
 
-  /**
-   * 所属行业 (餐饮：REPAST)
-   */
-  @ApiField("industry")
-  private String industry;
+3. insert_dish(插入菜品)
 
-  /**
-   * 操作的店铺对象
-   */
-  @ApiField("outer_shop_do")
-  private OuterShopDO outerShopDo;
+4. delete_dish(删除菜品)
 
-  public String getActionDetail() {
-    return this.actionDetail;
-  }
+5. soldout_dish(估清菜品)
 
-  public void setActionDetail(String actionDetail) {
-    this.actionDetail = actionDetail;
-  }
+6. modify_dish(修改菜品)
 
-  public String getActionOuterId() {
-    return this.actionOuterId;
-  }
+7. modify_shop_status(店铺状态变更)
+每一种操作行为对应的action_detail都不同，action_detail结构都是json串。
+	 */
+	@ApiField("action_type")
+	private String actionType;
 
-  public void setActionOuterId(String actionOuterId) {
-    this.actionOuterId = actionOuterId;
-  }
+	/**
+	 * 商户行为发生时间 格式：yyyy-MM-dd HH:mm:ss
+	 */
+	@ApiField("date_time")
+	private String dateTime;
 
-  public String getActionType() {
-    return this.actionType;
-  }
+	/**
+	 * 参数值固定为shop，代表店铺行为
+	 */
+	@ApiField("entity")
+	private String entity;
 
-  public void setActionType(String actionType) {
-    this.actionType = actionType;
-  }
+	/**
+	 * 当action_type的参数值是 insert_table、update_table、insert_dish、delete_dish、soldout_dish、modify_dish、insert_dish时，此参数的值固定为：REPAST
+	 */
+	@ApiField("industry")
+	private String industry;
 
-  public String getDateTime() {
-    return this.dateTime;
-  }
+	/**
+	 * 传入店铺关联关系。标记当前接口涉及到的店铺信息，同时如果传入的数据在口碑不存在，口碑会建立一条shop_id+ outer_id+ type的关联数据
+	 */
+	@ApiField("outer_shop_do")
+	private OuterShopDO outerShopDo;
 
-  public void setDateTime(String dateTime) {
-    this.dateTime = dateTime;
-  }
+	public String getActionDetail() {
+		return this.actionDetail;
+	}
+	public void setActionDetail(String actionDetail) {
+		this.actionDetail = actionDetail;
+	}
 
-  public String getEntity() {
-    return this.entity;
-  }
+	public String getActionOuterId() {
+		return this.actionOuterId;
+	}
+	public void setActionOuterId(String actionOuterId) {
+		this.actionOuterId = actionOuterId;
+	}
 
-  public void setEntity(String entity) {
-    this.entity = entity;
-  }
+	public String getActionType() {
+		return this.actionType;
+	}
+	public void setActionType(String actionType) {
+		this.actionType = actionType;
+	}
 
-  public String getIndustry() {
-    return this.industry;
-  }
+	public String getDateTime() {
+		return this.dateTime;
+	}
+	public void setDateTime(String dateTime) {
+		this.dateTime = dateTime;
+	}
 
-  public void setIndustry(String industry) {
-    this.industry = industry;
-  }
+	public String getEntity() {
+		return this.entity;
+	}
+	public void setEntity(String entity) {
+		this.entity = entity;
+	}
 
-  public OuterShopDO getOuterShopDo() {
-    return this.outerShopDo;
-  }
+	public String getIndustry() {
+		return this.industry;
+	}
+	public void setIndustry(String industry) {
+		this.industry = industry;
+	}
 
-  public void setOuterShopDo(OuterShopDO outerShopDo) {
-    this.outerShopDo = outerShopDo;
-  }
+	public OuterShopDO getOuterShopDo() {
+		return this.outerShopDo;
+	}
+	public void setOuterShopDo(OuterShopDO outerShopDo) {
+		this.outerShopDo = outerShopDo;
+	}
 
 }

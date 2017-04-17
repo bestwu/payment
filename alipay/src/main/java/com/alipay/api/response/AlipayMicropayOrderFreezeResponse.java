@@ -7,26 +7,25 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.micropay.order.freeze response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-06-06 17:49:00
  */
 public class AlipayMicropayOrderFreezeResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 2497591327165939732L;
+	private static final long serialVersionUID = 5132552923533974959L;
 
-  /**
-   * 冻结订单详情
-   */
-  @ApiField("micro_pay_order_detail")
-  private MicroPayOrderDetail microPayOrderDetail;
+	/** 
+	 * 冻结订单详情
+	 */
+	@ApiField("micro_pay_order_detail")
+	private MicroPayOrderDetail microPayOrderDetail;
 
-  public void setMicroPayOrderDetail(MicroPayOrderDetail microPayOrderDetail) {
-    this.microPayOrderDetail = microPayOrderDetail;
-  }
-
-  public MicroPayOrderDetail getMicroPayOrderDetail() {
-    return this.microPayOrderDetail;
-  }
+	public void setMicroPayOrderDetail(MicroPayOrderDetail microPayOrderDetail) {
+		this.microPayOrderDetail = microPayOrderDetail;
+	}
+	public MicroPayOrderDetail getMicroPayOrderDetail( ) {
+		return this.microPayOrderDetail;
+	}
 
 }

@@ -11,90 +11,84 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayUserCertDocDrivingLicense extends AlipayObject {
 
-  private static final long serialVersionUID = 4737454418513413345L;
+	private static final long serialVersionUID = 7198435797472518579L;
 
-  /**
-   * 准驾车型
-   */
-  @ApiField("clazz")
-  private String clazz;
+	/**
+	 * 准驾车型
+	 */
+	@ApiField("clazz")
+	private String clazz;
 
-  /**
-   * 证号
-   */
-  @ApiField("driving_license_no")
-  private String drivingLicenseNo;
+	/**
+	 * 证号
+	 */
+	@ApiField("driving_license_no")
+	private String drivingLicenseNo;
 
-  /**
-   * 失效日期
-   */
-  @ApiField("expire_date")
-  private String expireDate;
+	/**
+	 * 失效日期
+	 */
+	@ApiField("expire_date")
+	private String expireDate;
 
-  /**
-   * 档案编号
-   */
-  @ApiField("file_no")
-  private String fileNo;
+	/**
+	 * 档案编号
+	 */
+	@ApiField("file_no")
+	private String fileNo;
 
-  /**
-   * 姓名
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 姓名
+	 */
+	@ApiField("name")
+	private String name;
 
-  /**
-   * 生效日期
-   */
-  @ApiField("valide_date")
-  private String valideDate;
+	/**
+	 * 生效日期
+	 */
+	@ApiField("valide_date")
+	private String valideDate;
 
-  public String getClazz() {
-    return this.clazz;
-  }
+	public String getClazz() {
+		return this.clazz;
+	}
+	public void setClazz(String clazz) {
+		this.clazz = clazz;
+	}
 
-  public void setClazz(String clazz) {
-    this.clazz = clazz;
-  }
+	public String getDrivingLicenseNo() {
+		return this.drivingLicenseNo;
+	}
+	public void setDrivingLicenseNo(String drivingLicenseNo) {
+		this.drivingLicenseNo = drivingLicenseNo;
+	}
 
-  public String getDrivingLicenseNo() {
-    return this.drivingLicenseNo;
-  }
+	public String getExpireDate() {
+		return this.expireDate;
+	}
+	public void setExpireDate(String expireDate) {
+		this.expireDate = expireDate;
+	}
 
-  public void setDrivingLicenseNo(String drivingLicenseNo) {
-    this.drivingLicenseNo = drivingLicenseNo;
-  }
+	public String getFileNo() {
+		return this.fileNo;
+	}
+	public void setFileNo(String fileNo) {
+		this.fileNo = fileNo;
+	}
 
-  public String getExpireDate() {
-    return this.expireDate;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public void setExpireDate(String expireDate) {
-    this.expireDate = expireDate;
-  }
-
-  public String getFileNo() {
-    return this.fileNo;
-  }
-
-  public void setFileNo(String fileNo) {
-    this.fileNo = fileNo;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getValideDate() {
-    return this.valideDate;
-  }
-
-  public void setValideDate(String valideDate) {
-    this.valideDate = valideDate;
-  }
+	public String getValideDate() {
+		return this.valideDate;
+	}
+	public void setValideDate(String valideDate) {
+		this.valideDate = valideDate;
+	}
 
 }

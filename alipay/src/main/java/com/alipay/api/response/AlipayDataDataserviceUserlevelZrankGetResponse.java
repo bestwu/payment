@@ -7,26 +7,25 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.data.dataservice.userlevel.zrank.get response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-06-02 14:27:08
  */
 public class AlipayDataDataserviceUserlevelZrankGetResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 3596834787312455962L;
+	private static final long serialVersionUID = 2485492523231768351L;
 
-  /**
-   * 活跃高价值用户返回
-   */
-  @ApiField("result")
-  private AlipayHighValueCustomerResult result;
+	/** 
+	 * 活跃高价值用户返回
+	 */
+	@ApiField("result")
+	private AlipayHighValueCustomerResult result;
 
-  public void setResult(AlipayHighValueCustomerResult result) {
-    this.result = result;
-  }
-
-  public AlipayHighValueCustomerResult getResult() {
-    return this.result;
-  }
+	public void setResult(AlipayHighValueCustomerResult result) {
+		this.result = result;
+	}
+	public AlipayHighValueCustomerResult getResult( ) {
+		return this.result;
+	}
 
 }

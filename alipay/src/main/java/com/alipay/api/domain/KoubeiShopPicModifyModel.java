@@ -14,49 +14,46 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class KoubeiShopPicModifyModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8161989227812793226L;
+	private static final long serialVersionUID = 2863557449954489537L;
 
-  /**
-   * 环境图名称
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 环境图名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  /**
-   * 适用的门店列表
-   */
-  @ApiListField("shop_ids")
-  @ApiField("string")
-  private List<String> shopIds;
+	/**
+	 * 适用的门店列表
+	 */
+	@ApiListField("shop_ids")
+	@ApiField("string")
+	private List<String> shopIds;
 
-  /**
-   * 店铺图片id
-   */
-  @ApiField("shop_pic_id")
-  private String shopPicId;
+	/**
+	 * 店铺图片id
+	 */
+	@ApiField("shop_pic_id")
+	private String shopPicId;
 
-  public String getName() {
-    return this.name;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
+	public List<String> getShopIds() {
+		return this.shopIds;
+	}
+	public void setShopIds(List<String> shopIds) {
+		this.shopIds = shopIds;
+	}
 
-  public List<String> getShopIds() {
-    return this.shopIds;
-  }
-
-  public void setShopIds(List<String> shopIds) {
-    this.shopIds = shopIds;
-  }
-
-  public String getShopPicId() {
-    return this.shopPicId;
-  }
-
-  public void setShopPicId(String shopPicId) {
-    this.shopPicId = shopPicId;
-  }
+	public String getShopPicId() {
+		return this.shopPicId;
+	}
+	public void setShopPicId(String shopPicId) {
+		this.shopPicId = shopPicId;
+	}
 
 }

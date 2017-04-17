@@ -11,63 +11,59 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KbAdvertAdvResponse extends AlipayObject {
 
-  private static final long serialVersionUID = 5132992542192498443L;
+	private static final long serialVersionUID = 2177461958881419534L;
 
-  /**
-   * 推广ID
-   */
-  @ApiField("adv_id")
-  private String advId;
+	/**
+	 * 推广ID
+	 */
+	@ApiField("adv_id")
+	private String advId;
 
-  /**
-   * 指定推广活动的名称
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 指定推广活动的名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  /**
-   * 单张券推广
-   * 只有type=single_voucher才会有值
-   */
-  @ApiField("single_voucher")
-  private KbAdvertAdvSingleVoucherResponse singleVoucher;
+	/**
+	 * 单张券推广
+只有type=single_voucher才会有值
+	 */
+	@ApiField("single_voucher")
+	private KbAdvertAdvSingleVoucherResponse singleVoucher;
 
-  /**
-   * 推广类型
-   */
-  @ApiField("type")
-  private String type;
+	/**
+	 * 推广类型
+	 */
+	@ApiField("type")
+	private String type;
 
-  public String getAdvId() {
-    return this.advId;
-  }
+	public String getAdvId() {
+		return this.advId;
+	}
+	public void setAdvId(String advId) {
+		this.advId = advId;
+	}
 
-  public void setAdvId(String advId) {
-    this.advId = advId;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public String getName() {
-    return this.name;
-  }
+	public KbAdvertAdvSingleVoucherResponse getSingleVoucher() {
+		return this.singleVoucher;
+	}
+	public void setSingleVoucher(KbAdvertAdvSingleVoucherResponse singleVoucher) {
+		this.singleVoucher = singleVoucher;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public KbAdvertAdvSingleVoucherResponse getSingleVoucher() {
-    return this.singleVoucher;
-  }
-
-  public void setSingleVoucher(KbAdvertAdvSingleVoucherResponse singleVoucher) {
-    this.singleVoucher = singleVoucher;
-  }
-
-  public String getType() {
-    return this.type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
+	public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 
 }

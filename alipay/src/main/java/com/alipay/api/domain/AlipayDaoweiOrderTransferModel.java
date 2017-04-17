@@ -7,52 +7,50 @@ import com.alipay.api.internal.mapping.ApiField;
  * 订单状态推进接口
  *
  * @author auto create
- * @since 1.0, 2017-01-16 11:30:28
+ * @since 1.0, 2017-03-20 14:01:25
  */
 public class AlipayDaoweiOrderTransferModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3161168153626535176L;
+	private static final long serialVersionUID = 5462421833242354615L;
 
-  /**
-   * 备注信息，第三方商家在推进订单状态的时候的填写的备注信息，用于告知到位或者服务的购买者的相关信息，不超过500字符
-   */
-  @ApiField("memo")
-  private String memo;
+	/**
+	 * 备注信息。商户在推进订单状态时填写的备注信息，不超过500字符。
+	 */
+	@ApiField("memo")
+	private String memo;
 
-  /**
-   * 订单动作，需要推进的订单状态，枚举值，目前支持的订单状态是PROVIDER_CONFIRMED (服务者完成服务)。
-   */
-  @ApiField("order_action")
-  private String orderAction;
+	/**
+	 * 需要推进的订单状态。目前支持的订单动作是：START_SERVICE(派单模式服务开始)；PROVIDER_CONFIRMED (服务者完成服务)。
+	 */
+	@ApiField("order_action")
+	private String orderAction;
 
-  /**
-   * 到位业务订单号，全局唯一，由32位数字组成，用户在到位下单时系统生成并消息同步给商家，商户只能查自己同步到的订单号
-   */
-  @ApiField("order_no")
-  private String orderNo;
+	/**
+	 * 到位业务订单号。用户在到位下单时，由到位系统生成的32位全局唯一数字 id。
+通过应用中的应用网关post发送给商户（应用网关配置参考链接：https%3A%2F%2Fdoc.open.alipay.com%2Fdocs%2Fdoc.htm%3Fspm%3Da219a.7629140.0.0.TcIuKL%26treeId%3D193%26articleId%3D105310%26docType%3D1）。
+	 */
+	@ApiField("order_no")
+	private String orderNo;
 
-  public String getMemo() {
-    return this.memo;
-  }
+	public String getMemo() {
+		return this.memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
 
-  public void setMemo(String memo) {
-    this.memo = memo;
-  }
+	public String getOrderAction() {
+		return this.orderAction;
+	}
+	public void setOrderAction(String orderAction) {
+		this.orderAction = orderAction;
+	}
 
-  public String getOrderAction() {
-    return this.orderAction;
-  }
-
-  public void setOrderAction(String orderAction) {
-    this.orderAction = orderAction;
-  }
-
-  public String getOrderNo() {
-    return this.orderNo;
-  }
-
-  public void setOrderNo(String orderNo) {
-    this.orderNo = orderNo;
-  }
+	public String getOrderNo() {
+		return this.orderNo;
+	}
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
+	}
 
 }

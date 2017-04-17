@@ -5,13 +5,16 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.daowei.order.confirm response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2017-01-16 11:30:52
+ * @since 1.0, 2017-03-20 14:01:05
  */
 public class AlipayDaoweiOrderConfirmResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 6725329934111133975L;
+	private static final long serialVersionUID = 6115815896814545552L;
 
+	
+
+	
 
 }

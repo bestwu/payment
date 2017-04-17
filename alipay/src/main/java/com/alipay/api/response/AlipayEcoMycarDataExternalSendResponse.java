@@ -6,40 +6,38 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.eco.mycar.data.external.send response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-05-12 10:25:11
  */
 public class AlipayEcoMycarDataExternalSendResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 7385429423116273168L;
+	private static final long serialVersionUID = 4613384278544758871L;
 
-  /**
-   * 20
-   */
-  @ApiField("external_system_name")
-  private String externalSystemName;
+	/** 
+	 * 20
+	 */
+	@ApiField("external_system_name")
+	private String externalSystemName;
 
-  /**
-   * outter_response
-   */
-  @ApiField("process_result")
-  private String processResult;
+	/** 
+	 * outter_response
+	 */
+	@ApiField("process_result")
+	private String processResult;
 
-  public void setExternalSystemName(String externalSystemName) {
-    this.externalSystemName = externalSystemName;
-  }
+	public void setExternalSystemName(String externalSystemName) {
+		this.externalSystemName = externalSystemName;
+	}
+	public String getExternalSystemName( ) {
+		return this.externalSystemName;
+	}
 
-  public String getExternalSystemName() {
-    return this.externalSystemName;
-  }
-
-  public void setProcessResult(String processResult) {
-    this.processResult = processResult;
-  }
-
-  public String getProcessResult() {
-    return this.processResult;
-  }
+	public void setProcessResult(String processResult) {
+		this.processResult = processResult;
+	}
+	public String getProcessResult( ) {
+		return this.processResult;
+	}
 
 }

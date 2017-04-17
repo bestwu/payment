@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayMarketingCampaignActivityOfflineTriggerModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5526524412877397338L;
+	private static final long serialVersionUID = 2779313916558766787L;
 
-  /**
-   * 活动id
-   */
-  @ApiField("camp_id")
-  private String campId;
+	/**
+	 * 活动id
+	 */
+	@ApiField("camp_id")
+	private String campId;
 
-  /**
-   * 用户id
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 用户id
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getCampId() {
-    return this.campId;
-  }
+	public String getCampId() {
+		return this.campId;
+	}
+	public void setCampId(String campId) {
+		this.campId = campId;
+	}
 
-  public void setCampId(String campId) {
-    this.campId = campId;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

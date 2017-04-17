@@ -14,35 +14,33 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class ArticleParagraph extends AlipayObject {
 
-  private static final long serialVersionUID = 8533981311322333575L;
+	private static final long serialVersionUID = 6165946576253861179L;
 
-  /**
-   * 图片列表
-   */
-  @ApiListField("pictures")
-  @ApiField("article_picture")
-  private List<ArticlePicture> pictures;
+	/**
+	 * 图片列表
+	 */
+	@ApiListField("pictures")
+	@ApiField("article_picture")
+	private List<ArticlePicture> pictures;
 
-  /**
-   * 文章正文描述
-   */
-  @ApiField("text")
-  private String text;
+	/**
+	 * 文章正文描述
+	 */
+	@ApiField("text")
+	private String text;
 
-  public List<ArticlePicture> getPictures() {
-    return this.pictures;
-  }
+	public List<ArticlePicture> getPictures() {
+		return this.pictures;
+	}
+	public void setPictures(List<ArticlePicture> pictures) {
+		this.pictures = pictures;
+	}
 
-  public void setPictures(List<ArticlePicture> pictures) {
-    this.pictures = pictures;
-  }
-
-  public String getText() {
-    return this.text;
-  }
-
-  public void setText(String text) {
-    this.text = text;
-  }
+	public String getText() {
+		return this.text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
 
 }

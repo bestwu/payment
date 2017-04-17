@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class QueryInstBillDetail extends AlipayObject {
 
-  private static final long serialVersionUID = 1324614313587353542L;
+	private static final long serialVersionUID = 6152629136211844747L;
 
-  /**
-   * 明细key
-   */
-  @ApiField("key")
-  private String key;
+	/**
+	 * 明细key
+	 */
+	@ApiField("key")
+	private String key;
 
-  /**
-   * 明细描述
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 明细描述
+	 */
+	@ApiField("name")
+	private String name;
 
-  /**
-   * 明细对应值
-   */
-  @ApiField("value")
-  private String value;
+	/**
+	 * 明细对应值
+	 */
+	@ApiField("value")
+	private String value;
 
-  public String getKey() {
-    return this.key;
-  }
+	public String getKey() {
+		return this.key;
+	}
+	public void setKey(String key) {
+		this.key = key;
+	}
 
-  public void setKey(String key) {
-    this.key = key;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getValue() {
-    return this.value;
-  }
-
-  public void setValue(String value) {
-    this.value = value;
-  }
+	public String getValue() {
+		return this.value;
+	}
+	public void setValue(String value) {
+		this.value = value;
+	}
 
 }

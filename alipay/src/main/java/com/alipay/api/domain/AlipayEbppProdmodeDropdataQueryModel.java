@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEbppProdmodeDropdataQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2577748258699245641L;
+	private static final long serialVersionUID = 2448126127922143234L;
 
-  /**
-   * 参数为：缴费业务类型
-   */
-  @ApiField("biz_type")
-  private String bizType;
+	/**
+	 * 参数为：缴费业务类型
+	 */
+	@ApiField("biz_type")
+	private String bizType;
 
-  /**
-   * 参数包含：业务类型、子业务类型、产品模式等
-   */
-  @ApiField("search_type")
-  private String searchType;
+	/**
+	 * 参数包含：业务类型、子业务类型、产品模式等
+	 */
+	@ApiField("search_type")
+	private String searchType;
 
-  public String getBizType() {
-    return this.bizType;
-  }
+	public String getBizType() {
+		return this.bizType;
+	}
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+	}
 
-  public void setBizType(String bizType) {
-    this.bizType = bizType;
-  }
-
-  public String getSearchType() {
-    return this.searchType;
-  }
-
-  public void setSearchType(String searchType) {
-    this.searchType = searchType;
-  }
+	public String getSearchType() {
+		return this.searchType;
+	}
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
 
 }

@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiMarketingDataCustomreportDeleteModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2359862799416267278L;
+	private static final long serialVersionUID = 5652241647379112293L;
 
-  /**
-   * 自定义报表规则的KEY
-   */
-  @ApiField("condition_key")
-  private String conditionKey;
+	/**
+	 * 自定义报表规则的KEY
+	 */
+	@ApiField("condition_key")
+	private String conditionKey;
 
-  public String getConditionKey() {
-    return this.conditionKey;
-  }
-
-  public void setConditionKey(String conditionKey) {
-    this.conditionKey = conditionKey;
-  }
+	public String getConditionKey() {
+		return this.conditionKey;
+	}
+	public void setConditionKey(String conditionKey) {
+		this.conditionKey = conditionKey;
+	}
 
 }

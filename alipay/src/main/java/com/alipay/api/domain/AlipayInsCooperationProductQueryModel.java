@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayInsCooperationProductQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4614946425245266211L;
+	private static final long serialVersionUID = 7438946693415977576L;
 
-  /**
-   * 产品编码;由蚂蚁保险平台分配,商户通过该产品编码投保特定的保险产品
-   */
-  @ApiField("prod_code")
-  private String prodCode;
+	/**
+	 * 产品编码;由蚂蚁保险平台分配,商户通过该产品编码投保特定的保险产品
+	 */
+	@ApiField("prod_code")
+	private String prodCode;
 
-  public String getProdCode() {
-    return this.prodCode;
-  }
-
-  public void setProdCode(String prodCode) {
-    this.prodCode = prodCode;
-  }
+	public String getProdCode() {
+		return this.prodCode;
+	}
+	public void setProdCode(String prodCode) {
+		this.prodCode = prodCode;
+	}
 
 }

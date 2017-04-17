@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayHighValueCustomerResult extends AlipayObject {
 
-  private static final long serialVersionUID = 8567898852481163635L;
+	private static final long serialVersionUID = 1445353496216659582L;
 
-  /**
-   * Z0-Z7
-   */
-  @ApiField("level")
-  private String level;
+	/**
+	 * Z0-Z7
+	 */
+	@ApiField("level")
+	private String level;
 
-  public String getLevel() {
-    return this.level;
-  }
-
-  public void setLevel(String level) {
-    this.level = level;
-  }
+	public String getLevel() {
+		return this.level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
 
 }

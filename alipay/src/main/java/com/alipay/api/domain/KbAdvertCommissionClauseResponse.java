@@ -11,52 +11,49 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KbAdvertCommissionClauseResponse extends AlipayObject {
 
-  private static final long serialVersionUID = 2597141123879661658L;
+	private static final long serialVersionUID = 6415791293876978698L;
 
-  /**
-   * 比例分佣规则
-   * 只有type=PERCENTAGE_CLAUSE才会有值
-   */
-  @ApiField("percentage_clause")
-  private KbAdvertCommissionClausePercentageResponse percentageClause;
+	/**
+	 * 比例分佣规则
+只有type=PERCENTAGE_CLAUSE才会有值
+	 */
+	@ApiField("percentage_clause")
+	private KbAdvertCommissionClausePercentageResponse percentageClause;
 
-  /**
-   * 定额分佣规则
-   * 只有type=QUOTA_CLAUSE才会有值
-   */
-  @ApiField("quota_clause")
-  private KbAdvertCommissionClauseQuotaResponse quotaClause;
+	/**
+	 * 定额分佣规则
+只有type=QUOTA_CLAUSE才会有值
+	 */
+	@ApiField("quota_clause")
+	private KbAdvertCommissionClauseQuotaResponse quotaClause;
 
-  /**
-   * 分佣规则类型
-   * PERCENTAGE_CLAUSE-比例
-   * QUOTA_CLAUSE-定额
-   */
-  @ApiField("type")
-  private String type;
+	/**
+	 * 分佣规则类型
+PERCENTAGE_CLAUSE-比例
+QUOTA_CLAUSE-定额
+	 */
+	@ApiField("type")
+	private String type;
 
-  public KbAdvertCommissionClausePercentageResponse getPercentageClause() {
-    return this.percentageClause;
-  }
+	public KbAdvertCommissionClausePercentageResponse getPercentageClause() {
+		return this.percentageClause;
+	}
+	public void setPercentageClause(KbAdvertCommissionClausePercentageResponse percentageClause) {
+		this.percentageClause = percentageClause;
+	}
 
-  public void setPercentageClause(KbAdvertCommissionClausePercentageResponse percentageClause) {
-    this.percentageClause = percentageClause;
-  }
+	public KbAdvertCommissionClauseQuotaResponse getQuotaClause() {
+		return this.quotaClause;
+	}
+	public void setQuotaClause(KbAdvertCommissionClauseQuotaResponse quotaClause) {
+		this.quotaClause = quotaClause;
+	}
 
-  public KbAdvertCommissionClauseQuotaResponse getQuotaClause() {
-    return this.quotaClause;
-  }
-
-  public void setQuotaClause(KbAdvertCommissionClauseQuotaResponse quotaClause) {
-    this.quotaClause = quotaClause;
-  }
-
-  public String getType() {
-    return this.type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
+	public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 
 }

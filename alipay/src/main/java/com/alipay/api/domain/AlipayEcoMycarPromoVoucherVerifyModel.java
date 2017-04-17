@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarPromoVoucherVerifyModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7853443118453944158L;
+	private static final long serialVersionUID = 8219695559748334789L;
 
-  /**
-   * 订单编号
-   */
-  @ApiField("order_no")
-  private String orderNo;
+	/**
+	 * 订单编号
+	 */
+	@ApiField("order_no")
+	private String orderNo;
 
-  /**
-   * 订单状态 1. 待支付 4. 交易关闭 6. 待发货 53. 已评价 55. 已核销 56. 交易完成
-   */
-  @ApiField("order_status")
-  private String orderStatus;
+	/**
+	 * 订单状态 1. 待支付 4. 交易关闭 6. 待发货 53. 已评价 55. 已核销 56. 交易完成
+	 */
+	@ApiField("order_status")
+	private String orderStatus;
 
-  /**
-   * 核销码
-   */
-  @ApiField("sms_code")
-  private String smsCode;
+	/**
+	 * 核销码
+	 */
+	@ApiField("sms_code")
+	private String smsCode;
 
-  public String getOrderNo() {
-    return this.orderNo;
-  }
+	public String getOrderNo() {
+		return this.orderNo;
+	}
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
+	}
 
-  public void setOrderNo(String orderNo) {
-    this.orderNo = orderNo;
-  }
+	public String getOrderStatus() {
+		return this.orderStatus;
+	}
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
 
-  public String getOrderStatus() {
-    return this.orderStatus;
-  }
-
-  public void setOrderStatus(String orderStatus) {
-    this.orderStatus = orderStatus;
-  }
-
-  public String getSmsCode() {
-    return this.smsCode;
-  }
-
-  public void setSmsCode(String smsCode) {
-    this.smsCode = smsCode;
-  }
+	public String getSmsCode() {
+		return this.smsCode;
+	}
+	public void setSmsCode(String smsCode) {
+		this.smsCode = smsCode;
+	}
 
 }

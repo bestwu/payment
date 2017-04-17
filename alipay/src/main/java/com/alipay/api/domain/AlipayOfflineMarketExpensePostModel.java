@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOfflineMarketExpensePostModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4726163485723966251L;
+	private static final long serialVersionUID = 8353746153569973533L;
 
-  /**
-   * 操作方法
-   */
-  @ApiField("action")
-  private String action;
+	/**
+	 * 操作方法
+	 */
+	@ApiField("action")
+	private String action;
 
-  /**
-   * 操作请求参数，JSON格式
-   */
-  @ApiField("request")
-  private String request;
+	/**
+	 * 操作请求参数，JSON格式
+	 */
+	@ApiField("request")
+	private String request;
 
-  public String getAction() {
-    return this.action;
-  }
+	public String getAction() {
+		return this.action;
+	}
+	public void setAction(String action) {
+		this.action = action;
+	}
 
-  public void setAction(String action) {
-    this.action = action;
-  }
-
-  public String getRequest() {
-    return this.request;
-  }
-
-  public void setRequest(String request) {
-    this.request = request;
-  }
+	public String getRequest() {
+		return this.request;
+	}
+	public void setRequest(String request) {
+		this.request = request;
+	}
 
 }

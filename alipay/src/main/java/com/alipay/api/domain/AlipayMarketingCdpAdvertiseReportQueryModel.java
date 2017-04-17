@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayMarketingCdpAdvertiseReportQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6796773122556896995L;
+	private static final long serialVersionUID = 1719787911459555249L;
 
-  /**
-   * 广告Id，唯一标识一条广告
-   */
-  @ApiField("ad_id")
-  private String adId;
+	/**
+	 * 广告Id，唯一标识一条广告
+	 */
+	@ApiField("ad_id")
+	private String adId;
 
-  public String getAdId() {
-    return this.adId;
-  }
-
-  public void setAdId(String adId) {
-    this.adId = adId;
-  }
+	public String getAdId() {
+		return this.adId;
+	}
+	public void setAdId(String adId) {
+		this.adId = adId;
+	}
 
 }

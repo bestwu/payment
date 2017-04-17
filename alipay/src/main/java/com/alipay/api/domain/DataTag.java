@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class DataTag extends AlipayObject {
 
-  private static final long serialVersionUID = 5518228562167732395L;
+	private static final long serialVersionUID = 8137467974988565766L;
 
-  /**
-   * 聚合方式NONE,COUNT,COUNT_DISTINCT,DISTINCT,MIN,MAX,SUM
-   */
-  @ApiField("aggregate")
-  private String aggregate;
+	/**
+	 * 聚合方式NONE,COUNT,COUNT_DISTINCT,DISTINCT,MIN,MAX,SUM
+	 */
+	@ApiField("aggregate")
+	private String aggregate;
 
-  /**
-   * 列别名
-   */
-  @ApiField("alias")
-  private String alias;
+	/**
+	 * 列别名
+	 */
+	@ApiField("alias")
+	private String alias;
 
-  /**
-   * 标签CODE
-   */
-  @ApiField("code")
-  private String code;
+	/**
+	 * 标签CODE
+	 */
+	@ApiField("code")
+	private String code;
 
-  public String getAggregate() {
-    return this.aggregate;
-  }
+	public String getAggregate() {
+		return this.aggregate;
+	}
+	public void setAggregate(String aggregate) {
+		this.aggregate = aggregate;
+	}
 
-  public void setAggregate(String aggregate) {
-    this.aggregate = aggregate;
-  }
+	public String getAlias() {
+		return this.alias;
+	}
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
 
-  public String getAlias() {
-    return this.alias;
-  }
-
-  public void setAlias(String alias) {
-    this.alias = alias;
-  }
-
-  public String getCode() {
-    return this.code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
+	public String getCode() {
+		return this.code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 }

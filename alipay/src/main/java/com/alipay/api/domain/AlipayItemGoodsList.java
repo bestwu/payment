@@ -14,35 +14,33 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayItemGoodsList extends AlipayObject {
 
-  private static final long serialVersionUID = 7655248261751366532L;
+	private static final long serialVersionUID = 2297112511776326679L;
 
-  /**
-   * 外部单品的描述信息（此字段暂时无用）
-   */
-  @ApiField("desc")
-  private String desc;
+	/**
+	 * 外部单品的描述信息（此字段暂时无用）
+	 */
+	@ApiField("desc")
+	private String desc;
 
-  /**
-   * 外部单品id列表，传入服务商、商户系统中的商品id。
-   */
-  @ApiListField("goods_list")
-  @ApiField("string")
-  private List<String> goodsList;
+	/**
+	 * 外部单品id列表，传入服务商、商户系统中的商品id。
+	 */
+	@ApiListField("goods_list")
+	@ApiField("string")
+	private List<String> goodsList;
 
-  public String getDesc() {
-    return this.desc;
-  }
+	public String getDesc() {
+		return this.desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 
-  public void setDesc(String desc) {
-    this.desc = desc;
-  }
-
-  public List<String> getGoodsList() {
-    return this.goodsList;
-  }
-
-  public void setGoodsList(List<String> goodsList) {
-    this.goodsList = goodsList;
-  }
+	public List<String> getGoodsList() {
+		return this.goodsList;
+	}
+	public void setGoodsList(List<String> goodsList) {
+		this.goodsList = goodsList;
+	}
 
 }

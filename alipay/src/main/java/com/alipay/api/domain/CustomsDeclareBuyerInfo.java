@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class CustomsDeclareBuyerInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 5843537179812913682L;
+	private static final long serialVersionUID = 5141659216218653698L;
 
-  /**
-   * 订购人身份证号。即订购人留在商户处的身份证信息
-   */
-  @ApiField("buyer_cert_no")
-  private String buyerCertNo;
+	/**
+	 * 订购人身份证号。即订购人留在商户处的身份证信息
+	 */
+	@ApiField("buyer_cert_no")
+	private String buyerCertNo;
 
-  /**
-   * 订购人姓名。即订购人留在商户处的姓名信息
-   */
-  @ApiField("buyer_name")
-  private String buyerName;
+	/**
+	 * 订购人姓名。即订购人留在商户处的姓名信息
+	 */
+	@ApiField("buyer_name")
+	private String buyerName;
 
-  public String getBuyerCertNo() {
-    return this.buyerCertNo;
-  }
+	public String getBuyerCertNo() {
+		return this.buyerCertNo;
+	}
+	public void setBuyerCertNo(String buyerCertNo) {
+		this.buyerCertNo = buyerCertNo;
+	}
 
-  public void setBuyerCertNo(String buyerCertNo) {
-    this.buyerCertNo = buyerCertNo;
-  }
-
-  public String getBuyerName() {
-    return this.buyerName;
-  }
-
-  public void setBuyerName(String buyerName) {
-    this.buyerName = buyerName;
-  }
+	public String getBuyerName() {
+		return this.buyerName;
+	}
+	public void setBuyerName(String buyerName) {
+		this.buyerName = buyerName;
+	}
 
 }

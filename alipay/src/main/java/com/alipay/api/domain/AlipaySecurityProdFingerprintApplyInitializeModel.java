@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipaySecurityProdFingerprintApplyInitializeModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8223329172367357846L;
+	private static final long serialVersionUID = 8747364325915156949L;
 
-  /**
-   * IFAA标准中的校验类型，目前1为指纹
-   */
-  @ApiField("auth_type")
-  private String authType;
+	/**
+	 * IFAA标准中的校验类型，目前1为指纹
+	 */
+	@ApiField("auth_type")
+	private String authType;
 
-  /**
-   * IFAA协议的版本，目前为2.0
-   */
-  @ApiField("ifaa_version")
-  private String ifaaVersion;
+	/**
+	 * IFAA协议的版本，目前为2.0
+	 */
+	@ApiField("ifaa_version")
+	private String ifaaVersion;
 
-  public String getAuthType() {
-    return this.authType;
-  }
+	public String getAuthType() {
+		return this.authType;
+	}
+	public void setAuthType(String authType) {
+		this.authType = authType;
+	}
 
-  public void setAuthType(String authType) {
-    this.authType = authType;
-  }
-
-  public String getIfaaVersion() {
-    return this.ifaaVersion;
-  }
-
-  public void setIfaaVersion(String ifaaVersion) {
-    this.ifaaVersion = ifaaVersion;
-  }
+	public String getIfaaVersion() {
+		return this.ifaaVersion;
+	}
+	public void setIfaaVersion(String ifaaVersion) {
+		this.ifaaVersion = ifaaVersion;
+	}
 
 }

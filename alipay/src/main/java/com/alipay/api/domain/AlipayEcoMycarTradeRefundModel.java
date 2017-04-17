@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarTradeRefundModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4362424749397322145L;
+	private static final long serialVersionUID = 4715134388931746417L;
 
-  /**
-   * 渠道平台
-   */
-  @ApiField("isv")
-  private String isv;
+	/**
+	 * 渠道平台
+	 */
+	@ApiField("isv")
+	private String isv;
 
-  /**
-   * 退款金额(分)
-   */
-  @ApiField("refund_fee")
-  private String refundFee;
+	/**
+	 * 退款金额(分)
+	 */
+	@ApiField("refund_fee")
+	private String refundFee;
 
-  /**
-   * 退款原因
-   */
-  @ApiField("refund_reason")
-  private String refundReason;
+	/**
+	 * 退款原因
+	 */
+	@ApiField("refund_reason")
+	private String refundReason;
 
-  /**
-   * 退款交易编号
-   */
-  @ApiField("trade_no")
-  private String tradeNo;
+	/**
+	 * 退款交易编号
+	 */
+	@ApiField("trade_no")
+	private String tradeNo;
 
-  public String getIsv() {
-    return this.isv;
-  }
+	public String getIsv() {
+		return this.isv;
+	}
+	public void setIsv(String isv) {
+		this.isv = isv;
+	}
 
-  public void setIsv(String isv) {
-    this.isv = isv;
-  }
+	public String getRefundFee() {
+		return this.refundFee;
+	}
+	public void setRefundFee(String refundFee) {
+		this.refundFee = refundFee;
+	}
 
-  public String getRefundFee() {
-    return this.refundFee;
-  }
+	public String getRefundReason() {
+		return this.refundReason;
+	}
+	public void setRefundReason(String refundReason) {
+		this.refundReason = refundReason;
+	}
 
-  public void setRefundFee(String refundFee) {
-    this.refundFee = refundFee;
-  }
-
-  public String getRefundReason() {
-    return this.refundReason;
-  }
-
-  public void setRefundReason(String refundReason) {
-    this.refundReason = refundReason;
-  }
-
-  public String getTradeNo() {
-    return this.tradeNo;
-  }
-
-  public void setTradeNo(String tradeNo) {
-    this.tradeNo = tradeNo;
-  }
+	public String getTradeNo() {
+		return this.tradeNo;
+	}
+	public void setTradeNo(String tradeNo) {
+		this.tradeNo = tradeNo;
+	}
 
 }

@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlisisReportColumn extends AlipayObject {
 
-  private static final long serialVersionUID = 2225952743666564773L;
+	private static final long serialVersionUID = 8138415531658163426L;
 
-  /**
-   * 列别名
-   */
-  @ApiField("alias")
-  private String alias;
+	/**
+	 * 列别名
+	 */
+	@ApiField("alias")
+	private String alias;
 
-  /**
-   * 列值
-   */
-  @ApiField("data")
-  private String data;
+	/**
+	 * 列值
+	 */
+	@ApiField("data")
+	private String data;
 
-  public String getAlias() {
-    return this.alias;
-  }
+	public String getAlias() {
+		return this.alias;
+	}
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
 
-  public void setAlias(String alias) {
-    this.alias = alias;
-  }
-
-  public String getData() {
-    return this.data;
-  }
-
-  public void setData(String data) {
-    this.data = data;
-  }
+	public String getData() {
+		return this.data;
+	}
+	public void setData(String data) {
+		this.data = data;
+	}
 
 }

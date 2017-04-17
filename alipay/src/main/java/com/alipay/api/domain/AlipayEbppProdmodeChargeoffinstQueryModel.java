@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEbppProdmodeChargeoffinstQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2488358873315764677L;
+	private static final long serialVersionUID = 7252491417159219416L;
 
-  /**
-   * 业务类型
-   */
-  @ApiField("biz_type")
-  private String bizType;
+	/**
+	 * 业务类型
+	 */
+	@ApiField("biz_type")
+	private String bizType;
 
-  public String getBizType() {
-    return this.bizType;
-  }
-
-  public void setBizType(String bizType) {
-    this.bizType = bizType;
-  }
+	public String getBizType() {
+		return this.bizType;
+	}
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
+	}
 
 }

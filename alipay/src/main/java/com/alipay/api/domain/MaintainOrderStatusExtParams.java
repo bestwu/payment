@@ -11,90 +11,84 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class MaintainOrderStatusExtParams extends AlipayObject {
 
-  private static final long serialVersionUID = 6812918171411537594L;
+	private static final long serialVersionUID = 4294915593337846243L;
 
-  /**
-   * 编码
-   */
-  @ApiField("logistics_code")
-  private String logisticsCode;
+	/**
+	 * 编码
+	 */
+	@ApiField("logistics_code")
+	private String logisticsCode;
 
-  /**
-   * 快递发货商
-   */
-  @ApiField("logistics_company")
-  private String logisticsCompany;
+	/**
+	 * 快递发货商
+	 */
+	@ApiField("logistics_company")
+	private String logisticsCompany;
 
-  /**
-   * 快递单号
-   */
-  @ApiField("logistics_no")
-  private String logisticsNo;
+	/**
+	 * 快递单号
+	 */
+	@ApiField("logistics_no")
+	private String logisticsNo;
 
-  /**
-   * 4S订单状态
-   */
-  @ApiField("order_status_txt")
-  private String orderStatusTxt;
+	/**
+	 * 4S订单状态
+	 */
+	@ApiField("order_status_txt")
+	private String orderStatusTxt;
 
-  /**
-   * 收货地址
-   */
-  @ApiField("receiver_addr")
-  private String receiverAddr;
+	/**
+	 * 收货地址
+	 */
+	@ApiField("receiver_addr")
+	private String receiverAddr;
 
-  /**
-   * 发货地址
-   */
-  @ApiField("sender_addr")
-  private String senderAddr;
+	/**
+	 * 发货地址
+	 */
+	@ApiField("sender_addr")
+	private String senderAddr;
 
-  public String getLogisticsCode() {
-    return this.logisticsCode;
-  }
+	public String getLogisticsCode() {
+		return this.logisticsCode;
+	}
+	public void setLogisticsCode(String logisticsCode) {
+		this.logisticsCode = logisticsCode;
+	}
 
-  public void setLogisticsCode(String logisticsCode) {
-    this.logisticsCode = logisticsCode;
-  }
+	public String getLogisticsCompany() {
+		return this.logisticsCompany;
+	}
+	public void setLogisticsCompany(String logisticsCompany) {
+		this.logisticsCompany = logisticsCompany;
+	}
 
-  public String getLogisticsCompany() {
-    return this.logisticsCompany;
-  }
+	public String getLogisticsNo() {
+		return this.logisticsNo;
+	}
+	public void setLogisticsNo(String logisticsNo) {
+		this.logisticsNo = logisticsNo;
+	}
 
-  public void setLogisticsCompany(String logisticsCompany) {
-    this.logisticsCompany = logisticsCompany;
-  }
+	public String getOrderStatusTxt() {
+		return this.orderStatusTxt;
+	}
+	public void setOrderStatusTxt(String orderStatusTxt) {
+		this.orderStatusTxt = orderStatusTxt;
+	}
 
-  public String getLogisticsNo() {
-    return this.logisticsNo;
-  }
+	public String getReceiverAddr() {
+		return this.receiverAddr;
+	}
+	public void setReceiverAddr(String receiverAddr) {
+		this.receiverAddr = receiverAddr;
+	}
 
-  public void setLogisticsNo(String logisticsNo) {
-    this.logisticsNo = logisticsNo;
-  }
-
-  public String getOrderStatusTxt() {
-    return this.orderStatusTxt;
-  }
-
-  public void setOrderStatusTxt(String orderStatusTxt) {
-    this.orderStatusTxt = orderStatusTxt;
-  }
-
-  public String getReceiverAddr() {
-    return this.receiverAddr;
-  }
-
-  public void setReceiverAddr(String receiverAddr) {
-    this.receiverAddr = receiverAddr;
-  }
-
-  public String getSenderAddr() {
-    return this.senderAddr;
-  }
-
-  public void setSenderAddr(String senderAddr) {
-    this.senderAddr = senderAddr;
-  }
+	public String getSenderAddr() {
+		return this.senderAddr;
+	}
+	public void setSenderAddr(String senderAddr) {
+		this.senderAddr = senderAddr;
+	}
 
 }

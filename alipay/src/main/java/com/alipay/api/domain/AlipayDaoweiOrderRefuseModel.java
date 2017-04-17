@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayDaoweiOrderRefuseModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8582548795156516613L;
+	private static final long serialVersionUID = 7645998426576397376L;
 
-  /**
-   * 到位业务订单号，全局唯一，由32位数字组成，用户在到位下单时系统生成并消息同步给商家，商户只能查自己同步到的订单号
-   */
-  @ApiField("order_no")
-  private String orderNo;
+	/**
+	 * 到位业务订单号，全局唯一，由32位数字组成，用户在到位下单时系统生成并消息同步给商家，商户只能查自己同步到的订单号
+	 */
+	@ApiField("order_no")
+	private String orderNo;
 
-  /**
-   * 拒单理由，第三方商户拒绝接单时填写的拒单理由，必填，长度不超过500字符
-   */
-  @ApiField("reason")
-  private String reason;
+	/**
+	 * 拒单理由，第三方商户拒绝接单时填写的拒单理由，必填，长度不超过500字符
+	 */
+	@ApiField("reason")
+	private String reason;
 
-  public String getOrderNo() {
-    return this.orderNo;
-  }
+	public String getOrderNo() {
+		return this.orderNo;
+	}
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
+	}
 
-  public void setOrderNo(String orderNo) {
-    this.orderNo = orderNo;
-  }
-
-  public String getReason() {
-    return this.reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
-  }
+	public String getReason() {
+		return this.reason;
+	}
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
 
 }

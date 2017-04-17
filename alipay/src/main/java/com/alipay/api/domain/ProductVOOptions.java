@@ -11,104 +11,97 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ProductVOOptions extends AlipayObject {
 
-  private static final long serialVersionUID = 5525383524914867921L;
+	private static final long serialVersionUID = 3377441863936812974L;
 
-  /**
-   * 是否包括产品条件组信息，默认为false
-   */
-  @ApiField("include_condition_group")
-  private Boolean includeConditionGroup;
+	/**
+	 * 是否包括产品条件组信息，默认为false
+	 */
+	@ApiField("include_condition_group")
+	private Boolean includeConditionGroup;
 
-  /**
-   * 是否包括产品基本信息，默认为false
-   */
-  @ApiField("include_prod_base")
-  private Boolean includeProdBase;
+	/**
+	 * 是否包括产品基本信息，默认为false
+	 */
+	@ApiField("include_prod_base")
+	private Boolean includeProdBase;
 
-  /**
-   * 是否包括产品参与者信息，默认为false
-   */
-  @ApiField("include_prod_ip")
-  private Boolean includeProdIp;
+	/**
+	 * 是否包括产品参与者信息，默认为false
+	 */
+	@ApiField("include_prod_ip")
+	private Boolean includeProdIp;
 
-  /**
-   * 是否包括产品区域信息
-   */
-  @ApiField("include_prod_lo")
-  private Boolean includeProdLo;
+	/**
+	 * 是否包括产品区域信息
+	 */
+	@ApiField("include_prod_lo")
+	private Boolean includeProdLo;
 
-  /**
-   * 是否包括产品外标信息
-   */
-  @ApiField("include_prod_mark")
-  private Boolean includeProdMark;
+	/**
+	 * 是否包括产品外标信息
+	 */
+	@ApiField("include_prod_mark")
+	private Boolean includeProdMark;
 
-  /**
-   * 产品关联关系
-   */
-  @ApiField("include_prod_rel")
-  private String includeProdRel;
+	/**
+	 * 产品关联关系
+	 */
+	@ApiField("include_prod_rel")
+	private String includeProdRel;
 
-  /**
-   * 是否包括产品资源项信息
-   */
-  @ApiField("include_prod_ri")
-  private Boolean includeProdRi;
+	/**
+	 * 是否包括产品资源项信息
+	 */
+	@ApiField("include_prod_ri")
+	private Boolean includeProdRi;
 
-  public Boolean getIncludeConditionGroup() {
-    return this.includeConditionGroup;
-  }
+	public Boolean getIncludeConditionGroup() {
+		return this.includeConditionGroup;
+	}
+	public void setIncludeConditionGroup(Boolean includeConditionGroup) {
+		this.includeConditionGroup = includeConditionGroup;
+	}
 
-  public void setIncludeConditionGroup(Boolean includeConditionGroup) {
-    this.includeConditionGroup = includeConditionGroup;
-  }
+	public Boolean getIncludeProdBase() {
+		return this.includeProdBase;
+	}
+	public void setIncludeProdBase(Boolean includeProdBase) {
+		this.includeProdBase = includeProdBase;
+	}
 
-  public Boolean getIncludeProdBase() {
-    return this.includeProdBase;
-  }
+	public Boolean getIncludeProdIp() {
+		return this.includeProdIp;
+	}
+	public void setIncludeProdIp(Boolean includeProdIp) {
+		this.includeProdIp = includeProdIp;
+	}
 
-  public void setIncludeProdBase(Boolean includeProdBase) {
-    this.includeProdBase = includeProdBase;
-  }
+	public Boolean getIncludeProdLo() {
+		return this.includeProdLo;
+	}
+	public void setIncludeProdLo(Boolean includeProdLo) {
+		this.includeProdLo = includeProdLo;
+	}
 
-  public Boolean getIncludeProdIp() {
-    return this.includeProdIp;
-  }
+	public Boolean getIncludeProdMark() {
+		return this.includeProdMark;
+	}
+	public void setIncludeProdMark(Boolean includeProdMark) {
+		this.includeProdMark = includeProdMark;
+	}
 
-  public void setIncludeProdIp(Boolean includeProdIp) {
-    this.includeProdIp = includeProdIp;
-  }
+	public String getIncludeProdRel() {
+		return this.includeProdRel;
+	}
+	public void setIncludeProdRel(String includeProdRel) {
+		this.includeProdRel = includeProdRel;
+	}
 
-  public Boolean getIncludeProdLo() {
-    return this.includeProdLo;
-  }
-
-  public void setIncludeProdLo(Boolean includeProdLo) {
-    this.includeProdLo = includeProdLo;
-  }
-
-  public Boolean getIncludeProdMark() {
-    return this.includeProdMark;
-  }
-
-  public void setIncludeProdMark(Boolean includeProdMark) {
-    this.includeProdMark = includeProdMark;
-  }
-
-  public String getIncludeProdRel() {
-    return this.includeProdRel;
-  }
-
-  public void setIncludeProdRel(String includeProdRel) {
-    this.includeProdRel = includeProdRel;
-  }
-
-  public Boolean getIncludeProdRi() {
-    return this.includeProdRi;
-  }
-
-  public void setIncludeProdRi(Boolean includeProdRi) {
-    this.includeProdRi = includeProdRi;
-  }
+	public Boolean getIncludeProdRi() {
+		return this.includeProdRi;
+	}
+	public void setIncludeProdRi(Boolean includeProdRi) {
+		this.includeProdRi = includeProdRi;
+	}
 
 }

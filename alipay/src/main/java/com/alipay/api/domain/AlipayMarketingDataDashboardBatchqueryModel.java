@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayMarketingDataDashboardBatchqueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 1738539414237976875L;
+	private static final long serialVersionUID = 1422137197329189629L;
 
-  /**
-   * 当前页码
-   */
-  @ApiField("page")
-  private String page;
+	/**
+	 * 当前页码
+	 */
+	@ApiField("page")
+	private String page;
 
-  /**
-   * 每页最大条数，最大每页30条
-   */
-  @ApiField("size")
-  private String size;
+	/**
+	 * 每页最大条数，最大每页30条
+	 */
+	@ApiField("size")
+	private String size;
 
-  public String getPage() {
-    return this.page;
-  }
+	public String getPage() {
+		return this.page;
+	}
+	public void setPage(String page) {
+		this.page = page;
+	}
 
-  public void setPage(String page) {
-    this.page = page;
-  }
-
-  public String getSize() {
-    return this.size;
-  }
-
-  public void setSize(String size) {
-    this.size = size;
-  }
+	public String getSize() {
+		return this.size;
+	}
+	public void setSize(String size) {
+		this.size = size;
+	}
 
 }

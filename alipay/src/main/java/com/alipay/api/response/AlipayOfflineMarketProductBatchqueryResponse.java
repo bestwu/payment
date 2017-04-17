@@ -8,55 +8,52 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.offline.market.product.batchquery response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-07-29 19:51:58
+ * @since 1.0, 2017-04-07 17:46:07
  */
 public class AlipayOfflineMarketProductBatchqueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 7464428562279846218L;
+	private static final long serialVersionUID = 6733167453273886977L;
 
-  /**
-   * 当前页码
-   */
-  @ApiField("current_pageno")
-  private Long currentPageno;
+	/** 
+	 * 当前页码
+	 */
+	@ApiField("current_pageno")
+	private Long currentPageno;
 
-  /**
-   * 商品列表ID，逗号分隔
-   */
-  @ApiListField("item_ids")
-  @ApiField("string")
-  private List<String> itemIds;
+	/** 
+	 * 商品列表ID，逗号分隔
+	 */
+	@ApiListField("item_ids")
+	@ApiField("string")
+	private List<String> itemIds;
 
-  /**
-   * 总页码数
-   */
-  @ApiField("total_pageno")
-  private Long totalPageno;
+	/** 
+	 * 总页码数
+	 */
+	@ApiField("total_pageno")
+	private Long totalPageno;
 
-  public void setCurrentPageno(Long currentPageno) {
-    this.currentPageno = currentPageno;
-  }
+	public void setCurrentPageno(Long currentPageno) {
+		this.currentPageno = currentPageno;
+	}
+	public Long getCurrentPageno( ) {
+		return this.currentPageno;
+	}
 
-  public Long getCurrentPageno() {
-    return this.currentPageno;
-  }
+	public void setItemIds(List<String> itemIds) {
+		this.itemIds = itemIds;
+	}
+	public List<String> getItemIds( ) {
+		return this.itemIds;
+	}
 
-  public void setItemIds(List<String> itemIds) {
-    this.itemIds = itemIds;
-  }
-
-  public List<String> getItemIds() {
-    return this.itemIds;
-  }
-
-  public void setTotalPageno(Long totalPageno) {
-    this.totalPageno = totalPageno;
-  }
-
-  public Long getTotalPageno() {
-    return this.totalPageno;
-  }
+	public void setTotalPageno(Long totalPageno) {
+		this.totalPageno = totalPageno;
+	}
+	public Long getTotalPageno( ) {
+		return this.totalPageno;
+	}
 
 }

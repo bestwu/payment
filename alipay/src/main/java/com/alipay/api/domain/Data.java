@@ -14,21 +14,20 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class Data extends AlipayObject {
 
-  private static final long serialVersionUID = 5854522994991399288L;
+	private static final long serialVersionUID = 4251219618273392443L;
 
-  /**
-   * 用户id列表
-   */
-  @ApiListField("user_id_list")
-  @ApiField("string")
-  private List<String> userIdList;
+	/**
+	 * 用户id列表
+	 */
+	@ApiListField("user_id_list")
+	@ApiField("string")
+	private List<String> userIdList;
 
-  public List<String> getUserIdList() {
-    return this.userIdList;
-  }
-
-  public void setUserIdList(List<String> userIdList) {
-    this.userIdList = userIdList;
-  }
+	public List<String> getUserIdList() {
+		return this.userIdList;
+	}
+	public void setUserIdList(List<String> userIdList) {
+		this.userIdList = userIdList;
+	}
 
 }

@@ -11,104 +11,97 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOfflineProviderEquipmentAuthQuerybypageModel extends AlipayObject {
 
-  private static final long serialVersionUID = 1641764593896552856L;
+	private static final long serialVersionUID = 4767849485426981579L;
 
-  /**
-   * 解绑起始时间
-   */
-  @ApiField("begin_time")
-  private String beginTime;
+	/**
+	 * 解绑起始时间
+	 */
+	@ApiField("begin_time")
+	private String beginTime;
 
-  /**
-   * 机具类型
-   */
-  @ApiField("device_type")
-  private String deviceType;
+	/**
+	 * 机具类型
+	 */
+	@ApiField("device_type")
+	private String deviceType;
 
-  /**
-   * 解绑截止时间
-   */
-  @ApiField("end_time")
-  private String endTime;
+	/**
+	 * 解绑截止时间
+	 */
+	@ApiField("end_time")
+	private String endTime;
 
-  /**
-   * 扩展信息，传json格式的字符串，包含operator=操作人；operator_id =操作人ID
-   */
-  @ApiField("ext_info")
-  private String extInfo;
+	/**
+	 * 扩展信息，传json格式的字符串，包含operator=操作人；operator_id =操作人ID
+	 */
+	@ApiField("ext_info")
+	private String extInfo;
 
-  /**
-   * 机具厂商PID
-   */
-  @ApiField("merchant_pid")
-  private String merchantPid;
+	/**
+	 * 机具厂商PID
+	 */
+	@ApiField("merchant_pid")
+	private String merchantPid;
 
-  /**
-   * 当前页，***注意页数从1开始***
-   */
-  @ApiField("page_num")
-  private String pageNum;
+	/**
+	 * 当前页，***注意页数从1开始***
+	 */
+	@ApiField("page_num")
+	private String pageNum;
 
-  /**
-   * 每页容量：最小1，最大100
-   */
-  @ApiField("page_size")
-  private String pageSize;
+	/**
+	 * 每页容量：最小1，最大100
+	 */
+	@ApiField("page_size")
+	private String pageSize;
 
-  public String getBeginTime() {
-    return this.beginTime;
-  }
+	public String getBeginTime() {
+		return this.beginTime;
+	}
+	public void setBeginTime(String beginTime) {
+		this.beginTime = beginTime;
+	}
 
-  public void setBeginTime(String beginTime) {
-    this.beginTime = beginTime;
-  }
+	public String getDeviceType() {
+		return this.deviceType;
+	}
+	public void setDeviceType(String deviceType) {
+		this.deviceType = deviceType;
+	}
 
-  public String getDeviceType() {
-    return this.deviceType;
-  }
+	public String getEndTime() {
+		return this.endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
-  public void setDeviceType(String deviceType) {
-    this.deviceType = deviceType;
-  }
+	public String getExtInfo() {
+		return this.extInfo;
+	}
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
+	}
 
-  public String getEndTime() {
-    return this.endTime;
-  }
+	public String getMerchantPid() {
+		return this.merchantPid;
+	}
+	public void setMerchantPid(String merchantPid) {
+		this.merchantPid = merchantPid;
+	}
 
-  public void setEndTime(String endTime) {
-    this.endTime = endTime;
-  }
+	public String getPageNum() {
+		return this.pageNum;
+	}
+	public void setPageNum(String pageNum) {
+		this.pageNum = pageNum;
+	}
 
-  public String getExtInfo() {
-    return this.extInfo;
-  }
-
-  public void setExtInfo(String extInfo) {
-    this.extInfo = extInfo;
-  }
-
-  public String getMerchantPid() {
-    return this.merchantPid;
-  }
-
-  public void setMerchantPid(String merchantPid) {
-    this.merchantPid = merchantPid;
-  }
-
-  public String getPageNum() {
-    return this.pageNum;
-  }
-
-  public void setPageNum(String pageNum) {
-    this.pageNum = pageNum;
-  }
-
-  public String getPageSize() {
-    return this.pageSize;
-  }
-
-  public void setPageSize(String pageSize) {
-    this.pageSize = pageSize;
-  }
+	public String getPageSize() {
+		return this.pageSize;
+	}
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
 
 }

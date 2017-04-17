@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOfflinePayMasterKey extends AlipayObject {
 
-  private static final long serialVersionUID = 1366959188898935991L;
+	private static final long serialVersionUID = 5194947467722717689L;
 
-  /**
-   * 秘钥id
-   */
-  @ApiField("key_id")
-  private Long keyId;
+	/**
+	 * 秘钥id
+	 */
+	@ApiField("key_id")
+	private Long keyId;
 
-  /**
-   * 支付宝脱机服务公钥
-   */
-  @ApiField("public_key")
-  private String publicKey;
+	/**
+	 * 支付宝脱机服务公钥
+	 */
+	@ApiField("public_key")
+	private String publicKey;
 
-  public Long getKeyId() {
-    return this.keyId;
-  }
+	public Long getKeyId() {
+		return this.keyId;
+	}
+	public void setKeyId(Long keyId) {
+		this.keyId = keyId;
+	}
 
-  public void setKeyId(Long keyId) {
-    this.keyId = keyId;
-  }
-
-  public String getPublicKey() {
-    return this.publicKey;
-  }
-
-  public void setPublicKey(String publicKey) {
-    this.publicKey = publicKey;
-  }
+	public String getPublicKey() {
+		return this.publicKey;
+	}
+	public void setPublicKey(String publicKey) {
+		this.publicKey = publicKey;
+	}
 
 }

@@ -14,77 +14,72 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class KbAdvertAdvChannelResponse extends AlipayObject {
 
-  private static final long serialVersionUID = 4119539586888185996L;
+	private static final long serialVersionUID = 3194969496773544276L;
 
-  /**
-   * 广告内容模型
-   */
-  @ApiListField("adv_content_list")
-  @ApiField("kb_advert_adv_content_response")
-  private List<KbAdvertAdvContentResponse> advContentList;
+	/**
+	 * 广告内容模型
+	 */
+	@ApiListField("adv_content_list")
+	@ApiField("kb_advert_adv_content_response")
+	private List<KbAdvertAdvContentResponse> advContentList;
 
-  /**
-   * 广告id
-   */
-  @ApiField("adv_id")
-  private String advId;
+	/**
+	 * 广告id
+	 */
+	@ApiField("adv_id")
+	private String advId;
 
-  /**
-   * 渠道ID
-   */
-  @ApiField("channel_id")
-  private String channelId;
+	/**
+	 * 渠道ID
+	 */
+	@ApiField("channel_id")
+	private String channelId;
 
-  /**
-   * 渠道名称
-   */
-  @ApiField("channel_name")
-  private String channelName;
+	/**
+	 * 渠道名称
+	 */
+	@ApiField("channel_name")
+	private String channelName;
 
-  /**
-   * 渠道类型
-   */
-  @ApiField("channel_type")
-  private String channelType;
+	/**
+	 * 渠道类型
+	 */
+	@ApiField("channel_type")
+	private String channelType;
 
-  public List<KbAdvertAdvContentResponse> getAdvContentList() {
-    return this.advContentList;
-  }
+	public List<KbAdvertAdvContentResponse> getAdvContentList() {
+		return this.advContentList;
+	}
+	public void setAdvContentList(List<KbAdvertAdvContentResponse> advContentList) {
+		this.advContentList = advContentList;
+	}
 
-  public void setAdvContentList(List<KbAdvertAdvContentResponse> advContentList) {
-    this.advContentList = advContentList;
-  }
+	public String getAdvId() {
+		return this.advId;
+	}
+	public void setAdvId(String advId) {
+		this.advId = advId;
+	}
 
-  public String getAdvId() {
-    return this.advId;
-  }
+	public String getChannelId() {
+		return this.channelId;
+	}
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+	}
 
-  public void setAdvId(String advId) {
-    this.advId = advId;
-  }
+	public String getChannelName() {
+		return this.channelName;
+	}
+	public void setChannelName(String channelName) {
+		this.channelName = channelName;
+	}
 
-  public String getChannelId() {
-    return this.channelId;
-  }
-
-  public void setChannelId(String channelId) {
-    this.channelId = channelId;
-  }
-
-  public String getChannelName() {
-    return this.channelName;
-  }
-
-  public void setChannelName(String channelName) {
-    this.channelName = channelName;
-  }
-
-  public String getChannelType() {
-    return this.channelType;
-  }
-
-  public void setChannelType(String channelType) {
-    this.channelType = channelType;
-  }
+	public String getChannelType() {
+		return this.channelType;
+	}
+	public void setChannelType(String channelType) {
+		this.channelType = channelType;
+	}
 
 }

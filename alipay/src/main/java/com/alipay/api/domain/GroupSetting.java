@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class GroupSetting extends AlipayObject {
 
-  private static final long serialVersionUID = 2573543344173544426L;
+	private static final long serialVersionUID = 8384725373198616118L;
 
-  /**
-   * 群名称
-   */
-  @ApiField("group_name")
-  private String groupName;
+	/**
+	 * 群名称
+	 */
+	@ApiField("group_name")
+	private String groupName;
 
-  /**
-   * 是否开放群成员邀请
-   */
-  @ApiField("is_openinv")
-  private Boolean isOpeninv;
+	/**
+	 * 是否开放群成员邀请
+	 */
+	@ApiField("is_openinv")
+	private Boolean isOpeninv;
 
-  /**
-   * 群公告
-   */
-  @ApiField("public_notice")
-  private String publicNotice;
+	/**
+	 * 群公告
+	 */
+	@ApiField("public_notice")
+	private String publicNotice;
 
-  public String getGroupName() {
-    return this.groupName;
-  }
+	public String getGroupName() {
+		return this.groupName;
+	}
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
 
-  public void setGroupName(String groupName) {
-    this.groupName = groupName;
-  }
+	public Boolean getIsOpeninv() {
+		return this.isOpeninv;
+	}
+	public void setIsOpeninv(Boolean isOpeninv) {
+		this.isOpeninv = isOpeninv;
+	}
 
-  public Boolean getIsOpeninv() {
-    return this.isOpeninv;
-  }
-
-  public void setIsOpeninv(Boolean isOpeninv) {
-    this.isOpeninv = isOpeninv;
-  }
-
-  public String getPublicNotice() {
-    return this.publicNotice;
-  }
-
-  public void setPublicNotice(String publicNotice) {
-    this.publicNotice = publicNotice;
-  }
+	public String getPublicNotice() {
+		return this.publicNotice;
+	}
+	public void setPublicNotice(String publicNotice) {
+		this.publicNotice = publicNotice;
+	}
 
 }

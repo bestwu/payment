@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class Retailer extends AlipayObject {
 
-  private static final long serialVersionUID = 8646765247554771169L;
+	private static final long serialVersionUID = 3216623912676715345L;
 
-  /**
-   * 零售商名称
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 零售商名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  /**
-   * 零售商pid
-   */
-  @ApiField("partner_id")
-  private String partnerId;
+	/**
+	 * 零售商pid
+	 */
+	@ApiField("partner_id")
+	private String partnerId;
 
-  public String getName() {
-    return this.name;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getPartnerId() {
-    return this.partnerId;
-  }
-
-  public void setPartnerId(String partnerId) {
-    this.partnerId = partnerId;
-  }
+	public String getPartnerId() {
+		return this.partnerId;
+	}
+	public void setPartnerId(String partnerId) {
+		this.partnerId = partnerId;
+	}
 
 }

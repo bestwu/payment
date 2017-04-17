@@ -10,39 +10,37 @@ import com.alipay.api.internal.mapping.ApiListField;
  * 券的说明条款
  *
  * @author auto create
- * @since 1.0, 2016-10-31 12:00:30
+ * @since 1.0, 2017-04-01 21:21:04
  */
 public class ClauseTerm extends AlipayObject {
 
-  private static final long serialVersionUID = 1681768949855928788L;
+	private static final long serialVersionUID = 2755685541654734226L;
 
-  /**
-   * 说明描述内容
-   */
-  @ApiListField("descriptions")
-  @ApiField("string")
-  private List<String> descriptions;
+	/**
+	 * 说明描述内容
+	 */
+	@ApiListField("descriptions")
+	@ApiField("string")
+	private List<String> descriptions;
 
-  /**
-   * 说明title
-   */
-  @ApiField("title")
-  private String title;
+	/**
+	 * 说明title
+	 */
+	@ApiField("title")
+	private String title;
 
-  public List<String> getDescriptions() {
-    return this.descriptions;
-  }
+	public List<String> getDescriptions() {
+		return this.descriptions;
+	}
+	public void setDescriptions(List<String> descriptions) {
+		this.descriptions = descriptions;
+	}
 
-  public void setDescriptions(List<String> descriptions) {
-    this.descriptions = descriptions;
-  }
-
-  public String getTitle() {
-    return this.title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 }

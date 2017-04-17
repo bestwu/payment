@@ -9,27 +9,26 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: koubei.craftsman.data.work.create response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2017-01-13 16:32:38
  */
 public class KoubeiCraftsmanDataWorkCreateResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 4151975832848131783L;
+	private static final long serialVersionUID = 6275266799246386666L;
 
-  /**
-   * 作品id
-   */
-  @ApiListField("works")
-  @ApiField("craftsman_work_out_id_open_model")
-  private List<CraftsmanWorkOutIdOpenModel> works;
+	/** 
+	 * 作品id
+	 */
+	@ApiListField("works")
+	@ApiField("craftsman_work_out_id_open_model")
+	private List<CraftsmanWorkOutIdOpenModel> works;
 
-  public void setWorks(List<CraftsmanWorkOutIdOpenModel> works) {
-    this.works = works;
-  }
-
-  public List<CraftsmanWorkOutIdOpenModel> getWorks() {
-    return this.works;
-  }
+	public void setWorks(List<CraftsmanWorkOutIdOpenModel> works) {
+		this.works = works;
+	}
+	public List<CraftsmanWorkOutIdOpenModel> getWorks( ) {
+		return this.works;
+	}
 
 }

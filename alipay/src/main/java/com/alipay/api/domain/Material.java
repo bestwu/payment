@@ -14,49 +14,46 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class Material extends AlipayObject {
 
-  private static final long serialVersionUID = 2427758611213788446L;
+	private static final long serialVersionUID = 8272898356298485369L;
 
-  /**
-   * 图文消息子消息项集合，单条消息最多6个子项，否则会发送失败
-   */
-  @ApiListField("articles")
-  @ApiField("article")
-  private List<Article> articles;
+	/**
+	 * 图文消息子消息项集合，单条消息最多6个子项，否则会发送失败
+	 */
+	@ApiListField("articles")
+	@ApiField("article")
+	private List<Article> articles;
 
-  /**
-   * 消息类型，text：文本类型，image-text：图文类型。当消息类型为text时，text参数必传，当消息类型为image-text时，articles参数必传
-   */
-  @ApiField("msg_type")
-  private String msgType;
+	/**
+	 * 消息类型，text：文本类型，image-text：图文类型。当消息类型为text时，text参数必传，当消息类型为image-text时，articles参数必传
+	 */
+	@ApiField("msg_type")
+	private String msgType;
 
-  /**
-   * 文本消息内容
-   */
-  @ApiField("text")
-  private Text text;
+	/**
+	 * 文本消息内容
+	 */
+	@ApiField("text")
+	private Text text;
 
-  public List<Article> getArticles() {
-    return this.articles;
-  }
+	public List<Article> getArticles() {
+		return this.articles;
+	}
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
 
-  public void setArticles(List<Article> articles) {
-    this.articles = articles;
-  }
+	public String getMsgType() {
+		return this.msgType;
+	}
+	public void setMsgType(String msgType) {
+		this.msgType = msgType;
+	}
 
-  public String getMsgType() {
-    return this.msgType;
-  }
-
-  public void setMsgType(String msgType) {
-    this.msgType = msgType;
-  }
-
-  public Text getText() {
-    return this.text;
-  }
-
-  public void setText(Text text) {
-    this.text = text;
-  }
+	public Text getText() {
+		return this.text;
+	}
+	public void setText(Text text) {
+		this.text = text;
+	}
 
 }

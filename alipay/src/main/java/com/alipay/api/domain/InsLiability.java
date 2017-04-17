@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class InsLiability extends AlipayObject {
 
-  private static final long serialVersionUID = 4375291794478314919L;
+	private static final long serialVersionUID = 1566374592744574496L;
 
-  /**
-   * 责任描述
-   */
-  @ApiField("liability_desc")
-  private String liabilityDesc;
+	/**
+	 * 责任描述
+	 */
+	@ApiField("liability_desc")
+	private String liabilityDesc;
 
-  /**
-   * 责任名称
-   */
-  @ApiField("liability_name")
-  private String liabilityName;
+	/**
+	 * 责任名称
+	 */
+	@ApiField("liability_name")
+	private String liabilityName;
 
-  /**
-   * 保额
-   */
-  @ApiField("sum_insured")
-  private InsSumInsured sumInsured;
+	/**
+	 * 保额
+	 */
+	@ApiField("sum_insured")
+	private InsSumInsured sumInsured;
 
-  public String getLiabilityDesc() {
-    return this.liabilityDesc;
-  }
+	public String getLiabilityDesc() {
+		return this.liabilityDesc;
+	}
+	public void setLiabilityDesc(String liabilityDesc) {
+		this.liabilityDesc = liabilityDesc;
+	}
 
-  public void setLiabilityDesc(String liabilityDesc) {
-    this.liabilityDesc = liabilityDesc;
-  }
+	public String getLiabilityName() {
+		return this.liabilityName;
+	}
+	public void setLiabilityName(String liabilityName) {
+		this.liabilityName = liabilityName;
+	}
 
-  public String getLiabilityName() {
-    return this.liabilityName;
-  }
-
-  public void setLiabilityName(String liabilityName) {
-    this.liabilityName = liabilityName;
-  }
-
-  public InsSumInsured getSumInsured() {
-    return this.sumInsured;
-  }
-
-  public void setSumInsured(InsSumInsured sumInsured) {
-    this.sumInsured = sumInsured;
-  }
+	public InsSumInsured getSumInsured() {
+		return this.sumInsured;
+	}
+	public void setSumInsured(InsSumInsured sumInsured) {
+		this.sumInsured = sumInsured;
+	}
 
 }

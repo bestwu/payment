@@ -15,105 +15,98 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class CplifeNoticeDetail extends AlipayObject {
 
-  private static final long serialVersionUID = 4574352995757216813L;
+	private static final long serialVersionUID = 6271992713579345356L;
 
-  /**
-   * 通告公告的具体内容
-   */
-  @ApiField("content")
-  private String content;
+	/**
+	 * 通告公告的具体内容
+	 */
+	@ApiField("content")
+	private String content;
 
-  /**
-   * 通知的下线时间.
-   */
-  @ApiField("end_time")
-  private Date endTime;
+	/**
+	 * 通知的下线时间.
+	 */
+	@ApiField("end_time")
+	private Date endTime;
 
-  /**
-   * 通知公告中允许出现的图片列表。
-   */
-  @ApiListField("image_list")
-  @ApiField("cplife_notice_img")
-  private List<CplifeNoticeImg> imageList;
+	/**
+	 * 通知公告中允许出现的图片列表。
+	 */
+	@ApiListField("image_list")
+	@ApiField("cplife_notice_img")
+	private List<CplifeNoticeImg> imageList;
 
-  /**
-   * 通知的上线时间，该时刻之后，用户才能在支付宝客户端看到该通知。
-   */
-  @ApiField("start_time")
-  private Date startTime;
+	/**
+	 * 通知的上线时间，该时刻之后，用户才能在支付宝客户端看到该通知。
+	 */
+	@ApiField("start_time")
+	private Date startTime;
 
-  /**
-   * 通知是否置顶，默认为false.
-   */
-  @ApiField("stickied")
-  private Boolean stickied;
+	/**
+	 * 通知是否置顶，默认为false.
+	 */
+	@ApiField("stickied")
+	private Boolean stickied;
 
-  /**
-   * 通知(公告)的标题
-   */
-  @ApiField("title")
-  private String title;
+	/**
+	 * 通知(公告)的标题
+	 */
+	@ApiField("title")
+	private String title;
 
-  /**
-   * 通告公告的具体类型.通知：“01” ,公告：“02”
-   */
-  @ApiField("type")
-  private String type;
+	/**
+	 * 通告公告的具体类型.通知：“01” ,公告：“02”
+	 */
+	@ApiField("type")
+	private String type;
 
-  public String getContent() {
-    return this.content;
-  }
+	public String getContent() {
+		return this.content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
 
-  public void setContent(String content) {
-    this.content = content;
-  }
+	public Date getEndTime() {
+		return this.endTime;
+	}
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
 
-  public Date getEndTime() {
-    return this.endTime;
-  }
+	public List<CplifeNoticeImg> getImageList() {
+		return this.imageList;
+	}
+	public void setImageList(List<CplifeNoticeImg> imageList) {
+		this.imageList = imageList;
+	}
 
-  public void setEndTime(Date endTime) {
-    this.endTime = endTime;
-  }
+	public Date getStartTime() {
+		return this.startTime;
+	}
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
 
-  public List<CplifeNoticeImg> getImageList() {
-    return this.imageList;
-  }
+	public Boolean getStickied() {
+		return this.stickied;
+	}
+	public void setStickied(Boolean stickied) {
+		this.stickied = stickied;
+	}
 
-  public void setImageList(List<CplifeNoticeImg> imageList) {
-    this.imageList = imageList;
-  }
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-  public Date getStartTime() {
-    return this.startTime;
-  }
-
-  public void setStartTime(Date startTime) {
-    this.startTime = startTime;
-  }
-
-  public Boolean getStickied() {
-    return this.stickied;
-  }
-
-  public void setStickied(Boolean stickied) {
-    this.stickied = stickied;
-  }
-
-  public String getTitle() {
-    return this.title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public String getType() {
-    return this.type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
+	public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 
 }

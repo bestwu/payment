@@ -14,105 +14,98 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class InputFieldModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3527982485172158183L;
+	private static final long serialVersionUID = 1742919726331489118L;
 
-  /**
-   * 默认提示值，例如歌华宽带的金额为100的倍数
-   */
-  @ApiField("default_value")
-  private String defaultValue;
+	/**
+	 * 默认提示值，例如歌华宽带的金额为100的倍数
+	 */
+	@ApiField("default_value")
+	private String defaultValue;
 
-  /**
-   * 域英文名称 例如：billkey
-   */
-  @ApiField("field_name")
-  private String fieldName;
+	/**
+	 * 域英文名称 例如：billkey
+	 */
+	@ApiField("field_name")
+	private String fieldName;
 
-  /**
-   * 输入框下方文字提示，例如： 户号为10位数字
-   */
-  @ApiField("field_tips")
-  private String fieldTips;
+	/**
+	 * 输入框下方文字提示，例如： 户号为10位数字
+	 */
+	@ApiField("field_tips")
+	private String fieldTips;
 
-  /**
-   * 页面显示提示 例如：手机号码
-   */
-  @ApiField("field_title")
-  private String fieldTitle;
+	/**
+	 * 页面显示提示 例如：手机号码
+	 */
+	@ApiField("field_title")
+	private String fieldTitle;
 
-  /**
-   * 控件类型 输入框类型 例如：inputText (文本输入框)
-   */
-  @ApiField("field_type")
-  private String fieldType;
+	/**
+	 * 控件类型 输入框类型 例如：inputText (文本输入框)
+	 */
+	@ApiField("field_type")
+	private String fieldType;
 
-  /**
-   * 控件展示顺序 例如：优选级 1
-   */
-  @ApiField("priority")
-  private String priority;
+	/**
+	 * 控件展示顺序 例如：优选级 1
+	 */
+	@ApiField("priority")
+	private String priority;
 
-  /**
-   * 输入域的校验规则模型
-   */
-  @ApiListField("regexp_rule_list")
-  @ApiField("validation_rule")
-  private List<ValidationRule> regexpRuleList;
+	/**
+	 * 输入域的校验规则模型
+	 */
+	@ApiListField("regexp_rule_list")
+	@ApiField("validation_rule")
+	private List<ValidationRule> regexpRuleList;
 
-  public String getDefaultValue() {
-    return this.defaultValue;
-  }
+	public String getDefaultValue() {
+		return this.defaultValue;
+	}
+	public void setDefaultValue(String defaultValue) {
+		this.defaultValue = defaultValue;
+	}
 
-  public void setDefaultValue(String defaultValue) {
-    this.defaultValue = defaultValue;
-  }
+	public String getFieldName() {
+		return this.fieldName;
+	}
+	public void setFieldName(String fieldName) {
+		this.fieldName = fieldName;
+	}
 
-  public String getFieldName() {
-    return this.fieldName;
-  }
+	public String getFieldTips() {
+		return this.fieldTips;
+	}
+	public void setFieldTips(String fieldTips) {
+		this.fieldTips = fieldTips;
+	}
 
-  public void setFieldName(String fieldName) {
-    this.fieldName = fieldName;
-  }
+	public String getFieldTitle() {
+		return this.fieldTitle;
+	}
+	public void setFieldTitle(String fieldTitle) {
+		this.fieldTitle = fieldTitle;
+	}
 
-  public String getFieldTips() {
-    return this.fieldTips;
-  }
+	public String getFieldType() {
+		return this.fieldType;
+	}
+	public void setFieldType(String fieldType) {
+		this.fieldType = fieldType;
+	}
 
-  public void setFieldTips(String fieldTips) {
-    this.fieldTips = fieldTips;
-  }
+	public String getPriority() {
+		return this.priority;
+	}
+	public void setPriority(String priority) {
+		this.priority = priority;
+	}
 
-  public String getFieldTitle() {
-    return this.fieldTitle;
-  }
-
-  public void setFieldTitle(String fieldTitle) {
-    this.fieldTitle = fieldTitle;
-  }
-
-  public String getFieldType() {
-    return this.fieldType;
-  }
-
-  public void setFieldType(String fieldType) {
-    this.fieldType = fieldType;
-  }
-
-  public String getPriority() {
-    return this.priority;
-  }
-
-  public void setPriority(String priority) {
-    this.priority = priority;
-  }
-
-  public List<ValidationRule> getRegexpRuleList() {
-    return this.regexpRuleList;
-  }
-
-  public void setRegexpRuleList(List<ValidationRule> regexpRuleList) {
-    this.regexpRuleList = regexpRuleList;
-  }
+	public List<ValidationRule> getRegexpRuleList() {
+		return this.regexpRuleList;
+	}
+	public void setRegexpRuleList(List<ValidationRule> regexpRuleList) {
+		this.regexpRuleList = regexpRuleList;
+	}
 
 }

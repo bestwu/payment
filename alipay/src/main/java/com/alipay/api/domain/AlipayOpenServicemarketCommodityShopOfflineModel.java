@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOpenServicemarketCommodityShopOfflineModel extends AlipayObject {
 
-  private static final long serialVersionUID = 1253172539589153492L;
+	private static final long serialVersionUID = 3221791718295411714L;
 
-  /**
-   * 服务商户ID
-   */
-  @ApiField("commodity_id")
-  private String commodityId;
+	/**
+	 * 服务商户ID
+	 */
+	@ApiField("commodity_id")
+	private String commodityId;
 
-  /**
-   * 门店ID
-   */
-  @ApiField("shop_id")
-  private String shopId;
+	/**
+	 * 门店ID
+	 */
+	@ApiField("shop_id")
+	private String shopId;
 
-  public String getCommodityId() {
-    return this.commodityId;
-  }
+	public String getCommodityId() {
+		return this.commodityId;
+	}
+	public void setCommodityId(String commodityId) {
+		this.commodityId = commodityId;
+	}
 
-  public void setCommodityId(String commodityId) {
-    this.commodityId = commodityId;
-  }
-
-  public String getShopId() {
-    return this.shopId;
-  }
-
-  public void setShopId(String shopId) {
-    this.shopId = shopId;
-  }
+	public String getShopId() {
+		return this.shopId;
+	}
+	public void setShopId(String shopId) {
+		this.shopId = shopId;
+	}
 
 }

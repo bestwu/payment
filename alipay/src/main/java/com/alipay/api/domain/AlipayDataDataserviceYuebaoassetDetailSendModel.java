@@ -14,21 +14,20 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayDataDataserviceYuebaoassetDetailSendModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4583434128853869963L;
+	private static final long serialVersionUID = 1417295485481934964L;
 
-  /**
-   * 资产负债报表数据列表
-   */
-  @ApiListField("alm_report_data")
-  @ApiField("alm_report_data")
-  private List<AlmReportData> almReportData;
+	/**
+	 * 资产负债报表数据列表
+	 */
+	@ApiListField("alm_report_data")
+	@ApiField("alm_report_data")
+	private List<AlmReportData> almReportData;
 
-  public List<AlmReportData> getAlmReportData() {
-    return this.almReportData;
-  }
-
-  public void setAlmReportData(List<AlmReportData> almReportData) {
-    this.almReportData = almReportData;
-  }
+	public List<AlmReportData> getAlmReportData() {
+		return this.almReportData;
+	}
+	public void setAlmReportData(List<AlmReportData> almReportData) {
+		this.almReportData = almReportData;
+	}
 
 }

@@ -5,13 +5,16 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.data.dataservice.sdfsdf response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-03-30 20:51:14
  */
 public class AlipayDataDataserviceSdfsdfResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 6484714667482534632L;
+	private static final long serialVersionUID = 5872874553589215984L;
 
+	
+
+	
 
 }

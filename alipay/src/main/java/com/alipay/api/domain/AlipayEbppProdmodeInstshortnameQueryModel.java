@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEbppProdmodeInstshortnameQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6398347536523897723L;
+	private static final long serialVersionUID = 4545976513682635965L;
 
-  /**
-   * 出账机构中文名称
-   */
-  @ApiField("chargeinst_cn_name")
-  private String chargeinstCnName;
+	/**
+	 * 出账机构中文名称
+	 */
+	@ApiField("chargeinst_cn_name")
+	private String chargeinstCnName;
 
-  public String getChargeinstCnName() {
-    return this.chargeinstCnName;
-  }
-
-  public void setChargeinstCnName(String chargeinstCnName) {
-    this.chargeinstCnName = chargeinstCnName;
-  }
+	public String getChargeinstCnName() {
+		return this.chargeinstCnName;
+	}
+	public void setChargeinstCnName(String chargeinstCnName) {
+		this.chargeinstCnName = chargeinstCnName;
+	}
 
 }

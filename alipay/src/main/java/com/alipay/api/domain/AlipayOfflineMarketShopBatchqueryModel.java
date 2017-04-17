@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOfflineMarketShopBatchqueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7655386128127447279L;
+	private static final long serialVersionUID = 4583872684732655975L;
 
-  /**
-   * 页码，第一页传入"1"，默认500个结果为一页。此参数必须是大于0的正整数，为0时将查询报错。
-   */
-  @ApiField("page_no")
-  private String pageNo;
+	/**
+	 * 页码，第一页传入"1"，默认500个结果为一页。此参数必须是大于0的正整数，为0时将查询报错。
+	 */
+	@ApiField("page_no")
+	private String pageNo;
 
-  public String getPageNo() {
-    return this.pageNo;
-  }
-
-  public void setPageNo(String pageNo) {
-    this.pageNo = pageNo;
-  }
+	public String getPageNo() {
+		return this.pageNo;
+	}
+	public void setPageNo(String pageNo) {
+		this.pageNo = pageNo;
+	}
 
 }

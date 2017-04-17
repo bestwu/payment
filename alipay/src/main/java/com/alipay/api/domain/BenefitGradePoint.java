@@ -14,63 +14,59 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class BenefitGradePoint extends AlipayObject {
 
-  private static final long serialVersionUID = 6739918394492939238L;
+	private static final long serialVersionUID = 1844269769761557618L;
 
-  /**
-   * 蚂蚁会员权益配置的ID
-   */
-  @ApiField("benefit_id")
-  private String benefitId;
+	/**
+	 * 蚂蚁会员权益配置的ID
+	 */
+	@ApiField("benefit_id")
+	private String benefitId;
 
-  /**
-   * 蚂蚁会员权益配置在各个用户等级下的折扣积分
-   */
-  @ApiListField("grade_points")
-  @ApiField("grade_discount_point")
-  private List<GradeDiscountPoint> gradePoints;
+	/**
+	 * 蚂蚁会员权益配置在各个用户等级下的折扣积分
+	 */
+	@ApiListField("grade_points")
+	@ApiField("grade_discount_point")
+	private List<GradeDiscountPoint> gradePoints;
 
-  /**
-   * 蚂蚁会员权益配置的原始积分
-   */
-  @ApiField("original_point")
-  private String originalPoint;
+	/**
+	 * 蚂蚁会员权益配置的原始积分
+	 */
+	@ApiField("original_point")
+	private String originalPoint;
 
-  /**
-   * 蚂蚁会员权益的专享等级列表
-   */
-  @ApiField("own_grades")
-  private String ownGrades;
+	/**
+	 * 蚂蚁会员权益的专享等级列表
+	 */
+	@ApiField("own_grades")
+	private String ownGrades;
 
-  public String getBenefitId() {
-    return this.benefitId;
-  }
+	public String getBenefitId() {
+		return this.benefitId;
+	}
+	public void setBenefitId(String benefitId) {
+		this.benefitId = benefitId;
+	}
 
-  public void setBenefitId(String benefitId) {
-    this.benefitId = benefitId;
-  }
+	public List<GradeDiscountPoint> getGradePoints() {
+		return this.gradePoints;
+	}
+	public void setGradePoints(List<GradeDiscountPoint> gradePoints) {
+		this.gradePoints = gradePoints;
+	}
 
-  public List<GradeDiscountPoint> getGradePoints() {
-    return this.gradePoints;
-  }
+	public String getOriginalPoint() {
+		return this.originalPoint;
+	}
+	public void setOriginalPoint(String originalPoint) {
+		this.originalPoint = originalPoint;
+	}
 
-  public void setGradePoints(List<GradeDiscountPoint> gradePoints) {
-    this.gradePoints = gradePoints;
-  }
-
-  public String getOriginalPoint() {
-    return this.originalPoint;
-  }
-
-  public void setOriginalPoint(String originalPoint) {
-    this.originalPoint = originalPoint;
-  }
-
-  public String getOwnGrades() {
-    return this.ownGrades;
-  }
-
-  public void setOwnGrades(String ownGrades) {
-    this.ownGrades = ownGrades;
-  }
+	public String getOwnGrades() {
+		return this.ownGrades;
+	}
+	public void setOwnGrades(String ownGrades) {
+		this.ownGrades = ownGrades;
+	}
 
 }

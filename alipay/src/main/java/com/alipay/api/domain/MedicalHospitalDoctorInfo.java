@@ -11,51 +11,48 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class MedicalHospitalDoctorInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 3687993284267755221L;
+	private static final long serialVersionUID = 8273623899182862314L;
 
-  /**
-   * 医生唯一标识，编码开发者生成并保证唯一
-   */
-  @ApiField("code")
-  private String code;
+	/**
+	 * 医生唯一标识，编码开发者生成并保证唯一
+	 */
+	@ApiField("code")
+	private String code;
 
-  /**
-   * 医生名称
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 医生名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  /**
-   * 性别
-   * 女性：F
-   * 男性：M
-   * 未知：U
-   */
-  @ApiField("sex")
-  private String sex;
+	/**
+	 * 性别
+女性：F
+男性：M
+未知：U
+	 */
+	@ApiField("sex")
+	private String sex;
 
-  public String getCode() {
-    return this.code;
-  }
+	public String getCode() {
+		return this.code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getSex() {
-    return this.sex;
-  }
-
-  public void setSex(String sex) {
-    this.sex = sex;
-  }
+	public String getSex() {
+		return this.sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 
 }

@@ -6,26 +6,25 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.ins.scene.application.issue.confirm response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-12-29 17:49:41
+ * @since 1.0, 2017-03-20 14:55:26
  */
 public class AlipayInsSceneApplicationIssueConfirmResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 1746479123836474885L;
+	private static final long serialVersionUID = 5157713349115146684L;
 
-  /**
-   * 投保订单号
-   */
-  @ApiField("application_no")
-  private String applicationNo;
+	/** 
+	 * 投保订单号
+	 */
+	@ApiField("application_no")
+	private String applicationNo;
 
-  public void setApplicationNo(String applicationNo) {
-    this.applicationNo = applicationNo;
-  }
-
-  public String getApplicationNo() {
-    return this.applicationNo;
-  }
+	public void setApplicationNo(String applicationNo) {
+		this.applicationNo = applicationNo;
+	}
+	public String getApplicationNo( ) {
+		return this.applicationNo;
+	}
 
 }

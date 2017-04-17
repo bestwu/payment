@@ -6,54 +6,51 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.mobile.public.messagespecify.push response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-01-14 20:25:45
+ * @since 1.0, 2017-04-07 20:33:50
  */
 public class AlipayMobilePublicMessagespecifyPushResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 2756147998547472733L;
+	private static final long serialVersionUID = 2864338618125697893L;
 
-  /**
-   * 成功
-   */
-  @ApiField("code")
-  private String code;
+	/** 
+	 * 成功
+	 */
+	@ApiField("code")
+	private String code;
 
-  /**
-   * 消息ID
-   */
-  @ApiField("data")
-  private String data;
+	/** 
+	 * 消息ID
+	 */
+	@ApiField("data")
+	private String data;
 
-  /**
-   * 成功
-   */
-  @ApiField("msg")
-  private String msg;
+	/** 
+	 * 成功
+	 */
+	@ApiField("msg")
+	private String msg;
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getCode( ) {
+		return this.code;
+	}
 
-  public String getCode() {
-    return this.code;
-  }
+	public void setData(String data) {
+		this.data = data;
+	}
+	public String getData( ) {
+		return this.data;
+	}
 
-  public void setData(String data) {
-    this.data = data;
-  }
-
-  public String getData() {
-    return this.data;
-  }
-
-  public void setMsg(String msg) {
-    this.msg = msg;
-  }
-
-  public String getMsg() {
-    return this.msg;
-  }
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public String getMsg( ) {
+		return this.msg;
+	}
 
 }

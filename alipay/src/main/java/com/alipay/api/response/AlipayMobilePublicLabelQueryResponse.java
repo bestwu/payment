@@ -8,55 +8,52 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.mobile.public.label.query response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-07-29 20:00:13
  */
 public class AlipayMobilePublicLabelQueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 8668357397541165394L;
+	private static final long serialVersionUID = 3442182744747271374L;
 
-  /**
-   * 结果码
-   */
-  @ApiField("code")
-  private String code;
+	/** 
+	 * 结果码
+	 */
+	@ApiField("code")
+	private String code;
 
-  /**
-   * 所有标签
-   */
-  @ApiListField("labels")
-  @ApiField("string")
-  private List<String> labels;
+	/** 
+	 * 所有标签
+	 */
+	@ApiListField("labels")
+	@ApiField("string")
+	private List<String> labels;
 
-  /**
-   * 结果信息
-   */
-  @ApiField("msg")
-  private String msg;
+	/** 
+	 * 结果信息
+	 */
+	@ApiField("msg")
+	private String msg;
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getCode( ) {
+		return this.code;
+	}
 
-  public String getCode() {
-    return this.code;
-  }
+	public void setLabels(List<String> labels) {
+		this.labels = labels;
+	}
+	public List<String> getLabels( ) {
+		return this.labels;
+	}
 
-  public void setLabels(List<String> labels) {
-    this.labels = labels;
-  }
-
-  public List<String> getLabels() {
-    return this.labels;
-  }
-
-  public void setMsg(String msg) {
-    this.msg = msg;
-  }
-
-  public String getMsg() {
-    return this.msg;
-  }
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public String getMsg( ) {
+		return this.msg;
+	}
 
 }

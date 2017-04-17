@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class OrderLogisticsExtInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 5536484686845984619L;
+	private static final long serialVersionUID = 5281919436176127377L;
 
-  /**
-   * 服务结束时间，格式为yyyy-MM-dd HH:mm（到分）
-   */
-  @ApiField("gmt_end")
-  private String gmtEnd;
+	/**
+	 * 服务结束时间，格式为yyyy-MM-dd HH:mm（到分）
+	 */
+	@ApiField("gmt_end")
+	private String gmtEnd;
 
-  /**
-   * 服务开始时间，格式为yyyy-MM-dd HH:mm（到分）
-   */
-  @ApiField("gmt_start")
-  private String gmtStart;
+	/**
+	 * 服务开始时间，格式为yyyy-MM-dd HH:mm（到分）
+	 */
+	@ApiField("gmt_start")
+	private String gmtStart;
 
-  public String getGmtEnd() {
-    return this.gmtEnd;
-  }
+	public String getGmtEnd() {
+		return this.gmtEnd;
+	}
+	public void setGmtEnd(String gmtEnd) {
+		this.gmtEnd = gmtEnd;
+	}
 
-  public void setGmtEnd(String gmtEnd) {
-    this.gmtEnd = gmtEnd;
-  }
-
-  public String getGmtStart() {
-    return this.gmtStart;
-  }
-
-  public void setGmtStart(String gmtStart) {
-    this.gmtStart = gmtStart;
-  }
+	public String getGmtStart() {
+		return this.gmtStart;
+	}
+	public void setGmtStart(String gmtStart) {
+		this.gmtStart = gmtStart;
+	}
 
 }

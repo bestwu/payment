@@ -13,118 +13,110 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class InsMktCouponDTO extends AlipayObject {
 
-  private static final long serialVersionUID = 5784573334897819815L;
+	private static final long serialVersionUID = 8477735712443341443L;
 
-  /**
-   * 权益资产Id，如券Id
-   */
-  @ApiField("asset_id")
-  private String assetId;
+	/**
+	 * 权益资产Id，如券Id
+	 */
+	@ApiField("asset_id")
+	private String assetId;
 
-  /**
-   * 权益Id
-   */
-  @ApiField("coupon_id")
-  private String couponId;
+	/**
+	 * 权益Id
+	 */
+	@ApiField("coupon_id")
+	private String couponId;
 
-  /**
-   * 权益类型
-   */
-  @ApiField("coupon_type")
-  private String couponType;
+	/**
+	 * 权益类型
+	 */
+	@ApiField("coupon_type")
+	private String couponType;
 
-  /**
-   * 500元单品券
-   */
-  @ApiField("coupon_value")
-  private String couponValue;
+	/**
+	 * 500元单品券
+	 */
+	@ApiField("coupon_value")
+	private String couponValue;
 
-  /**
-   * 是否推荐使用该优惠
-   */
-  @ApiField("recommend")
-  private Boolean recommend;
+	/**
+	 * 是否推荐使用该优惠
+	 */
+	@ApiField("recommend")
+	private Boolean recommend;
 
-  /**
-   * 核销结束时间
-   */
-  @ApiField("use_end_time")
-  private Date useEndTime;
+	/**
+	 * 核销结束时间
+	 */
+	@ApiField("use_end_time")
+	private Date useEndTime;
 
-  /**
-   * 核销规则
-   */
-  @ApiField("use_rule")
-  private String useRule;
+	/**
+	 * 核销规则
+	 */
+	@ApiField("use_rule")
+	private String useRule;
 
-  /**
-   * 核销开始时间
-   */
-  @ApiField("use_start_time")
-  private Date useStartTime;
+	/**
+	 * 核销开始时间
+	 */
+	@ApiField("use_start_time")
+	private Date useStartTime;
 
-  public String getAssetId() {
-    return this.assetId;
-  }
+	public String getAssetId() {
+		return this.assetId;
+	}
+	public void setAssetId(String assetId) {
+		this.assetId = assetId;
+	}
 
-  public void setAssetId(String assetId) {
-    this.assetId = assetId;
-  }
+	public String getCouponId() {
+		return this.couponId;
+	}
+	public void setCouponId(String couponId) {
+		this.couponId = couponId;
+	}
 
-  public String getCouponId() {
-    return this.couponId;
-  }
+	public String getCouponType() {
+		return this.couponType;
+	}
+	public void setCouponType(String couponType) {
+		this.couponType = couponType;
+	}
 
-  public void setCouponId(String couponId) {
-    this.couponId = couponId;
-  }
+	public String getCouponValue() {
+		return this.couponValue;
+	}
+	public void setCouponValue(String couponValue) {
+		this.couponValue = couponValue;
+	}
 
-  public String getCouponType() {
-    return this.couponType;
-  }
+	public Boolean getRecommend() {
+		return this.recommend;
+	}
+	public void setRecommend(Boolean recommend) {
+		this.recommend = recommend;
+	}
 
-  public void setCouponType(String couponType) {
-    this.couponType = couponType;
-  }
+	public Date getUseEndTime() {
+		return this.useEndTime;
+	}
+	public void setUseEndTime(Date useEndTime) {
+		this.useEndTime = useEndTime;
+	}
 
-  public String getCouponValue() {
-    return this.couponValue;
-  }
+	public String getUseRule() {
+		return this.useRule;
+	}
+	public void setUseRule(String useRule) {
+		this.useRule = useRule;
+	}
 
-  public void setCouponValue(String couponValue) {
-    this.couponValue = couponValue;
-  }
-
-  public Boolean getRecommend() {
-    return this.recommend;
-  }
-
-  public void setRecommend(Boolean recommend) {
-    this.recommend = recommend;
-  }
-
-  public Date getUseEndTime() {
-    return this.useEndTime;
-  }
-
-  public void setUseEndTime(Date useEndTime) {
-    this.useEndTime = useEndTime;
-  }
-
-  public String getUseRule() {
-    return this.useRule;
-  }
-
-  public void setUseRule(String useRule) {
-    this.useRule = useRule;
-  }
-
-  public Date getUseStartTime() {
-    return this.useStartTime;
-  }
-
-  public void setUseStartTime(Date useStartTime) {
-    this.useStartTime = useStartTime;
-  }
+	public Date getUseStartTime() {
+		return this.useStartTime;
+	}
+	public void setUseStartTime(Date useStartTime) {
+		this.useStartTime = useStartTime;
+	}
 
 }

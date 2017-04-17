@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ZhimaCustomerCertificationQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4378691915665939167L;
+	private static final long serialVersionUID = 5465396497921455391L;
 
-  /**
-   * 一次认证的唯一标识,在商户调用认证初始化接口的时候获取
-   */
-  @ApiField("biz_no")
-  private String bizNo;
+	/**
+	 * 一次认证的唯一标识,在商户调用认证初始化接口的时候获取
+	 */
+	@ApiField("biz_no")
+	private String bizNo;
 
-  public String getBizNo() {
-    return this.bizNo;
-  }
-
-  public void setBizNo(String bizNo) {
-    this.bizNo = bizNo;
-  }
+	public String getBizNo() {
+		return this.bizNo;
+	}
+	public void setBizNo(String bizNo) {
+		this.bizNo = bizNo;
+	}
 
 }

@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class MerchantMenber extends AlipayObject {
 
-  private static final long serialVersionUID = 7158971596132895362L;
+	private static final long serialVersionUID = 3447163731849346492L;
 
-  /**
-   * 生日 yyyy-MM-dd
-   */
-  @ApiField("birth")
-  private String birth;
+	/**
+	 * 生日 yyyy-MM-dd
+	 */
+	@ApiField("birth")
+	private String birth;
 
-  /**
-   * 手机号
-   */
-  @ApiField("cell")
-  private String cell;
+	/**
+	 * 手机号
+	 */
+	@ApiField("cell")
+	private String cell;
 
-  /**
-   * 性别（男：MALE；女：FEMALE）
-   */
-  @ApiField("gende")
-  private String gende;
+	/**
+	 * 性别（男：MALE；女：FEMALE）
+	 */
+	@ApiField("gende")
+	private String gende;
 
-  /**
-   * 姓名
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 姓名
+	 */
+	@ApiField("name")
+	private String name;
 
-  public String getBirth() {
-    return this.birth;
-  }
+	public String getBirth() {
+		return this.birth;
+	}
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
 
-  public void setBirth(String birth) {
-    this.birth = birth;
-  }
+	public String getCell() {
+		return this.cell;
+	}
+	public void setCell(String cell) {
+		this.cell = cell;
+	}
 
-  public String getCell() {
-    return this.cell;
-  }
+	public String getGende() {
+		return this.gende;
+	}
+	public void setGende(String gende) {
+		this.gende = gende;
+	}
 
-  public void setCell(String cell) {
-    this.cell = cell;
-  }
-
-  public String getGende() {
-    return this.gende;
-  }
-
-  public void setGende(String gende) {
-    this.gende = gende;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

@@ -14,35 +14,33 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class InvestigCategoryResult extends AlipayObject {
 
-  private static final long serialVersionUID = 7177995235788761588L;
+	private static final long serialVersionUID = 7475566664624552563L;
 
-  /**
-   * 数据项Category
-   */
-  @ApiField("category")
-  private String category;
+	/**
+	 * 数据项Category
+	 */
+	@ApiField("category")
+	private String category;
 
-  /**
-   * 数据项对应的所有采集结果
-   */
-  @ApiListField("category_result")
-  @ApiField("investig_category_data")
-  private List<InvestigCategoryData> categoryResult;
+	/**
+	 * 数据项对应的所有采集结果
+	 */
+	@ApiListField("category_result")
+	@ApiField("investig_category_data")
+	private List<InvestigCategoryData> categoryResult;
 
-  public String getCategory() {
-    return this.category;
-  }
+	public String getCategory() {
+		return this.category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
-  public void setCategory(String category) {
-    this.category = category;
-  }
-
-  public List<InvestigCategoryData> getCategoryResult() {
-    return this.categoryResult;
-  }
-
-  public void setCategoryResult(List<InvestigCategoryData> categoryResult) {
-    this.categoryResult = categoryResult;
-  }
+	public List<InvestigCategoryData> getCategoryResult() {
+		return this.categoryResult;
+	}
+	public void setCategoryResult(List<InvestigCategoryData> categoryResult) {
+		this.categoryResult = categoryResult;
+	}
 
 }

@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KbAdvertCommissionClausePercentage extends AlipayObject {
 
-  private static final long serialVersionUID = 4459241112949332188L;
+	private static final long serialVersionUID = 5584398113677324859L;
 
-  /**
-   * 分佣比例结束范围(100以内精度2位的非负小数)
-   */
-  @ApiField("commission_rate_end")
-  private String commissionRateEnd;
+	/**
+	 * 分佣比例结束范围(100以内精度2位的非负小数)
+	 */
+	@ApiField("commission_rate_end")
+	private String commissionRateEnd;
 
-  /**
-   * 分佣比例开始范围(100以内精度2位的非负小数)
-   */
-  @ApiField("commission_rate_start")
-  private String commissionRateStart;
+	/**
+	 * 分佣比例开始范围(100以内精度2位的非负小数)
+	 */
+	@ApiField("commission_rate_start")
+	private String commissionRateStart;
 
-  /**
-   * 封顶金额结束范围(精度2位的非负小数)
-   */
-  @ApiField("max_limit_end")
-  private String maxLimitEnd;
+	/**
+	 * 封顶金额结束范围(精度2位的非负小数)
+	 */
+	@ApiField("max_limit_end")
+	private String maxLimitEnd;
 
-  /**
-   * 封顶金额开始范围(精度2位的非负小数)
-   */
-  @ApiField("max_limit_start")
-  private String maxLimitStart;
+	/**
+	 * 封顶金额开始范围(精度2位的非负小数)
+	 */
+	@ApiField("max_limit_start")
+	private String maxLimitStart;
 
-  public String getCommissionRateEnd() {
-    return this.commissionRateEnd;
-  }
+	public String getCommissionRateEnd() {
+		return this.commissionRateEnd;
+	}
+	public void setCommissionRateEnd(String commissionRateEnd) {
+		this.commissionRateEnd = commissionRateEnd;
+	}
 
-  public void setCommissionRateEnd(String commissionRateEnd) {
-    this.commissionRateEnd = commissionRateEnd;
-  }
+	public String getCommissionRateStart() {
+		return this.commissionRateStart;
+	}
+	public void setCommissionRateStart(String commissionRateStart) {
+		this.commissionRateStart = commissionRateStart;
+	}
 
-  public String getCommissionRateStart() {
-    return this.commissionRateStart;
-  }
+	public String getMaxLimitEnd() {
+		return this.maxLimitEnd;
+	}
+	public void setMaxLimitEnd(String maxLimitEnd) {
+		this.maxLimitEnd = maxLimitEnd;
+	}
 
-  public void setCommissionRateStart(String commissionRateStart) {
-    this.commissionRateStart = commissionRateStart;
-  }
-
-  public String getMaxLimitEnd() {
-    return this.maxLimitEnd;
-  }
-
-  public void setMaxLimitEnd(String maxLimitEnd) {
-    this.maxLimitEnd = maxLimitEnd;
-  }
-
-  public String getMaxLimitStart() {
-    return this.maxLimitStart;
-  }
-
-  public void setMaxLimitStart(String maxLimitStart) {
-    this.maxLimitStart = maxLimitStart;
-  }
+	public String getMaxLimitStart() {
+		return this.maxLimitStart;
+	}
+	public void setMaxLimitStart(String maxLimitStart) {
+		this.maxLimitStart = maxLimitStart;
+	}
 
 }

@@ -9,145 +9,141 @@ import com.alipay.api.AlipayObject;
 
 /**
  * ALIPAY API: alipay.mobile.public.template.message.modify request
- *
+ * 
  * @author auto create
- * @since 1.0, 2015-12-16 11:41:42
+ * @since 1.0, 2017-04-07 20:26:11
  */
-public class AlipayMobilePublicTemplateMessageModifyRequest implements
-    AlipayRequest<AlipayMobilePublicTemplateMessageModifyResponse> {
+public class AlipayMobilePublicTemplateMessageModifyRequest implements AlipayRequest<AlipayMobilePublicTemplateMessageModifyResponse> {
 
-  private AlipayHashMap udfParams; // add user-defined text parameters
-  private String apiVersion = "1.0";
+	private AlipayHashMap udfParams; // add user-defined text parameters
+	private String apiVersion="1.0";
 
-  /**
-   * 模板id
-   */
-  private String templateId;
+	/** 
+	* 模板id
+	 */
+	private String templateId;
 
-  /**
-   * 行业设置
-   */
-  private String tradeSetting;
+	/** 
+	* 行业设置
+	 */
+	private String tradeSetting;
 
-  public void setTemplateId(String templateId) {
-    this.templateId = templateId;
-  }
+	public void setTemplateId(String templateId) {
+		this.templateId = templateId;
+	}
+	public String getTemplateId() {
+		return this.templateId;
+	}
 
-  public String getTemplateId() {
-    return this.templateId;
-  }
+	public void setTradeSetting(String tradeSetting) {
+		this.tradeSetting = tradeSetting;
+	}
+	public String getTradeSetting() {
+		return this.tradeSetting;
+	}
+	private String terminalType;
+	private String terminalInfo;	
+	private String prodCode;
+	private String notifyUrl;
+	private String returnUrl;
+	private boolean needEncrypt=false;
+	private AlipayObject bizModel=null;
 
-  public void setTradeSetting(String tradeSetting) {
-    this.tradeSetting = tradeSetting;
-  }
+	public String getNotifyUrl() {
+		return this.notifyUrl;
+	}
 
-  public String getTradeSetting() {
-    return this.tradeSetting;
-  }
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+	}
 
-  private String terminalType;
-  private String terminalInfo;
-  private String prodCode;
-  private String notifyUrl;
-  private String returnUrl;
-  private boolean needEncrypt = false;
-  private AlipayObject bizModel = null;
+	public String getReturnUrl() {
+		return this.returnUrl;
+	}
 
-  public String getNotifyUrl() {
-    return this.notifyUrl;
-  }
+	public void setReturnUrl(String returnUrl) {
+		this.returnUrl = returnUrl;
+	}
 
-  public void setNotifyUrl(String notifyUrl) {
-    this.notifyUrl = notifyUrl;
-  }
+	public String getApiVersion() {
+		return this.apiVersion;
+	}
 
-  public String getReturnUrl() {
-    return this.returnUrl;
-  }
+	public void setApiVersion(String apiVersion) {
+		this.apiVersion = apiVersion;
+	}
 
-  public void setReturnUrl(String returnUrl) {
-    this.returnUrl = returnUrl;
-  }
+	public void setTerminalType(String terminalType){
+		this.terminalType=terminalType;
+	}
 
-  public String getApiVersion() {
-    return this.apiVersion;
-  }
-
-  public void setApiVersion(String apiVersion) {
-    this.apiVersion = apiVersion;
-  }
-
-  public void setTerminalType(String terminalType) {
-    this.terminalType = terminalType;
-  }
-
-  public String getTerminalType() {
-    return this.terminalType;
-  }
-
-  public void setTerminalInfo(String terminalInfo) {
-    this.terminalInfo = terminalInfo;
-  }
-
-  public String getTerminalInfo() {
-    return this.terminalInfo;
-  }
-
-  public void setProdCode(String prodCode) {
-    this.prodCode = prodCode;
-  }
-
-  public String getProdCode() {
-    return this.prodCode;
-  }
-
-  public String getApiMethodName() {
-    return "alipay.mobile.public.template.message.modify";
-  }
-
-  public Map<String, String> getTextParams() {
-    AlipayHashMap txtParams = new AlipayHashMap();
-    txtParams.put("template_id", this.templateId);
-    txtParams.put("trade_setting", this.tradeSetting);
-    if (udfParams != null) {
-      txtParams.putAll(this.udfParams);
+    public String getTerminalType(){
+    	return this.terminalType;
     }
-    return txtParams;
-  }
 
-  public void putOtherTextParam(String key, String value) {
-    if (this.udfParams == null) {
-      this.udfParams = new AlipayHashMap();
+    public void setTerminalInfo(String terminalInfo){
+    	this.terminalInfo=terminalInfo;
     }
-    this.udfParams.put(key, value);
-  }
 
-  public Class<AlipayMobilePublicTemplateMessageModifyResponse> getResponseClass() {
-    return AlipayMobilePublicTemplateMessageModifyResponse.class;
-  }
+    public String getTerminalInfo(){
+    	return this.terminalInfo;
+    }	
+
+	public void setProdCode(String prodCode) {
+		this.prodCode=prodCode;
+	}
+
+	public String getProdCode() {
+		return this.prodCode; 
+	}
+
+	public String getApiMethodName() {
+		return "alipay.mobile.public.template.message.modify";
+	}
+
+	public Map<String, String> getTextParams() {		
+		AlipayHashMap txtParams = new AlipayHashMap();
+		txtParams.put("template_id", this.templateId);
+		txtParams.put("trade_setting", this.tradeSetting);
+		if(udfParams != null) {
+			txtParams.putAll(this.udfParams);
+		}
+		return txtParams;
+	}
+
+	public void putOtherTextParam(String key, String value) {
+		if(this.udfParams == null) {
+			this.udfParams = new AlipayHashMap();
+		}
+		this.udfParams.put(key, value);
+	}
+
+	public Class<AlipayMobilePublicTemplateMessageModifyResponse> getResponseClass() {
+		return AlipayMobilePublicTemplateMessageModifyResponse.class;
+	}
+	
+
+    public boolean isNeedEncrypt() {
+    
+      return this.needEncrypt;
+    }
 
 
-  public boolean isNeedEncrypt() {
-
-    return this.needEncrypt;
-  }
-
-
-  public void setNeedEncrypt(boolean needEncrypt) {
-
-    this.needEncrypt = needEncrypt;
-  }
-
-  public AlipayObject getBizModel() {
-
-    return this.bizModel;
-  }
+    public void setNeedEncrypt(boolean needEncrypt) {
+    
+         this.needEncrypt=needEncrypt;
+    }
+    
+    public AlipayObject getBizModel() {
+    
+      return this.bizModel;
+    }
 
 
-  public void setBizModel(AlipayObject bizModel) {
-
-    this.bizModel = bizModel;
-  }
-
-
+    public void setBizModel(AlipayObject bizModel) {
+    
+         this.bizModel=bizModel;
+    }
+	
+	
 }

@@ -10,67 +10,63 @@ import com.alipay.api.internal.mapping.ApiListField;
  * 阶梯优惠
  *
  * @author auto create
- * @since 1.0, 2016-11-10 14:13:39
+ * @since 1.0, 2017-03-03 16:47:49
  */
 public class StagedDiscountDstCampPrizeModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6463467712848398752L;
+	private static final long serialVersionUID = 2599361899933847724L;
 
-  /**
-   * 折扣预算ID
-   */
-  @ApiField("budget_id")
-  private String budgetId;
+	/**
+	 * 折扣预算ID
+	 */
+	@ApiField("budget_id")
+	private String budgetId;
 
-  /**
-   * 折扣幅度列表.
-   */
-  @ApiListField("discount_rate_model_list")
-  @ApiField("discount_rate_model")
-  private List<DiscountRateModel> discountRateModelList;
+	/**
+	 * 折扣幅度列表.
+	 */
+	@ApiListField("discount_rate_model_list")
+	@ApiField("discount_rate_model")
+	private List<DiscountRateModel> discountRateModelList;
 
-  /**
-   * 奖品id
-   */
-  @ApiField("id")
-  private String id;
+	/**
+	 * 奖品id
+	 */
+	@ApiField("id")
+	private String id;
 
-  /**
-   * 单次优惠上限(元)
-   */
-  @ApiField("max_discount_amt")
-  private String maxDiscountAmt;
+	/**
+	 * 单次优惠上限(元)
+	 */
+	@ApiField("max_discount_amt")
+	private String maxDiscountAmt;
 
-  public String getBudgetId() {
-    return this.budgetId;
-  }
+	public String getBudgetId() {
+		return this.budgetId;
+	}
+	public void setBudgetId(String budgetId) {
+		this.budgetId = budgetId;
+	}
 
-  public void setBudgetId(String budgetId) {
-    this.budgetId = budgetId;
-  }
+	public List<DiscountRateModel> getDiscountRateModelList() {
+		return this.discountRateModelList;
+	}
+	public void setDiscountRateModelList(List<DiscountRateModel> discountRateModelList) {
+		this.discountRateModelList = discountRateModelList;
+	}
 
-  public List<DiscountRateModel> getDiscountRateModelList() {
-    return this.discountRateModelList;
-  }
+	public String getId() {
+		return this.id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public void setDiscountRateModelList(List<DiscountRateModel> discountRateModelList) {
-    this.discountRateModelList = discountRateModelList;
-  }
-
-  public String getId() {
-    return this.id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public String getMaxDiscountAmt() {
-    return this.maxDiscountAmt;
-  }
-
-  public void setMaxDiscountAmt(String maxDiscountAmt) {
-    this.maxDiscountAmt = maxDiscountAmt;
-  }
+	public String getMaxDiscountAmt() {
+		return this.maxDiscountAmt;
+	}
+	public void setMaxDiscountAmt(String maxDiscountAmt) {
+		this.maxDiscountAmt = maxDiscountAmt;
+	}
 
 }

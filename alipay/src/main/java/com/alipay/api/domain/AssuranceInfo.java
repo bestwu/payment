@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AssuranceInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 8324152611647133838L;
+	private static final long serialVersionUID = 2818811971783643884L;
 
-  /**
-   * 服务保障的描述
-   */
-  @ApiField("description")
-  private String description;
+	/**
+	 * 服务保障的描述
+	 */
+	@ApiField("description")
+	private String description;
 
-  /**
-   * 服务保障的标题
-   */
-  @ApiField("title")
-  private String title;
+	/**
+	 * 服务保障的标题
+	 */
+	@ApiField("title")
+	private String title;
 
-  public String getDescription() {
-    return this.description;
-  }
+	public String getDescription() {
+		return this.description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public String getTitle() {
-    return this.title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 }

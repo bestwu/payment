@@ -13,77 +13,72 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayMarketingCardUpdateModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6497772489547867211L;
+	private static final long serialVersionUID = 8479713339616428525L;
 
-  /**
-   * 需要修改的最新卡信息
-   */
-  @ApiField("card_info")
-  private MerchantCard cardInfo;
+	/**
+	 * 需要修改的最新卡信息
+	 */
+	@ApiField("card_info")
+	private MerchantCard cardInfo;
 
-  /**
-   * 扩展信息(暂时无用)
-   */
-  @ApiField("ext_info")
-  private String extInfo;
+	/**
+	 * 扩展信息(暂时无用)
+	 */
+	@ApiField("ext_info")
+	private String extInfo;
 
-  /**
-   * 标识业务发生的时间
-   */
-  @ApiField("occur_time")
-  private Date occurTime;
+	/**
+	 * 标识业务发生的时间
+	 */
+	@ApiField("occur_time")
+	private Date occurTime;
 
-  /**
-   * 支付宝业务卡号，开卡接口中返回获取
-   */
-  @ApiField("target_card_no")
-  private String targetCardNo;
+	/**
+	 * 支付宝业务卡号，开卡接口中返回获取
+	 */
+	@ApiField("target_card_no")
+	private String targetCardNo;
 
-  /**
-   * 卡号ID类型
-   * BIZ_CARD：支付宝业务卡号
-   */
-  @ApiField("target_card_no_type")
-  private String targetCardNoType;
+	/**
+	 * 卡号ID类型
+BIZ_CARD：支付宝业务卡号
+	 */
+	@ApiField("target_card_no_type")
+	private String targetCardNoType;
 
-  public MerchantCard getCardInfo() {
-    return this.cardInfo;
-  }
+	public MerchantCard getCardInfo() {
+		return this.cardInfo;
+	}
+	public void setCardInfo(MerchantCard cardInfo) {
+		this.cardInfo = cardInfo;
+	}
 
-  public void setCardInfo(MerchantCard cardInfo) {
-    this.cardInfo = cardInfo;
-  }
+	public String getExtInfo() {
+		return this.extInfo;
+	}
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
+	}
 
-  public String getExtInfo() {
-    return this.extInfo;
-  }
+	public Date getOccurTime() {
+		return this.occurTime;
+	}
+	public void setOccurTime(Date occurTime) {
+		this.occurTime = occurTime;
+	}
 
-  public void setExtInfo(String extInfo) {
-    this.extInfo = extInfo;
-  }
+	public String getTargetCardNo() {
+		return this.targetCardNo;
+	}
+	public void setTargetCardNo(String targetCardNo) {
+		this.targetCardNo = targetCardNo;
+	}
 
-  public Date getOccurTime() {
-    return this.occurTime;
-  }
-
-  public void setOccurTime(Date occurTime) {
-    this.occurTime = occurTime;
-  }
-
-  public String getTargetCardNo() {
-    return this.targetCardNo;
-  }
-
-  public void setTargetCardNo(String targetCardNo) {
-    this.targetCardNo = targetCardNo;
-  }
-
-  public String getTargetCardNoType() {
-    return this.targetCardNoType;
-  }
-
-  public void setTargetCardNoType(String targetCardNoType) {
-    this.targetCardNoType = targetCardNoType;
-  }
+	public String getTargetCardNoType() {
+		return this.targetCardNoType;
+	}
+	public void setTargetCardNoType(String targetCardNoType) {
+		this.targetCardNoType = targetCardNoType;
+	}
 
 }

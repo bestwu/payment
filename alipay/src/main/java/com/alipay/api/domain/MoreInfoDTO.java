@@ -14,63 +14,59 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class MoreInfoDTO extends AlipayObject {
 
-  private static final long serialVersionUID = 8581465782354448464L;
+	private static final long serialVersionUID = 3786795576364862537L;
 
-  /**
-   * 选择opennative的时候必须填写descs的内容
-   */
-  @ApiListField("descs")
-  @ApiField("string")
-  private List<String> descs;
+	/**
+	 * 选择opennative的时候必须填写descs的内容
+	 */
+	@ApiListField("descs")
+	@ApiField("string")
+	private List<String> descs;
 
-  /**
-   * 扩展参数，需要URL地址回带的值，JSON格式(openweb时填)
-   */
-  @ApiField("params")
-  private String params;
+	/**
+	 * 扩展参数，需要URL地址回带的值，JSON格式(openweb时填)
+	 */
+	@ApiField("params")
+	private String params;
 
-  /**
-   * 二级页面标题
-   */
-  @ApiField("title")
-  private String title;
+	/**
+	 * 二级页面标题
+	 */
+	@ApiField("title")
+	private String title;
 
-  /**
-   * 超链接(选择openweb的时候必须填写url参数内容)
-   */
-  @ApiField("url")
-  private String url;
+	/**
+	 * 超链接(选择openweb的时候必须填写url参数内容)
+	 */
+	@ApiField("url")
+	private String url;
 
-  public List<String> getDescs() {
-    return this.descs;
-  }
+	public List<String> getDescs() {
+		return this.descs;
+	}
+	public void setDescs(List<String> descs) {
+		this.descs = descs;
+	}
 
-  public void setDescs(List<String> descs) {
-    this.descs = descs;
-  }
+	public String getParams() {
+		return this.params;
+	}
+	public void setParams(String params) {
+		this.params = params;
+	}
 
-  public String getParams() {
-    return this.params;
-  }
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-  public void setParams(String params) {
-    this.params = params;
-  }
-
-  public String getTitle() {
-    return this.title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public String getUrl() {
-    return this.url;
-  }
-
-  public void setUrl(String url) {
-    this.url = url;
-  }
+	public String getUrl() {
+		return this.url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
 }

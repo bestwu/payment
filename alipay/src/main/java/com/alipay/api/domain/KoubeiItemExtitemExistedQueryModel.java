@@ -14,21 +14,20 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class KoubeiItemExtitemExistedQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5231426514234448417L;
+	private static final long serialVersionUID = 1189213656569236322L;
 
-  /**
-   * 商品编码列表, 商品编码数量不超过100条。
-   */
-  @ApiListField("code_list")
-  @ApiField("string")
-  private List<String> codeList;
+	/**
+	 * 商品编码列表, 商品编码数量不超过100条。
+	 */
+	@ApiListField("code_list")
+	@ApiField("string")
+	private List<String> codeList;
 
-  public List<String> getCodeList() {
-    return this.codeList;
-  }
-
-  public void setCodeList(List<String> codeList) {
-    this.codeList = codeList;
-  }
+	public List<String> getCodeList() {
+		return this.codeList;
+	}
+	public void setCodeList(List<String> codeList) {
+		this.codeList = codeList;
+	}
 
 }

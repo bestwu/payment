@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class MybankCreditLoantradeLoanarQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5418815987338439175L;
+	private static final long serialVersionUID = 7597559148845432254L;
 
-  /**
-   * 客户的角色编号
-   */
-  @ApiField("iproleid")
-  private String iproleid;
+	/**
+	 * 客户的角色编号
+	 */
+	@ApiField("iproleid")
+	private String iproleid;
 
-  /**
-   * 合约编号
-   */
-  @ApiField("loanarno")
-  private String loanarno;
+	/**
+	 * 合约编号
+	 */
+	@ApiField("loanarno")
+	private String loanarno;
 
-  public String getIproleid() {
-    return this.iproleid;
-  }
+	public String getIproleid() {
+		return this.iproleid;
+	}
+	public void setIproleid(String iproleid) {
+		this.iproleid = iproleid;
+	}
 
-  public void setIproleid(String iproleid) {
-    this.iproleid = iproleid;
-  }
-
-  public String getLoanarno() {
-    return this.loanarno;
-  }
-
-  public void setLoanarno(String loanarno) {
-    this.loanarno = loanarno;
-  }
+	public String getLoanarno() {
+		return this.loanarno;
+	}
+	public void setLoanarno(String loanarno) {
+		this.loanarno = loanarno;
+	}
 
 }

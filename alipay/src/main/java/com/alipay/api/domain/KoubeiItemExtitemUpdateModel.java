@@ -11,160 +11,149 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiItemExtitemUpdateModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6175628258567684687L;
+	private static final long serialVersionUID = 6357939418115892835L;
 
-  /**
-   * 品牌编码
-   */
-  @ApiField("brand_code")
-  private String brandCode;
+	/**
+	 * 品牌编码
+	 */
+	@ApiField("brand_code")
+	private String brandCode;
 
-  /**
-   * 品类编码
-   */
-  @ApiField("category_code")
-  private String categoryCode;
+	/**
+	 * 品类编码
+	 */
+	@ApiField("category_code")
+	private String categoryCode;
 
-  /**
-   * 入数，必须为整数
-   */
-  @ApiField("count")
-  private String count;
+	/**
+	 * 入数，必须为整数
+	 */
+	@ApiField("count")
+	private String count;
 
-  /**
-   * 产地
-   */
-  @ApiField("country")
-  private String country;
+	/**
+	 * 产地
+	 */
+	@ApiField("country")
+	private String country;
 
-  /**
-   * 商品描述
-   */
-  @ApiField("description")
-  private String description;
+	/**
+	 * 商品描述
+	 */
+	@ApiField("description")
+	private String description;
 
-  /**
-   * 商品id
-   */
-  @ApiField("id")
-  private String id;
+	/**
+	 * 商品id
+	 */
+	@ApiField("id")
+	private String id;
 
-  /**
-   * 商品条码
-   */
-  @ApiField("item_code")
-  private String itemCode;
+	/**
+	 * 商品条码
+	 */
+	@ApiField("item_code")
+	private String itemCode;
 
-  /**
-   * 商品图片file id
-   */
-  @ApiField("picture")
-  private String picture;
+	/**
+	 * 商品图片file id
+	 */
+	@ApiField("picture")
+	private String picture;
 
-  /**
-   * 参考价格，单位（分），必须为整数
-   */
-  @ApiField("price")
-  private String price;
+	/**
+	 * 参考价格，单位（分），必须为整数
+	 */
+	@ApiField("price")
+	private String price;
 
-  /**
-   * 商品规格
-   */
-  @ApiField("specification")
-  private String specification;
+	/**
+	 * 商品规格
+	 */
+	@ApiField("specification")
+	private String specification;
 
-  /**
-   * 商品名称
-   */
-  @ApiField("title")
-  private String title;
+	/**
+	 * 商品名称
+	 */
+	@ApiField("title")
+	private String title;
 
-  public String getBrandCode() {
-    return this.brandCode;
-  }
+	public String getBrandCode() {
+		return this.brandCode;
+	}
+	public void setBrandCode(String brandCode) {
+		this.brandCode = brandCode;
+	}
 
-  public void setBrandCode(String brandCode) {
-    this.brandCode = brandCode;
-  }
+	public String getCategoryCode() {
+		return this.categoryCode;
+	}
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
 
-  public String getCategoryCode() {
-    return this.categoryCode;
-  }
+	public String getCount() {
+		return this.count;
+	}
+	public void setCount(String count) {
+		this.count = count;
+	}
 
-  public void setCategoryCode(String categoryCode) {
-    this.categoryCode = categoryCode;
-  }
+	public String getCountry() {
+		return this.country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
 
-  public String getCount() {
-    return this.count;
-  }
+	public String getDescription() {
+		return this.description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-  public void setCount(String count) {
-    this.count = count;
-  }
+	public String getId() {
+		return this.id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public String getCountry() {
-    return this.country;
-  }
+	public String getItemCode() {
+		return this.itemCode;
+	}
+	public void setItemCode(String itemCode) {
+		this.itemCode = itemCode;
+	}
 
-  public void setCountry(String country) {
-    this.country = country;
-  }
+	public String getPicture() {
+		return this.picture;
+	}
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
 
-  public String getDescription() {
-    return this.description;
-  }
+	public String getPrice() {
+		return this.price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+	public String getSpecification() {
+		return this.specification;
+	}
+	public void setSpecification(String specification) {
+		this.specification = specification;
+	}
 
-  public String getId() {
-    return this.id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public String getItemCode() {
-    return this.itemCode;
-  }
-
-  public void setItemCode(String itemCode) {
-    this.itemCode = itemCode;
-  }
-
-  public String getPicture() {
-    return this.picture;
-  }
-
-  public void setPicture(String picture) {
-    this.picture = picture;
-  }
-
-  public String getPrice() {
-    return this.price;
-  }
-
-  public void setPrice(String price) {
-    this.price = price;
-  }
-
-  public String getSpecification() {
-    return this.specification;
-  }
-
-  public void setSpecification(String specification) {
-    this.specification = specification;
-  }
-
-  public String getTitle() {
-    return this.title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 }

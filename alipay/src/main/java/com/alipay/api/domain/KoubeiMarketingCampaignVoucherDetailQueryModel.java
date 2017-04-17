@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiMarketingCampaignVoucherDetailQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4222353966845575732L;
+	private static final long serialVersionUID = 1282961317279285561L;
 
-  /**
-   * 支付宝用户id
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 支付宝用户id
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  /**
-   * 券id
-   */
-  @ApiField("voucher_id")
-  private String voucherId;
+	/**
+	 * 券id
+	 */
+	@ApiField("voucher_id")
+	private String voucherId;
 
-  public String getUserId() {
-    return this.userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
-
-  public String getVoucherId() {
-    return this.voucherId;
-  }
-
-  public void setVoucherId(String voucherId) {
-    this.voucherId = voucherId;
-  }
+	public String getVoucherId() {
+		return this.voucherId;
+	}
+	public void setVoucherId(String voucherId) {
+		this.voucherId = voucherId;
+	}
 
 }

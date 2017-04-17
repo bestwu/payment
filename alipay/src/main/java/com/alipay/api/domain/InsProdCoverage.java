@@ -14,106 +14,99 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class InsProdCoverage extends AlipayObject {
 
-  private static final long serialVersionUID = 6162375852815316718L;
+	private static final long serialVersionUID = 5428961178185753963L;
 
-  /**
-   * 险种描述
-   */
-  @ApiField("coverage_desc")
-  private String coverageDesc;
+	/**
+	 * 险种描述
+	 */
+	@ApiField("coverage_desc")
+	private String coverageDesc;
 
-  /**
-   * 险种名称
-   */
-  @ApiField("coverage_name")
-  private String coverageName;
+	/**
+	 * 险种名称
+	 */
+	@ApiField("coverage_name")
+	private String coverageName;
 
-  /**
-   * 险种编号
-   */
-  @ApiField("coverage_no")
-  private String coverageNo;
+	/**
+	 * 险种编号
+	 */
+	@ApiField("coverage_no")
+	private String coverageNo;
 
-  /**
-   * 是否定期险种
-   */
-  @ApiField("is_fixed_period")
-  private Boolean isFixedPeriod;
+	/**
+	 * 是否定期险种
+	 */
+	@ApiField("is_fixed_period")
+	private Boolean isFixedPeriod;
 
-  /**
-   * 险种责任列表
-   */
-  @ApiListField("liabilities")
-  @ApiField("ins_liability")
-  private List<InsLiability> liabilities;
+	/**
+	 * 险种责任列表
+	 */
+	@ApiListField("liabilities")
+	@ApiField("ins_liability")
+	private List<InsLiability> liabilities;
 
-  /**
-   * 可用的保障期限列表;约定“1D”代表一天，“1M”代表一个月,"1Y"代表一年
-   */
-  @ApiListField("periods")
-  @ApiField("string")
-  private List<String> periods;
+	/**
+	 * 可用的保障期限列表;约定“1D”代表一天，“1M”代表一个月,"1Y"代表一年
+	 */
+	@ApiListField("periods")
+	@ApiField("string")
+	private List<String> periods;
 
-  /**
-   * 保额
-   */
-  @ApiField("sum_insured")
-  private InsSumInsured sumInsured;
+	/**
+	 * 保额
+	 */
+	@ApiField("sum_insured")
+	private InsSumInsured sumInsured;
 
-  public String getCoverageDesc() {
-    return this.coverageDesc;
-  }
+	public String getCoverageDesc() {
+		return this.coverageDesc;
+	}
+	public void setCoverageDesc(String coverageDesc) {
+		this.coverageDesc = coverageDesc;
+	}
 
-  public void setCoverageDesc(String coverageDesc) {
-    this.coverageDesc = coverageDesc;
-  }
+	public String getCoverageName() {
+		return this.coverageName;
+	}
+	public void setCoverageName(String coverageName) {
+		this.coverageName = coverageName;
+	}
 
-  public String getCoverageName() {
-    return this.coverageName;
-  }
+	public String getCoverageNo() {
+		return this.coverageNo;
+	}
+	public void setCoverageNo(String coverageNo) {
+		this.coverageNo = coverageNo;
+	}
 
-  public void setCoverageName(String coverageName) {
-    this.coverageName = coverageName;
-  }
+	public Boolean getIsFixedPeriod() {
+		return this.isFixedPeriod;
+	}
+	public void setIsFixedPeriod(Boolean isFixedPeriod) {
+		this.isFixedPeriod = isFixedPeriod;
+	}
 
-  public String getCoverageNo() {
-    return this.coverageNo;
-  }
+	public List<InsLiability> getLiabilities() {
+		return this.liabilities;
+	}
+	public void setLiabilities(List<InsLiability> liabilities) {
+		this.liabilities = liabilities;
+	}
 
-  public void setCoverageNo(String coverageNo) {
-    this.coverageNo = coverageNo;
-  }
+	public List<String> getPeriods() {
+		return this.periods;
+	}
+	public void setPeriods(List<String> periods) {
+		this.periods = periods;
+	}
 
-  public Boolean getIsFixedPeriod() {
-    return this.isFixedPeriod;
-  }
-
-  public void setIsFixedPeriod(Boolean isFixedPeriod) {
-    this.isFixedPeriod = isFixedPeriod;
-  }
-
-  public List<InsLiability> getLiabilities() {
-    return this.liabilities;
-  }
-
-  public void setLiabilities(List<InsLiability> liabilities) {
-    this.liabilities = liabilities;
-  }
-
-  public List<String> getPeriods() {
-    return this.periods;
-  }
-
-  public void setPeriods(List<String> periods) {
-    this.periods = periods;
-  }
-
-  public InsSumInsured getSumInsured() {
-    return this.sumInsured;
-  }
-
-  public void setSumInsured(InsSumInsured sumInsured) {
-    this.sumInsured = sumInsured;
-  }
+	public InsSumInsured getSumInsured() {
+		return this.sumInsured;
+	}
+	public void setSumInsured(InsSumInsured sumInsured) {
+		this.sumInsured = sumInsured;
+	}
 
 }

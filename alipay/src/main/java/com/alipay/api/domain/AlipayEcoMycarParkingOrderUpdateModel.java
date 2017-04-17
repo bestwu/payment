@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarParkingOrderUpdateModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8182324141849891218L;
+	private static final long serialVersionUID = 5842513414762453615L;
 
-  /**
-   * 支付宝支付流水号，系统唯一
-   */
-  @ApiField("order_no")
-  private String orderNo;
+	/**
+	 * 支付宝支付流水号，系统唯一
+	 */
+	@ApiField("order_no")
+	private String orderNo;
 
-  /**
-   * 用户停车订单状态，0：成功，1：失败
-   */
-  @ApiField("order_status")
-  private String orderStatus;
+	/**
+	 * 用户停车订单状态，0：成功，1：失败
+	 */
+	@ApiField("order_status")
+	private String orderStatus;
 
-  /**
-   * 停车缴费支付宝用户的ID，请ISV保证用户ID的正确性，以免导致用户在停车平台查询不到相关的订单信息
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 停车缴费支付宝用户的ID，请ISV保证用户ID的正确性，以免导致用户在停车平台查询不到相关的订单信息
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getOrderNo() {
-    return this.orderNo;
-  }
+	public String getOrderNo() {
+		return this.orderNo;
+	}
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
+	}
 
-  public void setOrderNo(String orderNo) {
-    this.orderNo = orderNo;
-  }
+	public String getOrderStatus() {
+		return this.orderStatus;
+	}
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
 
-  public String getOrderStatus() {
-    return this.orderStatus;
-  }
-
-  public void setOrderStatus(String orderStatus) {
-    this.orderStatus = orderStatus;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

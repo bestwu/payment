@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoCplifeRepairStatusUpdateModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7219644169981826859L;
+	private static final long serialVersionUID = 5675386397331343548L;
 
-  /**
-   * 报修单状态明细
-   */
-  @ApiField("biz_details")
-  private String bizDetails;
+	/**
+	 * 报修单状态明细
+	 */
+	@ApiField("biz_details")
+	private String bizDetails;
 
-  /**
-   * 当前报修单状态
-   */
-  @ApiField("biz_state")
-  private String bizState;
+	/**
+	 * 当前报修单状态
+	 */
+	@ApiField("biz_state")
+	private String bizState;
 
-  /**
-   * 报修单ID
-   */
-  @ApiField("req_id")
-  private String reqId;
+	/**
+	 * 报修单ID
+	 */
+	@ApiField("req_id")
+	private String reqId;
 
-  public String getBizDetails() {
-    return this.bizDetails;
-  }
+	public String getBizDetails() {
+		return this.bizDetails;
+	}
+	public void setBizDetails(String bizDetails) {
+		this.bizDetails = bizDetails;
+	}
 
-  public void setBizDetails(String bizDetails) {
-    this.bizDetails = bizDetails;
-  }
+	public String getBizState() {
+		return this.bizState;
+	}
+	public void setBizState(String bizState) {
+		this.bizState = bizState;
+	}
 
-  public String getBizState() {
-    return this.bizState;
-  }
-
-  public void setBizState(String bizState) {
-    this.bizState = bizState;
-  }
-
-  public String getReqId() {
-    return this.reqId;
-  }
-
-  public void setReqId(String reqId) {
-    this.reqId = reqId;
-  }
+	public String getReqId() {
+		return this.reqId;
+	}
+	public void setReqId(String reqId) {
+		this.reqId = reqId;
+	}
 
 }

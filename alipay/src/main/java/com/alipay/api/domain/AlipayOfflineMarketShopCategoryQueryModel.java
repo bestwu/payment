@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOfflineMarketShopCategoryQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8745859663947637975L;
+	private static final long serialVersionUID = 2586183217721546877L;
 
-  /**
-   * 类目ID，如果为空则查询全部类目。
-   */
-  @ApiField("category_id")
-  private String categoryId;
+	/**
+	 * 类目ID，如果为空则查询全部类目。
+	 */
+	@ApiField("category_id")
+	private String categoryId;
 
-  /**
-   * 表示接口业务的调用方身份,默认不填标识为ISV。
-   */
-  @ApiField("op_role")
-  private String opRole;
+	/**
+	 * 表示接口业务的调用方身份,默认不填标识为ISV。
+	 */
+	@ApiField("op_role")
+	private String opRole;
 
-  public String getCategoryId() {
-    return this.categoryId;
-  }
+	public String getCategoryId() {
+		return this.categoryId;
+	}
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
 
-  public void setCategoryId(String categoryId) {
-    this.categoryId = categoryId;
-  }
-
-  public String getOpRole() {
-    return this.opRole;
-  }
-
-  public void setOpRole(String opRole) {
-    this.opRole = opRole;
-  }
+	public String getOpRole() {
+		return this.opRole;
+	}
+	public void setOpRole(String opRole) {
+		this.opRole = opRole;
+	}
 
 }

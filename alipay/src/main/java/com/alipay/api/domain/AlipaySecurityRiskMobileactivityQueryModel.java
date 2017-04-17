@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipaySecurityRiskMobileactivityQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3428891674567115621L;
+	private static final long serialVersionUID = 6654374562851386242L;
 
-  /**
-   * 账户绑定手机号
-   */
-  @ApiField("mobile")
-  private String mobile;
+	/**
+	 * 账户绑定手机号
+	 */
+	@ApiField("mobile")
+	private String mobile;
 
-  /**
-   * 场景名称
-   */
-  @ApiField("scene_id")
-  private String sceneId;
+	/**
+	 * 场景名称
+	 */
+	@ApiField("scene_id")
+	private String sceneId;
 
-  /**
-   * 支付宝userId
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 支付宝userId
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getMobile() {
-    return this.mobile;
-  }
+	public String getMobile() {
+		return this.mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 
-  public void setMobile(String mobile) {
-    this.mobile = mobile;
-  }
+	public String getSceneId() {
+		return this.sceneId;
+	}
+	public void setSceneId(String sceneId) {
+		this.sceneId = sceneId;
+	}
 
-  public String getSceneId() {
-    return this.sceneId;
-  }
-
-  public void setSceneId(String sceneId) {
-    this.sceneId = sceneId;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

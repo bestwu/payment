@@ -11,42 +11,40 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class CardTypeVO extends AlipayObject {
 
-  private static final long serialVersionUID = 2267917618843463792L;
+	private static final long serialVersionUID = 2572921758961979879L;
 
-  /**
-   * 卡类型标识符，取值范围如下：
-   * DC("借记卡")
-   * CC("贷记卡")
-   * SCC("准贷记卡")
-   * DCC("存贷合一卡")
-   * PC("预付卡")
-   * STPB("标准存折")
-   * STFA("标准对公账户")
-   * NSTFA("非标准对公账户")
-   */
-  @ApiField("card_type")
-  private String cardType;
+	/**
+	 * 卡类型标识符，取值范围如下：
+DC("借记卡")
+CC("贷记卡")
+SCC("准贷记卡")
+DCC("存贷合一卡")
+PC("预付卡")
+STPB("标准存折")
+STFA("标准对公账户")
+NSTFA("非标准对公账户")
+	 */
+	@ApiField("card_type")
+	private String cardType;
 
-  /**
-   * 卡类型描述，参考cardType的描述字段中括号里的值。
-   */
-  @ApiField("description")
-  private String description;
+	/**
+	 * 卡类型描述，参考cardType的描述字段中括号里的值。
+	 */
+	@ApiField("description")
+	private String description;
 
-  public String getCardType() {
-    return this.cardType;
-  }
+	public String getCardType() {
+		return this.cardType;
+	}
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
+	}
 
-  public void setCardType(String cardType) {
-    this.cardType = cardType;
-  }
-
-  public String getDescription() {
-    return this.description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
+	public String getDescription() {
+		return this.description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 }

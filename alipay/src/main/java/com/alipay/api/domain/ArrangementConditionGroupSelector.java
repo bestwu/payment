@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ArrangementConditionGroupSelector extends AlipayObject {
 
-  private static final long serialVersionUID = 2384691688363473689L;
+	private static final long serialVersionUID = 4289992162673542881L;
 
-  /**
-   * 是否选择最新的产品条件,默认为TRUE
-   */
-  @ApiField("select_latest_pd_cd")
-  private Boolean selectLatestPdCd;
+	/**
+	 * 是否选择最新的产品条件,默认为TRUE
+	 */
+	@ApiField("select_latest_pd_cd")
+	private Boolean selectLatestPdCd;
 
-  public Boolean getSelectLatestPdCd() {
-    return this.selectLatestPdCd;
-  }
-
-  public void setSelectLatestPdCd(Boolean selectLatestPdCd) {
-    this.selectLatestPdCd = selectLatestPdCd;
-  }
+	public Boolean getSelectLatestPdCd() {
+		return this.selectLatestPdCd;
+	}
+	public void setSelectLatestPdCd(Boolean selectLatestPdCd) {
+		this.selectLatestPdCd = selectLatestPdCd;
+	}
 
 }

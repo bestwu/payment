@@ -11,90 +11,84 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ItermInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 6123441679383154653L;
+	private static final long serialVersionUID = 6216277582617346139L;
 
-  /**
-   * 更新时系统异常，返回错误详细信息
-   */
-  @ApiField("error_message")
-  private String errorMessage;
+	/**
+	 * 更新时系统异常，返回错误详细信息
+	 */
+	@ApiField("error_message")
+	private String errorMessage;
 
-  /**
-   * 充值面额的状态Y/N
-   */
-  @ApiField("is_for_sale")
-  private String isForSale;
+	/**
+	 * 充值面额的状态Y/N
+	 */
+	@ApiField("is_for_sale")
+	private String isForSale;
 
-  /**
-   * 面额的code，唯一标示码
-   */
-  @ApiField("item_code")
-  private String itemCode;
+	/**
+	 * 面额的code，唯一标示码
+	 */
+	@ApiField("item_code")
+	private String itemCode;
 
-  /**
-   * 售价，比如100的面额，卖99元
-   */
-  @ApiField("mark_price")
-  private String markPrice;
+	/**
+	 * 售价，比如100的面额，卖99元
+	 */
+	@ApiField("mark_price")
+	private String markPrice;
 
-  /**
-   * 针对更新时，是否更新成功
-   */
-  @ApiField("success")
-  private Boolean success;
+	/**
+	 * 针对更新时，是否更新成功
+	 */
+	@ApiField("success")
+	private Boolean success;
 
-  /**
-   * 手机充值的面额价格
-   */
-  @ApiField("supplier_price")
-  private String supplierPrice;
+	/**
+	 * 手机充值的面额价格
+	 */
+	@ApiField("supplier_price")
+	private String supplierPrice;
 
-  public String getErrorMessage() {
-    return this.errorMessage;
-  }
+	public String getErrorMessage() {
+		return this.errorMessage;
+	}
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
 
-  public void setErrorMessage(String errorMessage) {
-    this.errorMessage = errorMessage;
-  }
+	public String getIsForSale() {
+		return this.isForSale;
+	}
+	public void setIsForSale(String isForSale) {
+		this.isForSale = isForSale;
+	}
 
-  public String getIsForSale() {
-    return this.isForSale;
-  }
+	public String getItemCode() {
+		return this.itemCode;
+	}
+	public void setItemCode(String itemCode) {
+		this.itemCode = itemCode;
+	}
 
-  public void setIsForSale(String isForSale) {
-    this.isForSale = isForSale;
-  }
+	public String getMarkPrice() {
+		return this.markPrice;
+	}
+	public void setMarkPrice(String markPrice) {
+		this.markPrice = markPrice;
+	}
 
-  public String getItemCode() {
-    return this.itemCode;
-  }
+	public Boolean getSuccess() {
+		return this.success;
+	}
+	public void setSuccess(Boolean success) {
+		this.success = success;
+	}
 
-  public void setItemCode(String itemCode) {
-    this.itemCode = itemCode;
-  }
-
-  public String getMarkPrice() {
-    return this.markPrice;
-  }
-
-  public void setMarkPrice(String markPrice) {
-    this.markPrice = markPrice;
-  }
-
-  public Boolean getSuccess() {
-    return this.success;
-  }
-
-  public void setSuccess(Boolean success) {
-    this.success = success;
-  }
-
-  public String getSupplierPrice() {
-    return this.supplierPrice;
-  }
-
-  public void setSupplierPrice(String supplierPrice) {
-    this.supplierPrice = supplierPrice;
-  }
+	public String getSupplierPrice() {
+		return this.supplierPrice;
+	}
+	public void setSupplierPrice(String supplierPrice) {
+		this.supplierPrice = supplierPrice;
+	}
 
 }

@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class GradeDiscountPoint extends AlipayObject {
 
-  private static final long serialVersionUID = 3683373658469745216L;
+	private static final long serialVersionUID = 1846842531162381965L;
 
-  /**
-   * 蚂蚁会员权益配置的ID
-   */
-  @ApiField("benefit_id")
-  private Long benefitId;
+	/**
+	 * 蚂蚁会员权益配置的ID
+	 */
+	@ApiField("benefit_id")
+	private Long benefitId;
 
-  /**
-   * 各个等级的等级折扣后的积分
-   */
-  @ApiField("discount_point")
-  private String discountPoint;
+	/**
+	 * 各个等级的等级折扣后的积分
+	 */
+	@ApiField("discount_point")
+	private String discountPoint;
 
-  /**
-   * 蚂蚁会员等级
-   */
-  @ApiField("grade")
-  private String grade;
+	/**
+	 * 蚂蚁会员等级
+	 */
+	@ApiField("grade")
+	private String grade;
 
-  public Long getBenefitId() {
-    return this.benefitId;
-  }
+	public Long getBenefitId() {
+		return this.benefitId;
+	}
+	public void setBenefitId(Long benefitId) {
+		this.benefitId = benefitId;
+	}
 
-  public void setBenefitId(Long benefitId) {
-    this.benefitId = benefitId;
-  }
+	public String getDiscountPoint() {
+		return this.discountPoint;
+	}
+	public void setDiscountPoint(String discountPoint) {
+		this.discountPoint = discountPoint;
+	}
 
-  public String getDiscountPoint() {
-    return this.discountPoint;
-  }
-
-  public void setDiscountPoint(String discountPoint) {
-    this.discountPoint = discountPoint;
-  }
-
-  public String getGrade() {
-    return this.grade;
-  }
-
-  public void setGrade(String grade) {
-    this.grade = grade;
-  }
+	public String getGrade() {
+		return this.grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
 
 }

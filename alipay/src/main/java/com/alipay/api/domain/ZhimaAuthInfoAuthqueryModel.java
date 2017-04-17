@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ZhimaAuthInfoAuthqueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3554495779682213117L;
+	private static final long serialVersionUID = 5565375643338466547L;
 
-  /**
-   * json格式的内容,包含userId,userId为支付宝用户id,用户授权后商户可以拿到这个支付宝userId
-   */
-  @ApiField("identity_param")
-  private String identityParam;
+	/**
+	 * json格式的内容,包含userId,userId为支付宝用户id,用户授权后商户可以拿到这个支付宝userId
+	 */
+	@ApiField("identity_param")
+	private String identityParam;
 
-  public String getIdentityParam() {
-    return this.identityParam;
-  }
-
-  public void setIdentityParam(String identityParam) {
-    this.identityParam = identityParam;
-  }
+	public String getIdentityParam() {
+		return this.identityParam;
+	}
+	public void setIdentityParam(String identityParam) {
+		this.identityParam = identityParam;
+	}
 
 }

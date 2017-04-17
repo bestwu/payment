@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiMarketingAdvertisingQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3267511714792969992L;
+	private static final long serialVersionUID = 4776828276145525477L;
 
-  /**
-   * 广告Id，唯一标识一条广告
-   */
-  @ApiField("ad_id")
-  private String adId;
+	/**
+	 * 广告Id，唯一标识一条广告
+	 */
+	@ApiField("ad_id")
+	private String adId;
 
-  public String getAdId() {
-    return this.adId;
-  }
-
-  public void setAdId(String adId) {
-    this.adId = adId;
-  }
+	public String getAdId() {
+		return this.adId;
+	}
+	public void setAdId(String adId) {
+		this.adId = adId;
+	}
 
 }

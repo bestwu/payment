@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarDialogonlineVehicleQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2863112341819389333L;
+	private static final long serialVersionUID = 2365949345815691511L;
 
-  /**
-   * 车辆ID
-   */
-  @ApiField("vi_id")
-  private String viId;
+	/**
+	 * 车辆ID
+	 */
+	@ApiField("vi_id")
+	private String viId;
 
-  public String getViId() {
-    return this.viId;
-  }
-
-  public void setViId(String viId) {
-    this.viId = viId;
-  }
+	public String getViId() {
+		return this.viId;
+	}
+	public void setViId(String viId) {
+		this.viId = viId;
+	}
 
 }

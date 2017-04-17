@@ -7,24 +7,23 @@ import com.alipay.api.internal.mapping.ApiField;
  * 优惠活动查看
  *
  * @author auto create
- * @since 1.0, 2016-11-10 14:13:39
+ * @since 1.0, 2017-03-03 16:47:49
  */
 public class AlipayMarketingCampaignDiscountQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6173712521751769654L;
+	private static final long serialVersionUID = 7374941562868766566L;
 
-  /**
-   * 活动id
-   */
-  @ApiField("camp_id")
-  private String campId;
+	/**
+	 * 活动id
+	 */
+	@ApiField("camp_id")
+	private String campId;
 
-  public String getCampId() {
-    return this.campId;
-  }
-
-  public void setCampId(String campId) {
-    this.campId = campId;
-  }
+	public String getCampId() {
+		return this.campId;
+	}
+	public void setCampId(String campId) {
+		this.campId = campId;
+	}
 
 }

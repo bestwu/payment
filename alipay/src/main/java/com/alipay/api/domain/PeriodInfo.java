@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class PeriodInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 4819547562276368851L;
+	private static final long serialVersionUID = 3817667391866325591L;
 
-  /**
-   * 单位
-   */
-  @ApiField("dimension")
-  private String dimension;
+	/**
+	 * 单位
+	 */
+	@ApiField("dimension")
+	private String dimension;
 
-  /**
-   * 周期值
-   */
-  @ApiField("value")
-  private Long value;
+	/**
+	 * 周期值
+	 */
+	@ApiField("value")
+	private Long value;
 
-  public String getDimension() {
-    return this.dimension;
-  }
+	public String getDimension() {
+		return this.dimension;
+	}
+	public void setDimension(String dimension) {
+		this.dimension = dimension;
+	}
 
-  public void setDimension(String dimension) {
-    this.dimension = dimension;
-  }
-
-  public Long getValue() {
-    return this.value;
-  }
-
-  public void setValue(Long value) {
-    this.value = value;
-  }
+	public Long getValue() {
+		return this.value;
+	}
+	public void setValue(Long value) {
+		this.value = value;
+	}
 
 }

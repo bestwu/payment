@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarParkingExitinfoSyncModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8816226228659876119L;
+	private static final long serialVersionUID = 8448871359531167571L;
 
-  /**
-   * 车牌号
-   */
-  @ApiField("car_number")
-  private String carNumber;
+	/**
+	 * 车牌号
+	 */
+	@ApiField("car_number")
+	private String carNumber;
 
-  /**
-   * 车辆离场时间，格式"YYYY-MM-DD HH:mm:ss"，24小时制
-   */
-  @ApiField("out_time")
-  private String outTime;
+	/**
+	 * 车辆离场时间，格式"YYYY-MM-DD HH:mm:ss"，24小时制
+	 */
+	@ApiField("out_time")
+	private String outTime;
 
-  /**
-   * 支付宝停车场ID，系统唯一
-   */
-  @ApiField("parking_id")
-  private String parkingId;
+	/**
+	 * 支付宝停车场ID，系统唯一
+	 */
+	@ApiField("parking_id")
+	private String parkingId;
 
-  public String getCarNumber() {
-    return this.carNumber;
-  }
+	public String getCarNumber() {
+		return this.carNumber;
+	}
+	public void setCarNumber(String carNumber) {
+		this.carNumber = carNumber;
+	}
 
-  public void setCarNumber(String carNumber) {
-    this.carNumber = carNumber;
-  }
+	public String getOutTime() {
+		return this.outTime;
+	}
+	public void setOutTime(String outTime) {
+		this.outTime = outTime;
+	}
 
-  public String getOutTime() {
-    return this.outTime;
-  }
-
-  public void setOutTime(String outTime) {
-    this.outTime = outTime;
-  }
-
-  public String getParkingId() {
-    return this.parkingId;
-  }
-
-  public void setParkingId(String parkingId) {
-    this.parkingId = parkingId;
-  }
+	public String getParkingId() {
+		return this.parkingId;
+	}
+	public void setParkingId(String parkingId) {
+		this.parkingId = parkingId;
+	}
 
 }

@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class MerchantScreenHit extends AlipayObject {
 
-  private static final long serialVersionUID = 5321596468668463995L;
+	private static final long serialVersionUID = 2758797661823755775L;
 
-  /**
-   * 送检的实体类型，如CEO，控股人，等
-   */
-  @ApiField("input_type")
-  private String inputType;
+	/**
+	 * 送检的实体类型，如CEO，控股人，等
+	 */
+	@ApiField("input_type")
+	private String inputType;
 
-  /**
-   * 命中详情
-   */
-  @ApiField("risk_detail")
-  private String riskDetail;
+	/**
+	 * 命中详情
+	 */
+	@ApiField("risk_detail")
+	private String riskDetail;
 
-  public String getInputType() {
-    return this.inputType;
-  }
+	public String getInputType() {
+		return this.inputType;
+	}
+	public void setInputType(String inputType) {
+		this.inputType = inputType;
+	}
 
-  public void setInputType(String inputType) {
-    this.inputType = inputType;
-  }
-
-  public String getRiskDetail() {
-    return this.riskDetail;
-  }
-
-  public void setRiskDetail(String riskDetail) {
-    this.riskDetail = riskDetail;
-  }
+	public String getRiskDetail() {
+		return this.riskDetail;
+	}
+	public void setRiskDetail(String riskDetail) {
+		this.riskDetail = riskDetail;
+	}
 
 }

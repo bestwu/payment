@@ -9,150 +9,153 @@ import com.alipay.api.internal.mapping.ApiField;
  * 理赔受理
  *
  * @author auto create
- * @since 1.0, 2016-10-28 10:28:49
+ * @since 1.0, 2017-03-14 14:36:52
  */
 public class AlipayInsSceneClaimApplyModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3827753566813935271L;
+	private static final long serialVersionUID = 7226942951492729342L;
 
-  /**
-   * 出险地点
-   */
-  @ApiField("accident_address")
-  private String accidentAddress;
+	/**
+	 * 出险地点
+	 */
+	@ApiField("accident_address")
+	private String accidentAddress;
 
-  /**
-   * 出险描述
-   */
-  @ApiField("accident_desc")
-  private String accidentDesc;
+	/**
+	 * 出险描述
+	 */
+	@ApiField("accident_desc")
+	private String accidentDesc;
 
-  /**
-   * 出险时间
-   */
-  @ApiField("accident_time")
-  private Date accidentTime;
+	/**
+	 * 出险时间
+	 */
+	@ApiField("accident_time")
+	private Date accidentTime;
 
-  /**
-   * 支付账单流水的标题
-   */
-  @ApiField("bill_title")
-  private String billTitle;
+	/**
+	 * 受益人
+	 */
+	@ApiField("beneficiary")
+	private InsPerson beneficiary;
 
-  /**
-   * 理赔因子;标准json格式
-   */
-  @ApiField("biz_data")
-  private String bizData;
+	/**
+	 * 支付账单流水的标题
+	 */
+	@ApiField("bill_title")
+	private String billTitle;
 
-  /**
-   * 索赔金额（如果需要外部指定则必填），单位分
-   */
-  @ApiField("claim_fee")
-  private Long claimFee;
+	/**
+	 * 理赔因子;标准json格式
+	 */
+	@ApiField("biz_data")
+	private String bizData;
 
-  /**
-   * 商户生成的外部投保业务单号
-   */
-  @ApiField("out_biz_no")
-  private String outBizNo;
+	/**
+	 * 索赔金额（如果需要外部指定则必填），单位分
+	 */
+	@ApiField("claim_fee")
+	private Long claimFee;
 
-  /**
-   * 商户生成的理赔请求单号【幂等字段】
-   */
-  @ApiField("out_request_no")
-  private String outRequestNo;
+	/**
+	 * 商户生成的外部投保业务单号
+	 */
+	@ApiField("out_biz_no")
+	private String outBizNo;
 
-  /**
-   * 产品编码；由蚂蚁保险平台分配，商户通过该产品编码投保特定的保险产品（如饿了么外卖延误险）
-   */
-  @ApiField("prod_code")
-  private String prodCode;
+	/**
+	 * 商户生成的理赔请求单号【幂等字段】
+	 */
+	@ApiField("out_request_no")
+	private String outRequestNo;
 
-  /**
-   * 报案人
-   */
-  @ApiField("reporter")
-  private InsPerson reporter;
+	/**
+	 * 产品编码；由蚂蚁保险平台分配，商户通过该产品编码投保特定的保险产品（如饿了么外卖延误险）
+	 */
+	@ApiField("prod_code")
+	private String prodCode;
 
-  public String getAccidentAddress() {
-    return this.accidentAddress;
-  }
+	/**
+	 * 报案人
+	 */
+	@ApiField("reporter")
+	private InsPerson reporter;
 
-  public void setAccidentAddress(String accidentAddress) {
-    this.accidentAddress = accidentAddress;
-  }
+	public String getAccidentAddress() {
+		return this.accidentAddress;
+	}
+	public void setAccidentAddress(String accidentAddress) {
+		this.accidentAddress = accidentAddress;
+	}
 
-  public String getAccidentDesc() {
-    return this.accidentDesc;
-  }
+	public String getAccidentDesc() {
+		return this.accidentDesc;
+	}
+	public void setAccidentDesc(String accidentDesc) {
+		this.accidentDesc = accidentDesc;
+	}
 
-  public void setAccidentDesc(String accidentDesc) {
-    this.accidentDesc = accidentDesc;
-  }
+	public Date getAccidentTime() {
+		return this.accidentTime;
+	}
+	public void setAccidentTime(Date accidentTime) {
+		this.accidentTime = accidentTime;
+	}
 
-  public Date getAccidentTime() {
-    return this.accidentTime;
-  }
+	public InsPerson getBeneficiary() {
+		return this.beneficiary;
+	}
+	public void setBeneficiary(InsPerson beneficiary) {
+		this.beneficiary = beneficiary;
+	}
 
-  public void setAccidentTime(Date accidentTime) {
-    this.accidentTime = accidentTime;
-  }
+	public String getBillTitle() {
+		return this.billTitle;
+	}
+	public void setBillTitle(String billTitle) {
+		this.billTitle = billTitle;
+	}
 
-  public String getBillTitle() {
-    return this.billTitle;
-  }
+	public String getBizData() {
+		return this.bizData;
+	}
+	public void setBizData(String bizData) {
+		this.bizData = bizData;
+	}
 
-  public void setBillTitle(String billTitle) {
-    this.billTitle = billTitle;
-  }
+	public Long getClaimFee() {
+		return this.claimFee;
+	}
+	public void setClaimFee(Long claimFee) {
+		this.claimFee = claimFee;
+	}
 
-  public String getBizData() {
-    return this.bizData;
-  }
+	public String getOutBizNo() {
+		return this.outBizNo;
+	}
+	public void setOutBizNo(String outBizNo) {
+		this.outBizNo = outBizNo;
+	}
 
-  public void setBizData(String bizData) {
-    this.bizData = bizData;
-  }
+	public String getOutRequestNo() {
+		return this.outRequestNo;
+	}
+	public void setOutRequestNo(String outRequestNo) {
+		this.outRequestNo = outRequestNo;
+	}
 
-  public Long getClaimFee() {
-    return this.claimFee;
-  }
+	public String getProdCode() {
+		return this.prodCode;
+	}
+	public void setProdCode(String prodCode) {
+		this.prodCode = prodCode;
+	}
 
-  public void setClaimFee(Long claimFee) {
-    this.claimFee = claimFee;
-  }
-
-  public String getOutBizNo() {
-    return this.outBizNo;
-  }
-
-  public void setOutBizNo(String outBizNo) {
-    this.outBizNo = outBizNo;
-  }
-
-  public String getOutRequestNo() {
-    return this.outRequestNo;
-  }
-
-  public void setOutRequestNo(String outRequestNo) {
-    this.outRequestNo = outRequestNo;
-  }
-
-  public String getProdCode() {
-    return this.prodCode;
-  }
-
-  public void setProdCode(String prodCode) {
-    this.prodCode = prodCode;
-  }
-
-  public InsPerson getReporter() {
-    return this.reporter;
-  }
-
-  public void setReporter(InsPerson reporter) {
-    this.reporter = reporter;
-  }
+	public InsPerson getReporter() {
+		return this.reporter;
+	}
+	public void setReporter(InsPerson reporter) {
+		this.reporter = reporter;
+	}
 
 }

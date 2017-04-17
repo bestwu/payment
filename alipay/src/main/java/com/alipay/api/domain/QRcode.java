@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class QRcode extends AlipayObject {
 
-  private static final long serialVersionUID = 6834485991934556281L;
+	private static final long serialVersionUID = 7386587666514545921L;
 
-  /**
-   * 用户ID
-   */
-  @ApiField("card_id")
-  private String cardId;
+	/**
+	 * 用户ID
+	 */
+	@ApiField("card_id")
+	private String cardId;
 
-  /**
-   * qrcode地址
-   */
-  @ApiField("qrcode_url")
-  private String qrcodeUrl;
+	/**
+	 * qrcode地址
+	 */
+	@ApiField("qrcode_url")
+	private String qrcodeUrl;
 
-  public String getCardId() {
-    return this.cardId;
-  }
+	public String getCardId() {
+		return this.cardId;
+	}
+	public void setCardId(String cardId) {
+		this.cardId = cardId;
+	}
 
-  public void setCardId(String cardId) {
-    this.cardId = cardId;
-  }
-
-  public String getQrcodeUrl() {
-    return this.qrcodeUrl;
-  }
-
-  public void setQrcodeUrl(String qrcodeUrl) {
-    this.qrcodeUrl = qrcodeUrl;
-  }
+	public String getQrcodeUrl() {
+		return this.qrcodeUrl;
+	}
+	public void setQrcodeUrl(String qrcodeUrl) {
+		this.qrcodeUrl = qrcodeUrl;
+	}
 
 }

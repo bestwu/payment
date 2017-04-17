@@ -14,50 +14,47 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class KbAdvertMissionSubject extends AlipayObject {
 
-  private static final long serialVersionUID = 3263719325411853531L;
+	private static final long serialVersionUID = 3723547263849734746L;
 
-  /**
-   * 分佣条款信息
-   */
-  @ApiListField("commission_clause_list")
-  @ApiField("kb_advert_commission_clause")
-  private List<KbAdvertCommissionClause> commissionClauseList;
+	/**
+	 * 分佣条款信息
+	 */
+	@ApiListField("commission_clause_list")
+	@ApiField("kb_advert_commission_clause")
+	private List<KbAdvertCommissionClause> commissionClauseList;
 
-  /**
-   * 标的对象的业务ID，如果标的为商品，则subject_biz_id为商品ID
-   */
-  @ApiField("subject_biz_id")
-  private String subjectBizId;
+	/**
+	 * 标的对象的业务ID，如果标的为商品，则subject_biz_id为商品ID
+	 */
+	@ApiField("subject_biz_id")
+	private String subjectBizId;
 
-  /**
-   * 标的类型
-   * voucher-券
-   */
-  @ApiField("subject_type")
-  private String subjectType;
+	/**
+	 * 标的类型
+voucher-券
+	 */
+	@ApiField("subject_type")
+	private String subjectType;
 
-  public List<KbAdvertCommissionClause> getCommissionClauseList() {
-    return this.commissionClauseList;
-  }
+	public List<KbAdvertCommissionClause> getCommissionClauseList() {
+		return this.commissionClauseList;
+	}
+	public void setCommissionClauseList(List<KbAdvertCommissionClause> commissionClauseList) {
+		this.commissionClauseList = commissionClauseList;
+	}
 
-  public void setCommissionClauseList(List<KbAdvertCommissionClause> commissionClauseList) {
-    this.commissionClauseList = commissionClauseList;
-  }
+	public String getSubjectBizId() {
+		return this.subjectBizId;
+	}
+	public void setSubjectBizId(String subjectBizId) {
+		this.subjectBizId = subjectBizId;
+	}
 
-  public String getSubjectBizId() {
-    return this.subjectBizId;
-  }
-
-  public void setSubjectBizId(String subjectBizId) {
-    this.subjectBizId = subjectBizId;
-  }
-
-  public String getSubjectType() {
-    return this.subjectType;
-  }
-
-  public void setSubjectType(String subjectType) {
-    this.subjectType = subjectType;
-  }
+	public String getSubjectType() {
+		return this.subjectType;
+	}
+	public void setSubjectType(String subjectType) {
+		this.subjectType = subjectType;
+	}
 
 }

@@ -11,163 +11,157 @@ import com.alipay.api.AlipayObject;
 
 /**
  * ALIPAY API: alipay.offline.marketing.voucher.code.upload request
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-06-23 17:58:11
  */
-public class AlipayOfflineMarketingVoucherCodeUploadRequest implements
-    AlipayUploadRequest<AlipayOfflineMarketingVoucherCodeUploadResponse> {
+public class AlipayOfflineMarketingVoucherCodeUploadRequest implements AlipayUploadRequest<AlipayOfflineMarketingVoucherCodeUploadResponse> {
 
-  private AlipayHashMap udfParams; // add user-defined text parameters
-  private String apiVersion = "1.0";
+	private AlipayHashMap udfParams; // add user-defined text parameters
+	private String apiVersion="1.0";
 
-  /**
-   * 约定的扩展参数
-   */
-  private String extendParams;
+	/** 
+	* 约定的扩展参数
+	 */
+	private String extendParams;
 
-  /**
-   * 文件编码
-   */
-  private String fileCharset;
+	/** 
+	* 文件编码
+	 */
+	private String fileCharset;
 
-  /**
-   * 文件二进制内容
-   */
-  private FileItem fileContent;
+	/** 
+	* 文件二进制内容
+	 */
+	private FileItem fileContent;
 
-  public void setExtendParams(String extendParams) {
-    this.extendParams = extendParams;
-  }
+	public void setExtendParams(String extendParams) {
+		this.extendParams = extendParams;
+	}
+	public String getExtendParams() {
+		return this.extendParams;
+	}
 
-  public String getExtendParams() {
-    return this.extendParams;
-  }
+	public void setFileCharset(String fileCharset) {
+		this.fileCharset = fileCharset;
+	}
+	public String getFileCharset() {
+		return this.fileCharset;
+	}
 
-  public void setFileCharset(String fileCharset) {
-    this.fileCharset = fileCharset;
-  }
+	public void setFileContent(FileItem fileContent) {
+		this.fileContent = fileContent;
+	}
+	public FileItem getFileContent() {
+		return this.fileContent;
+	}
+	private String terminalType;
+	private String terminalInfo;
+	private String prodCode;
+	private String notifyUrl;
+	private String returnUrl;
+    private boolean needEncrypt=false;
+	private AlipayObject bizModel=null;
 
-  public String getFileCharset() {
-    return this.fileCharset;
-  }
+	public String getNotifyUrl() {
+		return this.notifyUrl;
+	}
 
-  public void setFileContent(FileItem fileContent) {
-    this.fileContent = fileContent;
-  }
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+	}
 
-  public FileItem getFileContent() {
-    return this.fileContent;
-  }
+	public String getReturnUrl() {
+		return this.returnUrl;
+	}
 
-  private String terminalType;
-  private String terminalInfo;
-  private String prodCode;
-  private String notifyUrl;
-  private String returnUrl;
-  private boolean needEncrypt = false;
-  private AlipayObject bizModel = null;
+	public void setReturnUrl(String returnUrl) {
+		this.returnUrl = returnUrl;
+	}
 
-  public String getNotifyUrl() {
-    return this.notifyUrl;
-  }
+	public String getApiVersion() {
+		return this.apiVersion;
+	}
+	public void setApiVersion(String apiVersion) {
+		this.apiVersion = apiVersion;
+	}
 
-  public void setNotifyUrl(String notifyUrl) {
-    this.notifyUrl = notifyUrl;
-  }
-
-  public String getReturnUrl() {
-    return this.returnUrl;
-  }
-
-  public void setReturnUrl(String returnUrl) {
-    this.returnUrl = returnUrl;
-  }
-
-  public String getApiVersion() {
-    return this.apiVersion;
-  }
-
-  public void setApiVersion(String apiVersion) {
-    this.apiVersion = apiVersion;
-  }
-
-  public void setTerminalType(String terminalType) {
-    this.terminalType = terminalType;
-  }
-
-  public String getTerminalType() {
-    return this.terminalType;
-  }
-
-  public void setTerminalInfo(String terminalInfo) {
-    this.terminalInfo = terminalInfo;
-  }
-
-  public String getTerminalInfo() {
-    return this.terminalInfo;
-  }
-
-  public String getProdCode() {
-    return this.prodCode;
-  }
-
-  public void setProdCode(String prodCode) {
-    this.prodCode = prodCode;
-  }
-
-  public String getApiMethodName() {
-    return "alipay.offline.marketing.voucher.code.upload";
-  }
-
-  public Map<String, String> getTextParams() {
-    AlipayHashMap txtParams = new AlipayHashMap();
-    txtParams.put("extend_params", this.extendParams);
-    txtParams.put("file_charset", this.fileCharset);
-    if (udfParams != null) {
-      txtParams.putAll(this.udfParams);
+	public void setTerminalType(String terminalType){
+		this.terminalType=terminalType;
+	}
+	
+    public String getTerminalType(){
+    	return this.terminalType;
     }
-    return txtParams;
-  }
 
-  public void putOtherTextParam(String key, String value) {
-    if (this.udfParams == null) {
-      this.udfParams = new AlipayHashMap();
+    public void setTerminalInfo(String terminalInfo){
+    	this.terminalInfo=terminalInfo;
     }
-    this.udfParams.put(key, value);
-  }
 
-  public Map<String, FileItem> getFileParams() {
-    Map<String, FileItem> params = new HashMap<String, FileItem>();
-    params.put("file_content", this.fileContent);
-    return params;
-  }
+    public String getTerminalInfo(){
+    	return this.terminalInfo;
+    }
+	
+	public String getProdCode() {
+		return this.prodCode; 
+	}
+	
+	public void setProdCode(String prodCode) {
+		this.prodCode=prodCode;
+	}
+    
+	public String getApiMethodName() {
+		return "alipay.offline.marketing.voucher.code.upload";
+	}
 
-  public Class<AlipayOfflineMarketingVoucherCodeUploadResponse> getResponseClass() {
-    return AlipayOfflineMarketingVoucherCodeUploadResponse.class;
-  }
+	public Map<String, String> getTextParams() {		
+		AlipayHashMap txtParams = new AlipayHashMap();
+		txtParams.put("extend_params", this.extendParams);
+		txtParams.put("file_charset", this.fileCharset);
+		if(udfParams != null) {
+			txtParams.putAll(this.udfParams);
+		}
+		return txtParams;
+	}
+	
+	public void putOtherTextParam(String key, String value) {
+		if(this.udfParams == null) {
+			this.udfParams = new AlipayHashMap();
+		}
+		this.udfParams.put(key, value);
+	}
 
-  public boolean isNeedEncrypt() {
+	public Map<String, FileItem> getFileParams() {
+		Map<String, FileItem> params = new HashMap<String, FileItem>();
+		params.put("file_content", this.fileContent);
+		return params;
+	}
 
-    return this.needEncrypt;
-  }
-
-
-  public void setNeedEncrypt(boolean needEncrypt) {
-
-    this.needEncrypt = needEncrypt;
-  }
-
-  public AlipayObject getBizModel() {
-
-    return this.bizModel;
-  }
-
-
-  public void setBizModel(AlipayObject bizModel) {
-
-    this.bizModel = bizModel;
-  }
+	public Class<AlipayOfflineMarketingVoucherCodeUploadResponse> getResponseClass() {
+		return AlipayOfflineMarketingVoucherCodeUploadResponse.class;
+	}
+	
+	 public boolean isNeedEncrypt() {
+    
+      return this.needEncrypt;
+    }
 
 
+    public void setNeedEncrypt(boolean needEncrypt) {
+    
+         this.needEncrypt=needEncrypt;
+    }
+    
+    public AlipayObject getBizModel() {
+    
+      return this.bizModel;
+    }
+
+
+    public void setBizModel(AlipayObject bizModel) {
+    
+         this.bizModel=bizModel;
+    }
+	
+	
 }

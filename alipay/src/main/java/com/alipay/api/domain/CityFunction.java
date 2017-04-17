@@ -14,49 +14,46 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class CityFunction extends AlipayObject {
 
-  private static final long serialVersionUID = 4631575757387665813L;
+	private static final long serialVersionUID = 4357483939951185616L;
 
-  /**
-   * 城市标准编码
-   */
-  @ApiField("city_code")
-  private String cityCode;
+	/**
+	 * 城市标准编码
+	 */
+	@ApiField("city_code")
+	private String cityCode;
 
-  /**
-   * 城市名称
-   */
-  @ApiField("city_name")
-  private String cityName;
+	/**
+	 * 城市名称
+	 */
+	@ApiField("city_name")
+	private String cityName;
 
-  /**
-   * 描述功能，支持开卡(issue)，圈存(load)，充值转账(recharge)
-   */
-  @ApiListField("function_type")
-  @ApiField("string")
-  private List<String> functionType;
+	/**
+	 * 描述功能，支持开卡(issue)，圈存(load)，充值转账(recharge)
+	 */
+	@ApiListField("function_type")
+	@ApiField("string")
+	private List<String> functionType;
 
-  public String getCityCode() {
-    return this.cityCode;
-  }
+	public String getCityCode() {
+		return this.cityCode;
+	}
+	public void setCityCode(String cityCode) {
+		this.cityCode = cityCode;
+	}
 
-  public void setCityCode(String cityCode) {
-    this.cityCode = cityCode;
-  }
+	public String getCityName() {
+		return this.cityName;
+	}
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
 
-  public String getCityName() {
-    return this.cityName;
-  }
-
-  public void setCityName(String cityName) {
-    this.cityName = cityName;
-  }
-
-  public List<String> getFunctionType() {
-    return this.functionType;
-  }
-
-  public void setFunctionType(List<String> functionType) {
-    this.functionType = functionType;
-  }
+	public List<String> getFunctionType() {
+		return this.functionType;
+	}
+	public void setFunctionType(List<String> functionType) {
+		this.functionType = functionType;
+	}
 
 }

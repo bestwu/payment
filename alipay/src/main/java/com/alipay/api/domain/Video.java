@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class Video extends AlipayObject {
 
-  private static final long serialVersionUID = 2717774455474727432L;
+	private static final long serialVersionUID = 7669533816922886429L;
 
-  /**
-   * 调用alipay.offline.material.image.upload接口将视频上传到素材中心后，生成的ID
-   */
-  @ApiField("location")
-  private String location;
+	/**
+	 * 调用alipay.offline.material.image.upload接口将视频上传到素材中心后，生成的ID
+	 */
+	@ApiField("location")
+	private String location;
 
-  /**
-   * 视频名称
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 视频名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  public String getLocation() {
-    return this.location;
-  }
+	public String getLocation() {
+		return this.location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
 
-  public void setLocation(String location) {
-    this.location = location;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

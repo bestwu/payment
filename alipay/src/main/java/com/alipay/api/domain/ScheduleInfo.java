@@ -11,35 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ScheduleInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 5765638918871532515L;
+	private static final long serialVersionUID = 8729693151927193877L;
 
-  /**
-   * 根据定义的间隔长度跟单位，将date的时间切分，例如将2016-11-29整天按30分钟为一段切分为48段： 111111111111111111111111111111111110000011111111
-   * ， 其中0表示不可用，1表示可用
-   */
-  @ApiField("bitmap")
-  private String bitmap;
+	/**
+	 * 根据定义的间隔长度跟单位，将date的时间切分，例如将2016-11-29整天按30分钟为一段切分为48段： 111111111111111111111111111111111110000011111111 ， 其中0表示不可用，1表示可用
+	 */
+	@ApiField("bitmap")
+	private String bitmap;
 
-  /**
-   * 时间，默认YYYY-MM-DD格式，如果是单位是月，就填写YYYY-01-01格式，如果单位是周和日，就是YYYY-MM-01格式
-   */
-  @ApiField("date")
-  private String date;
+	/**
+	 * 时间，默认YYYY-MM-DD格式，如果是单位是月，就填写YYYY-01-01格式，如果单位是周和日，就是YYYY-MM-01格式
+	 */
+	@ApiField("date")
+	private String date;
 
-  public String getBitmap() {
-    return this.bitmap;
-  }
+	public String getBitmap() {
+		return this.bitmap;
+	}
+	public void setBitmap(String bitmap) {
+		this.bitmap = bitmap;
+	}
 
-  public void setBitmap(String bitmap) {
-    this.bitmap = bitmap;
-  }
-
-  public String getDate() {
-    return this.date;
-  }
-
-  public void setDate(String date) {
-    this.date = date;
-  }
+	public String getDate() {
+		return this.date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 
 }

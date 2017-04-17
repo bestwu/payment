@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class MergeVerifyConfig extends AlipayObject {
 
-  private static final long serialVersionUID = 2599166282943669976L;
+	private static final long serialVersionUID = 6316588797787755246L;
 
-  /**
-   * 可以与任意其他券叠加
-   */
-  @ApiField("general_merge_others")
-  private Boolean generalMergeOthers;
+	/**
+	 * 可以与任意其他券叠加
+	 */
+	@ApiField("general_merge_others")
+	private Boolean generalMergeOthers;
 
-  /**
-   * 全场和单品叠加标识
-   */
-  @ApiField("general_merge_single")
-  private Boolean generalMergeSingle;
+	/**
+	 * 全场和单品叠加标识
+	 */
+	@ApiField("general_merge_single")
+	private Boolean generalMergeSingle;
 
-  public Boolean getGeneralMergeOthers() {
-    return this.generalMergeOthers;
-  }
+	public Boolean getGeneralMergeOthers() {
+		return this.generalMergeOthers;
+	}
+	public void setGeneralMergeOthers(Boolean generalMergeOthers) {
+		this.generalMergeOthers = generalMergeOthers;
+	}
 
-  public void setGeneralMergeOthers(Boolean generalMergeOthers) {
-    this.generalMergeOthers = generalMergeOthers;
-  }
-
-  public Boolean getGeneralMergeSingle() {
-    return this.generalMergeSingle;
-  }
-
-  public void setGeneralMergeSingle(Boolean generalMergeSingle) {
-    this.generalMergeSingle = generalMergeSingle;
-  }
+	public Boolean getGeneralMergeSingle() {
+		return this.generalMergeSingle;
+	}
+	public void setGeneralMergeSingle(Boolean generalMergeSingle) {
+		this.generalMergeSingle = generalMergeSingle;
+	}
 
 }

@@ -14,21 +14,20 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayPlatformUseridGetModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8788769876833199875L;
+	private static final long serialVersionUID = 6116477289627766578L;
 
-  /**
-   * openId的列表
-   */
-  @ApiListField("open_ids")
-  @ApiField("string")
-  private List<String> openIds;
+	/**
+	 * openId的列表
+	 */
+	@ApiListField("open_ids")
+	@ApiField("string")
+	private List<String> openIds;
 
-  public List<String> getOpenIds() {
-    return this.openIds;
-  }
-
-  public void setOpenIds(List<String> openIds) {
-    this.openIds = openIds;
-  }
+	public List<String> getOpenIds() {
+		return this.openIds;
+	}
+	public void setOpenIds(List<String> openIds) {
+		this.openIds = openIds;
+	}
 
 }

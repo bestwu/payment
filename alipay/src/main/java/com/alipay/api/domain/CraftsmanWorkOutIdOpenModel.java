@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class CraftsmanWorkOutIdOpenModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6365761721676895914L;
+	private static final long serialVersionUID = 3151747836541769653L;
 
-  /**
-   * 外部作品id，isv生成，isv的appId+out_work_id全局唯一
-   */
-  @ApiField("out_work_id")
-  private String outWorkId;
+	/**
+	 * 外部作品id，isv生成，isv的appId+out_work_id全局唯一
+	 */
+	@ApiField("out_work_id")
+	private String outWorkId;
 
-  /**
-   * 支付宝生成的作品id，全局唯一，用于修改删除作品
-   */
-  @ApiField("work_id")
-  private String workId;
+	/**
+	 * 支付宝生成的作品id，全局唯一，用于修改删除作品
+	 */
+	@ApiField("work_id")
+	private String workId;
 
-  public String getOutWorkId() {
-    return this.outWorkId;
-  }
+	public String getOutWorkId() {
+		return this.outWorkId;
+	}
+	public void setOutWorkId(String outWorkId) {
+		this.outWorkId = outWorkId;
+	}
 
-  public void setOutWorkId(String outWorkId) {
-    this.outWorkId = outWorkId;
-  }
-
-  public String getWorkId() {
-    return this.workId;
-  }
-
-  public void setWorkId(String workId) {
-    this.workId = workId;
-  }
+	public String getWorkId() {
+		return this.workId;
+	}
+	public void setWorkId(String workId) {
+		this.workId = workId;
+	}
 
 }

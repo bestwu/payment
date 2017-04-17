@@ -14,91 +14,85 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class RefundDetail extends AlipayObject {
 
-  private static final long serialVersionUID = 2512787317427341574L;
+	private static final long serialVersionUID = 1752794659357375958L;
 
-  /**
-   * 交易退款金额
-   */
-  @ApiField("refund_amount")
-  private String refundAmount;
+	/**
+	 * 交易退款金额
+	 */
+	@ApiField("refund_amount")
+	private String refundAmount;
 
-  /**
-   * 退款备注
-   */
-  @ApiField("refund_memo")
-  private String refundMemo;
+	/**
+	 * 退款备注
+	 */
+	@ApiField("refund_memo")
+	private String refundMemo;
 
-  /**
-   * 退分润列表
-   */
-  @ApiListField("refund_royaltys")
-  @ApiField("refund_royalty_info")
-  private List<RefundRoyaltyInfo> refundRoyaltys;
+	/**
+	 * 退分润列表
+	 */
+	@ApiListField("refund_royaltys")
+	@ApiField("refund_royalty_info")
+	private List<RefundRoyaltyInfo> refundRoyaltys;
 
-  /**
-   * 退补差金额
-   */
-  @ApiField("refund_suppl_amount")
-  private String refundSupplAmount;
+	/**
+	 * 退补差金额
+	 */
+	@ApiField("refund_suppl_amount")
+	private String refundSupplAmount;
 
-  /**
-   * 退补差备注
-   */
-  @ApiField("refund_suppl_memo")
-  private String refundSupplMemo;
+	/**
+	 * 退补差备注
+	 */
+	@ApiField("refund_suppl_memo")
+	private String refundSupplMemo;
 
-  /**
-   * 支付宝交易号
-   */
-  @ApiField("trade_no")
-  private String tradeNo;
+	/**
+	 * 支付宝交易号
+	 */
+	@ApiField("trade_no")
+	private String tradeNo;
 
-  public String getRefundAmount() {
-    return this.refundAmount;
-  }
+	public String getRefundAmount() {
+		return this.refundAmount;
+	}
+	public void setRefundAmount(String refundAmount) {
+		this.refundAmount = refundAmount;
+	}
 
-  public void setRefundAmount(String refundAmount) {
-    this.refundAmount = refundAmount;
-  }
+	public String getRefundMemo() {
+		return this.refundMemo;
+	}
+	public void setRefundMemo(String refundMemo) {
+		this.refundMemo = refundMemo;
+	}
 
-  public String getRefundMemo() {
-    return this.refundMemo;
-  }
+	public List<RefundRoyaltyInfo> getRefundRoyaltys() {
+		return this.refundRoyaltys;
+	}
+	public void setRefundRoyaltys(List<RefundRoyaltyInfo> refundRoyaltys) {
+		this.refundRoyaltys = refundRoyaltys;
+	}
 
-  public void setRefundMemo(String refundMemo) {
-    this.refundMemo = refundMemo;
-  }
+	public String getRefundSupplAmount() {
+		return this.refundSupplAmount;
+	}
+	public void setRefundSupplAmount(String refundSupplAmount) {
+		this.refundSupplAmount = refundSupplAmount;
+	}
 
-  public List<RefundRoyaltyInfo> getRefundRoyaltys() {
-    return this.refundRoyaltys;
-  }
+	public String getRefundSupplMemo() {
+		return this.refundSupplMemo;
+	}
+	public void setRefundSupplMemo(String refundSupplMemo) {
+		this.refundSupplMemo = refundSupplMemo;
+	}
 
-  public void setRefundRoyaltys(List<RefundRoyaltyInfo> refundRoyaltys) {
-    this.refundRoyaltys = refundRoyaltys;
-  }
-
-  public String getRefundSupplAmount() {
-    return this.refundSupplAmount;
-  }
-
-  public void setRefundSupplAmount(String refundSupplAmount) {
-    this.refundSupplAmount = refundSupplAmount;
-  }
-
-  public String getRefundSupplMemo() {
-    return this.refundSupplMemo;
-  }
-
-  public void setRefundSupplMemo(String refundSupplMemo) {
-    this.refundSupplMemo = refundSupplMemo;
-  }
-
-  public String getTradeNo() {
-    return this.tradeNo;
-  }
-
-  public void setTradeNo(String tradeNo) {
-    this.tradeNo = tradeNo;
-  }
+	public String getTradeNo() {
+		return this.tradeNo;
+	}
+	public void setTradeNo(String tradeNo) {
+		this.tradeNo = tradeNo;
+	}
 
 }

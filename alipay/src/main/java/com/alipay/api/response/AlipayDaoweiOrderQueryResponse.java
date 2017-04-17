@@ -10,195 +10,196 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.daowei.order.query response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2017-01-16 11:29:56
+ * @since 1.0, 2017-03-20 14:00:38
  */
 public class AlipayDaoweiOrderQueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 6763584238391149889L;
+	private static final long serialVersionUID = 5149453369387299638L;
 
-  /**
-   * 订单创建时间，用户点击预约下单操作的时间，格式为yyyy-MM-dd HH:mm:ss（到秒）下单时间因早于服务预约时间
-   */
-  @ApiField("gmt_create")
-  private String gmtCreate;
+	/** 
+	 * 到位业务定义的订单买家id，全局唯一，商户可以根据该ID唯一确定买家的信息
+	 */
+	@ApiField("buyer_user_id")
+	private String buyerUserId;
 
-  /**
-   * 订单修改时间，格式为yyyy-MM-dd HH:mm:ss(到秒，创建订单时，修改时间与创建时间相同)
-   */
-  @ApiField("gmt_modified")
-  private String gmtModified;
+	/** 
+	 * 订单创建时间，用户点击预约下单操作的时间，格式为yyyy-MM-dd HH:mm:ss（到秒）下单时间因早于服务预约时间
+	 */
+	@ApiField("gmt_create")
+	private String gmtCreate;
 
-  /**
-   * 订单最后支付时间，格式：yyyy-MM-dd HH:mm:ss（到秒）
-   */
-  @ApiField("gmt_payment")
-  private String gmtPayment;
+	/** 
+	 * 订单修改时间，格式为yyyy-MM-dd HH:mm:ss(到秒，创建订单时，修改时间与创建时间相同)
+	 */
+	@ApiField("gmt_modified")
+	private String gmtModified;
 
-  /**
-   * 订单最后退款时间，格式：yyyy-MM-dd HH:mm:ss，订单产生退款时的最后操作时间
-   */
-  @ApiField("gmt_refund")
-  private String gmtRefund;
+	/** 
+	 * 订单最后支付时间，格式：yyyy-MM-dd HH:mm:ss（到秒）
+	 */
+	@ApiField("gmt_payment")
+	private String gmtPayment;
 
-  /**
-   * 物流信息，用户下订单填写的物流信息，包括服务地址的经纬度、联系人和手机号码以及扩展信息
-   */
-  @ApiField("logistics_info")
-  private OrderLogisticsInfo logisticsInfo;
+	/** 
+	 * 订单最后退款时间，格式：yyyy-MM-dd HH:mm:ss，订单产生退款时的最后操作时间
+	 */
+	@ApiField("gmt_refund")
+	private String gmtRefund;
 
-  /**
-   * 备注信息，消费者下单时填写的订单备注信息，长度不超过2000字符
-   */
-  @ApiField("memo")
-  private String memo;
+	/** 
+	 * 物流信息，用户下订单填写的物流信息，包括服务地址的经纬度、联系人和手机号码以及扩展信息
+	 */
+	@ApiField("logistics_info")
+	private OrderLogisticsInfo logisticsInfo;
 
-  /**
-   * 到位业务订单号，全局唯一，由32位数字组成，用户在到位下单时系统生成并消息同步给商家，商户只能查自己同步到的订单号
-   */
-  @ApiField("order_no")
-  private String orderNo;
+	/** 
+	 * 备注信息，消费者下单时填写的订单备注信息，长度不超过2000字符
+	 */
+	@ApiField("memo")
+	private String memo;
 
-  /**
-   * 到位订单状态枚举值，用于描述订单的业务状态，入参时手动设置（枚举：WAIT_CONFIRM/WAIT_SERVICE/CONFIRMED_SERVICE/SERVICE_COMPLETE/ORDER_FINISHED/ORDER_CLOSE）
-   */
-  @ApiField("order_status")
-  private String orderStatus;
+	/** 
+	 * 到位业务订单号。用户在到位下单时，由到位系统生成的32位全局唯一数字 id。
+通过应用中的应用网关post发送给商户（应用网关配置参考链接：https%3A%2F%2Fdoc.open.alipay.com%2Fdocs%2Fdoc.htm%3Fspm%3Da219a.7629140.0.0.TcIuKL%26treeId%3D193%26articleId%3D105310%26docType%3D1）。
+	 */
+	@ApiField("order_no")
+	private String orderNo;
 
-  /**
-   * 订单已付款金额，不小于0的数，单位为元，单个订单金额小于10w。
-   */
-  @ApiField("payment_amount")
-  private String paymentAmount;
+	/** 
+	 * 到位订单状态枚举值，用于描述订单的业务状态，到位系统定义的枚举值（枚举：WAIT_CONFIRM：待接单；WAIT_ASSIGN_SP：待确认服务者；WAIT_SERVICE：待服务；SERVICE_START：服务者开始服务；CONFIRMED_SERVICE：服务者确认服务完成；SERVICE_COMPLETE：消费者确认服务完成；ORDER_FINISHED：订单正常结束；ORDER_CLOSE：订单中途关闭；
+	 */
+	@ApiField("order_status")
+	private String orderStatus;
 
-  /**
-   * 订单实际金额，不小于0的数，单位为元，单个订单金额小于10w。
-   */
-  @ApiField("real_amount")
-  private String realAmount;
+	/** 
+	 * 用户下订单后已付款金额，不小于0的数，单位为元，单个订单金额小于10w。
+	 */
+	@ApiField("payment_amount")
+	private String paymentAmount;
 
-  /**
-   * 订单已退款的金额，单位为元，若订单存在退款，则金额大于0，且小于等于实际支付的金额
-   */
-  @ApiField("refund_amount")
-  private String refundAmount;
+	/** 
+	 * 用户下单产生的订单实际金额，不小于0的数，单位为元，单个订单金额小于10w。
+	 */
+	@ApiField("real_amount")
+	private String realAmount;
 
-  /**
-   * 服务订单列表：包含订单所对应的服务，服务可能包含不止一个，每个服务对应自身的单价、总价、退款价格等
-   */
-  @ApiListField("service_order_list")
-  @ApiField("service_order_info")
-  private List<ServiceOrderInfo> serviceOrderList;
+	/** 
+	 * 订单已退款的金额，单位为元，若订单存在退款，则金额大于0，且小于等于实际支付的金额
+	 */
+	@ApiField("refund_amount")
+	private String refundAmount;
 
-  /**
-   * 订单总的金额，不小于0的数，单位为元，单个订单金额小于10w
-   */
-  @ApiField("total_amount")
-  private String totalAmount;
+	/** 
+	 * 服务订单列表：包含订单所对应的服务，服务可能包含不止一个，每个服务对应自身的单价、总价、退款价格等
+	 */
+	@ApiListField("service_order_list")
+	@ApiField("service_order_info")
+	private List<ServiceOrderInfo> serviceOrderList;
 
-  public void setGmtCreate(String gmtCreate) {
-    this.gmtCreate = gmtCreate;
-  }
+	/** 
+	 * 用户下单产生的订单总金额，不小于0的数，单位为元，单个订单金额小于10w
+	 */
+	@ApiField("total_amount")
+	private String totalAmount;
 
-  public String getGmtCreate() {
-    return this.gmtCreate;
-  }
+	public void setBuyerUserId(String buyerUserId) {
+		this.buyerUserId = buyerUserId;
+	}
+	public String getBuyerUserId( ) {
+		return this.buyerUserId;
+	}
 
-  public void setGmtModified(String gmtModified) {
-    this.gmtModified = gmtModified;
-  }
+	public void setGmtCreate(String gmtCreate) {
+		this.gmtCreate = gmtCreate;
+	}
+	public String getGmtCreate( ) {
+		return this.gmtCreate;
+	}
 
-  public String getGmtModified() {
-    return this.gmtModified;
-  }
+	public void setGmtModified(String gmtModified) {
+		this.gmtModified = gmtModified;
+	}
+	public String getGmtModified( ) {
+		return this.gmtModified;
+	}
 
-  public void setGmtPayment(String gmtPayment) {
-    this.gmtPayment = gmtPayment;
-  }
+	public void setGmtPayment(String gmtPayment) {
+		this.gmtPayment = gmtPayment;
+	}
+	public String getGmtPayment( ) {
+		return this.gmtPayment;
+	}
 
-  public String getGmtPayment() {
-    return this.gmtPayment;
-  }
+	public void setGmtRefund(String gmtRefund) {
+		this.gmtRefund = gmtRefund;
+	}
+	public String getGmtRefund( ) {
+		return this.gmtRefund;
+	}
 
-  public void setGmtRefund(String gmtRefund) {
-    this.gmtRefund = gmtRefund;
-  }
+	public void setLogisticsInfo(OrderLogisticsInfo logisticsInfo) {
+		this.logisticsInfo = logisticsInfo;
+	}
+	public OrderLogisticsInfo getLogisticsInfo( ) {
+		return this.logisticsInfo;
+	}
 
-  public String getGmtRefund() {
-    return this.gmtRefund;
-  }
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
+	public String getMemo( ) {
+		return this.memo;
+	}
 
-  public void setLogisticsInfo(OrderLogisticsInfo logisticsInfo) {
-    this.logisticsInfo = logisticsInfo;
-  }
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
+	}
+	public String getOrderNo( ) {
+		return this.orderNo;
+	}
 
-  public OrderLogisticsInfo getLogisticsInfo() {
-    return this.logisticsInfo;
-  }
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+	public String getOrderStatus( ) {
+		return this.orderStatus;
+	}
 
-  public void setMemo(String memo) {
-    this.memo = memo;
-  }
+	public void setPaymentAmount(String paymentAmount) {
+		this.paymentAmount = paymentAmount;
+	}
+	public String getPaymentAmount( ) {
+		return this.paymentAmount;
+	}
 
-  public String getMemo() {
-    return this.memo;
-  }
+	public void setRealAmount(String realAmount) {
+		this.realAmount = realAmount;
+	}
+	public String getRealAmount( ) {
+		return this.realAmount;
+	}
 
-  public void setOrderNo(String orderNo) {
-    this.orderNo = orderNo;
-  }
+	public void setRefundAmount(String refundAmount) {
+		this.refundAmount = refundAmount;
+	}
+	public String getRefundAmount( ) {
+		return this.refundAmount;
+	}
 
-  public String getOrderNo() {
-    return this.orderNo;
-  }
+	public void setServiceOrderList(List<ServiceOrderInfo> serviceOrderList) {
+		this.serviceOrderList = serviceOrderList;
+	}
+	public List<ServiceOrderInfo> getServiceOrderList( ) {
+		return this.serviceOrderList;
+	}
 
-  public void setOrderStatus(String orderStatus) {
-    this.orderStatus = orderStatus;
-  }
-
-  public String getOrderStatus() {
-    return this.orderStatus;
-  }
-
-  public void setPaymentAmount(String paymentAmount) {
-    this.paymentAmount = paymentAmount;
-  }
-
-  public String getPaymentAmount() {
-    return this.paymentAmount;
-  }
-
-  public void setRealAmount(String realAmount) {
-    this.realAmount = realAmount;
-  }
-
-  public String getRealAmount() {
-    return this.realAmount;
-  }
-
-  public void setRefundAmount(String refundAmount) {
-    this.refundAmount = refundAmount;
-  }
-
-  public String getRefundAmount() {
-    return this.refundAmount;
-  }
-
-  public void setServiceOrderList(List<ServiceOrderInfo> serviceOrderList) {
-    this.serviceOrderList = serviceOrderList;
-  }
-
-  public List<ServiceOrderInfo> getServiceOrderList() {
-    return this.serviceOrderList;
-  }
-
-  public void setTotalAmount(String totalAmount) {
-    this.totalAmount = totalAmount;
-  }
-
-  public String getTotalAmount() {
-    return this.totalAmount;
-  }
+	public void setTotalAmount(String totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+	public String getTotalAmount( ) {
+		return this.totalAmount;
+	}
 
 }

@@ -11,76 +11,71 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class Article extends AlipayObject {
 
-  private static final long serialVersionUID = 2217661422696825237L;
+	private static final long serialVersionUID = 3167746236534898314L;
 
-  /**
-   * 链接文字
-   */
-  @ApiField("action_name")
-  private String actionName;
+	/**
+	 * 链接文字
+	 */
+	@ApiField("action_name")
+	private String actionName;
 
-  /**
-   * 图文消息内容
-   */
-  @ApiField("desc")
-  private String desc;
+	/**
+	 * 图文消息内容
+	 */
+	@ApiField("desc")
+	private String desc;
 
-  /**
-   * 图片链接，对于多条图文消息的第一条消息，该字段不能为空
-   */
-  @ApiField("image_url")
-  private String imageUrl;
+	/**
+	 * 图片链接，对于多条图文消息的第一条消息，该字段不能为空
+	 */
+	@ApiField("image_url")
+	private String imageUrl;
 
-  /**
-   * 图文消息标题
-   */
-  @ApiField("title")
-  private String title;
+	/**
+	 * 图文消息标题
+	 */
+	@ApiField("title")
+	private String title;
 
-  /**
-   * 点击图文消息跳转的链接
-   */
-  @ApiField("url")
-  private String url;
+	/**
+	 * 点击图文消息跳转的链接
+	 */
+	@ApiField("url")
+	private String url;
 
-  public String getActionName() {
-    return this.actionName;
-  }
+	public String getActionName() {
+		return this.actionName;
+	}
+	public void setActionName(String actionName) {
+		this.actionName = actionName;
+	}
 
-  public void setActionName(String actionName) {
-    this.actionName = actionName;
-  }
+	public String getDesc() {
+		return this.desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 
-  public String getDesc() {
-    return this.desc;
-  }
+	public String getImageUrl() {
+		return this.imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 
-  public void setDesc(String desc) {
-    this.desc = desc;
-  }
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-  public String getImageUrl() {
-    return this.imageUrl;
-  }
-
-  public void setImageUrl(String imageUrl) {
-    this.imageUrl = imageUrl;
-  }
-
-  public String getTitle() {
-    return this.title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public String getUrl() {
-    return this.url;
-  }
-
-  public void setUrl(String url) {
-    this.url = url;
-  }
+	public String getUrl() {
+		return this.url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
 }

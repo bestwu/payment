@@ -11,104 +11,97 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiQualityTestCloudacptCheckresultSubmitModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5677174319827197945L;
+	private static final long serialVersionUID = 7874889495646118588L;
 
-  /**
-   * 活动id
-   */
-  @ApiField("activity_id")
-  private String activityId;
+	/**
+	 * 活动id
+	 */
+	@ApiField("activity_id")
+	private String activityId;
 
-  /**
-   * 付款码
-   */
-  @ApiField("auth_code")
-  private String authCode;
+	/**
+	 * 付款码
+	 */
+	@ApiField("auth_code")
+	private String authCode;
 
-  /**
-   * 批次ID
-   */
-  @ApiField("batch_id")
-  private String batchId;
+	/**
+	 * 批次ID
+	 */
+	@ApiField("batch_id")
+	private String batchId;
 
-  /**
-   * 结束时间
-   */
-  @ApiField("end_time")
-  private String endTime;
+	/**
+	 * 结束时间
+	 */
+	@ApiField("end_time")
+	private String endTime;
 
-  /**
-   * partenter id
-   */
-  @ApiField("pid")
-  private String pid;
+	/**
+	 * partenter id
+	 */
+	@ApiField("pid")
+	private String pid;
 
-  /**
-   * 开始时间
-   */
-  @ApiField("start_time")
-  private String startTime;
+	/**
+	 * 开始时间
+	 */
+	@ApiField("start_time")
+	private String startTime;
 
-  /**
-   * user id
-   */
-  @ApiField("uid")
-  private String uid;
+	/**
+	 * user id
+	 */
+	@ApiField("uid")
+	private String uid;
 
-  public String getActivityId() {
-    return this.activityId;
-  }
+	public String getActivityId() {
+		return this.activityId;
+	}
+	public void setActivityId(String activityId) {
+		this.activityId = activityId;
+	}
 
-  public void setActivityId(String activityId) {
-    this.activityId = activityId;
-  }
+	public String getAuthCode() {
+		return this.authCode;
+	}
+	public void setAuthCode(String authCode) {
+		this.authCode = authCode;
+	}
 
-  public String getAuthCode() {
-    return this.authCode;
-  }
+	public String getBatchId() {
+		return this.batchId;
+	}
+	public void setBatchId(String batchId) {
+		this.batchId = batchId;
+	}
 
-  public void setAuthCode(String authCode) {
-    this.authCode = authCode;
-  }
+	public String getEndTime() {
+		return this.endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 
-  public String getBatchId() {
-    return this.batchId;
-  }
+	public String getPid() {
+		return this.pid;
+	}
+	public void setPid(String pid) {
+		this.pid = pid;
+	}
 
-  public void setBatchId(String batchId) {
-    this.batchId = batchId;
-  }
+	public String getStartTime() {
+		return this.startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
-  public String getEndTime() {
-    return this.endTime;
-  }
-
-  public void setEndTime(String endTime) {
-    this.endTime = endTime;
-  }
-
-  public String getPid() {
-    return this.pid;
-  }
-
-  public void setPid(String pid) {
-    this.pid = pid;
-  }
-
-  public String getStartTime() {
-    return this.startTime;
-  }
-
-  public void setStartTime(String startTime) {
-    this.startTime = startTime;
-  }
-
-  public String getUid() {
-    return this.uid;
-  }
-
-  public void setUid(String uid) {
-    this.uid = uid;
-  }
+	public String getUid() {
+		return this.uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
 
 }

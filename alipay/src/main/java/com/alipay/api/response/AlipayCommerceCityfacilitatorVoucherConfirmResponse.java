@@ -6,152 +6,142 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.commerce.cityfacilitator.voucher.confirm response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-07-07 13:14:52
  */
 public class AlipayCommerceCityfacilitatorVoucherConfirmResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 4255479499283775656L;
+	private static final long serialVersionUID = 6521568165734328115L;
 
-  /**
-   * 订单金额，元为单位
-   */
-  @ApiField("amount")
-  private String amount;
+	/** 
+	 * 订单金额，元为单位
+	 */
+	@ApiField("amount")
+	private String amount;
 
-  /**
-   * 终点站
-   */
-  @ApiField("end_station")
-  private String endStation;
+	/** 
+	 * 终点站
+	 */
+	@ApiField("end_station")
+	private String endStation;
 
-  /**
-   * 终点站点名称
-   */
-  @ApiField("end_station_name")
-  private String endStationName;
+	/** 
+	 * 终点站点名称
+	 */
+	@ApiField("end_station_name")
+	private String endStationName;
 
-  /**
-   * 订单中包含的票数
-   */
-  @ApiField("quantity")
-  private String quantity;
+	/** 
+	 * 订单中包含的票数
+	 */
+	@ApiField("quantity")
+	private String quantity;
 
-  /**
-   * 起点站
-   */
-  @ApiField("start_station")
-  private String startStation;
+	/** 
+	 * 起点站
+	 */
+	@ApiField("start_station")
+	private String startStation;
 
-  /**
-   * 起始站点名称
-   */
-  @ApiField("start_station_name")
-  private String startStationName;
+	/** 
+	 * 起始站点名称
+	 */
+	@ApiField("start_station_name")
+	private String startStationName;
 
-  /**
-   * 该笔订单状态，默认必然是SUCCESS
-   */
-  @ApiField("status")
-  private String status;
+	/** 
+	 * 该笔订单状态，默认必然是SUCCESS
+	 */
+	@ApiField("status")
+	private String status;
 
-  /**
-   * 票单价
-   */
-  @ApiField("ticket_price")
-  private String ticketPrice;
+	/** 
+	 * 票单价
+	 */
+	@ApiField("ticket_price")
+	private String ticketPrice;
 
-  /**
-   * 描述票种类
-   */
-  @ApiField("ticket_type")
-  private String ticketType;
+	/** 
+	 * 描述票种类
+	 */
+	@ApiField("ticket_type")
+	private String ticketType;
 
-  /**
-   * 支付宝交易号
-   */
-  @ApiField("trade_no")
-  private String tradeNo;
+	/** 
+	 * 支付宝交易号
+	 */
+	@ApiField("trade_no")
+	private String tradeNo;
 
-  public void setAmount(String amount) {
-    this.amount = amount;
-  }
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+	public String getAmount( ) {
+		return this.amount;
+	}
 
-  public String getAmount() {
-    return this.amount;
-  }
+	public void setEndStation(String endStation) {
+		this.endStation = endStation;
+	}
+	public String getEndStation( ) {
+		return this.endStation;
+	}
 
-  public void setEndStation(String endStation) {
-    this.endStation = endStation;
-  }
+	public void setEndStationName(String endStationName) {
+		this.endStationName = endStationName;
+	}
+	public String getEndStationName( ) {
+		return this.endStationName;
+	}
 
-  public String getEndStation() {
-    return this.endStation;
-  }
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
+	}
+	public String getQuantity( ) {
+		return this.quantity;
+	}
 
-  public void setEndStationName(String endStationName) {
-    this.endStationName = endStationName;
-  }
+	public void setStartStation(String startStation) {
+		this.startStation = startStation;
+	}
+	public String getStartStation( ) {
+		return this.startStation;
+	}
 
-  public String getEndStationName() {
-    return this.endStationName;
-  }
+	public void setStartStationName(String startStationName) {
+		this.startStationName = startStationName;
+	}
+	public String getStartStationName( ) {
+		return this.startStationName;
+	}
 
-  public void setQuantity(String quantity) {
-    this.quantity = quantity;
-  }
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getStatus( ) {
+		return this.status;
+	}
 
-  public String getQuantity() {
-    return this.quantity;
-  }
+	public void setTicketPrice(String ticketPrice) {
+		this.ticketPrice = ticketPrice;
+	}
+	public String getTicketPrice( ) {
+		return this.ticketPrice;
+	}
 
-  public void setStartStation(String startStation) {
-    this.startStation = startStation;
-  }
+	public void setTicketType(String ticketType) {
+		this.ticketType = ticketType;
+	}
+	public String getTicketType( ) {
+		return this.ticketType;
+	}
 
-  public String getStartStation() {
-    return this.startStation;
-  }
-
-  public void setStartStationName(String startStationName) {
-    this.startStationName = startStationName;
-  }
-
-  public String getStartStationName() {
-    return this.startStationName;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public String getStatus() {
-    return this.status;
-  }
-
-  public void setTicketPrice(String ticketPrice) {
-    this.ticketPrice = ticketPrice;
-  }
-
-  public String getTicketPrice() {
-    return this.ticketPrice;
-  }
-
-  public void setTicketType(String ticketType) {
-    this.ticketType = ticketType;
-  }
-
-  public String getTicketType() {
-    return this.ticketType;
-  }
-
-  public void setTradeNo(String tradeNo) {
-    this.tradeNo = tradeNo;
-  }
-
-  public String getTradeNo() {
-    return this.tradeNo;
-  }
+	public void setTradeNo(String tradeNo) {
+		this.tradeNo = tradeNo;
+	}
+	public String getTradeNo( ) {
+		return this.tradeNo;
+	}
 
 }

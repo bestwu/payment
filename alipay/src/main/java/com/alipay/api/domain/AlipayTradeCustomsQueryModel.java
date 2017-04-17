@@ -11,21 +11,20 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayTradeCustomsQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4169387146585976592L;
+	private static final long serialVersionUID = 2688245528874195489L;
 
-  /**
-   * 报关请求号。需要查询的商户端报关请求号，支持批量查询，
-   * 多个值用英文半角逗号分隔，单次请求最多10个;
-   */
-  @ApiField("out_request_nos")
-  private String outRequestNos;
+	/**
+	 * 报关请求号。需要查询的商户端报关请求号，支持批量查询，
+多个值用英文半角逗号分隔，单次请求最多10个;
+	 */
+	@ApiField("out_request_nos")
+	private String outRequestNos;
 
-  public String getOutRequestNos() {
-    return this.outRequestNos;
-  }
-
-  public void setOutRequestNos(String outRequestNos) {
-    this.outRequestNos = outRequestNos;
-  }
+	public String getOutRequestNos() {
+		return this.outRequestNos;
+	}
+	public void setOutRequestNos(String outRequestNos) {
+		this.outRequestNos = outRequestNos;
+	}
 
 }

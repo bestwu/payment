@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class MybankFinanceYulibaoAccountQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5545237729958581232L;
+	private static final long serialVersionUID = 2816952136235952365L;
 
-  /**
-   * 基金代码，必填。目前默认填001529，代表余利宝
-   */
-  @ApiField("fund_code")
-  private String fundCode;
+	/**
+	 * 基金代码，必填。目前默认填001529，代表余利宝
+	 */
+	@ApiField("fund_code")
+	private String fundCode;
 
-  public String getFundCode() {
-    return this.fundCode;
-  }
-
-  public void setFundCode(String fundCode) {
-    this.fundCode = fundCode;
-  }
+	public String getFundCode() {
+		return this.fundCode;
+	}
+	public void setFundCode(String fundCode) {
+		this.fundCode = fundCode;
+	}
 
 }

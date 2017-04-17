@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarDataExternalQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7393853464972687768L;
+	private static final long serialVersionUID = 6197829986841728515L;
 
-  /**
-   * external_system_name
-   */
-  @ApiField("external_system_name")
-  private String externalSystemName;
+	/**
+	 * external_system_name
+	 */
+	@ApiField("external_system_name")
+	private String externalSystemName;
 
-  /**
-   * is_transfer_uid
-   */
-  @ApiField("is_transfer_uid")
-  private Boolean isTransferUid;
+	/**
+	 * is_transfer_uid
+	 */
+	@ApiField("is_transfer_uid")
+	private Boolean isTransferUid;
 
-  /**
-   * operate_type
-   */
-  @ApiField("operate_type")
-  private String operateType;
+	/**
+	 * operate_type
+	 */
+	@ApiField("operate_type")
+	private String operateType;
 
-  /**
-   * query_condition
-   */
-  @ApiField("query_condition")
-  private String queryCondition;
+	/**
+	 * query_condition
+	 */
+	@ApiField("query_condition")
+	private String queryCondition;
 
-  public String getExternalSystemName() {
-    return this.externalSystemName;
-  }
+	public String getExternalSystemName() {
+		return this.externalSystemName;
+	}
+	public void setExternalSystemName(String externalSystemName) {
+		this.externalSystemName = externalSystemName;
+	}
 
-  public void setExternalSystemName(String externalSystemName) {
-    this.externalSystemName = externalSystemName;
-  }
+	public Boolean getIsTransferUid() {
+		return this.isTransferUid;
+	}
+	public void setIsTransferUid(Boolean isTransferUid) {
+		this.isTransferUid = isTransferUid;
+	}
 
-  public Boolean getIsTransferUid() {
-    return this.isTransferUid;
-  }
+	public String getOperateType() {
+		return this.operateType;
+	}
+	public void setOperateType(String operateType) {
+		this.operateType = operateType;
+	}
 
-  public void setIsTransferUid(Boolean isTransferUid) {
-    this.isTransferUid = isTransferUid;
-  }
-
-  public String getOperateType() {
-    return this.operateType;
-  }
-
-  public void setOperateType(String operateType) {
-    this.operateType = operateType;
-  }
-
-  public String getQueryCondition() {
-    return this.queryCondition;
-  }
-
-  public void setQueryCondition(String queryCondition) {
-    this.queryCondition = queryCondition;
-  }
+	public String getQueryCondition() {
+		return this.queryCondition;
+	}
+	public void setQueryCondition(String queryCondition) {
+		this.queryCondition = queryCondition;
+	}
 
 }

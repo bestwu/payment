@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayMarketingCampaignCashDetailQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2673685427638775435L;
+	private static final long serialVersionUID = 2375756932547822226L;
 
-  /**
-   * 要查询的现金红包活动号
-   */
-  @ApiField("crowd_no")
-  private String crowdNo;
+	/**
+	 * 要查询的现金红包活动号
+	 */
+	@ApiField("crowd_no")
+	private String crowdNo;
 
-  public String getCrowdNo() {
-    return this.crowdNo;
-  }
-
-  public void setCrowdNo(String crowdNo) {
-    this.crowdNo = crowdNo;
-  }
+	public String getCrowdNo() {
+		return this.crowdNo;
+	}
+	public void setCrowdNo(String crowdNo) {
+		this.crowdNo = crowdNo;
+	}
 
 }

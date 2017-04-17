@@ -14,79 +14,74 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class KbAdvertMissionQueryResponse extends AlipayObject {
 
-  private static final long serialVersionUID = 3367668251218952319L;
+	private static final long serialVersionUID = 6417714742674767361L;
 
-  /**
-   * 任务结束时间
-   */
-  @ApiField("gmt_end")
-  private String gmtEnd;
+	/**
+	 * 任务结束时间
+	 */
+	@ApiField("gmt_end")
+	private String gmtEnd;
 
-  /**
-   * 任务开始时间
-   */
-  @ApiField("gmt_start")
-  private String gmtStart;
+	/**
+	 * 任务开始时间
+	 */
+	@ApiField("gmt_start")
+	private String gmtStart;
 
-  /**
-   * 分佣任务ID
-   */
-  @ApiField("mission_id")
-  private String missionId;
+	/**
+	 * 分佣任务ID
+	 */
+	@ApiField("mission_id")
+	private String missionId;
 
-  /**
-   * 推广状态
-   * EFFECTIVE-有效
-   * INVALID-无效
-   */
-  @ApiField("promote_status")
-  private String promoteStatus;
+	/**
+	 * 推广状态
+EFFECTIVE-有效
+INVALID-无效
+	 */
+	@ApiField("promote_status")
+	private String promoteStatus;
 
-  /**
-   * 分佣标的信息
-   */
-  @ApiListField("subjects")
-  @ApiField("kb_advert_mission_subject")
-  private List<KbAdvertMissionSubject> subjects;
+	/**
+	 * 分佣标的信息
+	 */
+	@ApiListField("subjects")
+	@ApiField("kb_advert_mission_subject")
+	private List<KbAdvertMissionSubject> subjects;
 
-  public String getGmtEnd() {
-    return this.gmtEnd;
-  }
+	public String getGmtEnd() {
+		return this.gmtEnd;
+	}
+	public void setGmtEnd(String gmtEnd) {
+		this.gmtEnd = gmtEnd;
+	}
 
-  public void setGmtEnd(String gmtEnd) {
-    this.gmtEnd = gmtEnd;
-  }
+	public String getGmtStart() {
+		return this.gmtStart;
+	}
+	public void setGmtStart(String gmtStart) {
+		this.gmtStart = gmtStart;
+	}
 
-  public String getGmtStart() {
-    return this.gmtStart;
-  }
+	public String getMissionId() {
+		return this.missionId;
+	}
+	public void setMissionId(String missionId) {
+		this.missionId = missionId;
+	}
 
-  public void setGmtStart(String gmtStart) {
-    this.gmtStart = gmtStart;
-  }
+	public String getPromoteStatus() {
+		return this.promoteStatus;
+	}
+	public void setPromoteStatus(String promoteStatus) {
+		this.promoteStatus = promoteStatus;
+	}
 
-  public String getMissionId() {
-    return this.missionId;
-  }
-
-  public void setMissionId(String missionId) {
-    this.missionId = missionId;
-  }
-
-  public String getPromoteStatus() {
-    return this.promoteStatus;
-  }
-
-  public void setPromoteStatus(String promoteStatus) {
-    this.promoteStatus = promoteStatus;
-  }
-
-  public List<KbAdvertMissionSubject> getSubjects() {
-    return this.subjects;
-  }
-
-  public void setSubjects(List<KbAdvertMissionSubject> subjects) {
-    this.subjects = subjects;
-  }
+	public List<KbAdvertMissionSubject> getSubjects() {
+		return this.subjects;
+	}
+	public void setSubjects(List<KbAdvertMissionSubject> subjects) {
+		this.subjects = subjects;
+	}
 
 }

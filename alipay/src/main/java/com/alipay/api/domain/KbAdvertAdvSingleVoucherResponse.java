@@ -14,49 +14,46 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class KbAdvertAdvSingleVoucherResponse extends AlipayObject {
 
-  private static final long serialVersionUID = 7363924955893838641L;
+	private static final long serialVersionUID = 4691423957568689169L;
 
-  /**
-   * 广告内容模型
-   */
-  @ApiListField("adv_content_list")
-  @ApiField("kb_advert_adv_content_response")
-  private List<KbAdvertAdvContentResponse> advContentList;
+	/**
+	 * 广告内容模型
+	 */
+	@ApiListField("adv_content_list")
+	@ApiField("kb_advert_adv_content_response")
+	private List<KbAdvertAdvContentResponse> advContentList;
 
-  /**
-   * 广告内容（广告内容请使用新的属性adv_content_list，此属性仍会保留）
-   */
-  @ApiField("content")
-  private KbAdvertAdvContent content;
+	/**
+	 * 广告内容（广告内容请使用新的属性adv_content_list，此属性仍会保留）
+	 */
+	@ApiField("content")
+	private KbAdvertAdvContent content;
 
-  /**
-   * 券标的
-   */
-  @ApiField("voucher")
-  private KbAdvertSubjectVoucherResponse voucher;
+	/**
+	 * 券标的
+	 */
+	@ApiField("voucher")
+	private KbAdvertSubjectVoucherResponse voucher;
 
-  public List<KbAdvertAdvContentResponse> getAdvContentList() {
-    return this.advContentList;
-  }
+	public List<KbAdvertAdvContentResponse> getAdvContentList() {
+		return this.advContentList;
+	}
+	public void setAdvContentList(List<KbAdvertAdvContentResponse> advContentList) {
+		this.advContentList = advContentList;
+	}
 
-  public void setAdvContentList(List<KbAdvertAdvContentResponse> advContentList) {
-    this.advContentList = advContentList;
-  }
+	public KbAdvertAdvContent getContent() {
+		return this.content;
+	}
+	public void setContent(KbAdvertAdvContent content) {
+		this.content = content;
+	}
 
-  public KbAdvertAdvContent getContent() {
-    return this.content;
-  }
-
-  public void setContent(KbAdvertAdvContent content) {
-    this.content = content;
-  }
-
-  public KbAdvertSubjectVoucherResponse getVoucher() {
-    return this.voucher;
-  }
-
-  public void setVoucher(KbAdvertSubjectVoucherResponse voucher) {
-    this.voucher = voucher;
-  }
+	public KbAdvertSubjectVoucherResponse getVoucher() {
+		return this.voucher;
+	}
+	public void setVoucher(KbAdvertSubjectVoucherResponse voucher) {
+		this.voucher = voucher;
+	}
 
 }

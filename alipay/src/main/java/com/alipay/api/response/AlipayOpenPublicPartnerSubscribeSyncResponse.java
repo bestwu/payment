@@ -5,13 +5,16 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.open.public.partner.subscribe.sync response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-12-08 12:10:03
+ * @since 1.0, 2017-04-07 20:24:37
  */
 public class AlipayOpenPublicPartnerSubscribeSyncResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 8855826226224133896L;
+	private static final long serialVersionUID = 3481726531379989786L;
 
+	
+
+	
 
 }

@@ -13,104 +13,97 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class EduOneCardDepositCardQueryResult extends AlipayObject {
 
-  private static final long serialVersionUID = 8234248252736793684L;
+	private static final long serialVersionUID = 5428837736546572996L;
 
-  /**
-   * 校园一卡通机构代码
-   */
-  @ApiField("agent_code")
-  private String agentCode;
+	/**
+	 * 校园一卡通机构代码
+	 */
+	@ApiField("agent_code")
+	private String agentCode;
 
-  /**
-   * 校园一卡通机构姓名
-   */
-  @ApiField("agent_name")
-  private String agentName;
+	/**
+	 * 校园一卡通机构姓名
+	 */
+	@ApiField("agent_name")
+	private String agentName;
 
-  /**
-   * 校园一卡通余额
-   */
-  @ApiField("balance")
-  private String balance;
+	/**
+	 * 校园一卡通余额
+	 */
+	@ApiField("balance")
+	private String balance;
 
-  /**
-   * 校园一卡通姓名
-   */
-  @ApiField("card_name")
-  private String cardName;
+	/**
+	 * 校园一卡通姓名
+	 */
+	@ApiField("card_name")
+	private String cardName;
 
-  /**
-   * 校园一卡通卡号
-   */
-  @ApiField("card_no")
-  private String cardNo;
+	/**
+	 * 校园一卡通卡号
+	 */
+	@ApiField("card_no")
+	private String cardNo;
 
-  /**
-   * 余额最后更新时间
-   */
-  @ApiField("last_update_time")
-  private Date lastUpdateTime;
+	/**
+	 * 余额最后更新时间
+	 */
+	@ApiField("last_update_time")
+	private Date lastUpdateTime;
 
-  /**
-   * 校园一卡通待领金额
-   */
-  @ApiField("pound_amount")
-  private String poundAmount;
+	/**
+	 * 校园一卡通待领金额
+	 */
+	@ApiField("pound_amount")
+	private String poundAmount;
 
-  public String getAgentCode() {
-    return this.agentCode;
-  }
+	public String getAgentCode() {
+		return this.agentCode;
+	}
+	public void setAgentCode(String agentCode) {
+		this.agentCode = agentCode;
+	}
 
-  public void setAgentCode(String agentCode) {
-    this.agentCode = agentCode;
-  }
+	public String getAgentName() {
+		return this.agentName;
+	}
+	public void setAgentName(String agentName) {
+		this.agentName = agentName;
+	}
 
-  public String getAgentName() {
-    return this.agentName;
-  }
+	public String getBalance() {
+		return this.balance;
+	}
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
 
-  public void setAgentName(String agentName) {
-    this.agentName = agentName;
-  }
+	public String getCardName() {
+		return this.cardName;
+	}
+	public void setCardName(String cardName) {
+		this.cardName = cardName;
+	}
 
-  public String getBalance() {
-    return this.balance;
-  }
+	public String getCardNo() {
+		return this.cardNo;
+	}
+	public void setCardNo(String cardNo) {
+		this.cardNo = cardNo;
+	}
 
-  public void setBalance(String balance) {
-    this.balance = balance;
-  }
+	public Date getLastUpdateTime() {
+		return this.lastUpdateTime;
+	}
+	public void setLastUpdateTime(Date lastUpdateTime) {
+		this.lastUpdateTime = lastUpdateTime;
+	}
 
-  public String getCardName() {
-    return this.cardName;
-  }
-
-  public void setCardName(String cardName) {
-    this.cardName = cardName;
-  }
-
-  public String getCardNo() {
-    return this.cardNo;
-  }
-
-  public void setCardNo(String cardNo) {
-    this.cardNo = cardNo;
-  }
-
-  public Date getLastUpdateTime() {
-    return this.lastUpdateTime;
-  }
-
-  public void setLastUpdateTime(Date lastUpdateTime) {
-    this.lastUpdateTime = lastUpdateTime;
-  }
-
-  public String getPoundAmount() {
-    return this.poundAmount;
-  }
-
-  public void setPoundAmount(String poundAmount) {
-    this.poundAmount = poundAmount;
-  }
+	public String getPoundAmount() {
+		return this.poundAmount;
+	}
+	public void setPoundAmount(String poundAmount) {
+		this.poundAmount = poundAmount;
+	}
 
 }

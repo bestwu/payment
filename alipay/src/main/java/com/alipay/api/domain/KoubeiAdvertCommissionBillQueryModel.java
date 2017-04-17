@@ -11,36 +11,34 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiAdvertCommissionBillQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7277815229817694867L;
+	private static final long serialVersionUID = 3796259318983412781L;
 
-  /**
-   * 账期(格式为yyyyMM)
-   */
-  @ApiField("date")
-  private String date;
+	/**
+	 * 账期(格式为yyyyMM)
+	 */
+	@ApiField("date")
+	private String date;
 
-  /**
-   * 账单类型
-   * deal-交易账单
-   * settle-结算账单
-   */
-  @ApiField("type")
-  private String type;
+	/**
+	 * 账单类型
+deal-交易账单
+settle-结算账单
+	 */
+	@ApiField("type")
+	private String type;
 
-  public String getDate() {
-    return this.date;
-  }
+	public String getDate() {
+		return this.date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 
-  public void setDate(String date) {
-    this.date = date;
-  }
-
-  public String getType() {
-    return this.type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
+	public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 
 }

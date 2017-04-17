@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ChargeItems extends AlipayObject {
 
-  private static final long serialVersionUID = 3773742895575671626L;
+	private static final long serialVersionUID = 2223322884468619514L;
 
-  /**
-   * 缴费项名称
-   */
-  @ApiField("item_name")
-  private String itemName;
+	/**
+	 * 缴费项名称
+	 */
+	@ApiField("item_name")
+	private String itemName;
 
-  /**
-   * 缴费项金额
-   */
-  @ApiField("item_price")
-  private String itemPrice;
+	/**
+	 * 缴费项金额
+	 */
+	@ApiField("item_price")
+	private String itemPrice;
 
-  public String getItemName() {
-    return this.itemName;
-  }
+	public String getItemName() {
+		return this.itemName;
+	}
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
 
-  public void setItemName(String itemName) {
-    this.itemName = itemName;
-  }
-
-  public String getItemPrice() {
-    return this.itemPrice;
-  }
-
-  public void setItemPrice(String itemPrice) {
-    this.itemPrice = itemPrice;
-  }
+	public String getItemPrice() {
+		return this.itemPrice;
+	}
+	public void setItemPrice(String itemPrice) {
+		this.itemPrice = itemPrice;
+	}
 
 }

@@ -6,40 +6,38 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.mobile.public.template.message.get response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-07-29 20:00:22
+ * @since 1.0, 2017-04-07 20:48:27
  */
 public class AlipayMobilePublicTemplateMessageGetResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 6844263333341888611L;
+	private static final long serialVersionUID = 4456912837597625797L;
 
-  /**
-   * 消息模板id--商户领取母版后生成的唯一模板id
-   */
-  @ApiField("msg_template_id")
-  private String msgTemplateId;
+	/** 
+	 * 消息模板id--商户领取母版后生成的唯一模板id
+	 */
+	@ApiField("msg_template_id")
+	private String msgTemplateId;
 
-  /**
-   * 模板内容
-   */
-  @ApiField("template")
-  private String template;
+	/** 
+	 * 模板内容
+	 */
+	@ApiField("template")
+	private String template;
 
-  public void setMsgTemplateId(String msgTemplateId) {
-    this.msgTemplateId = msgTemplateId;
-  }
+	public void setMsgTemplateId(String msgTemplateId) {
+		this.msgTemplateId = msgTemplateId;
+	}
+	public String getMsgTemplateId( ) {
+		return this.msgTemplateId;
+	}
 
-  public String getMsgTemplateId() {
-    return this.msgTemplateId;
-  }
-
-  public void setTemplate(String template) {
-    this.template = template;
-  }
-
-  public String getTemplate() {
-    return this.template;
-  }
+	public void setTemplate(String template) {
+		this.template = template;
+	}
+	public String getTemplate( ) {
+		return this.template;
+	}
 
 }

@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class CommonDescInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 6687537249455823495L;
+	private static final long serialVersionUID = 4768682618128549233L;
 
-  /**
-   * 图片URL地址，最大不超过60K，必须使用https
-   */
-  @ApiField("img")
-  private String img;
+	/**
+	 * 图片URL地址，最大不超过60K，必须使用https
+	 */
+	@ApiField("img")
+	private String img;
 
-  /**
-   * 文本描述
-   */
-  @ApiField("text")
-  private String text;
+	/**
+	 * 文本描述
+	 */
+	@ApiField("text")
+	private String text;
 
-  public String getImg() {
-    return this.img;
-  }
+	public String getImg() {
+		return this.img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 
-  public void setImg(String img) {
-    this.img = img;
-  }
-
-  public String getText() {
-    return this.text;
-  }
-
-  public void setText(String text) {
-    this.text = text;
-  }
+	public String getText() {
+		return this.text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
 
 }

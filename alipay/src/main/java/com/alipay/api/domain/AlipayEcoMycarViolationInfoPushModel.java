@@ -13,132 +13,123 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarViolationInfoPushModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8694995223819236879L;
+	private static final long serialVersionUID = 8637857896643539977L;
 
-  /**
-   * 1:可在线处理, 2:不可在线处理, 3:需查询确定
-   */
-  @ApiField("deal_type")
-  private String dealType;
+	/**
+	 * 1:可在线处理, 2:不可在线处理, 3:需查询确定
+	 */
+	@ApiField("deal_type")
+	private String dealType;
 
-  /**
-   * 暂无
-   */
-  @ApiField("push_type")
-  private String pushType;
+	/**
+	 * 暂无
+	 */
+	@ApiField("push_type")
+	private String pushType;
 
-  /**
-   * 违章地点
-   */
-  @ApiField("vi_address")
-  private String viAddress;
+	/**
+	 * 违章地点
+	 */
+	@ApiField("vi_address")
+	private String viAddress;
 
-  /**
-   * 违章罚款金额
-   */
-  @ApiField("vi_fine")
-  private String viFine;
+	/**
+	 * 违章罚款金额
+	 */
+	@ApiField("vi_fine")
+	private String viFine;
 
-  /**
-   * 是否已处理, 0:已处理，1:未处理
-   */
-  @ApiField("vi_handled")
-  private String viHandled;
+	/**
+	 * 是否已处理, 0:已处理，1:未处理
+	 */
+	@ApiField("vi_handled")
+	private String viHandled;
 
-  /**
-   * 车牌号
-   */
-  @ApiField("vi_number")
-  private String viNumber;
+	/**
+	 * 车牌号
+	 */
+	@ApiField("vi_number")
+	private String viNumber;
 
-  /**
-   * 违章扣分
-   */
-  @ApiField("vi_point")
-  private String viPoint;
+	/**
+	 * 违章扣分
+	 */
+	@ApiField("vi_point")
+	private String viPoint;
 
-  /**
-   * 违章时间(yyyyMMddhhmmss)
-   */
-  @ApiField("vi_time")
-  private Date viTime;
+	/**
+	 * 违章时间(yyyyMMddhhmmss)
+	 */
+	@ApiField("vi_time")
+	private Date viTime;
 
-  /**
-   * 违章行为
-   */
-  @ApiField("vi_type")
-  private String viType;
+	/**
+	 * 违章行为
+	 */
+	@ApiField("vi_type")
+	private String viType;
 
-  public String getDealType() {
-    return this.dealType;
-  }
+	public String getDealType() {
+		return this.dealType;
+	}
+	public void setDealType(String dealType) {
+		this.dealType = dealType;
+	}
 
-  public void setDealType(String dealType) {
-    this.dealType = dealType;
-  }
+	public String getPushType() {
+		return this.pushType;
+	}
+	public void setPushType(String pushType) {
+		this.pushType = pushType;
+	}
 
-  public String getPushType() {
-    return this.pushType;
-  }
+	public String getViAddress() {
+		return this.viAddress;
+	}
+	public void setViAddress(String viAddress) {
+		this.viAddress = viAddress;
+	}
 
-  public void setPushType(String pushType) {
-    this.pushType = pushType;
-  }
+	public String getViFine() {
+		return this.viFine;
+	}
+	public void setViFine(String viFine) {
+		this.viFine = viFine;
+	}
 
-  public String getViAddress() {
-    return this.viAddress;
-  }
+	public String getViHandled() {
+		return this.viHandled;
+	}
+	public void setViHandled(String viHandled) {
+		this.viHandled = viHandled;
+	}
 
-  public void setViAddress(String viAddress) {
-    this.viAddress = viAddress;
-  }
+	public String getViNumber() {
+		return this.viNumber;
+	}
+	public void setViNumber(String viNumber) {
+		this.viNumber = viNumber;
+	}
 
-  public String getViFine() {
-    return this.viFine;
-  }
+	public String getViPoint() {
+		return this.viPoint;
+	}
+	public void setViPoint(String viPoint) {
+		this.viPoint = viPoint;
+	}
 
-  public void setViFine(String viFine) {
-    this.viFine = viFine;
-  }
+	public Date getViTime() {
+		return this.viTime;
+	}
+	public void setViTime(Date viTime) {
+		this.viTime = viTime;
+	}
 
-  public String getViHandled() {
-    return this.viHandled;
-  }
-
-  public void setViHandled(String viHandled) {
-    this.viHandled = viHandled;
-  }
-
-  public String getViNumber() {
-    return this.viNumber;
-  }
-
-  public void setViNumber(String viNumber) {
-    this.viNumber = viNumber;
-  }
-
-  public String getViPoint() {
-    return this.viPoint;
-  }
-
-  public void setViPoint(String viPoint) {
-    this.viPoint = viPoint;
-  }
-
-  public Date getViTime() {
-    return this.viTime;
-  }
-
-  public void setViTime(Date viTime) {
-    this.viTime = viTime;
-  }
-
-  public String getViType() {
-    return this.viType;
-  }
-
-  public void setViType(String viType) {
-    this.viType = viType;
-  }
+	public String getViType() {
+		return this.viType;
+	}
+	public void setViType(String viType) {
+		this.viType = viType;
+	}
 
 }

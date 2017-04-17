@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiMarketingToolPrizesendAuthModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3826635418524183793L;
+	private static final long serialVersionUID = 5478271428569844746L;
 
-  /**
-   * 奖品ID
-   */
-  @ApiField("prize_id")
-  private String prizeId;
+	/**
+	 * 奖品ID
+	 */
+	@ApiField("prize_id")
+	private String prizeId;
 
-  /**
-   * 外部流水号，保证业务幂等性
-   */
-  @ApiField("req_id")
-  private String reqId;
+	/**
+	 * 外部流水号，保证业务幂等性
+	 */
+	@ApiField("req_id")
+	private String reqId;
 
-  /**
-   * 发奖用户ID
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 发奖用户ID
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getPrizeId() {
-    return this.prizeId;
-  }
+	public String getPrizeId() {
+		return this.prizeId;
+	}
+	public void setPrizeId(String prizeId) {
+		this.prizeId = prizeId;
+	}
 
-  public void setPrizeId(String prizeId) {
-    this.prizeId = prizeId;
-  }
+	public String getReqId() {
+		return this.reqId;
+	}
+	public void setReqId(String reqId) {
+		this.reqId = reqId;
+	}
 
-  public String getReqId() {
-    return this.reqId;
-  }
-
-  public void setReqId(String reqId) {
-    this.reqId = reqId;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

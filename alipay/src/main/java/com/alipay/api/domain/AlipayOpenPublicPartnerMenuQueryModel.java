@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOpenPublicPartnerMenuQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 1817882847171389551L;
+	private static final long serialVersionUID = 1369373847753149462L;
 
-  /**
-   * 服务窗id
-   */
-  @ApiField("public_id")
-  private String publicId;
+	/**
+	 * 服务窗id
+	 */
+	@ApiField("public_id")
+	private String publicId;
 
-  /**
-   * 用户id
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 用户id
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getPublicId() {
-    return this.publicId;
-  }
+	public String getPublicId() {
+		return this.publicId;
+	}
+	public void setPublicId(String publicId) {
+		this.publicId = publicId;
+	}
 
-  public void setPublicId(String publicId) {
-    this.publicId = publicId;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

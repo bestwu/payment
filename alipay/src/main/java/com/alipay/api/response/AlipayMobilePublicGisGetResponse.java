@@ -6,110 +6,103 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.mobile.public.gis.get response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-10-09 11:38:26
  */
 public class AlipayMobilePublicGisGetResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 8872371912854168687L;
+	private static final long serialVersionUID = 7818172959551998855L;
 
-  /**
-   * 精确度
-   */
-  @ApiField("accuracy")
-  private String accuracy;
+	/** 
+	 * 精确度
+	 */
+	@ApiField("accuracy")
+	private String accuracy;
 
-  /**
-   * 经纬度所在位置
-   */
-  @ApiField("city")
-  private String city;
+	/** 
+	 * 经纬度所在位置
+	 */
+	@ApiField("city")
+	private String city;
 
-  /**
-   * 结果码
-   */
-  @ApiField("code")
-  private String code;
+	/** 
+	 * 结果码
+	 */
+	@ApiField("code")
+	private String code;
 
-  /**
-   * 纬度信息
-   */
-  @ApiField("latitude")
-  private String latitude;
+	/** 
+	 * 纬度信息
+	 */
+	@ApiField("latitude")
+	private String latitude;
 
-  /**
-   * 经度信息
-   */
-  @ApiField("longitude")
-  private String longitude;
+	/** 
+	 * 经度信息
+	 */
+	@ApiField("longitude")
+	private String longitude;
 
-  /**
-   * 结果信息
-   */
-  @ApiField("msg")
-  private String msg;
+	/** 
+	 * 结果信息
+	 */
+	@ApiField("msg")
+	private String msg;
 
-  /**
-   * 经纬度对应位置所在的省份
-   */
-  @ApiField("province")
-  private String province;
+	/** 
+	 * 经纬度对应位置所在的省份
+	 */
+	@ApiField("province")
+	private String province;
 
-  public void setAccuracy(String accuracy) {
-    this.accuracy = accuracy;
-  }
+	public void setAccuracy(String accuracy) {
+		this.accuracy = accuracy;
+	}
+	public String getAccuracy( ) {
+		return this.accuracy;
+	}
 
-  public String getAccuracy() {
-    return this.accuracy;
-  }
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getCity( ) {
+		return this.city;
+	}
 
-  public void setCity(String city) {
-    this.city = city;
-  }
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getCode( ) {
+		return this.code;
+	}
 
-  public String getCity() {
-    return this.city;
-  }
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public String getLatitude( ) {
+		return this.latitude;
+	}
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+	public String getLongitude( ) {
+		return this.longitude;
+	}
 
-  public String getCode() {
-    return this.code;
-  }
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public String getMsg( ) {
+		return this.msg;
+	}
 
-  public void setLatitude(String latitude) {
-    this.latitude = latitude;
-  }
-
-  public String getLatitude() {
-    return this.latitude;
-  }
-
-  public void setLongitude(String longitude) {
-    this.longitude = longitude;
-  }
-
-  public String getLongitude() {
-    return this.longitude;
-  }
-
-  public void setMsg(String msg) {
-    this.msg = msg;
-  }
-
-  public String getMsg() {
-    return this.msg;
-  }
-
-  public void setProvince(String province) {
-    this.province = province;
-  }
-
-  public String getProvince() {
-    return this.province;
-  }
+	public void setProvince(String province) {
+		this.province = province;
+	}
+	public String getProvince( ) {
+		return this.province;
+	}
 
 }

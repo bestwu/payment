@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class YLBProfitDetailInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 6868878649499645553L;
+	private static final long serialVersionUID = 4697774664773498859L;
 
-  /**
-   * 近1日收益，单位为元
-   */
-  @ApiField("day_profit")
-  private String dayProfit;
+	/**
+	 * 近1日收益，单位为元
+	 */
+	@ApiField("day_profit")
+	private String dayProfit;
 
-  /**
-   * 近1月收益，单位为元
-   */
-  @ApiField("month_profit")
-  private String monthProfit;
+	/**
+	 * 近1月收益，单位为元
+	 */
+	@ApiField("month_profit")
+	private String monthProfit;
 
-  /**
-   * 历史累计收益，单位为元
-   */
-  @ApiField("total_profit")
-  private String totalProfit;
+	/**
+	 * 历史累计收益，单位为元
+	 */
+	@ApiField("total_profit")
+	private String totalProfit;
 
-  /**
-   * 近1周收益，单位为元
-   */
-  @ApiField("week_profit")
-  private String weekProfit;
+	/**
+	 * 近1周收益，单位为元
+	 */
+	@ApiField("week_profit")
+	private String weekProfit;
 
-  public String getDayProfit() {
-    return this.dayProfit;
-  }
+	public String getDayProfit() {
+		return this.dayProfit;
+	}
+	public void setDayProfit(String dayProfit) {
+		this.dayProfit = dayProfit;
+	}
 
-  public void setDayProfit(String dayProfit) {
-    this.dayProfit = dayProfit;
-  }
+	public String getMonthProfit() {
+		return this.monthProfit;
+	}
+	public void setMonthProfit(String monthProfit) {
+		this.monthProfit = monthProfit;
+	}
 
-  public String getMonthProfit() {
-    return this.monthProfit;
-  }
+	public String getTotalProfit() {
+		return this.totalProfit;
+	}
+	public void setTotalProfit(String totalProfit) {
+		this.totalProfit = totalProfit;
+	}
 
-  public void setMonthProfit(String monthProfit) {
-    this.monthProfit = monthProfit;
-  }
-
-  public String getTotalProfit() {
-    return this.totalProfit;
-  }
-
-  public void setTotalProfit(String totalProfit) {
-    this.totalProfit = totalProfit;
-  }
-
-  public String getWeekProfit() {
-    return this.weekProfit;
-  }
-
-  public void setWeekProfit(String weekProfit) {
-    this.weekProfit = weekProfit;
-  }
+	public String getWeekProfit() {
+		return this.weekProfit;
+	}
+	public void setWeekProfit(String weekProfit) {
+		this.weekProfit = weekProfit;
+	}
 
 }

@@ -14,21 +14,20 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayOpenPublicMenuModifyModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5494419681118731953L;
+	private static final long serialVersionUID = 7384425234987572447L;
 
-  /**
-   * 一级菜单数组，个数应为1~4个
-   */
-  @ApiListField("button")
-  @ApiField("button_object")
-  private List<ButtonObject> button;
+	/**
+	 * 一级菜单数组，个数应为1~4个
+	 */
+	@ApiListField("button")
+	@ApiField("button_object")
+	private List<ButtonObject> button;
 
-  public List<ButtonObject> getButton() {
-    return this.button;
-  }
-
-  public void setButton(List<ButtonObject> button) {
-    this.button = button;
-  }
+	public List<ButtonObject> getButton() {
+		return this.button;
+	}
+	public void setButton(List<ButtonObject> button) {
+		this.button = button;
+	}
 
 }

@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOpenServicemarketOrderItemCancelModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7115227521873424491L;
+	private static final long serialVersionUID = 2427773198111354131L;
 
-  /**
-   * 当前门店区域不支持实施
-   */
-  @ApiField("cancel_reason")
-  private String cancelReason;
+	/**
+	 * 当前门店区域不支持实施
+	 */
+	@ApiField("cancel_reason")
+	private String cancelReason;
 
-  /**
-   * 订购服务订单ID
-   */
-  @ApiField("commodity_order_id")
-  private String commodityOrderId;
+	/**
+	 * 订购服务订单ID
+	 */
+	@ApiField("commodity_order_id")
+	private String commodityOrderId;
 
-  /**
-   * 订购服务门店ID
-   */
-  @ApiField("shop_id")
-  private String shopId;
+	/**
+	 * 订购服务门店ID
+	 */
+	@ApiField("shop_id")
+	private String shopId;
 
-  public String getCancelReason() {
-    return this.cancelReason;
-  }
+	public String getCancelReason() {
+		return this.cancelReason;
+	}
+	public void setCancelReason(String cancelReason) {
+		this.cancelReason = cancelReason;
+	}
 
-  public void setCancelReason(String cancelReason) {
-    this.cancelReason = cancelReason;
-  }
+	public String getCommodityOrderId() {
+		return this.commodityOrderId;
+	}
+	public void setCommodityOrderId(String commodityOrderId) {
+		this.commodityOrderId = commodityOrderId;
+	}
 
-  public String getCommodityOrderId() {
-    return this.commodityOrderId;
-  }
-
-  public void setCommodityOrderId(String commodityOrderId) {
-    this.commodityOrderId = commodityOrderId;
-  }
-
-  public String getShopId() {
-    return this.shopId;
-  }
-
-  public void setShopId(String shopId) {
-    this.shopId = shopId;
-  }
+	public String getShopId() {
+		return this.shopId;
+	}
+	public void setShopId(String shopId) {
+		this.shopId = shopId;
+	}
 
 }

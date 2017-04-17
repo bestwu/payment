@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayItemOperationContext extends AlipayObject {
 
-  private static final long serialVersionUID = 6326474641478762229L;
+	private static final long serialVersionUID = 3877385226788272273L;
 
-  /**
-   * 商品创建者，商户授权模式此值不需要填写。
-   */
-  @ApiField("creator")
-  private String creator;
+	/**
+	 * 商品创建者，商户授权模式此值不需要填写。
+	 */
+	@ApiField("creator")
+	private String creator;
 
-  /**
-   * 操作角色类型，授权授权模式下此值不需要填写。
-   */
-  @ApiField("op_role")
-  private String opRole;
+	/**
+	 * 操作角色类型，授权授权模式下此值不需要填写。
+	 */
+	@ApiField("op_role")
+	private String opRole;
 
-  /**
-   * 商户ID，如果商户传入此值，将以此商户ID作为业务主体，商户授权模式此值不需要填写。
-   */
-  @ApiField("partner_id")
-  private String partnerId;
+	/**
+	 * 商户ID，如果商户传入此值，将以此商户ID作为业务主体，商户授权模式此值不需要填写。
+	 */
+	@ApiField("partner_id")
+	private String partnerId;
 
-  public String getCreator() {
-    return this.creator;
-  }
+	public String getCreator() {
+		return this.creator;
+	}
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
 
-  public void setCreator(String creator) {
-    this.creator = creator;
-  }
+	public String getOpRole() {
+		return this.opRole;
+	}
+	public void setOpRole(String opRole) {
+		this.opRole = opRole;
+	}
 
-  public String getOpRole() {
-    return this.opRole;
-  }
-
-  public void setOpRole(String opRole) {
-    this.opRole = opRole;
-  }
-
-  public String getPartnerId() {
-    return this.partnerId;
-  }
-
-  public void setPartnerId(String partnerId) {
-    this.partnerId = partnerId;
-  }
+	public String getPartnerId() {
+		return this.partnerId;
+	}
+	public void setPartnerId(String partnerId) {
+		this.partnerId = partnerId;
+	}
 
 }

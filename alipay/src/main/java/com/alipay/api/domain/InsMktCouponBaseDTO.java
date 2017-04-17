@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class InsMktCouponBaseDTO extends AlipayObject {
 
-  private static final long serialVersionUID = 3245518868351755764L;
+	private static final long serialVersionUID = 7574332977954664218L;
 
-  /**
-   * 权益Id
-   */
-  @ApiField("coupon_id")
-  private String couponId;
+	/**
+	 * 权益Id
+	 */
+	@ApiField("coupon_id")
+	private String couponId;
 
-  /**
-   * 权益类型
-   */
-  @ApiField("coupon_type")
-  private String couponType;
+	/**
+	 * 权益类型
+	 */
+	@ApiField("coupon_type")
+	private String couponType;
 
-  /**
-   * 权益值
-   */
-  @ApiField("coupon_value")
-  private String couponValue;
+	/**
+	 * 权益值
+	 */
+	@ApiField("coupon_value")
+	private String couponValue;
 
-  public String getCouponId() {
-    return this.couponId;
-  }
+	public String getCouponId() {
+		return this.couponId;
+	}
+	public void setCouponId(String couponId) {
+		this.couponId = couponId;
+	}
 
-  public void setCouponId(String couponId) {
-    this.couponId = couponId;
-  }
+	public String getCouponType() {
+		return this.couponType;
+	}
+	public void setCouponType(String couponType) {
+		this.couponType = couponType;
+	}
 
-  public String getCouponType() {
-    return this.couponType;
-  }
-
-  public void setCouponType(String couponType) {
-    this.couponType = couponType;
-  }
-
-  public String getCouponValue() {
-    return this.couponValue;
-  }
-
-  public void setCouponValue(String couponValue) {
-    this.couponValue = couponValue;
-  }
+	public String getCouponValue() {
+		return this.couponValue;
+	}
+	public void setCouponValue(String couponValue) {
+		this.couponValue = couponValue;
+	}
 
 }

@@ -11,24 +11,23 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEbppIsvProdmodeCreateModel extends AlipayObject {
 
-  private static final long serialVersionUID = 1833351557531246855L;
+	private static final long serialVersionUID = 4665863985956491126L;
 
-  /**
-   * 参数内容包含：ISV录入产品模型相关信息，具体分类如下：1.销账机构信息
-   * 2.对账配置信息
-   * 3.清算配置信息
-   * 4.产品模型和出账机构信息
-   * 5.机构拓展信息
-   */
-  @ApiField("biz_data")
-  private String bizData;
+	/**
+	 * 参数内容包含：ISV录入产品模型相关信息，具体分类如下：1.销账机构信息
+2.对账配置信息
+3.清算配置信息
+4.产品模型和出账机构信息
+5.机构拓展信息
+	 */
+	@ApiField("biz_data")
+	private String bizData;
 
-  public String getBizData() {
-    return this.bizData;
-  }
-
-  public void setBizData(String bizData) {
-    this.bizData = bizData;
-  }
+	public String getBizData() {
+		return this.bizData;
+	}
+	public void setBizData(String bizData) {
+		this.bizData = bizData;
+	}
 
 }

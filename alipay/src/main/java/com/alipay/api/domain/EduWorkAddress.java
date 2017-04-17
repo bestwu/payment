@@ -11,76 +11,71 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class EduWorkAddress extends AlipayObject {
 
-  private static final long serialVersionUID = 3353174794737727359L;
+	private static final long serialVersionUID = 2122979288812617548L;
 
-  /**
-   * 地址
-   */
-  @ApiField("address")
-  private String address;
+	/**
+	 * 地址
+	 */
+	@ApiField("address")
+	private String address;
 
-  /**
-   * 城市
-   */
-  @ApiField("city")
-  private String city;
+	/**
+	 * 城市
+	 */
+	@ApiField("city")
+	private String city;
 
-  /**
-   * 区
-   */
-  @ApiField("district_name")
-  private String districtName;
+	/**
+	 * 区
+	 */
+	@ApiField("district_name")
+	private String districtName;
 
-  /**
-   * 北京市
-   */
-  @ApiField("province")
-  private String province;
+	/**
+	 * 北京市
+	 */
+	@ApiField("province")
+	private String province;
 
-  /**
-   * 街道
-   */
-  @ApiField("street_name")
-  private String streetName;
+	/**
+	 * 街道
+	 */
+	@ApiField("street_name")
+	private String streetName;
 
-  public String getAddress() {
-    return this.address;
-  }
+	public String getAddress() {
+		return this.address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-  public void setAddress(String address) {
-    this.address = address;
-  }
+	public String getCity() {
+		return this.city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
 
-  public String getCity() {
-    return this.city;
-  }
+	public String getDistrictName() {
+		return this.districtName;
+	}
+	public void setDistrictName(String districtName) {
+		this.districtName = districtName;
+	}
 
-  public void setCity(String city) {
-    this.city = city;
-  }
+	public String getProvince() {
+		return this.province;
+	}
+	public void setProvince(String province) {
+		this.province = province;
+	}
 
-  public String getDistrictName() {
-    return this.districtName;
-  }
-
-  public void setDistrictName(String districtName) {
-    this.districtName = districtName;
-  }
-
-  public String getProvince() {
-    return this.province;
-  }
-
-  public void setProvince(String province) {
-    this.province = province;
-  }
-
-  public String getStreetName() {
-    return this.streetName;
-  }
-
-  public void setStreetName(String streetName) {
-    this.streetName = streetName;
-  }
+	public String getStreetName() {
+		return this.streetName;
+	}
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
 
 }

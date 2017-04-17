@@ -13,90 +13,84 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ActivityAuditDTO extends AlipayObject {
 
-  private static final long serialVersionUID = 5814758993534356258L;
+	private static final long serialVersionUID = 7184994686895918168L;
 
-  /**
-   * 审核id
-   */
-  @ApiField("audit_id")
-  private String auditId;
+	/**
+	 * 审核id
+	 */
+	@ApiField("audit_id")
+	private String auditId;
 
-  /**
-   * INIT:初始化;AUDITING:审核中;REJECT:审核驳回;PASS:审核通过;CANCEL:审核撤销;FAIL:审核失败
-   */
-  @ApiField("audit_status")
-  private String auditStatus;
+	/**
+	 * INIT:初始化;AUDITING:审核中;REJECT:审核驳回;PASS:审核通过;CANCEL:审核撤销;FAIL:审核失败
+	 */
+	@ApiField("audit_status")
+	private String auditStatus;
 
-  /**
-   * 操作人id
-   */
-  @ApiField("creator_id")
-  private String creatorId;
+	/**
+	 * 操作人id
+	 */
+	@ApiField("creator_id")
+	private String creatorId;
 
-  /**
-   * SALES:口碑内部小二;PROVIDER:外部服务商;PROVIDER_STAFF:外部服务商员工
-   */
-  @ApiField("creator_type")
-  private String creatorType;
+	/**
+	 * SALES:口碑内部小二;PROVIDER:外部服务商;PROVIDER_STAFF:外部服务商员工
+	 */
+	@ApiField("creator_type")
+	private String creatorType;
 
-  /**
-   * 操作时间
-   */
-  @ApiField("operation_time")
-  private Date operationTime;
+	/**
+	 * 操作时间
+	 */
+	@ApiField("operation_time")
+	private Date operationTime;
 
-  /**
-   * 审核通过或者审核驳回的原因
-   */
-  @ApiField("reason")
-  private String reason;
+	/**
+	 * 审核通过或者审核驳回的原因
+	 */
+	@ApiField("reason")
+	private String reason;
 
-  public String getAuditId() {
-    return this.auditId;
-  }
+	public String getAuditId() {
+		return this.auditId;
+	}
+	public void setAuditId(String auditId) {
+		this.auditId = auditId;
+	}
 
-  public void setAuditId(String auditId) {
-    this.auditId = auditId;
-  }
+	public String getAuditStatus() {
+		return this.auditStatus;
+	}
+	public void setAuditStatus(String auditStatus) {
+		this.auditStatus = auditStatus;
+	}
 
-  public String getAuditStatus() {
-    return this.auditStatus;
-  }
+	public String getCreatorId() {
+		return this.creatorId;
+	}
+	public void setCreatorId(String creatorId) {
+		this.creatorId = creatorId;
+	}
 
-  public void setAuditStatus(String auditStatus) {
-    this.auditStatus = auditStatus;
-  }
+	public String getCreatorType() {
+		return this.creatorType;
+	}
+	public void setCreatorType(String creatorType) {
+		this.creatorType = creatorType;
+	}
 
-  public String getCreatorId() {
-    return this.creatorId;
-  }
+	public Date getOperationTime() {
+		return this.operationTime;
+	}
+	public void setOperationTime(Date operationTime) {
+		this.operationTime = operationTime;
+	}
 
-  public void setCreatorId(String creatorId) {
-    this.creatorId = creatorId;
-  }
-
-  public String getCreatorType() {
-    return this.creatorType;
-  }
-
-  public void setCreatorType(String creatorType) {
-    this.creatorType = creatorType;
-  }
-
-  public Date getOperationTime() {
-    return this.operationTime;
-  }
-
-  public void setOperationTime(Date operationTime) {
-    this.operationTime = operationTime;
-  }
-
-  public String getReason() {
-    return this.reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
-  }
+	public String getReason() {
+		return this.reason;
+	}
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
 
 }

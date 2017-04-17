@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class QueryProvCityInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 1665795432395627334L;
+	private static final long serialVersionUID = 7699297739645615665L;
 
-  /**
-   * 省市编号
-   */
-  @ApiField("adcode")
-  private String adcode;
+	/**
+	 * 省市编号
+	 */
+	@ApiField("adcode")
+	private String adcode;
 
-  /**
-   * 城市名称
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 城市名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  public String getAdcode() {
-    return this.adcode;
-  }
+	public String getAdcode() {
+		return this.adcode;
+	}
+	public void setAdcode(String adcode) {
+		this.adcode = adcode;
+	}
 
-  public void setAdcode(String adcode) {
-    this.adcode = adcode;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

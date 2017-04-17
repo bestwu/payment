@@ -7,52 +7,50 @@ import com.alipay.api.internal.mapping.ApiField;
  * 订单确认接口
  *
  * @author auto create
- * @since 1.0, 2017-01-16 11:30:52
+ * @since 1.0, 2017-03-20 14:01:05
  */
 public class AlipayDaoweiOrderConfirmModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2486526749473972571L;
+	private static final long serialVersionUID = 5288429189863789749L;
 
-  /**
-   * 备注信息，商家确认订单时添加的备注信息，长度不超过2000个字符
-   */
-  @ApiField("memo")
-  private String memo;
+	/**
+	 * 备注信息，商家确认订单时添加的备注信息，长度不超过2000个字符
+	 */
+	@ApiField("memo")
+	private String memo;
 
-  /**
-   * 到位业务订单号，全局唯一，由32位数字组成，用户在到位下单时系统生成并消息同步给商家，商户只能查自己同步到的订单号
-   */
-  @ApiField("order_no")
-  private String orderNo;
+	/**
+	 * 到位业务订单号。用户在到位下单时，由到位系统生成的32位全局唯一数字 id。
+通过应用中的应用网关post发送给商户（应用网关配置参考链接：https%3A%2F%2Fdoc.open.alipay.com%2Fdocs%2Fdoc.htm%3Fspm%3Da219a.7629140.0.0.TcIuKL%26treeId%3D193%26articleId%3D105310%26docType%3D1）。
+	 */
+	@ApiField("order_no")
+	private String orderNo;
 
-  /**
-   * 第三方商家自己的订单号码，保证商家内部唯一，确认接单时需要设置外部订单号，长度不超过64个字符
-   */
-  @ApiField("out_order_no")
-  private String outOrderNo;
+	/**
+	 * 商户订单号码。确认接单时需要设置外部订单号，由商户自行生成，并确保其唯一性
+	 */
+	@ApiField("out_order_no")
+	private String outOrderNo;
 
-  public String getMemo() {
-    return this.memo;
-  }
+	public String getMemo() {
+		return this.memo;
+	}
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
 
-  public void setMemo(String memo) {
-    this.memo = memo;
-  }
+	public String getOrderNo() {
+		return this.orderNo;
+	}
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
+	}
 
-  public String getOrderNo() {
-    return this.orderNo;
-  }
-
-  public void setOrderNo(String orderNo) {
-    this.orderNo = orderNo;
-  }
-
-  public String getOutOrderNo() {
-    return this.outOrderNo;
-  }
-
-  public void setOutOrderNo(String outOrderNo) {
-    this.outOrderNo = outOrderNo;
-  }
+	public String getOutOrderNo() {
+		return this.outOrderNo;
+	}
+	public void setOutOrderNo(String outOrderNo) {
+		this.outOrderNo = outOrderNo;
+	}
 
 }

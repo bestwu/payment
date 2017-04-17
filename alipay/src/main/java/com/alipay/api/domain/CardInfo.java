@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class CardInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 7629537981343382649L;
+	private static final long serialVersionUID = 7494165996337738433L;
 
-  /**
-   * 领取时间
-   */
-  @ApiField("taken_time")
-  private String takenTime;
+	/**
+	 * 领取时间
+	 */
+	@ApiField("taken_time")
+	private String takenTime;
 
-  /**
-   * 用户名
-   */
-  @ApiField("user_name")
-  private String userName;
+	/**
+	 * 用户名
+	 */
+	@ApiField("user_name")
+	private String userName;
 
-  public String getTakenTime() {
-    return this.takenTime;
-  }
+	public String getTakenTime() {
+		return this.takenTime;
+	}
+	public void setTakenTime(String takenTime) {
+		this.takenTime = takenTime;
+	}
 
-  public void setTakenTime(String takenTime) {
-    this.takenTime = takenTime;
-  }
-
-  public String getUserName() {
-    return this.userName;
-  }
-
-  public void setUserName(String userName) {
-    this.userName = userName;
-  }
+	public String getUserName() {
+		return this.userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
 }

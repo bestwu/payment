@@ -10,40 +10,38 @@ import com.alipay.api.internal.mapping.ApiListField;
  * 分账信息
  *
  * @author auto create
- * @since 1.0, 2016-10-26 17:43:41
+ * @since 1.0, 2017-04-10 14:29:41
  */
 public class RoyaltyInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 1681486987231275525L;
+	private static final long serialVersionUID = 3278113991713194324L;
 
-  /**
-   * 分账明细的信息，可以描述多条分账指令，json数组。
-   */
-  @ApiListField("royalty_detail_infos")
-  @ApiField("royalty_detail_infos")
-  private List<RoyaltyDetailInfos> royaltyDetailInfos;
+	/**
+	 * 分账明细的信息，可以描述多条分账指令，json数组。
+	 */
+	@ApiListField("royalty_detail_infos")
+	@ApiField("royalty_detail_infos")
+	private List<RoyaltyDetailInfos> royaltyDetailInfos;
 
-  /**
-   * 分账类型
-   * 卖家的分账类型，目前只支持传入ROYALTY（普通分账类型）。
-   */
-  @ApiField("royalty_type")
-  private String royaltyType;
+	/**
+	 * 分账类型
+卖家的分账类型，目前只支持传入ROYALTY（普通分账类型）。
+	 */
+	@ApiField("royalty_type")
+	private String royaltyType;
 
-  public List<RoyaltyDetailInfos> getRoyaltyDetailInfos() {
-    return this.royaltyDetailInfos;
-  }
+	public List<RoyaltyDetailInfos> getRoyaltyDetailInfos() {
+		return this.royaltyDetailInfos;
+	}
+	public void setRoyaltyDetailInfos(List<RoyaltyDetailInfos> royaltyDetailInfos) {
+		this.royaltyDetailInfos = royaltyDetailInfos;
+	}
 
-  public void setRoyaltyDetailInfos(List<RoyaltyDetailInfos> royaltyDetailInfos) {
-    this.royaltyDetailInfos = royaltyDetailInfos;
-  }
-
-  public String getRoyaltyType() {
-    return this.royaltyType;
-  }
-
-  public void setRoyaltyType(String royaltyType) {
-    this.royaltyType = royaltyType;
-  }
+	public String getRoyaltyType() {
+		return this.royaltyType;
+	}
+	public void setRoyaltyType(String royaltyType) {
+		this.royaltyType = royaltyType;
+	}
 
 }

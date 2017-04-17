@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayItemAuditRule extends AlipayObject {
 
-  private static final long serialVersionUID = 6498231881847224658L;
+	private static final long serialVersionUID = 3366247494672893831L;
 
-  /**
-   * 审核类型，商户授权模式此字段不需要填写。
-   */
-  @ApiField("audit_type")
-  private String auditType;
+	/**
+	 * 审核类型，商户授权模式此字段不需要填写。
+	 */
+	@ApiField("audit_type")
+	private String auditType;
 
-  /**
-   * true：需要审核、false：不需要审核，默认为不需要审核,商户授权模式此字段不需要填写。
-   */
-  @ApiField("need_audit")
-  private Boolean needAudit;
+	/**
+	 * true：需要审核、false：不需要审核，默认为不需要审核,商户授权模式此字段不需要填写。
+	 */
+	@ApiField("need_audit")
+	private Boolean needAudit;
 
-  public String getAuditType() {
-    return this.auditType;
-  }
+	public String getAuditType() {
+		return this.auditType;
+	}
+	public void setAuditType(String auditType) {
+		this.auditType = auditType;
+	}
 
-  public void setAuditType(String auditType) {
-    this.auditType = auditType;
-  }
-
-  public Boolean getNeedAudit() {
-    return this.needAudit;
-  }
-
-  public void setNeedAudit(Boolean needAudit) {
-    this.needAudit = needAudit;
-  }
+	public Boolean getNeedAudit() {
+		return this.needAudit;
+	}
+	public void setNeedAudit(Boolean needAudit) {
+		this.needAudit = needAudit;
+	}
 
 }

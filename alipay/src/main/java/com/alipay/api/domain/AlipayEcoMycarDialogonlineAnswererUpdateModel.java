@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarDialogonlineAnswererUpdateModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8238319264359179241L;
+	private static final long serialVersionUID = 6198215711859837662L;
 
-  /**
-   * 技师ID
-   */
-  @ApiField("answer_id")
-  private String answerId;
+	/**
+	 * 技师ID
+	 */
+	@ApiField("answer_id")
+	private String answerId;
 
-  /**
-   * 技师状态，0：可用，1：停用
-   */
-  @ApiField("answer_status")
-  private String answerStatus;
+	/**
+	 * 技师状态，0：可用，1：停用
+	 */
+	@ApiField("answer_status")
+	private String answerStatus;
 
-  public String getAnswerId() {
-    return this.answerId;
-  }
+	public String getAnswerId() {
+		return this.answerId;
+	}
+	public void setAnswerId(String answerId) {
+		this.answerId = answerId;
+	}
 
-  public void setAnswerId(String answerId) {
-    this.answerId = answerId;
-  }
-
-  public String getAnswerStatus() {
-    return this.answerStatus;
-  }
-
-  public void setAnswerStatus(String answerStatus) {
-    this.answerStatus = answerStatus;
-  }
+	public String getAnswerStatus() {
+		return this.answerStatus;
+	}
+	public void setAnswerStatus(String answerStatus) {
+		this.answerStatus = answerStatus;
+	}
 
 }

@@ -13,76 +13,71 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class SimpleMockModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2749929287592752845L;
+	private static final long serialVersionUID = 8279249463141498694L;
 
-  /**
-   * 11
-   */
-  @ApiField("count_items")
-  private Long countItems;
+	/**
+	 * 11
+	 */
+	@ApiField("count_items")
+	private Long countItems;
 
-  /**
-   * 111
-   */
-  @ApiField("happen_time")
-  private Date happenTime;
+	/**
+	 * 111
+	 */
+	@ApiField("happen_time")
+	private Date happenTime;
 
-  /**
-   * 1.2f
-   */
-  @ApiField("price_num")
-  private String priceNum;
+	/**
+	 * 1.2f
+	 */
+	@ApiField("price_num")
+	private String priceNum;
 
-  /**
-   * false
-   */
-  @ApiField("right")
-  private Boolean right;
+	/**
+	 * false
+	 */
+	@ApiField("right")
+	private Boolean right;
 
-  /**
-   * trade_no
-   */
-  @ApiField("trade_no")
-  private String tradeNo;
+	/**
+	 * trade_no
+	 */
+	@ApiField("trade_no")
+	private String tradeNo;
 
-  public Long getCountItems() {
-    return this.countItems;
-  }
+	public Long getCountItems() {
+		return this.countItems;
+	}
+	public void setCountItems(Long countItems) {
+		this.countItems = countItems;
+	}
 
-  public void setCountItems(Long countItems) {
-    this.countItems = countItems;
-  }
+	public Date getHappenTime() {
+		return this.happenTime;
+	}
+	public void setHappenTime(Date happenTime) {
+		this.happenTime = happenTime;
+	}
 
-  public Date getHappenTime() {
-    return this.happenTime;
-  }
+	public String getPriceNum() {
+		return this.priceNum;
+	}
+	public void setPriceNum(String priceNum) {
+		this.priceNum = priceNum;
+	}
 
-  public void setHappenTime(Date happenTime) {
-    this.happenTime = happenTime;
-  }
+	public Boolean getRight() {
+		return this.right;
+	}
+	public void setRight(Boolean right) {
+		this.right = right;
+	}
 
-  public String getPriceNum() {
-    return this.priceNum;
-  }
-
-  public void setPriceNum(String priceNum) {
-    this.priceNum = priceNum;
-  }
-
-  public Boolean getRight() {
-    return this.right;
-  }
-
-  public void setRight(Boolean right) {
-    this.right = right;
-  }
-
-  public String getTradeNo() {
-    return this.tradeNo;
-  }
-
-  public void setTradeNo(String tradeNo) {
-    this.tradeNo = tradeNo;
-  }
+	public String getTradeNo() {
+		return this.tradeNo;
+	}
+	public void setTradeNo(String tradeNo) {
+		this.tradeNo = tradeNo;
+	}
 
 }

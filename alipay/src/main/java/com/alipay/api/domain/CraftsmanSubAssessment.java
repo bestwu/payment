@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class CraftsmanSubAssessment extends AlipayObject {
 
-  private static final long serialVersionUID = 1876594877728795279L;
+	private static final long serialVersionUID = 5851484146777558247L;
 
-  /**
-   * 子评分
-   */
-  @ApiField("score")
-  private Long score;
+	/**
+	 * 子评分
+	 */
+	@ApiField("score")
+	private Long score;
 
-  /**
-   * 子评分项名
-   */
-  @ApiField("title")
-  private String title;
+	/**
+	 * 子评分项名
+	 */
+	@ApiField("title")
+	private String title;
 
-  public Long getScore() {
-    return this.score;
-  }
+	public Long getScore() {
+		return this.score;
+	}
+	public void setScore(Long score) {
+		this.score = score;
+	}
 
-  public void setScore(Long score) {
-    this.score = score;
-  }
-
-  public String getTitle() {
-    return this.title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
+	public String getTitle() {
+		return this.title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 }

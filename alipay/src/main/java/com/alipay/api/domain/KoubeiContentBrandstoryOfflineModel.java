@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiContentBrandstoryOfflineModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6343359835625722658L;
+	private static final long serialVersionUID = 8629295127768939142L;
 
-  /**
-   * 需要下架的品牌故事id
-   */
-  @ApiField("brand_story_id")
-  private String brandStoryId;
+	/**
+	 * 需要下架的品牌故事id
+	 */
+	@ApiField("brand_story_id")
+	private String brandStoryId;
 
-  public String getBrandStoryId() {
-    return this.brandStoryId;
-  }
-
-  public void setBrandStoryId(String brandStoryId) {
-    this.brandStoryId = brandStoryId;
-  }
+	public String getBrandStoryId() {
+		return this.brandStoryId;
+	}
+	public void setBrandStoryId(String brandStoryId) {
+		this.brandStoryId = brandStoryId;
+	}
 
 }

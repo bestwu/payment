@@ -14,35 +14,33 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayEcoCplifeNoticeDeleteModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6449919443517716544L;
+	private static final long serialVersionUID = 4186946129764646754L;
 
-  /**
-   * 待删除通知的支付宝小区ID，如果为空，则在所有小区下线该通知.
-   */
-  @ApiListField("community_id_set")
-  @ApiField("string")
-  private List<String> communityIdSet;
+	/**
+	 * 待删除通知的支付宝小区ID，如果为空，则在所有小区下线该通知.
+	 */
+	@ApiListField("community_id_set")
+	@ApiField("string")
+	private List<String> communityIdSet;
 
-  /**
-   * 待删除的通知ID,(见alipay.eco.cplife.notice.publish接口返回参数列表.)
-   */
-  @ApiField("notice_id")
-  private String noticeId;
+	/**
+	 * 待删除的通知ID,(见alipay.eco.cplife.notice.publish接口返回参数列表.)
+	 */
+	@ApiField("notice_id")
+	private String noticeId;
 
-  public List<String> getCommunityIdSet() {
-    return this.communityIdSet;
-  }
+	public List<String> getCommunityIdSet() {
+		return this.communityIdSet;
+	}
+	public void setCommunityIdSet(List<String> communityIdSet) {
+		this.communityIdSet = communityIdSet;
+	}
 
-  public void setCommunityIdSet(List<String> communityIdSet) {
-    this.communityIdSet = communityIdSet;
-  }
-
-  public String getNoticeId() {
-    return this.noticeId;
-  }
-
-  public void setNoticeId(String noticeId) {
-    this.noticeId = noticeId;
-  }
+	public String getNoticeId() {
+		return this.noticeId;
+	}
+	public void setNoticeId(String noticeId) {
+		this.noticeId = noticeId;
+	}
 
 }

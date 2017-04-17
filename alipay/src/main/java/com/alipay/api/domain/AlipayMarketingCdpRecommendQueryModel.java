@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayMarketingCdpRecommendQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5383859469588115493L;
+	private static final long serialVersionUID = 8452355351915161934L;
 
-  /**
-   * 广告标识码
-   */
-  @ApiField("ad_code")
-  private String adCode;
+	/**
+	 * 广告标识码
+	 */
+	@ApiField("ad_code")
+	private String adCode;
 
-  /**
-   * 扩展信息，传json格式的字符串，包含longitude=经度；latitude=纬度；deviceId=设备标识
-   */
-  @ApiField("ext_info")
-  private String extInfo;
+	/**
+	 * 扩展信息，传json格式的字符串，包含longitude=经度；latitude=纬度；deviceId=设备标识
+	 */
+	@ApiField("ext_info")
+	private String extInfo;
 
-  /**
-   * 支付宝账户
-   */
-  @ApiField("logon_id")
-  private String logonId;
+	/**
+	 * 支付宝账户
+	 */
+	@ApiField("logon_id")
+	private String logonId;
 
-  public String getAdCode() {
-    return this.adCode;
-  }
+	public String getAdCode() {
+		return this.adCode;
+	}
+	public void setAdCode(String adCode) {
+		this.adCode = adCode;
+	}
 
-  public void setAdCode(String adCode) {
-    this.adCode = adCode;
-  }
+	public String getExtInfo() {
+		return this.extInfo;
+	}
+	public void setExtInfo(String extInfo) {
+		this.extInfo = extInfo;
+	}
 
-  public String getExtInfo() {
-    return this.extInfo;
-  }
-
-  public void setExtInfo(String extInfo) {
-    this.extInfo = extInfo;
-  }
-
-  public String getLogonId() {
-    return this.logonId;
-  }
-
-  public void setLogonId(String logonId) {
-    this.logonId = logonId;
-  }
+	public String getLogonId() {
+		return this.logonId;
+	}
+	public void setLogonId(String logonId) {
+		this.logonId = logonId;
+	}
 
 }

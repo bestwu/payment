@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOpenAppPackagetestModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5647861658321514255L;
+	private static final long serialVersionUID = 3776764343351631785L;
 
-  /**
-   * testtest
-   */
-  @ApiField("testparam")
-  private String testparam;
+	/**
+	 * testtest
+	 */
+	@ApiField("testparam")
+	private String testparam;
 
-  /**
-   * testtest
-   */
-  @ApiField("testtest")
-  private String testtest;
+	/**
+	 * testtest
+	 */
+	@ApiField("testtest")
+	private String testtest;
 
-  public String getTestparam() {
-    return this.testparam;
-  }
+	public String getTestparam() {
+		return this.testparam;
+	}
+	public void setTestparam(String testparam) {
+		this.testparam = testparam;
+	}
 
-  public void setTestparam(String testparam) {
-    this.testparam = testparam;
-  }
-
-  public String getTesttest() {
-    return this.testtest;
-  }
-
-  public void setTesttest(String testtest) {
-    this.testtest = testtest;
-  }
+	public String getTesttest() {
+		return this.testtest;
+	}
+	public void setTesttest(String testtest) {
+		this.testtest = testtest;
+	}
 
 }

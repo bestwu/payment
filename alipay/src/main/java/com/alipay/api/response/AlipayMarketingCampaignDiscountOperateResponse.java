@@ -6,26 +6,25 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.marketing.campaign.discount.operate response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-11-10 14:13:57
+ * @since 1.0, 2017-03-03 16:48:01
  */
 public class AlipayMarketingCampaignDiscountOperateResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 7394467475425981164L;
+	private static final long serialVersionUID = 5843646896225727425L;
 
-  /**
-   * 123
-   */
-  @ApiField("camp_id")
-  private String campId;
+	/** 
+	 * 123
+	 */
+	@ApiField("camp_id")
+	private String campId;
 
-  public void setCampId(String campId) {
-    this.campId = campId;
-  }
-
-  public String getCampId() {
-    return this.campId;
-  }
+	public void setCampId(String campId) {
+		this.campId = campId;
+	}
+	public String getCampId( ) {
+		return this.campId;
+	}
 
 }

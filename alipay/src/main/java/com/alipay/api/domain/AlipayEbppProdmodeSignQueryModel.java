@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEbppProdmodeSignQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5835118588968139452L;
+	private static final long serialVersionUID = 4594848311785893568L;
 
-  /**
-   * 出账/销账机构支付宝账号
-   */
-  @ApiField("logon_id")
-  private String logonId;
+	/**
+	 * 出账/销账机构支付宝账号
+	 */
+	@ApiField("logon_id")
+	private String logonId;
 
-  /**
-   * 产品编号
-   */
-  @ApiField("prod_code")
-  private String prodCode;
+	/**
+	 * 产品编号
+	 */
+	@ApiField("prod_code")
+	private String prodCode;
 
-  public String getLogonId() {
-    return this.logonId;
-  }
+	public String getLogonId() {
+		return this.logonId;
+	}
+	public void setLogonId(String logonId) {
+		this.logonId = logonId;
+	}
 
-  public void setLogonId(String logonId) {
-    this.logonId = logonId;
-  }
-
-  public String getProdCode() {
-    return this.prodCode;
-  }
-
-  public void setProdCode(String prodCode) {
-    this.prodCode = prodCode;
-  }
+	public String getProdCode() {
+		return this.prodCode;
+	}
+	public void setProdCode(String prodCode) {
+		this.prodCode = prodCode;
+	}
 
 }

@@ -7,26 +7,25 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: koubei.marketing.campaign.activity.query response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-12-27 16:58:19
+ * @since 1.0, 2017-02-27 11:23:15
  */
 public class KoubeiMarketingCampaignActivityQueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 1635477967661225237L;
+	private static final long serialVersionUID = 8174789246156868844L;
 
-  /**
-   * 活动详情
-   */
-  @ApiField("camp_detail")
-  private CampDetail campDetail;
+	/** 
+	 * 活动详情
+	 */
+	@ApiField("camp_detail")
+	private CampDetail campDetail;
 
-  public void setCampDetail(CampDetail campDetail) {
-    this.campDetail = campDetail;
-  }
-
-  public CampDetail getCampDetail() {
-    return this.campDetail;
-  }
+	public void setCampDetail(CampDetail campDetail) {
+		this.campDetail = campDetail;
+	}
+	public CampDetail getCampDetail( ) {
+		return this.campDetail;
+	}
 
 }

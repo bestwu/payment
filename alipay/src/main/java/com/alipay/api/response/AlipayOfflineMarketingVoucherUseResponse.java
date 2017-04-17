@@ -5,13 +5,16 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.offline.marketing.voucher.use response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-06-23 17:57:58
  */
 public class AlipayOfflineMarketingVoucherUseResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 7486168341322924968L;
+	private static final long serialVersionUID = 1247962688986346282L;
 
+	
+
+	
 
 }

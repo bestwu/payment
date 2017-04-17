@@ -14,35 +14,33 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class ZhimaMerchantTestPracticeModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2418792389385534947L;
+	private static final long serialVersionUID = 4389217334161152546L;
 
-  /**
-   * a d
-   */
-  @ApiListField("add")
-  @ApiField("string")
-  private List<String> add;
+	/**
+	 * a d
+	 */
+	@ApiListField("add")
+	@ApiField("string")
+	private List<String> add;
 
-  /**
-   * zzz
-   */
-  @ApiField("xxxx")
-  private XXXXsdasdasd xxxx;
+	/**
+	 * zzz
+	 */
+	@ApiField("xxxx")
+	private XXXXsdasdasd xxxx;
 
-  public List<String> getAdd() {
-    return this.add;
-  }
+	public List<String> getAdd() {
+		return this.add;
+	}
+	public void setAdd(List<String> add) {
+		this.add = add;
+	}
 
-  public void setAdd(List<String> add) {
-    this.add = add;
-  }
-
-  public XXXXsdasdasd getXxxx() {
-    return this.xxxx;
-  }
-
-  public void setXxxx(XXXXsdasdasd xxxx) {
-    this.xxxx = xxxx;
-  }
+	public XXXXsdasdasd getXxxx() {
+		return this.xxxx;
+	}
+	public void setXxxx(XXXXsdasdasd xxxx) {
+		this.xxxx = xxxx;
+	}
 
 }

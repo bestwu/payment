@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class ContentPicture extends AlipayObject {
 
-  private static final long serialVersionUID = 6569493398542146655L;
+	private static final long serialVersionUID = 7435553713792546587L;
 
-  /**
-   * 调用alipay.offline.material.image.upload，将图片上传到素材中心后，生成的ID
-   */
-  @ApiField("location")
-  private String location;
+	/**
+	 * 调用alipay.offline.material.image.upload，将图片上传到素材中心后，生成的ID
+	 */
+	@ApiField("location")
+	private String location;
 
-  /**
-   * 图片名称
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 图片名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  /**
-   * "DISH"："菜品"，"ENVIRONMENT"："环境"，"SHOPHEAD"："门头照"，"OTHER"："其他"
-   */
-  @ApiField("type")
-  private String type;
+	/**
+	 * "DISH"："菜品"，"ENVIRONMENT"："环境"，"SHOPHEAD"："门头照"，"OTHER"："其他"
+	 */
+	@ApiField("type")
+	private String type;
 
-  public String getLocation() {
-    return this.location;
-  }
+	public String getLocation() {
+		return this.location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
 
-  public void setLocation(String location) {
-    this.location = location;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getType() {
-    return this.type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
+	public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 
 }

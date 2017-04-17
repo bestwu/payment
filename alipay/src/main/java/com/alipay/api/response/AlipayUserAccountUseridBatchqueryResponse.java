@@ -8,27 +8,26 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.user.account.userid.batchquery response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-06-06 21:37:53
  */
 public class AlipayUserAccountUseridBatchqueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 2176772175153711159L;
+	private static final long serialVersionUID = 7696662582662866372L;
 
-  /**
-   * 用户列表
-   */
-  @ApiListField("user_id_list")
-  @ApiField("string")
-  private List<String> userIdList;
+	/** 
+	 * 用户列表
+	 */
+	@ApiListField("user_id_list")
+	@ApiField("string")
+	private List<String> userIdList;
 
-  public void setUserIdList(List<String> userIdList) {
-    this.userIdList = userIdList;
-  }
-
-  public List<String> getUserIdList() {
-    return this.userIdList;
-  }
+	public void setUserIdList(List<String> userIdList) {
+		this.userIdList = userIdList;
+	}
+	public List<String> getUserIdList( ) {
+		return this.userIdList;
+	}
 
 }

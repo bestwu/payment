@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayMarketingCampaignDiscountBudgetQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8796764945821583574L;
+	private static final long serialVersionUID = 4839527743594343977L;
 
-  /**
-   * 预算名称
-   */
-  @ApiField("budget_id")
-  private String budgetId;
+	/**
+	 * 预算名称
+	 */
+	@ApiField("budget_id")
+	private String budgetId;
 
-  public String getBudgetId() {
-    return this.budgetId;
-  }
-
-  public void setBudgetId(String budgetId) {
-    this.budgetId = budgetId;
-  }
+	public String getBudgetId() {
+		return this.budgetId;
+	}
+	public void setBudgetId(String budgetId) {
+		this.budgetId = budgetId;
+	}
 
 }

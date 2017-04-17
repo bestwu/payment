@@ -14,91 +14,85 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayInsMarketingCampaignPrizeSendModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7835977976636221254L;
+	private static final long serialVersionUID = 7227534594671269836L;
 
-  /**
-   * 账户id，如支付宝userId：2088102161835009
-   */
-  @ApiField("account_id")
-  private String accountId;
+	/**
+	 * 账户id，如支付宝userId：2088102161835009
+	 */
+	@ApiField("account_id")
+	private String accountId;
 
-  /**
-   * 账号类型
-   */
-  @ApiField("account_type")
-  private Long accountType;
+	/**
+	 * 账号类型
+	 */
+	@ApiField("account_type")
+	private Long accountType;
 
-  /**
-   * 营销保险活动Id
-   */
-  @ApiField("campaign_id")
-  private String campaignId;
+	/**
+	 * 营销保险活动Id
+	 */
+	@ApiField("campaign_id")
+	private String campaignId;
 
-  /**
-   * 发奖规则因子
-   */
-  @ApiListField("factors")
-  @ApiField("ins_mkt_factor_d_t_o")
-  private List<InsMktFactorDTO> factors;
+	/**
+	 * 发奖规则因子
+	 */
+	@ApiListField("factors")
+	@ApiField("ins_mkt_factor_d_t_o")
+	private List<InsMktFactorDTO> factors;
 
-  /**
-   * 发奖接口幂等字段
-   */
-  @ApiField("out_biz_no")
-  private String outBizNo;
+	/**
+	 * 发奖接口幂等字段
+	 */
+	@ApiField("out_biz_no")
+	private String outBizNo;
 
-  /**
-   * 请求流水Id
-   */
-  @ApiField("request_id")
-  private String requestId;
+	/**
+	 * 请求流水Id
+	 */
+	@ApiField("request_id")
+	private String requestId;
 
-  public String getAccountId() {
-    return this.accountId;
-  }
+	public String getAccountId() {
+		return this.accountId;
+	}
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+	}
 
-  public void setAccountId(String accountId) {
-    this.accountId = accountId;
-  }
+	public Long getAccountType() {
+		return this.accountType;
+	}
+	public void setAccountType(Long accountType) {
+		this.accountType = accountType;
+	}
 
-  public Long getAccountType() {
-    return this.accountType;
-  }
+	public String getCampaignId() {
+		return this.campaignId;
+	}
+	public void setCampaignId(String campaignId) {
+		this.campaignId = campaignId;
+	}
 
-  public void setAccountType(Long accountType) {
-    this.accountType = accountType;
-  }
+	public List<InsMktFactorDTO> getFactors() {
+		return this.factors;
+	}
+	public void setFactors(List<InsMktFactorDTO> factors) {
+		this.factors = factors;
+	}
 
-  public String getCampaignId() {
-    return this.campaignId;
-  }
+	public String getOutBizNo() {
+		return this.outBizNo;
+	}
+	public void setOutBizNo(String outBizNo) {
+		this.outBizNo = outBizNo;
+	}
 
-  public void setCampaignId(String campaignId) {
-    this.campaignId = campaignId;
-  }
-
-  public List<InsMktFactorDTO> getFactors() {
-    return this.factors;
-  }
-
-  public void setFactors(List<InsMktFactorDTO> factors) {
-    this.factors = factors;
-  }
-
-  public String getOutBizNo() {
-    return this.outBizNo;
-  }
-
-  public void setOutBizNo(String outBizNo) {
-    this.outBizNo = outBizNo;
-  }
-
-  public String getRequestId() {
-    return this.requestId;
-  }
-
-  public void setRequestId(String requestId) {
-    this.requestId = requestId;
-  }
+	public String getRequestId() {
+		return this.requestId;
+	}
+	public void setRequestId(String requestId) {
+		this.requestId = requestId;
+	}
 
 }

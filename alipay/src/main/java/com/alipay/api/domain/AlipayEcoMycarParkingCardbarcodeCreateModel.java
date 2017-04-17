@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarParkingCardbarcodeCreateModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6378374951982699571L;
+	private static final long serialVersionUID = 1253157229149268133L;
 
-  /**
-   * 设备商订单id
-   */
-  @ApiField("equipment_id")
-  private String equipmentId;
+	/**
+	 * 设备商订单id
+	 */
+	@ApiField("equipment_id")
+	private String equipmentId;
 
-  /**
-   * 支付宝交易流水号订单
-   */
-  @ApiField("parking_id")
-  private String parkingId;
+	/**
+	 * 支付宝交易流水号订单
+	 */
+	@ApiField("parking_id")
+	private String parkingId;
 
-  public String getEquipmentId() {
-    return this.equipmentId;
-  }
+	public String getEquipmentId() {
+		return this.equipmentId;
+	}
+	public void setEquipmentId(String equipmentId) {
+		this.equipmentId = equipmentId;
+	}
 
-  public void setEquipmentId(String equipmentId) {
-    this.equipmentId = equipmentId;
-  }
-
-  public String getParkingId() {
-    return this.parkingId;
-  }
-
-  public void setParkingId(String parkingId) {
-    this.parkingId = parkingId;
-  }
+	public String getParkingId() {
+		return this.parkingId;
+	}
+	public void setParkingId(String parkingId) {
+		this.parkingId = parkingId;
+	}
 
 }

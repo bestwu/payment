@@ -14,49 +14,46 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class LabelFilter extends AlipayObject {
 
-  private static final long serialVersionUID = 3185412899383276453L;
+	private static final long serialVersionUID = 3544266595269297594L;
 
-  /**
-   * 标签组名，商户自定义的标签固定为label_id_list，支付宝开放的标签详见<a href="http://aopsdkdownload.cn-hangzhou.alipay-pub.aliyun-inc.com/doc/FirstPartOfTagsFromAlipay.xlsx">支付宝开放标签</a>
-   */
-  @ApiField("column_name")
-  private String columnName;
+	/**
+	 * 标签组名，商户自定义的标签固定为label_id_list，支付宝开放的标签详见<a href="http://aopsdkdownload.cn-hangzhou.alipay-pub.aliyun-inc.com/doc/FirstPartOfTagsFromAlipay.xlsx">支付宝开放标签</a>
+	 */
+	@ApiField("column_name")
+	private String columnName;
 
-  /**
-   * 操作符，支持=、!=、in三个操作符；其中in表示是某几个标签中的一个
-   */
-  @ApiField("op")
-  private String op;
+	/**
+	 * 操作符，支持=、!=、in三个操作符；其中in表示是某几个标签中的一个
+	 */
+	@ApiField("op")
+	private String op;
 
-  /**
-   * 标签数组，用于组装最后的表达式
-   */
-  @ApiListField("values")
-  @ApiField("string")
-  private List<String> values;
+	/**
+	 * 标签数组，用于组装最后的表达式
+	 */
+	@ApiListField("values")
+	@ApiField("string")
+	private List<String> values;
 
-  public String getColumnName() {
-    return this.columnName;
-  }
+	public String getColumnName() {
+		return this.columnName;
+	}
+	public void setColumnName(String columnName) {
+		this.columnName = columnName;
+	}
 
-  public void setColumnName(String columnName) {
-    this.columnName = columnName;
-  }
+	public String getOp() {
+		return this.op;
+	}
+	public void setOp(String op) {
+		this.op = op;
+	}
 
-  public String getOp() {
-    return this.op;
-  }
-
-  public void setOp(String op) {
-    this.op = op;
-  }
-
-  public List<String> getValues() {
-    return this.values;
-  }
-
-  public void setValues(List<String> values) {
-    this.values = values;
-  }
+	public List<String> getValues() {
+		return this.values;
+	}
+	public void setValues(List<String> values) {
+		this.values = values;
+	}
 
 }

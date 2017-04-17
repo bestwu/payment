@@ -14,21 +14,20 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayMarketingDataDashboardCancelModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6772616548244463251L;
+	private static final long serialVersionUID = 8826689495462516918L;
 
-  /**
-   * 批量取消仪表盘授权
-   */
-  @ApiListField("dashboard_ids")
-  @ApiField("string")
-  private List<String> dashboardIds;
+	/**
+	 * 批量取消仪表盘授权
+	 */
+	@ApiListField("dashboard_ids")
+	@ApiField("string")
+	private List<String> dashboardIds;
 
-  public List<String> getDashboardIds() {
-    return this.dashboardIds;
-  }
-
-  public void setDashboardIds(List<String> dashboardIds) {
-    this.dashboardIds = dashboardIds;
-  }
+	public List<String> getDashboardIds() {
+		return this.dashboardIds;
+	}
+	public void setDashboardIds(List<String> dashboardIds) {
+		this.dashboardIds = dashboardIds;
+	}
 
 }

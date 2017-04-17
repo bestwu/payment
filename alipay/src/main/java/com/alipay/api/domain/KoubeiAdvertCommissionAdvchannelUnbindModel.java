@@ -14,35 +14,33 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class KoubeiAdvertCommissionAdvchannelUnbindModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5827774481983876743L;
+	private static final long serialVersionUID = 5179482755368561541L;
 
-  /**
-   * 广告ID
-   */
-  @ApiField("adv_id")
-  private String advId;
+	/**
+	 * 广告ID
+	 */
+	@ApiField("adv_id")
+	private String advId;
 
-  /**
-   * 渠道ID列表
-   */
-  @ApiListField("channel_id_list")
-  @ApiField("string")
-  private List<String> channelIdList;
+	/**
+	 * 渠道ID列表
+	 */
+	@ApiListField("channel_id_list")
+	@ApiField("string")
+	private List<String> channelIdList;
 
-  public String getAdvId() {
-    return this.advId;
-  }
+	public String getAdvId() {
+		return this.advId;
+	}
+	public void setAdvId(String advId) {
+		this.advId = advId;
+	}
 
-  public void setAdvId(String advId) {
-    this.advId = advId;
-  }
-
-  public List<String> getChannelIdList() {
-    return this.channelIdList;
-  }
-
-  public void setChannelIdList(List<String> channelIdList) {
-    this.channelIdList = channelIdList;
-  }
+	public List<String> getChannelIdList() {
+		return this.channelIdList;
+	}
+	public void setChannelIdList(List<String> channelIdList) {
+		this.channelIdList = channelIdList;
+	}
 
 }

@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class BizListDataInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 1278331412934562623L;
+	private static final long serialVersionUID = 1294738228623713778L;
 
-  /**
-   * 下拉列表编号
-   */
-  @ApiField("code")
-  private String code;
+	/**
+	 * 下拉列表编号
+	 */
+	@ApiField("code")
+	private String code;
 
-  /**
-   * 下拉列表名称
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 下拉列表名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  public String getCode() {
-    return this.code;
-  }
+	public String getCode() {
+		return this.code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

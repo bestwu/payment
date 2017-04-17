@@ -11,35 +11,33 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KbAdvertSpecialAdvContentRequest extends AlipayObject {
 
-  private static final long serialVersionUID = 5889593299633339177L;
+	private static final long serialVersionUID = 5343359991811978697L;
 
-  /**
-   * 红包口令模型，创建红包口令时传入该模型
-   */
-  @ApiField("content_password_modify")
-  private KbAdvertContentPasswordModify contentPasswordModify;
+	/**
+	 * 红包口令模型，创建红包口令时传入该模型
+	 */
+	@ApiField("content_password_modify")
+	private KbAdvertContentPasswordModify contentPasswordModify;
 
-  /**
-   * 广告内容类型；
-   * 当值是passwordRed时，表示修改口令红包，需要传入content_password_modify模型的参数；
-   */
-  @ApiField("content_type")
-  private String contentType;
+	/**
+	 * 广告内容类型；
+当值是passwordRed时，表示修改口令红包，需要传入content_password_modify模型的参数；
+	 */
+	@ApiField("content_type")
+	private String contentType;
 
-  public KbAdvertContentPasswordModify getContentPasswordModify() {
-    return this.contentPasswordModify;
-  }
+	public KbAdvertContentPasswordModify getContentPasswordModify() {
+		return this.contentPasswordModify;
+	}
+	public void setContentPasswordModify(KbAdvertContentPasswordModify contentPasswordModify) {
+		this.contentPasswordModify = contentPasswordModify;
+	}
 
-  public void setContentPasswordModify(KbAdvertContentPasswordModify contentPasswordModify) {
-    this.contentPasswordModify = contentPasswordModify;
-  }
-
-  public String getContentType() {
-    return this.contentType;
-  }
-
-  public void setContentType(String contentType) {
-    this.contentType = contentType;
-  }
+	public String getContentType() {
+		return this.contentType;
+	}
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+	}
 
 }

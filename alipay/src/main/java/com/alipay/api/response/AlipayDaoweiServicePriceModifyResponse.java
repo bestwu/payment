@@ -5,13 +5,16 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.daowei.service.price.modify response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2017-01-16 11:30:05
+ * @since 1.0, 2017-03-17 17:47:55
  */
 public class AlipayDaoweiServicePriceModifyResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 3676385754858111951L;
+	private static final long serialVersionUID = 8153723452483469466L;
 
+	
+
+	
 
 }

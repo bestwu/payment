@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiQualityTestCloudacptItemQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7154216279864632348L;
+	private static final long serialVersionUID = 4676332772857243384L;
 
-  /**
-   * 活动id
-   */
-  @ApiField("activity_id")
-  private String activityId;
+	/**
+	 * 活动id
+	 */
+	@ApiField("activity_id")
+	private String activityId;
 
-  /**
-   * 批次id
-   */
-  @ApiField("batch_id")
-  private String batchId;
+	/**
+	 * 批次id
+	 */
+	@ApiField("batch_id")
+	private String batchId;
 
-  /**
-   * partener id
-   */
-  @ApiField("pid")
-  private String pid;
+	/**
+	 * partener id
+	 */
+	@ApiField("pid")
+	private String pid;
 
-  /**
-   * user id
-   */
-  @ApiField("uid")
-  private String uid;
+	/**
+	 * user id
+	 */
+	@ApiField("uid")
+	private String uid;
 
-  public String getActivityId() {
-    return this.activityId;
-  }
+	public String getActivityId() {
+		return this.activityId;
+	}
+	public void setActivityId(String activityId) {
+		this.activityId = activityId;
+	}
 
-  public void setActivityId(String activityId) {
-    this.activityId = activityId;
-  }
+	public String getBatchId() {
+		return this.batchId;
+	}
+	public void setBatchId(String batchId) {
+		this.batchId = batchId;
+	}
 
-  public String getBatchId() {
-    return this.batchId;
-  }
+	public String getPid() {
+		return this.pid;
+	}
+	public void setPid(String pid) {
+		this.pid = pid;
+	}
 
-  public void setBatchId(String batchId) {
-    this.batchId = batchId;
-  }
-
-  public String getPid() {
-    return this.pid;
-  }
-
-  public void setPid(String pid) {
-    this.pid = pid;
-  }
-
-  public String getUid() {
-    return this.uid;
-  }
-
-  public void setUid(String uid) {
-    this.uid = uid;
-  }
+	public String getUid() {
+		return this.uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
 
 }

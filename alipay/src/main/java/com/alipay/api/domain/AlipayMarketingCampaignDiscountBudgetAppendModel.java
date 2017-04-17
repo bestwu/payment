@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayMarketingCampaignDiscountBudgetAppendModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4742482715667436156L;
+	private static final long serialVersionUID = 2717687539878762246L;
 
-  /**
-   * 预算ID
-   */
-  @ApiField("budget_id")
-  private String budgetId;
+	/**
+	 * 预算ID
+	 */
+	@ApiField("budget_id")
+	private String budgetId;
 
-  /**
-   * 追加后的预算总金额（注意：是追加后的预算总金额，不是在原基础上追加的金额），单位：元
-   */
-  @ApiField("total_amount")
-  private String totalAmount;
+	/**
+	 * 追加后的预算总金额（注意：是追加后的预算总金额，不是在原基础上追加的金额），单位：元
+	 */
+	@ApiField("total_amount")
+	private String totalAmount;
 
-  public String getBudgetId() {
-    return this.budgetId;
-  }
+	public String getBudgetId() {
+		return this.budgetId;
+	}
+	public void setBudgetId(String budgetId) {
+		this.budgetId = budgetId;
+	}
 
-  public void setBudgetId(String budgetId) {
-    this.budgetId = budgetId;
-  }
-
-  public String getTotalAmount() {
-    return this.totalAmount;
-  }
-
-  public void setTotalAmount(String totalAmount) {
-    this.totalAmount = totalAmount;
-  }
+	public String getTotalAmount() {
+		return this.totalAmount;
+	}
+	public void setTotalAmount(String totalAmount) {
+		this.totalAmount = totalAmount;
+	}
 
 }

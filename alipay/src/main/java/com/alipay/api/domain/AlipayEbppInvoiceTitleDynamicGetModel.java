@@ -7,24 +7,23 @@ import com.alipay.api.internal.mapping.ApiField;
  * 根据条形码获取抬头
  *
  * @author auto create
- * @since 1.0, 2016-11-15 16:14:57
+ * @since 1.0, 2017-02-22 17:16:52
  */
 public class AlipayEbppInvoiceTitleDynamicGetModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8138884394928491873L;
+	private static final long serialVersionUID = 7696118919818171358L;
 
-  /**
-   * 抬头动态码
-   */
-  @ApiField("bar_code")
-  private String barCode;
+	/**
+	 * 抬头动态码
+	 */
+	@ApiField("bar_code")
+	private String barCode;
 
-  public String getBarCode() {
-    return this.barCode;
-  }
-
-  public void setBarCode(String barCode) {
-    this.barCode = barCode;
-  }
+	public String getBarCode() {
+		return this.barCode;
+	}
+	public void setBarCode(String barCode) {
+		this.barCode = barCode;
+	}
 
 }

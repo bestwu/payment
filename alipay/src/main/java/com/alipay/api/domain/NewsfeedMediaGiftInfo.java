@@ -11,132 +11,123 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class NewsfeedMediaGiftInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 5879357212824778167L;
+	private static final long serialVersionUID = 1668375885493975569L;
 
-  /**
-   * 地址
-   */
-  @ApiField("action")
-  private String action;
+	/**
+	 * 地址
+	 */
+	@ApiField("action")
+	private String action;
 
-  /**
-   * 安卓的高度
-   */
-  @ApiField("adr_height")
-  private String adrHeight;
+	/**
+	 * 安卓的高度
+	 */
+	@ApiField("adr_height")
+	private String adrHeight;
 
-  /**
-   * 安卓缩略图
-   */
-  @ApiField("adr_thumb")
-  private String adrThumb;
+	/**
+	 * 安卓缩略图
+	 */
+	@ApiField("adr_thumb")
+	private String adrThumb;
 
-  /**
-   * 安卓宽度
-   */
-  @ApiField("adr_width")
-  private String adrWidth;
+	/**
+	 * 安卓宽度
+	 */
+	@ApiField("adr_width")
+	private String adrWidth;
 
-  /**
-   * ios高度
-   */
-  @ApiField("ios_height")
-  private String iosHeight;
+	/**
+	 * ios高度
+	 */
+	@ApiField("ios_height")
+	private String iosHeight;
 
-  /**
-   * ios缩略图
-   */
-  @ApiField("ios_thumb")
-  private String iosThumb;
+	/**
+	 * ios缩略图
+	 */
+	@ApiField("ios_thumb")
+	private String iosThumb;
 
-  /**
-   * ios宽度
-   */
-  @ApiField("ios_width")
-  private String iosWidth;
+	/**
+	 * ios宽度
+	 */
+	@ApiField("ios_width")
+	private String iosWidth;
 
-  /**
-   * 大图
-   */
-  @ApiField("theme")
-  private String theme;
+	/**
+	 * 大图
+	 */
+	@ApiField("theme")
+	private String theme;
 
-  /**
-   * 红包类型all、f、m
-   */
-  @ApiField("type")
-  private String type;
+	/**
+	 * 红包类型all、f、m
+	 */
+	@ApiField("type")
+	private String type;
 
-  public String getAction() {
-    return this.action;
-  }
+	public String getAction() {
+		return this.action;
+	}
+	public void setAction(String action) {
+		this.action = action;
+	}
 
-  public void setAction(String action) {
-    this.action = action;
-  }
+	public String getAdrHeight() {
+		return this.adrHeight;
+	}
+	public void setAdrHeight(String adrHeight) {
+		this.adrHeight = adrHeight;
+	}
 
-  public String getAdrHeight() {
-    return this.adrHeight;
-  }
+	public String getAdrThumb() {
+		return this.adrThumb;
+	}
+	public void setAdrThumb(String adrThumb) {
+		this.adrThumb = adrThumb;
+	}
 
-  public void setAdrHeight(String adrHeight) {
-    this.adrHeight = adrHeight;
-  }
+	public String getAdrWidth() {
+		return this.adrWidth;
+	}
+	public void setAdrWidth(String adrWidth) {
+		this.adrWidth = adrWidth;
+	}
 
-  public String getAdrThumb() {
-    return this.adrThumb;
-  }
+	public String getIosHeight() {
+		return this.iosHeight;
+	}
+	public void setIosHeight(String iosHeight) {
+		this.iosHeight = iosHeight;
+	}
 
-  public void setAdrThumb(String adrThumb) {
-    this.adrThumb = adrThumb;
-  }
+	public String getIosThumb() {
+		return this.iosThumb;
+	}
+	public void setIosThumb(String iosThumb) {
+		this.iosThumb = iosThumb;
+	}
 
-  public String getAdrWidth() {
-    return this.adrWidth;
-  }
+	public String getIosWidth() {
+		return this.iosWidth;
+	}
+	public void setIosWidth(String iosWidth) {
+		this.iosWidth = iosWidth;
+	}
 
-  public void setAdrWidth(String adrWidth) {
-    this.adrWidth = adrWidth;
-  }
+	public String getTheme() {
+		return this.theme;
+	}
+	public void setTheme(String theme) {
+		this.theme = theme;
+	}
 
-  public String getIosHeight() {
-    return this.iosHeight;
-  }
-
-  public void setIosHeight(String iosHeight) {
-    this.iosHeight = iosHeight;
-  }
-
-  public String getIosThumb() {
-    return this.iosThumb;
-  }
-
-  public void setIosThumb(String iosThumb) {
-    this.iosThumb = iosThumb;
-  }
-
-  public String getIosWidth() {
-    return this.iosWidth;
-  }
-
-  public void setIosWidth(String iosWidth) {
-    this.iosWidth = iosWidth;
-  }
-
-  public String getTheme() {
-    return this.theme;
-  }
-
-  public void setTheme(String theme) {
-    this.theme = theme;
-  }
-
-  public String getType() {
-    return this.type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
+	public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 
 }

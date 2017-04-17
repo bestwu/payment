@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class RiskRankInfoCode extends AlipayObject {
 
-  private static final long serialVersionUID = 5742318183237826778L;
+	private static final long serialVersionUID = 1898269429284845121L;
 
-  /**
-   * infocode
-   */
-  @ApiField("code")
-  private String code;
+	/**
+	 * infocode
+	 */
+	@ApiField("code")
+	private String code;
 
-  /**
-   * 此infocode在总的得分中的贡献度
-   */
-  @ApiField("contribution_degree")
-  private Long contributionDegree;
+	/**
+	 * 此infocode在总的得分中的贡献度
+	 */
+	@ApiField("contribution_degree")
+	private Long contributionDegree;
 
-  /**
-   * 风险描述
-   */
-  @ApiField("desc")
-  private String desc;
+	/**
+	 * 风险描述
+	 */
+	@ApiField("desc")
+	private String desc;
 
-  /**
-   * 模型名称
-   */
-  @ApiField("model_name")
-  private String modelName;
+	/**
+	 * 模型名称
+	 */
+	@ApiField("model_name")
+	private String modelName;
 
-  public String getCode() {
-    return this.code;
-  }
+	public String getCode() {
+		return this.code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+	public Long getContributionDegree() {
+		return this.contributionDegree;
+	}
+	public void setContributionDegree(Long contributionDegree) {
+		this.contributionDegree = contributionDegree;
+	}
 
-  public Long getContributionDegree() {
-    return this.contributionDegree;
-  }
+	public String getDesc() {
+		return this.desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 
-  public void setContributionDegree(Long contributionDegree) {
-    this.contributionDegree = contributionDegree;
-  }
-
-  public String getDesc() {
-    return this.desc;
-  }
-
-  public void setDesc(String desc) {
-    this.desc = desc;
-  }
-
-  public String getModelName() {
-    return this.modelName;
-  }
-
-  public void setModelName(String modelName) {
-    this.modelName = modelName;
-  }
+	public String getModelName() {
+		return this.modelName;
+	}
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+	}
 
 }

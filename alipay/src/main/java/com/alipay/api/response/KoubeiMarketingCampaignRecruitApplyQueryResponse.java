@@ -10,97 +10,91 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: koubei.marketing.campaign.recruit.apply.query response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-11-18 11:48:44
+ * @since 1.0, 2017-02-20 13:50:48
  */
 public class KoubeiMarketingCampaignRecruitApplyQueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 1479644914721295742L;
+	private static final long serialVersionUID = 4213847572689173878L;
 
-  /**
-   * 活动开始购买时间
-   */
-  @ApiField("bought_time")
-  private Date boughtTime;
+	/** 
+	 * 活动开始购买时间
+	 */
+	@ApiField("bought_time")
+	private Date boughtTime;
 
-  /**
-   * 活动结束时间
-   */
-  @ApiField("end_time")
-  private Date endTime;
+	/** 
+	 * 活动结束时间
+	 */
+	@ApiField("end_time")
+	private Date endTime;
 
-  /**
-   * 招商报名数据总数
-   */
-  @ApiField("item_count")
-  private String itemCount;
+	/** 
+	 * 招商报名数据总数
+	 */
+	@ApiField("item_count")
+	private String itemCount;
 
-  /**
-   * 招商报名数据
-   */
-  @ApiListField("item_info")
-  @ApiField("recruit_item_apply_data")
-  private List<RecruitItemApplyData> itemInfo;
+	/** 
+	 * 招商报名数据
+	 */
+	@ApiListField("item_info")
+	@ApiField("recruit_item_apply_data")
+	private List<RecruitItemApplyData> itemInfo;
 
-  /**
-   * 活动名称
-   */
-  @ApiField("name")
-  private String name;
+	/** 
+	 * 活动名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  /**
-   * 预热开始时间 2016-12-12 10:10:10
-   */
-  @ApiField("prehot_time")
-  private Date prehotTime;
+	/** 
+	 * 预热开始时间 2016-12-12 10:10:10
+	 */
+	@ApiField("prehot_time")
+	private Date prehotTime;
 
-  public void setBoughtTime(Date boughtTime) {
-    this.boughtTime = boughtTime;
-  }
+	public void setBoughtTime(Date boughtTime) {
+		this.boughtTime = boughtTime;
+	}
+	public Date getBoughtTime( ) {
+		return this.boughtTime;
+	}
 
-  public Date getBoughtTime() {
-    return this.boughtTime;
-  }
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+	public Date getEndTime( ) {
+		return this.endTime;
+	}
 
-  public void setEndTime(Date endTime) {
-    this.endTime = endTime;
-  }
+	public void setItemCount(String itemCount) {
+		this.itemCount = itemCount;
+	}
+	public String getItemCount( ) {
+		return this.itemCount;
+	}
 
-  public Date getEndTime() {
-    return this.endTime;
-  }
+	public void setItemInfo(List<RecruitItemApplyData> itemInfo) {
+		this.itemInfo = itemInfo;
+	}
+	public List<RecruitItemApplyData> getItemInfo( ) {
+		return this.itemInfo;
+	}
 
-  public void setItemCount(String itemCount) {
-    this.itemCount = itemCount;
-  }
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getName( ) {
+		return this.name;
+	}
 
-  public String getItemCount() {
-    return this.itemCount;
-  }
-
-  public void setItemInfo(List<RecruitItemApplyData> itemInfo) {
-    this.itemInfo = itemInfo;
-  }
-
-  public List<RecruitItemApplyData> getItemInfo() {
-    return this.itemInfo;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setPrehotTime(Date prehotTime) {
-    this.prehotTime = prehotTime;
-  }
-
-  public Date getPrehotTime() {
-    return this.prehotTime;
-  }
+	public void setPrehotTime(Date prehotTime) {
+		this.prehotTime = prehotTime;
+	}
+	public Date getPrehotTime( ) {
+		return this.prehotTime;
+	}
 
 }

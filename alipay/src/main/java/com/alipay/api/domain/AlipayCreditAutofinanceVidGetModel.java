@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayCreditAutofinanceVidGetModel extends AlipayObject {
 
-  private static final long serialVersionUID = 1211445616982898156L;
+	private static final long serialVersionUID = 2317834582473115513L;
 
-  /**
-   * 机构编号
-   */
-  @ApiField("orgcode")
-  private String orgcode;
+	/**
+	 * 机构编号
+	 */
+	@ApiField("orgcode")
+	private String orgcode;
 
-  /**
-   * 支付宝账号数字ID
-   */
-  @ApiField("uid")
-  private String uid;
+	/**
+	 * 支付宝账号数字ID
+	 */
+	@ApiField("uid")
+	private String uid;
 
-  /**
-   * 当前安装的支付宝钱包版本号
-   */
-  @ApiField("version")
-  private String version;
+	/**
+	 * 当前安装的支付宝钱包版本号
+	 */
+	@ApiField("version")
+	private String version;
 
-  public String getOrgcode() {
-    return this.orgcode;
-  }
+	public String getOrgcode() {
+		return this.orgcode;
+	}
+	public void setOrgcode(String orgcode) {
+		this.orgcode = orgcode;
+	}
 
-  public void setOrgcode(String orgcode) {
-    this.orgcode = orgcode;
-  }
+	public String getUid() {
+		return this.uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
 
-  public String getUid() {
-    return this.uid;
-  }
-
-  public void setUid(String uid) {
-    this.uid = uid;
-  }
-
-  public String getVersion() {
-    return this.version;
-  }
-
-  public void setVersion(String version) {
-    this.version = version;
-  }
+	public String getVersion() {
+		return this.version;
+	}
+	public void setVersion(String version) {
+		this.version = version;
+	}
 
 }

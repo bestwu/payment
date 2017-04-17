@@ -6,54 +6,51 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.pass.file.add response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2016-07-01 15:32:08
  */
 public class AlipayPassFileAddResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 5144386458944219672L;
+	private static final long serialVersionUID = 5241599778656637339L;
 
-  /**
-   * 业务结果
-   */
-  @ApiField("biz_result")
-  private String bizResult;
+	/** 
+	 * 业务结果
+	 */
+	@ApiField("biz_result")
+	private String bizResult;
 
-  /**
-   * 业务错误码
-   */
-  @ApiField("error_code")
-  private String errorCode;
+	/** 
+	 * 业务错误码
+	 */
+	@ApiField("error_code")
+	private String errorCode;
 
-  /**
-   * 是否成功标识:T-成功；F-失败
-   */
-  @ApiField("success")
-  private String success;
+	/** 
+	 * 是否成功标识:T-成功；F-失败
+	 */
+	@ApiField("success")
+	private String success;
 
-  public void setBizResult(String bizResult) {
-    this.bizResult = bizResult;
-  }
+	public void setBizResult(String bizResult) {
+		this.bizResult = bizResult;
+	}
+	public String getBizResult( ) {
+		return this.bizResult;
+	}
 
-  public String getBizResult() {
-    return this.bizResult;
-  }
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+	public String getErrorCode( ) {
+		return this.errorCode;
+	}
 
-  public void setErrorCode(String errorCode) {
-    this.errorCode = errorCode;
-  }
-
-  public String getErrorCode() {
-    return this.errorCode;
-  }
-
-  public void setSuccess(String success) {
-    this.success = success;
-  }
-
-  public String getSuccess() {
-    return this.success;
-  }
+	public void setSuccess(String success) {
+		this.success = success;
+	}
+	public String getSuccess( ) {
+		return this.success;
+	}
 
 }

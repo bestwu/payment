@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipaySecurityDataInfoMobilecityQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7289421114324293837L;
+	private static final long serialVersionUID = 2838395137515127286L;
 
-  /**
-   * 电话号码
-   */
-  @ApiField("phone")
-  private String phone;
+	/**
+	 * 电话号码
+	 */
+	@ApiField("phone")
+	private String phone;
 
-  public String getPhone() {
-    return this.phone;
-  }
-
-  public void setPhone(String phone) {
-    this.phone = phone;
-  }
+	public String getPhone() {
+		return this.phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 }

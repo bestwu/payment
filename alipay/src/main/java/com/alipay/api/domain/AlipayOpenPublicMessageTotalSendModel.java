@@ -14,49 +14,46 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayOpenPublicMessageTotalSendModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7886857192982291942L;
+	private static final long serialVersionUID = 8737526635744893367L;
 
-  /**
-   * 图文消息，当msg_type为image-text，该值必须设置
-   */
-  @ApiListField("articles")
-  @ApiField("article")
-  private List<Article> articles;
+	/**
+	 * 图文消息，当msg_type为image-text，该值必须设置
+	 */
+	@ApiListField("articles")
+	@ApiField("article")
+	private List<Article> articles;
 
-  /**
-   * 消息类型，text：文本消息，image-text：图文消息
-   */
-  @ApiField("msg_type")
-  private String msgType;
+	/**
+	 * 消息类型，text：文本消息，image-text：图文消息
+	 */
+	@ApiField("msg_type")
+	private String msgType;
 
-  /**
-   * 文本消息内容，当msg_type为text，必须设置该值
-   */
-  @ApiField("text")
-  private Text text;
+	/**
+	 * 文本消息内容，当msg_type为text，必须设置该值
+	 */
+	@ApiField("text")
+	private Text text;
 
-  public List<Article> getArticles() {
-    return this.articles;
-  }
+	public List<Article> getArticles() {
+		return this.articles;
+	}
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
 
-  public void setArticles(List<Article> articles) {
-    this.articles = articles;
-  }
+	public String getMsgType() {
+		return this.msgType;
+	}
+	public void setMsgType(String msgType) {
+		this.msgType = msgType;
+	}
 
-  public String getMsgType() {
-    return this.msgType;
-  }
-
-  public void setMsgType(String msgType) {
-    this.msgType = msgType;
-  }
-
-  public Text getText() {
-    return this.text;
-  }
-
-  public void setText(Text text) {
-    this.text = text;
-  }
+	public Text getText() {
+		return this.text;
+	}
+	public void setText(Text text) {
+		this.text = text;
+	}
 
 }

@@ -6,40 +6,38 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.mobile.beacon.device.add response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2015-02-03 19:48:59
+ * @since 1.0, 2017-02-28 11:14:28
  */
 public class AlipayMobileBeaconDeviceAddResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 3185967648728773273L;
+	private static final long serialVersionUID = 3293173445199162328L;
 
-  /**
-   * 请求操作成功与否，200为成功
-   */
-  @ApiField("code")
-  private String code;
+	/** 
+	 * 请求操作成功与否，200为成功
+	 */
+	@ApiField("code")
+	private String code;
 
-  /**
-   * 请求的处理结果
-   */
-  @ApiField("msg")
-  private String msg;
+	/** 
+	 * 请求的处理结果
+	 */
+	@ApiField("msg")
+	private String msg;
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getCode( ) {
+		return this.code;
+	}
 
-  public String getCode() {
-    return this.code;
-  }
-
-  public void setMsg(String msg) {
-    this.msg = msg;
-  }
-
-  public String getMsg() {
-    return this.msg;
-  }
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public String getMsg( ) {
+		return this.msg;
+	}
 
 }

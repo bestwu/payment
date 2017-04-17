@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarDataExternalSendModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2123116436392964842L;
+	private static final long serialVersionUID = 8682567392544727431L;
 
-  /**
-   * external_system_name
-   */
-  @ApiField("external_system_name")
-  private String externalSystemName;
+	/**
+	 * external_system_name
+	 */
+	@ApiField("external_system_name")
+	private String externalSystemName;
 
-  /**
-   * is_transfer_uid
-   */
-  @ApiField("is_transfer_uid")
-  private String isTransferUid;
+	/**
+	 * is_transfer_uid
+	 */
+	@ApiField("is_transfer_uid")
+	private String isTransferUid;
 
-  /**
-   * operate_type
-   */
-  @ApiField("operate_type")
-  private String operateType;
+	/**
+	 * operate_type
+	 */
+	@ApiField("operate_type")
+	private String operateType;
 
-  /**
-   * send_data
-   */
-  @ApiField("send_data")
-  private String sendData;
+	/**
+	 * send_data
+	 */
+	@ApiField("send_data")
+	private String sendData;
 
-  public String getExternalSystemName() {
-    return this.externalSystemName;
-  }
+	public String getExternalSystemName() {
+		return this.externalSystemName;
+	}
+	public void setExternalSystemName(String externalSystemName) {
+		this.externalSystemName = externalSystemName;
+	}
 
-  public void setExternalSystemName(String externalSystemName) {
-    this.externalSystemName = externalSystemName;
-  }
+	public String getIsTransferUid() {
+		return this.isTransferUid;
+	}
+	public void setIsTransferUid(String isTransferUid) {
+		this.isTransferUid = isTransferUid;
+	}
 
-  public String getIsTransferUid() {
-    return this.isTransferUid;
-  }
+	public String getOperateType() {
+		return this.operateType;
+	}
+	public void setOperateType(String operateType) {
+		this.operateType = operateType;
+	}
 
-  public void setIsTransferUid(String isTransferUid) {
-    this.isTransferUid = isTransferUid;
-  }
-
-  public String getOperateType() {
-    return this.operateType;
-  }
-
-  public void setOperateType(String operateType) {
-    this.operateType = operateType;
-  }
-
-  public String getSendData() {
-    return this.sendData;
-  }
-
-  public void setSendData(String sendData) {
-    this.sendData = sendData;
-  }
+	public String getSendData() {
+		return this.sendData;
+	}
+	public void setSendData(String sendData) {
+		this.sendData = sendData;
+	}
 
 }

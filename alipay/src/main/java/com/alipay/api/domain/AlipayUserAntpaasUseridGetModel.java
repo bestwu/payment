@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayUserAntpaasUseridGetModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4378986972325946121L;
+	private static final long serialVersionUID = 8435846273692149773L;
 
-  /**
-   * 账户登录号，邮箱或者手机号
-   */
-  @ApiField("logon_id")
-  private String logonId;
+	/**
+	 * 账户登录号，邮箱或者手机号
+	 */
+	@ApiField("logon_id")
+	private String logonId;
 
-  public String getLogonId() {
-    return this.logonId;
-  }
-
-  public void setLogonId(String logonId) {
-    this.logonId = logonId;
-  }
+	public String getLogonId() {
+		return this.logonId;
+	}
+	public void setLogonId(String logonId) {
+		this.logonId = logonId;
+	}
 
 }

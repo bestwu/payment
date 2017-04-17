@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipaySecurityProdFacerepoSearchModel extends AlipayObject {
 
-  private static final long serialVersionUID = 1533747875718394976L;
+	private static final long serialVersionUID = 2243887938542917942L;
 
-  /**
-   * 商户的业务单据号，用于核对与问题排查
-   */
-  @ApiField("biz_id")
-  private String bizId;
+	/**
+	 * 商户的业务单据号，用于核对与问题排查
+	 */
+	@ApiField("biz_id")
+	private String bizId;
 
-  /**
-   * 待搜索的人脸图片字节数组进行Base64编码后的字符串
-   */
-  @ApiField("face_str")
-  private String faceStr;
+	/**
+	 * 待搜索的人脸图片字节数组进行Base64编码后的字符串
+	 */
+	@ApiField("face_str")
+	private String faceStr;
 
-  /**
-   * 人脸库分组,在指定的人脸库分组中搜索
-   */
-  @ApiField("group_id")
-  private String groupId;
+	/**
+	 * 人脸库分组,在指定的人脸库分组中搜索
+	 */
+	@ApiField("group_id")
+	private String groupId;
 
-  public String getBizId() {
-    return this.bizId;
-  }
+	public String getBizId() {
+		return this.bizId;
+	}
+	public void setBizId(String bizId) {
+		this.bizId = bizId;
+	}
 
-  public void setBizId(String bizId) {
-    this.bizId = bizId;
-  }
+	public String getFaceStr() {
+		return this.faceStr;
+	}
+	public void setFaceStr(String faceStr) {
+		this.faceStr = faceStr;
+	}
 
-  public String getFaceStr() {
-    return this.faceStr;
-  }
-
-  public void setFaceStr(String faceStr) {
-    this.faceStr = faceStr;
-  }
-
-  public String getGroupId() {
-    return this.groupId;
-  }
-
-  public void setGroupId(String groupId) {
-    this.groupId = groupId;
-  }
+	public String getGroupId() {
+		return this.groupId;
+	}
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
 
 }

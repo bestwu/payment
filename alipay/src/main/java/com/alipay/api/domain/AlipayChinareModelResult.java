@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayChinareModelResult extends AlipayObject {
 
-  private static final long serialVersionUID = 2163626439329397188L;
+	private static final long serialVersionUID = 1227412936483484388L;
 
-  /**
-   * 体检记录id
-   */
-  @ApiField("id")
-  private String id;
+	/**
+	 * 体检记录id
+	 */
+	@ApiField("id")
+	private String id;
 
-  /**
-   * 规则id
-   */
-  @ApiField("rule_id")
-  private String ruleId;
+	/**
+	 * 规则id
+	 */
+	@ApiField("rule_id")
+	private String ruleId;
 
-  /**
-   * 核保结果
-   */
-  @ApiField("rule_result")
-  private String ruleResult;
+	/**
+	 * 核保结果
+	 */
+	@ApiField("rule_result")
+	private String ruleResult;
 
-  /**
-   * 交易流水记录id
-   */
-  @ApiField("trans_id")
-  private String transId;
+	/**
+	 * 交易流水记录id
+	 */
+	@ApiField("trans_id")
+	private String transId;
 
-  public String getId() {
-    return this.id;
-  }
+	public String getId() {
+		return this.id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public void setId(String id) {
-    this.id = id;
-  }
+	public String getRuleId() {
+		return this.ruleId;
+	}
+	public void setRuleId(String ruleId) {
+		this.ruleId = ruleId;
+	}
 
-  public String getRuleId() {
-    return this.ruleId;
-  }
+	public String getRuleResult() {
+		return this.ruleResult;
+	}
+	public void setRuleResult(String ruleResult) {
+		this.ruleResult = ruleResult;
+	}
 
-  public void setRuleId(String ruleId) {
-    this.ruleId = ruleId;
-  }
-
-  public String getRuleResult() {
-    return this.ruleResult;
-  }
-
-  public void setRuleResult(String ruleResult) {
-    this.ruleResult = ruleResult;
-  }
-
-  public String getTransId() {
-    return this.transId;
-  }
-
-  public void setTransId(String transId) {
-    this.transId = transId;
-  }
+	public String getTransId() {
+		return this.transId;
+	}
+	public void setTransId(String transId) {
+		this.transId = transId;
+	}
 
 }

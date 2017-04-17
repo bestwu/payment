@@ -14,35 +14,33 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayMarketingDataDashboardQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7755494738543893587L;
+	private static final long serialVersionUID = 8391831281654413693L;
 
-  /**
-   * 仪表盘ID
-   */
-  @ApiField("dashboard_id")
-  private String dashboardId;
+	/**
+	 * 仪表盘ID
+	 */
+	@ApiField("dashboard_id")
+	private String dashboardId;
 
-  /**
-   * 仪表盘过滤条件
-   */
-  @ApiListField("param")
-  @ApiField("dashboard_param")
-  private List<DashboardParam> param;
+	/**
+	 * 仪表盘过滤条件
+	 */
+	@ApiListField("param")
+	@ApiField("dashboard_param")
+	private List<DashboardParam> param;
 
-  public String getDashboardId() {
-    return this.dashboardId;
-  }
+	public String getDashboardId() {
+		return this.dashboardId;
+	}
+	public void setDashboardId(String dashboardId) {
+		this.dashboardId = dashboardId;
+	}
 
-  public void setDashboardId(String dashboardId) {
-    this.dashboardId = dashboardId;
-  }
-
-  public List<DashboardParam> getParam() {
-    return this.param;
-  }
-
-  public void setParam(List<DashboardParam> param) {
-    this.param = param;
-  }
+	public List<DashboardParam> getParam() {
+		return this.param;
+	}
+	public void setParam(List<DashboardParam> param) {
+		this.param = param;
+	}
 
 }

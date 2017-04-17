@@ -11,90 +11,84 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class IndividualInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 2292215143966489174L;
+	private static final long serialVersionUID = 8329211389472619843L;
 
-  /**
-   * 生日
-   */
-  @ApiField("date_of_birth")
-  private String dateOfBirth;
+	/**
+	 * 生日
+	 */
+	@ApiField("date_of_birth")
+	private String dateOfBirth;
 
-  /**
-   * 证件号码
-   */
-  @ApiField("id_number")
-  private String idNumber;
+	/**
+	 * 证件号码
+	 */
+	@ApiField("id_number")
+	private String idNumber;
 
-  /**
-   * 个人名字
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 个人名字
+	 */
+	@ApiField("name")
+	private String name;
 
-  /**
-   * 国籍
-   */
-  @ApiField("nationality")
-  private String nationality;
+	/**
+	 * 国籍
+	 */
+	@ApiField("nationality")
+	private String nationality;
 
-  /**
-   * 个人居住地
-   */
-  @ApiField("residential_address")
-  private String residentialAddress;
+	/**
+	 * 个人居住地
+	 */
+	@ApiField("residential_address")
+	private String residentialAddress;
 
-  /**
-   * 该个体的类型
-   */
-  @ApiField("type")
-  private String type;
+	/**
+	 * 该个体的类型
+	 */
+	@ApiField("type")
+	private String type;
 
-  public String getDateOfBirth() {
-    return this.dateOfBirth;
-  }
+	public String getDateOfBirth() {
+		return this.dateOfBirth;
+	}
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
 
-  public void setDateOfBirth(String dateOfBirth) {
-    this.dateOfBirth = dateOfBirth;
-  }
+	public String getIdNumber() {
+		return this.idNumber;
+	}
+	public void setIdNumber(String idNumber) {
+		this.idNumber = idNumber;
+	}
 
-  public String getIdNumber() {
-    return this.idNumber;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public void setIdNumber(String idNumber) {
-    this.idNumber = idNumber;
-  }
+	public String getNationality() {
+		return this.nationality;
+	}
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
 
-  public String getName() {
-    return this.name;
-  }
+	public String getResidentialAddress() {
+		return this.residentialAddress;
+	}
+	public void setResidentialAddress(String residentialAddress) {
+		this.residentialAddress = residentialAddress;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getNationality() {
-    return this.nationality;
-  }
-
-  public void setNationality(String nationality) {
-    this.nationality = nationality;
-  }
-
-  public String getResidentialAddress() {
-    return this.residentialAddress;
-  }
-
-  public void setResidentialAddress(String residentialAddress) {
-    this.residentialAddress = residentialAddress;
-  }
-
-  public String getType() {
-    return this.type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
+	public String getType() {
+		return this.type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 
 }

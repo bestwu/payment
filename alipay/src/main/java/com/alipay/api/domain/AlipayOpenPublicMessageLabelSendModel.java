@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOpenPublicMessageLabelSendModel extends AlipayObject {
 
-  private static final long serialVersionUID = 4539692745885922784L;
+	private static final long serialVersionUID = 1142934861723893559L;
 
-  /**
-   * 根据标签圈人的过滤器
-   */
-  @ApiField("filter")
-  private Filter filter;
+	/**
+	 * 根据标签圈人的过滤器
+	 */
+	@ApiField("filter")
+	private Filter filter;
 
-  /**
-   * 发送消息内容，支持文本消息和图文消息
-   */
-  @ApiField("material")
-  private Material material;
+	/**
+	 * 发送消息内容，支持文本消息和图文消息
+	 */
+	@ApiField("material")
+	private Material material;
 
-  public Filter getFilter() {
-    return this.filter;
-  }
+	public Filter getFilter() {
+		return this.filter;
+	}
+	public void setFilter(Filter filter) {
+		this.filter = filter;
+	}
 
-  public void setFilter(Filter filter) {
-    this.filter = filter;
-  }
-
-  public Material getMaterial() {
-    return this.material;
-  }
-
-  public void setMaterial(Material material) {
-    this.material = material;
-  }
+	public Material getMaterial() {
+		return this.material;
+	}
+	public void setMaterial(Material material) {
+		this.material = material;
+	}
 
 }

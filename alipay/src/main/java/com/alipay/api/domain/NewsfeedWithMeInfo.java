@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class NewsfeedWithMeInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 5228112512915383171L;
+	private static final long serialVersionUID = 7328464111656596385L;
 
-  /**
-   * 登录ID
-   */
-  @ApiField("login_id")
-  private String loginId;
+	/**
+	 * 登录ID
+	 */
+	@ApiField("login_id")
+	private String loginId;
 
-  /**
-   * 用户id
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 用户id
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getLoginId() {
-    return this.loginId;
-  }
+	public String getLoginId() {
+		return this.loginId;
+	}
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
 
-  public void setLoginId(String loginId) {
-    this.loginId = loginId;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

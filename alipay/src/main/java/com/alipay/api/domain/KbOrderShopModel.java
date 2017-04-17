@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KbOrderShopModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7511861595418939117L;
+	private static final long serialVersionUID = 4486835658961198849L;
 
-  /**
-   * 门店ID
-   */
-  @ApiField("shop_id")
-  private String shopId;
+	/**
+	 * 门店ID
+	 */
+	@ApiField("shop_id")
+	private String shopId;
 
-  /**
-   * 店铺名
-   */
-  @ApiField("shop_name")
-  private String shopName;
+	/**
+	 * 店铺名
+	 */
+	@ApiField("shop_name")
+	private String shopName;
 
-  /**
-   * 外部门店ID
-   */
-  @ApiField("store_id")
-  private String storeId;
+	/**
+	 * 外部门店ID
+	 */
+	@ApiField("store_id")
+	private String storeId;
 
-  public String getShopId() {
-    return this.shopId;
-  }
+	public String getShopId() {
+		return this.shopId;
+	}
+	public void setShopId(String shopId) {
+		this.shopId = shopId;
+	}
 
-  public void setShopId(String shopId) {
-    this.shopId = shopId;
-  }
+	public String getShopName() {
+		return this.shopName;
+	}
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
+	}
 
-  public String getShopName() {
-    return this.shopName;
-  }
-
-  public void setShopName(String shopName) {
-    this.shopName = shopName;
-  }
-
-  public String getStoreId() {
-    return this.storeId;
-  }
-
-  public void setStoreId(String storeId) {
-    this.storeId = storeId;
-  }
+	public String getStoreId() {
+		return this.storeId;
+	}
+	public void setStoreId(String storeId) {
+		this.storeId = storeId;
+	}
 
 }

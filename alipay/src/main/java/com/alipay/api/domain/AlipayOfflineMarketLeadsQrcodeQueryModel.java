@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOfflineMarketLeadsQrcodeQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5265655659261745537L;
+	private static final long serialVersionUID = 6627341489978739949L;
 
-  /**
-   * 支付宝leads ID，后续的增删改查接口都使用该ID作为主键
-   */
-  @ApiField("leads_id")
-  private String leadsId;
+	/**
+	 * 支付宝leads ID，后续的增删改查接口都使用该ID作为主键
+	 */
+	@ApiField("leads_id")
+	private String leadsId;
 
-  /**
-   * 操作用户的支付账号id
-   */
-  @ApiField("op_id")
-  private String opId;
+	/**
+	 * 操作用户的支付账号id
+	 */
+	@ApiField("op_id")
+	private String opId;
 
-  public String getLeadsId() {
-    return this.leadsId;
-  }
+	public String getLeadsId() {
+		return this.leadsId;
+	}
+	public void setLeadsId(String leadsId) {
+		this.leadsId = leadsId;
+	}
 
-  public void setLeadsId(String leadsId) {
-    this.leadsId = leadsId;
-  }
-
-  public String getOpId() {
-    return this.opId;
-  }
-
-  public void setOpId(String opId) {
-    this.opId = opId;
-  }
+	public String getOpId() {
+		return this.opId;
+	}
+	public void setOpId(String opId) {
+		this.opId = opId;
+	}
 
 }

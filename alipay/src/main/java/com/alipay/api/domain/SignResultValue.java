@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class SignResultValue extends AlipayObject {
 
-  private static final long serialVersionUID = 4476928668812776695L;
+	private static final long serialVersionUID = 7684398425498357133L;
 
-  /**
-   * 已生效的销账/出账机构
-   */
-  @ApiField("effect_biz_value")
-  private String effectBizValue;
+	/**
+	 * 已生效的销账/出账机构
+	 */
+	@ApiField("effect_biz_value")
+	private String effectBizValue;
 
-  public String getEffectBizValue() {
-    return this.effectBizValue;
-  }
-
-  public void setEffectBizValue(String effectBizValue) {
-    this.effectBizValue = effectBizValue;
-  }
+	public String getEffectBizValue() {
+		return this.effectBizValue;
+	}
+	public void setEffectBizValue(String effectBizValue) {
+		this.effectBizValue = effectBizValue;
+	}
 
 }

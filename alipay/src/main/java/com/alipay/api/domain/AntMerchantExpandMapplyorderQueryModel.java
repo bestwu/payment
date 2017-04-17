@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AntMerchantExpandMapplyorderQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7358319615433925511L;
+	private static final long serialVersionUID = 8672595535124118948L;
 
-  /**
-   * 支付宝端商户入驻申请单据号
-   */
-  @ApiField("order_no")
-  private String orderNo;
+	/**
+	 * 支付宝端商户入驻申请单据号
+	 */
+	@ApiField("order_no")
+	private String orderNo;
 
-  public String getOrderNo() {
-    return this.orderNo;
-  }
-
-  public void setOrderNo(String orderNo) {
-    this.orderNo = orderNo;
-  }
+	public String getOrderNo() {
+		return this.orderNo;
+	}
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
+	}
 
 }

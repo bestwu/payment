@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarMaintainAftersaleSyncModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2213985697761784953L;
+	private static final long serialVersionUID = 5174463429157798565L;
 
-  /**
-   * 车主平台售后编号
-   */
-  @ApiField("aftersale_no")
-  private String aftersaleNo;
+	/**
+	 * 车主平台售后编号
+	 */
+	@ApiField("aftersale_no")
+	private String aftersaleNo;
 
-  /**
-   * 客服拒绝退款原因描述
-   */
-  @ApiField("refuse_reason")
-  private String refuseReason;
+	/**
+	 * 客服拒绝退款原因描述
+	 */
+	@ApiField("refuse_reason")
+	private String refuseReason;
 
-  /**
-   * 1：受理 2：拒绝
-   */
-  @ApiField("status")
-  private String status;
+	/**
+	 * 1：受理 2：拒绝
+	 */
+	@ApiField("status")
+	private String status;
 
-  public String getAftersaleNo() {
-    return this.aftersaleNo;
-  }
+	public String getAftersaleNo() {
+		return this.aftersaleNo;
+	}
+	public void setAftersaleNo(String aftersaleNo) {
+		this.aftersaleNo = aftersaleNo;
+	}
 
-  public void setAftersaleNo(String aftersaleNo) {
-    this.aftersaleNo = aftersaleNo;
-  }
+	public String getRefuseReason() {
+		return this.refuseReason;
+	}
+	public void setRefuseReason(String refuseReason) {
+		this.refuseReason = refuseReason;
+	}
 
-  public String getRefuseReason() {
-    return this.refuseReason;
-  }
-
-  public void setRefuseReason(String refuseReason) {
-    this.refuseReason = refuseReason;
-  }
-
-  public String getStatus() {
-    return this.status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 }

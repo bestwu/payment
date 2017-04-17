@@ -15,260 +15,242 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class MaintainVehicleInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 1892494143739424118L;
+	private static final long serialVersionUID = 5261229946269718878L;
 
-  /**
-   * 背景图片
-   */
-  @ApiField("bg_url")
-  private String bgUrl;
+	/**
+	 * 背景图片
+	 */
+	@ApiField("bg_url")
+	private String bgUrl;
 
-  /**
-   * 发动机编号
-   */
-  @ApiField("engine_no")
-  private String engineNo;
+	/**
+	 * 发动机编号
+	 */
+	@ApiField("engine_no")
+	private String engineNo;
 
-  /**
-   * 发动机类型
-   */
-  @ApiField("engine_type")
-  private String engineType;
+	/**
+	 * 发动机类型
+	 */
+	@ApiField("engine_type")
+	private String engineType;
 
-  /**
-   * 生产厂商
-   */
-  @ApiField("manufacturer")
-  private String manufacturer;
+	/**
+	 * 生产厂商
+	 */
+	@ApiField("manufacturer")
+	private String manufacturer;
 
-  /**
-   * 生产年份
-   */
-  @ApiField("production_year")
-  private String productionYear;
+	/**
+	 * 生产年份
+	 */
+	@ApiField("production_year")
+	private String productionYear;
 
-  /**
-   * 发动机排量
-   */
-  @ApiListField("swept_volume")
-  @ApiField("string")
-  private List<String> sweptVolume;
+	/**
+	 * 发动机排量
+	 */
+	@ApiListField("swept_volume")
+	@ApiField("string")
+	private List<String> sweptVolume;
 
-  /**
-   * 品牌Logo
-   */
-  @ApiField("vi_brand_logo")
-  private String viBrandLogo;
+	/**
+	 * 品牌Logo
+	 */
+	@ApiField("vi_brand_logo")
+	private String viBrandLogo;
 
-  /**
-   * 品牌名称
-   */
-  @ApiField("vi_brand_name")
-  private String viBrandName;
+	/**
+	 * 品牌名称
+	 */
+	@ApiField("vi_brand_name")
+	private String viBrandName;
 
-  /**
-   * 车辆归属地id
-   */
-  @ApiField("vi_city_id")
-  private String viCityId;
+	/**
+	 * 车辆归属地id
+	 */
+	@ApiField("vi_city_id")
+	private String viCityId;
 
-  /**
-   * 城市名称
-   */
-  @ApiField("vi_city_name")
-  private String viCityName;
+	/**
+	 * 城市名称
+	 */
+	@ApiField("vi_city_name")
+	private String viCityName;
 
-  /**
-   * 车辆图标URL
-   */
-  @ApiField("vi_logo_url")
-  private String viLogoUrl;
+	/**
+	 * 车辆图标URL
+	 */
+	@ApiField("vi_logo_url")
+	private String viLogoUrl;
 
-  /**
-   * 行驶里程
-   */
-  @ApiField("vi_mileage")
-  private String viMileage;
+	/**
+	 * 行驶里程
+	 */
+	@ApiField("vi_mileage")
+	private String viMileage;
 
-  /**
-   * 车型名称
-   */
-  @ApiField("vi_model_name")
-  private String viModelName;
+	/**
+	 * 车型名称
+	 */
+	@ApiField("vi_model_name")
+	private String viModelName;
 
-  /**
-   * 车牌号
-   */
-  @ApiField("vi_number")
-  private String viNumber;
+	/**
+	 * 车牌号
+	 */
+	@ApiField("vi_number")
+	private String viNumber;
 
-  /**
-   * 车系名称
-   */
-  @ApiField("vi_series_name")
-  private String viSeriesName;
+	/**
+	 * 车系名称
+	 */
+	@ApiField("vi_series_name")
+	private String viSeriesName;
 
-  /**
-   * 上路日期
-   */
-  @ApiField("vi_start_time")
-  private Date viStartTime;
+	/**
+	 * 上路日期
+	 */
+	@ApiField("vi_start_time")
+	private Date viStartTime;
 
-  /**
-   * 年款
-   */
-  @ApiField("vi_style_name")
-  private String viStyleName;
+	/**
+	 * 年款
+	 */
+	@ApiField("vi_style_name")
+	private String viStyleName;
 
-  /**
-   * 行驶里程
-   */
-  @ApiListField("vi_vin")
-  @ApiField("string")
-  private List<String> viVin;
+	/**
+	 * 行驶里程
+	 */
+	@ApiListField("vi_vin")
+	@ApiField("string")
+	private List<String> viVin;
 
-  public String getBgUrl() {
-    return this.bgUrl;
-  }
+	public String getBgUrl() {
+		return this.bgUrl;
+	}
+	public void setBgUrl(String bgUrl) {
+		this.bgUrl = bgUrl;
+	}
 
-  public void setBgUrl(String bgUrl) {
-    this.bgUrl = bgUrl;
-  }
+	public String getEngineNo() {
+		return this.engineNo;
+	}
+	public void setEngineNo(String engineNo) {
+		this.engineNo = engineNo;
+	}
 
-  public String getEngineNo() {
-    return this.engineNo;
-  }
+	public String getEngineType() {
+		return this.engineType;
+	}
+	public void setEngineType(String engineType) {
+		this.engineType = engineType;
+	}
 
-  public void setEngineNo(String engineNo) {
-    this.engineNo = engineNo;
-  }
+	public String getManufacturer() {
+		return this.manufacturer;
+	}
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
 
-  public String getEngineType() {
-    return this.engineType;
-  }
+	public String getProductionYear() {
+		return this.productionYear;
+	}
+	public void setProductionYear(String productionYear) {
+		this.productionYear = productionYear;
+	}
 
-  public void setEngineType(String engineType) {
-    this.engineType = engineType;
-  }
+	public List<String> getSweptVolume() {
+		return this.sweptVolume;
+	}
+	public void setSweptVolume(List<String> sweptVolume) {
+		this.sweptVolume = sweptVolume;
+	}
 
-  public String getManufacturer() {
-    return this.manufacturer;
-  }
+	public String getViBrandLogo() {
+		return this.viBrandLogo;
+	}
+	public void setViBrandLogo(String viBrandLogo) {
+		this.viBrandLogo = viBrandLogo;
+	}
 
-  public void setManufacturer(String manufacturer) {
-    this.manufacturer = manufacturer;
-  }
+	public String getViBrandName() {
+		return this.viBrandName;
+	}
+	public void setViBrandName(String viBrandName) {
+		this.viBrandName = viBrandName;
+	}
 
-  public String getProductionYear() {
-    return this.productionYear;
-  }
+	public String getViCityId() {
+		return this.viCityId;
+	}
+	public void setViCityId(String viCityId) {
+		this.viCityId = viCityId;
+	}
 
-  public void setProductionYear(String productionYear) {
-    this.productionYear = productionYear;
-  }
+	public String getViCityName() {
+		return this.viCityName;
+	}
+	public void setViCityName(String viCityName) {
+		this.viCityName = viCityName;
+	}
 
-  public List<String> getSweptVolume() {
-    return this.sweptVolume;
-  }
+	public String getViLogoUrl() {
+		return this.viLogoUrl;
+	}
+	public void setViLogoUrl(String viLogoUrl) {
+		this.viLogoUrl = viLogoUrl;
+	}
 
-  public void setSweptVolume(List<String> sweptVolume) {
-    this.sweptVolume = sweptVolume;
-  }
+	public String getViMileage() {
+		return this.viMileage;
+	}
+	public void setViMileage(String viMileage) {
+		this.viMileage = viMileage;
+	}
 
-  public String getViBrandLogo() {
-    return this.viBrandLogo;
-  }
+	public String getViModelName() {
+		return this.viModelName;
+	}
+	public void setViModelName(String viModelName) {
+		this.viModelName = viModelName;
+	}
 
-  public void setViBrandLogo(String viBrandLogo) {
-    this.viBrandLogo = viBrandLogo;
-  }
+	public String getViNumber() {
+		return this.viNumber;
+	}
+	public void setViNumber(String viNumber) {
+		this.viNumber = viNumber;
+	}
 
-  public String getViBrandName() {
-    return this.viBrandName;
-  }
+	public String getViSeriesName() {
+		return this.viSeriesName;
+	}
+	public void setViSeriesName(String viSeriesName) {
+		this.viSeriesName = viSeriesName;
+	}
 
-  public void setViBrandName(String viBrandName) {
-    this.viBrandName = viBrandName;
-  }
+	public Date getViStartTime() {
+		return this.viStartTime;
+	}
+	public void setViStartTime(Date viStartTime) {
+		this.viStartTime = viStartTime;
+	}
 
-  public String getViCityId() {
-    return this.viCityId;
-  }
+	public String getViStyleName() {
+		return this.viStyleName;
+	}
+	public void setViStyleName(String viStyleName) {
+		this.viStyleName = viStyleName;
+	}
 
-  public void setViCityId(String viCityId) {
-    this.viCityId = viCityId;
-  }
-
-  public String getViCityName() {
-    return this.viCityName;
-  }
-
-  public void setViCityName(String viCityName) {
-    this.viCityName = viCityName;
-  }
-
-  public String getViLogoUrl() {
-    return this.viLogoUrl;
-  }
-
-  public void setViLogoUrl(String viLogoUrl) {
-    this.viLogoUrl = viLogoUrl;
-  }
-
-  public String getViMileage() {
-    return this.viMileage;
-  }
-
-  public void setViMileage(String viMileage) {
-    this.viMileage = viMileage;
-  }
-
-  public String getViModelName() {
-    return this.viModelName;
-  }
-
-  public void setViModelName(String viModelName) {
-    this.viModelName = viModelName;
-  }
-
-  public String getViNumber() {
-    return this.viNumber;
-  }
-
-  public void setViNumber(String viNumber) {
-    this.viNumber = viNumber;
-  }
-
-  public String getViSeriesName() {
-    return this.viSeriesName;
-  }
-
-  public void setViSeriesName(String viSeriesName) {
-    this.viSeriesName = viSeriesName;
-  }
-
-  public Date getViStartTime() {
-    return this.viStartTime;
-  }
-
-  public void setViStartTime(Date viStartTime) {
-    this.viStartTime = viStartTime;
-  }
-
-  public String getViStyleName() {
-    return this.viStyleName;
-  }
-
-  public void setViStyleName(String viStyleName) {
-    this.viStyleName = viStyleName;
-  }
-
-  public List<String> getViVin() {
-    return this.viVin;
-  }
-
-  public void setViVin(List<String> viVin) {
-    this.viVin = viVin;
-  }
+	public List<String> getViVin() {
+		return this.viVin;
+	}
+	public void setViVin(List<String> viVin) {
+		this.viVin = viVin;
+	}
 
 }

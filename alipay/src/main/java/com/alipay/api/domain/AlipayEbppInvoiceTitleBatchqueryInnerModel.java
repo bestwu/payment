@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEbppInvoiceTitleBatchqueryInnerModel extends AlipayObject {
 
-  private static final long serialVersionUID = 7361454335291684762L;
+	private static final long serialVersionUID = 8515877236927259216L;
 
-  /**
-   * 抬头所属支付宝用户id
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 抬头所属支付宝用户id
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

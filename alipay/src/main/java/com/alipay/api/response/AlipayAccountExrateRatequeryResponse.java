@@ -9,27 +9,26 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.account.exrate.ratequery response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-05-23 14:55:56
+ * @since 1.0, 2017-03-27 18:11:27
  */
 public class AlipayAccountExrateRatequeryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 5758454919387895195L;
+	private static final long serialVersionUID = 7537579662175131737L;
 
-  /**
-   * 查询到的汇率对象列表，如果没有查询到则返回空列表
-   */
-  @ApiListField("rate_query_response_list")
-  @ApiField("ex_ref_rate_info_v_o")
-  private List<ExRefRateInfoVO> rateQueryResponseList;
+	/** 
+	 * 查询到的汇率对象列表，如果没有查询到则返回空列表
+	 */
+	@ApiListField("rate_query_response_list")
+	@ApiField("ex_ref_rate_info_v_o")
+	private List<ExRefRateInfoVO> rateQueryResponseList;
 
-  public void setRateQueryResponseList(List<ExRefRateInfoVO> rateQueryResponseList) {
-    this.rateQueryResponseList = rateQueryResponseList;
-  }
-
-  public List<ExRefRateInfoVO> getRateQueryResponseList() {
-    return this.rateQueryResponseList;
-  }
+	public void setRateQueryResponseList(List<ExRefRateInfoVO> rateQueryResponseList) {
+		this.rateQueryResponseList = rateQueryResponseList;
+	}
+	public List<ExRefRateInfoVO> getRateQueryResponseList( ) {
+		return this.rateQueryResponseList;
+	}
 
 }

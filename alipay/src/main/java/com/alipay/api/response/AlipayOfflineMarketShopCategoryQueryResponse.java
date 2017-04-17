@@ -9,27 +9,26 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.offline.market.shop.category.query response.
- *
+ * 
  * @author auto create
  * @since 1.0, 2017-02-07 16:47:06
  */
 public class AlipayOfflineMarketShopCategoryQueryResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 1778532912362129688L;
+	private static final long serialVersionUID = 3279311535624617336L;
 
-  /**
-   * 门店类目配置信息，包括能够开店的叶子节点类目信息，以及类目约束配置信息。
-   */
-  @ApiListField("shop_category_config_infos")
-  @ApiField("shop_category_config_info")
-  private List<ShopCategoryConfigInfo> shopCategoryConfigInfos;
+	/** 
+	 * 门店类目配置信息，包括能够开店的叶子节点类目信息，以及类目约束配置信息。
+	 */
+	@ApiListField("shop_category_config_infos")
+	@ApiField("shop_category_config_info")
+	private List<ShopCategoryConfigInfo> shopCategoryConfigInfos;
 
-  public void setShopCategoryConfigInfos(List<ShopCategoryConfigInfo> shopCategoryConfigInfos) {
-    this.shopCategoryConfigInfos = shopCategoryConfigInfos;
-  }
-
-  public List<ShopCategoryConfigInfo> getShopCategoryConfigInfos() {
-    return this.shopCategoryConfigInfos;
-  }
+	public void setShopCategoryConfigInfos(List<ShopCategoryConfigInfo> shopCategoryConfigInfos) {
+		this.shopCategoryConfigInfos = shopCategoryConfigInfos;
+	}
+	public List<ShopCategoryConfigInfo> getShopCategoryConfigInfos( ) {
+		return this.shopCategoryConfigInfos;
+	}
 
 }

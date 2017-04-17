@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiMarketingToolPointsQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 2138956817251674731L;
+	private static final long serialVersionUID = 4128155744746675644L;
 
-  /**
-   * 活动积分帐户
-   */
-  @ApiField("activity_account")
-  private String activityAccount;
+	/**
+	 * 活动积分帐户
+	 */
+	@ApiField("activity_account")
+	private String activityAccount;
 
-  /**
-   * 用户ID
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 用户ID
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getActivityAccount() {
-    return this.activityAccount;
-  }
+	public String getActivityAccount() {
+		return this.activityAccount;
+	}
+	public void setActivityAccount(String activityAccount) {
+		this.activityAccount = activityAccount;
+	}
 
-  public void setActivityAccount(String activityAccount) {
-    this.activityAccount = activityAccount;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

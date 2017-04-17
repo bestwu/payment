@@ -15,105 +15,98 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class InsClaim extends AlipayObject {
 
-  private static final long serialVersionUID = 2622325616412563396L;
+	private static final long serialVersionUID = 4383531886124625388L;
 
-  /**
-   * 理赔因子;标准json 格式
-   */
-  @ApiField("biz_data")
-  private String bizData;
+	/**
+	 * 理赔因子;标准json 格式
+	 */
+	@ApiField("biz_data")
+	private String bizData;
 
-  /**
-   * 实际赔付金额 ;单位分
-   */
-  @ApiField("claim_fee")
-  private Long claimFee;
+	/**
+	 * 实际赔付金额 ;单位分
+	 */
+	@ApiField("claim_fee")
+	private Long claimFee;
 
-  /**
-   * 赔案号
-   */
-  @ApiField("claim_no")
-  private String claimNo;
+	/**
+	 * 赔案号
+	 */
+	@ApiField("claim_no")
+	private String claimNo;
 
-  /**
-   * 赔付时间
-   */
-  @ApiField("claim_pay_time")
-  private Date claimPayTime;
+	/**
+	 * 赔付时间
+	 */
+	@ApiField("claim_pay_time")
+	private Date claimPayTime;
 
-  /**
-   * 赔案进度;根据更新时间倒序
-   */
-  @ApiListField("claim_progress")
-  @ApiField("claim_progress")
-  private List<ClaimProgress> claimProgress;
+	/**
+	 * 赔案进度;根据更新时间倒序
+	 */
+	@ApiListField("claim_progress")
+	@ApiField("claim_progress")
+	private List<ClaimProgress> claimProgress;
 
-  /**
-   * 赔案状态.ACCEPTED:已受理;REJECTED:已拒赔;PAID:已赔付
-   */
-  @ApiField("claim_status")
-  private String claimStatus;
+	/**
+	 * 赔案状态.ACCEPTED:已受理;REJECTED:已拒赔;PAID:已赔付
+	 */
+	@ApiField("claim_status")
+	private String claimStatus;
 
-  /**
-   * 商户生成的外部理赔请求单号
-   */
-  @ApiField("out_request_no")
-  private String outRequestNo;
+	/**
+	 * 商户生成的外部理赔请求单号
+	 */
+	@ApiField("out_request_no")
+	private String outRequestNo;
 
-  public String getBizData() {
-    return this.bizData;
-  }
+	public String getBizData() {
+		return this.bizData;
+	}
+	public void setBizData(String bizData) {
+		this.bizData = bizData;
+	}
 
-  public void setBizData(String bizData) {
-    this.bizData = bizData;
-  }
+	public Long getClaimFee() {
+		return this.claimFee;
+	}
+	public void setClaimFee(Long claimFee) {
+		this.claimFee = claimFee;
+	}
 
-  public Long getClaimFee() {
-    return this.claimFee;
-  }
+	public String getClaimNo() {
+		return this.claimNo;
+	}
+	public void setClaimNo(String claimNo) {
+		this.claimNo = claimNo;
+	}
 
-  public void setClaimFee(Long claimFee) {
-    this.claimFee = claimFee;
-  }
+	public Date getClaimPayTime() {
+		return this.claimPayTime;
+	}
+	public void setClaimPayTime(Date claimPayTime) {
+		this.claimPayTime = claimPayTime;
+	}
 
-  public String getClaimNo() {
-    return this.claimNo;
-  }
+	public List<ClaimProgress> getClaimProgress() {
+		return this.claimProgress;
+	}
+	public void setClaimProgress(List<ClaimProgress> claimProgress) {
+		this.claimProgress = claimProgress;
+	}
 
-  public void setClaimNo(String claimNo) {
-    this.claimNo = claimNo;
-  }
+	public String getClaimStatus() {
+		return this.claimStatus;
+	}
+	public void setClaimStatus(String claimStatus) {
+		this.claimStatus = claimStatus;
+	}
 
-  public Date getClaimPayTime() {
-    return this.claimPayTime;
-  }
-
-  public void setClaimPayTime(Date claimPayTime) {
-    this.claimPayTime = claimPayTime;
-  }
-
-  public List<ClaimProgress> getClaimProgress() {
-    return this.claimProgress;
-  }
-
-  public void setClaimProgress(List<ClaimProgress> claimProgress) {
-    this.claimProgress = claimProgress;
-  }
-
-  public String getClaimStatus() {
-    return this.claimStatus;
-  }
-
-  public void setClaimStatus(String claimStatus) {
-    this.claimStatus = claimStatus;
-  }
-
-  public String getOutRequestNo() {
-    return this.outRequestNo;
-  }
-
-  public void setOutRequestNo(String outRequestNo) {
-    this.outRequestNo = outRequestNo;
-  }
+	public String getOutRequestNo() {
+		return this.outRequestNo;
+	}
+	public void setOutRequestNo(String outRequestNo) {
+		this.outRequestNo = outRequestNo;
+	}
 
 }

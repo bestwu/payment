@@ -11,48 +11,45 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class PublicLabel extends AlipayObject {
 
-  private static final long serialVersionUID = 5847178687736195726L;
+	private static final long serialVersionUID = 2741129114188665799L;
 
-  /**
-   * 标签用户量
-   */
-  @ApiField("count")
-  private Long count;
+	/**
+	 * 标签用户量
+	 */
+	@ApiField("count")
+	private Long count;
 
-  /**
-   * 标签编号
-   */
-  @ApiField("id")
-  private String id;
+	/**
+	 * 标签编号
+	 */
+	@ApiField("id")
+	private String id;
 
-  /**
-   * 标签名称
-   */
-  @ApiField("name")
-  private String name;
+	/**
+	 * 标签名称
+	 */
+	@ApiField("name")
+	private String name;
 
-  public Long getCount() {
-    return this.count;
-  }
+	public Long getCount() {
+		return this.count;
+	}
+	public void setCount(Long count) {
+		this.count = count;
+	}
 
-  public void setCount(Long count) {
-    this.count = count;
-  }
+	public String getId() {
+		return this.id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public String getId() {
-    return this.id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

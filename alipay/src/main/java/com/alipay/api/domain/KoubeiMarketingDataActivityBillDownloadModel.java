@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiMarketingDataActivityBillDownloadModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3532954279649393364L;
+	private static final long serialVersionUID = 8772752586282125114L;
 
-  /**
-   * 活动id
-   */
-  @ApiField("camp_id")
-  private String campId;
+	/**
+	 * 活动id
+	 */
+	@ApiField("camp_id")
+	private String campId;
 
-  public String getCampId() {
-    return this.campId;
-  }
-
-  public void setCampId(String campId) {
-    this.campId = campId;
-  }
+	public String getCampId() {
+		return this.campId;
+	}
+	public void setCampId(String campId) {
+		this.campId = campId;
+	}
 
 }

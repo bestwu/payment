@@ -14,49 +14,46 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AliTrustRiskIdentify extends AlipayObject {
 
-  private static final long serialVersionUID = 1535691594559518243L;
+	private static final long serialVersionUID = 6112972912325989499L;
 
-  /**
-   * 芝麻信用风险名单详情列表
-   */
-  @ApiListField("details")
-  @ApiField("zhima_risk_detail")
-  private List<ZhimaRiskDetail> details;
+	/**
+	 * 芝麻信用风险名单详情列表
+	 */
+	@ApiListField("details")
+	@ApiField("zhima_risk_detail")
+	private List<ZhimaRiskDetail> details;
 
-  /**
-   * 当有风险时,为"T";无风险识别是为"F"
-   */
-  @ApiField("is_risk")
-  private String isRisk;
+	/**
+	 * 当有风险时,为"T";无风险识别是为"F"
+	 */
+	@ApiField("is_risk")
+	private String isRisk;
 
-  /**
-   * 已废弃
-   */
-  @ApiField("risk_tag")
-  private String riskTag;
+	/**
+	 * 已废弃
+	 */
+	@ApiField("risk_tag")
+	private String riskTag;
 
-  public List<ZhimaRiskDetail> getDetails() {
-    return this.details;
-  }
+	public List<ZhimaRiskDetail> getDetails() {
+		return this.details;
+	}
+	public void setDetails(List<ZhimaRiskDetail> details) {
+		this.details = details;
+	}
 
-  public void setDetails(List<ZhimaRiskDetail> details) {
-    this.details = details;
-  }
+	public String getIsRisk() {
+		return this.isRisk;
+	}
+	public void setIsRisk(String isRisk) {
+		this.isRisk = isRisk;
+	}
 
-  public String getIsRisk() {
-    return this.isRisk;
-  }
-
-  public void setIsRisk(String isRisk) {
-    this.isRisk = isRisk;
-  }
-
-  public String getRiskTag() {
-    return this.riskTag;
-  }
-
-  public void setRiskTag(String riskTag) {
-    this.riskTag = riskTag;
-  }
+	public String getRiskTag() {
+		return this.riskTag;
+	}
+	public void setRiskTag(String riskTag) {
+		this.riskTag = riskTag;
+	}
 
 }

@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiMarketingDataCustomreportBatchqueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5891843638449597689L;
+	private static final long serialVersionUID = 7315519436235386294L;
 
-  /**
-   * 当前页号，默认为1
-   */
-  @ApiField("page_no")
-  private String pageNo;
+	/**
+	 * 当前页号，默认为1
+	 */
+	@ApiField("page_no")
+	private String pageNo;
 
-  /**
-   * 每页条目数，默认为20,最大为30
-   */
-  @ApiField("page_size")
-  private String pageSize;
+	/**
+	 * 每页条目数，默认为20,最大为30
+	 */
+	@ApiField("page_size")
+	private String pageSize;
 
-  public String getPageNo() {
-    return this.pageNo;
-  }
+	public String getPageNo() {
+		return this.pageNo;
+	}
+	public void setPageNo(String pageNo) {
+		this.pageNo = pageNo;
+	}
 
-  public void setPageNo(String pageNo) {
-    this.pageNo = pageNo;
-  }
-
-  public String getPageSize() {
-    return this.pageSize;
-  }
-
-  public void setPageSize(String pageSize) {
-    this.pageSize = pageSize;
-  }
+	public String getPageSize() {
+		return this.pageSize;
+	}
+	public void setPageSize(String pageSize) {
+		this.pageSize = pageSize;
+	}
 
 }

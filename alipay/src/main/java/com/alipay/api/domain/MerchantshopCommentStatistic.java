@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class MerchantshopCommentStatistic extends AlipayObject {
 
-  private static final long serialVersionUID = 1163734544331327286L;
+	private static final long serialVersionUID = 4763964466824779559L;
 
-  /**
-   * 评论总数
-   */
-  @ApiField("comment_count")
-  private Long commentCount;
+	/**
+	 * 评论总数
+	 */
+	@ApiField("comment_count")
+	private Long commentCount;
 
-  /**
-   * 评分（平均分），两位小数
-   */
-  @ApiField("score")
-  private Long score;
+	/**
+	 * 评分（平均分），两位小数
+	 */
+	@ApiField("score")
+	private Long score;
 
-  public Long getCommentCount() {
-    return this.commentCount;
-  }
+	public Long getCommentCount() {
+		return this.commentCount;
+	}
+	public void setCommentCount(Long commentCount) {
+		this.commentCount = commentCount;
+	}
 
-  public void setCommentCount(Long commentCount) {
-    this.commentCount = commentCount;
-  }
-
-  public Long getScore() {
-    return this.score;
-  }
-
-  public void setScore(Long score) {
-    this.score = score;
-  }
+	public Long getScore() {
+		return this.score;
+	}
+	public void setScore(Long score) {
+		this.score = score;
+	}
 
 }

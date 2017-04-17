@@ -14,63 +14,59 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class AlipayInsScenePolicyEndorseApplyModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8715535383742634986L;
+	private static final long serialVersionUID = 6354583834713863895L;
 
-  /**
-   * 批单项列表
-   */
-  @ApiListField("endorse_items")
-  @ApiField("ins_endorse_item")
-  private List<InsEndorseItem> endorseItems;
+	/**
+	 * 批单项列表
+	 */
+	@ApiListField("endorse_items")
+	@ApiField("ins_endorse_item")
+	private List<InsEndorseItem> endorseItems;
 
-  /**
-   * 商户生成的批改请求单号【幂等字段】
-   */
-  @ApiField("out_request_no")
-  private String outRequestNo;
+	/**
+	 * 商户生成的批改请求单号【幂等字段】
+	 */
+	@ApiField("out_request_no")
+	private String outRequestNo;
 
-  /**
-   * 保单凭证号;蚂蚁保险平台生成的保单凭证号,用户可以通过此单号去保险公司查询保单信息.
-   */
-  @ApiField("policy_no")
-  private String policyNo;
+	/**
+	 * 保单凭证号;蚂蚁保险平台生成的保单凭证号,用户可以通过此单号去保险公司查询保单信息.
+	 */
+	@ApiField("policy_no")
+	private String policyNo;
 
-  /**
-   * 批单来源
-   */
-  @ApiField("source")
-  private String source;
+	/**
+	 * 批单来源
+	 */
+	@ApiField("source")
+	private String source;
 
-  public List<InsEndorseItem> getEndorseItems() {
-    return this.endorseItems;
-  }
+	public List<InsEndorseItem> getEndorseItems() {
+		return this.endorseItems;
+	}
+	public void setEndorseItems(List<InsEndorseItem> endorseItems) {
+		this.endorseItems = endorseItems;
+	}
 
-  public void setEndorseItems(List<InsEndorseItem> endorseItems) {
-    this.endorseItems = endorseItems;
-  }
+	public String getOutRequestNo() {
+		return this.outRequestNo;
+	}
+	public void setOutRequestNo(String outRequestNo) {
+		this.outRequestNo = outRequestNo;
+	}
 
-  public String getOutRequestNo() {
-    return this.outRequestNo;
-  }
+	public String getPolicyNo() {
+		return this.policyNo;
+	}
+	public void setPolicyNo(String policyNo) {
+		this.policyNo = policyNo;
+	}
 
-  public void setOutRequestNo(String outRequestNo) {
-    this.outRequestNo = outRequestNo;
-  }
-
-  public String getPolicyNo() {
-    return this.policyNo;
-  }
-
-  public void setPolicyNo(String policyNo) {
-    this.policyNo = policyNo;
-  }
-
-  public String getSource() {
-    return this.source;
-  }
-
-  public void setSource(String source) {
-    this.source = source;
-  }
+	public String getSource() {
+		return this.source;
+	}
+	public void setSource(String source) {
+		this.source = source;
+	}
 
 }

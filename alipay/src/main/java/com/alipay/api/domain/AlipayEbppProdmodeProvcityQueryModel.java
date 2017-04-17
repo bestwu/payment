@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEbppProdmodeProvcityQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 1433334858683328993L;
+	private static final long serialVersionUID = 6431911232466639385L;
 
-  /**
-   * 省市编号
-   */
-  @ApiField("adcode")
-  private String adcode;
+	/**
+	 * 省市编号
+	 */
+	@ApiField("adcode")
+	private String adcode;
 
-  /**
-   * 查询类型，queryType=1,查询省下面的市信息
-   */
-  @ApiField("query_type")
-  private String queryType;
+	/**
+	 * 查询类型，queryType=1,查询省下面的市信息
+	 */
+	@ApiField("query_type")
+	private String queryType;
 
-  public String getAdcode() {
-    return this.adcode;
-  }
+	public String getAdcode() {
+		return this.adcode;
+	}
+	public void setAdcode(String adcode) {
+		this.adcode = adcode;
+	}
 
-  public void setAdcode(String adcode) {
-    this.adcode = adcode;
-  }
-
-  public String getQueryType() {
-    return this.queryType;
-  }
-
-  public void setQueryType(String queryType) {
-    this.queryType = queryType;
-  }
+	public String getQueryType() {
+		return this.queryType;
+	}
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+	}
 
 }

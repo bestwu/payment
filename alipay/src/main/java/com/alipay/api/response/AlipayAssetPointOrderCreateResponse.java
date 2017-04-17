@@ -6,26 +6,25 @@ import com.alipay.api.AlipayResponse;
 
 /**
  * ALIPAY API: alipay.asset.point.order.create response.
- *
+ * 
  * @author auto create
- * @since 1.0, 2016-07-29 19:52:44
+ * @since 1.0, 2017-04-07 18:38:50
  */
 public class AlipayAssetPointOrderCreateResponse extends AlipayResponse {
 
-  private static final long serialVersionUID = 2886532463225349169L;
+	private static final long serialVersionUID = 8817756561317758397L;
 
-  /**
-   * 支付宝集分宝发放流水号
-   */
-  @ApiField("alipay_order_no")
-  private String alipayOrderNo;
+	/** 
+	 * 支付宝集分宝发放流水号
+	 */
+	@ApiField("alipay_order_no")
+	private String alipayOrderNo;
 
-  public void setAlipayOrderNo(String alipayOrderNo) {
-    this.alipayOrderNo = alipayOrderNo;
-  }
-
-  public String getAlipayOrderNo() {
-    return this.alipayOrderNo;
-  }
+	public void setAlipayOrderNo(String alipayOrderNo) {
+		this.alipayOrderNo = alipayOrderNo;
+	}
+	public String getAlipayOrderNo( ) {
+		return this.alipayOrderNo;
+	}
 
 }

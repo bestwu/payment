@@ -13,121 +13,113 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class BenefitInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 5747251829842152288L;
+	private static final long serialVersionUID = 7671453437665374751L;
 
-  /**
-   * 权益信息id
-   */
-  @ApiField("benefit_info_id")
-  private String benefitInfoId;
+	/**
+	 * 权益信息id
+	 */
+	@ApiField("benefit_info_id")
+	private String benefitInfoId;
 
-  /**
-   * 权益名称
-   */
-  @ApiField("benefit_name")
-  private String benefitName;
+	/**
+	 * 权益名称
+	 */
+	@ApiField("benefit_name")
+	private String benefitName;
 
-  /**
-   * 权益中文名称
-   */
-  @ApiField("benefit_name_cn")
-  private String benefitNameCn;
+	/**
+	 * 权益中文名称
+	 */
+	@ApiField("benefit_name_cn")
+	private String benefitNameCn;
 
-  /**
-   * 权益类型(会员等级: MemberGrade)
-   */
-  @ApiField("benefit_type")
-  private String benefitType;
+	/**
+	 * 权益类型(会员等级: MemberGrade)
+	 */
+	@ApiField("benefit_type")
+	private String benefitType;
 
-  /**
-   * 权益发放时间
-   */
-  @ApiField("dispatch_dt")
-  private Date dispatchDt;
+	/**
+	 * 权益发放时间
+	 */
+	@ApiField("dispatch_dt")
+	private Date dispatchDt;
 
-  /**
-   * 权益失效时间
-   */
-  @ApiField("end_dt")
-  private Date endDt;
+	/**
+	 * 权益失效时间
+	 */
+	@ApiField("end_dt")
+	private Date endDt;
 
-  /**
-   * 权益生效时间
-   */
-  @ApiField("start_dt")
-  private Date startDt;
+	/**
+	 * 权益生效时间
+	 */
+	@ApiField("start_dt")
+	private Date startDt;
 
-  /**
-   * 权益当前状态
-   * 待生效：WAIT
-   * 生效：VALID
-   * 失效：INVALID
-   */
-  @ApiField("status")
-  private String status;
+	/**
+	 * 权益当前状态     
+* 待生效：WAIT
+* 生效：VALID
+* 失效：INVALID
+	 */
+	@ApiField("status")
+	private String status;
 
-  public String getBenefitInfoId() {
-    return this.benefitInfoId;
-  }
+	public String getBenefitInfoId() {
+		return this.benefitInfoId;
+	}
+	public void setBenefitInfoId(String benefitInfoId) {
+		this.benefitInfoId = benefitInfoId;
+	}
 
-  public void setBenefitInfoId(String benefitInfoId) {
-    this.benefitInfoId = benefitInfoId;
-  }
+	public String getBenefitName() {
+		return this.benefitName;
+	}
+	public void setBenefitName(String benefitName) {
+		this.benefitName = benefitName;
+	}
 
-  public String getBenefitName() {
-    return this.benefitName;
-  }
+	public String getBenefitNameCn() {
+		return this.benefitNameCn;
+	}
+	public void setBenefitNameCn(String benefitNameCn) {
+		this.benefitNameCn = benefitNameCn;
+	}
 
-  public void setBenefitName(String benefitName) {
-    this.benefitName = benefitName;
-  }
+	public String getBenefitType() {
+		return this.benefitType;
+	}
+	public void setBenefitType(String benefitType) {
+		this.benefitType = benefitType;
+	}
 
-  public String getBenefitNameCn() {
-    return this.benefitNameCn;
-  }
+	public Date getDispatchDt() {
+		return this.dispatchDt;
+	}
+	public void setDispatchDt(Date dispatchDt) {
+		this.dispatchDt = dispatchDt;
+	}
 
-  public void setBenefitNameCn(String benefitNameCn) {
-    this.benefitNameCn = benefitNameCn;
-  }
+	public Date getEndDt() {
+		return this.endDt;
+	}
+	public void setEndDt(Date endDt) {
+		this.endDt = endDt;
+	}
 
-  public String getBenefitType() {
-    return this.benefitType;
-  }
+	public Date getStartDt() {
+		return this.startDt;
+	}
+	public void setStartDt(Date startDt) {
+		this.startDt = startDt;
+	}
 
-  public void setBenefitType(String benefitType) {
-    this.benefitType = benefitType;
-  }
-
-  public Date getDispatchDt() {
-    return this.dispatchDt;
-  }
-
-  public void setDispatchDt(Date dispatchDt) {
-    this.dispatchDt = dispatchDt;
-  }
-
-  public Date getEndDt() {
-    return this.endDt;
-  }
-
-  public void setEndDt(Date endDt) {
-    this.endDt = endDt;
-  }
-
-  public Date getStartDt() {
-    return this.startDt;
-  }
-
-  public void setStartDt(Date startDt) {
-    this.startDt = startDt;
-  }
-
-  public String getStatus() {
-    return this.status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
+	public String getStatus() {
+		return this.status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 }

@@ -14,49 +14,46 @@ import com.alipay.api.internal.mapping.ApiListField;
  */
 public class KoubeiMarketingDataCustomreportQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 3754323574887141511L;
+	private static final long serialVersionUID = 4263774931755323678L;
 
-  /**
-   * 规则KEY
-   */
-  @ApiField("condition_key")
-  private String conditionKey;
+	/**
+	 * 规则KEY
+	 */
+	@ApiField("condition_key")
+	private String conditionKey;
 
-  /**
-   * 额外增加的查询过滤条件
-   */
-  @ApiListField("filter_tags")
-  @ApiField("filter_tag")
-  private List<FilterTag> filterTags;
+	/**
+	 * 额外增加的查询过滤条件
+	 */
+	@ApiListField("filter_tags")
+	@ApiField("filter_tag")
+	private List<FilterTag> filterTags;
 
-  /**
-   * 一次拉多少条
-   */
-  @ApiField("max_count")
-  private String maxCount;
+	/**
+	 * 一次拉多少条
+	 */
+	@ApiField("max_count")
+	private String maxCount;
 
-  public String getConditionKey() {
-    return this.conditionKey;
-  }
+	public String getConditionKey() {
+		return this.conditionKey;
+	}
+	public void setConditionKey(String conditionKey) {
+		this.conditionKey = conditionKey;
+	}
 
-  public void setConditionKey(String conditionKey) {
-    this.conditionKey = conditionKey;
-  }
+	public List<FilterTag> getFilterTags() {
+		return this.filterTags;
+	}
+	public void setFilterTags(List<FilterTag> filterTags) {
+		this.filterTags = filterTags;
+	}
 
-  public List<FilterTag> getFilterTags() {
-    return this.filterTags;
-  }
-
-  public void setFilterTags(List<FilterTag> filterTags) {
-    this.filterTags = filterTags;
-  }
-
-  public String getMaxCount() {
-    return this.maxCount;
-  }
-
-  public void setMaxCount(String maxCount) {
-    this.maxCount = maxCount;
-  }
+	public String getMaxCount() {
+		return this.maxCount;
+	}
+	public void setMaxCount(String maxCount) {
+		this.maxCount = maxCount;
+	}
 
 }

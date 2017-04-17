@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class InsMktFactorDTO extends AlipayObject {
 
-  private static final long serialVersionUID = 8648144333723666973L;
+	private static final long serialVersionUID = 5886517557824383128L;
 
-  /**
-   * 规则因子
-   */
-  @ApiField("key")
-  private String key;
+	/**
+	 * 规则因子
+	 */
+	@ApiField("key")
+	private String key;
 
-  /**
-   * 规则因子值
-   */
-  @ApiField("value")
-  private String value;
+	/**
+	 * 规则因子值
+	 */
+	@ApiField("value")
+	private String value;
 
-  public String getKey() {
-    return this.key;
-  }
+	public String getKey() {
+		return this.key;
+	}
+	public void setKey(String key) {
+		this.key = key;
+	}
 
-  public void setKey(String key) {
-    this.key = key;
-  }
-
-  public String getValue() {
-    return this.value;
-  }
-
-  public void setValue(String value) {
-    this.value = value;
-  }
+	public String getValue() {
+		return this.value;
+	}
+	public void setValue(String value) {
+		this.value = value;
+	}
 
 }

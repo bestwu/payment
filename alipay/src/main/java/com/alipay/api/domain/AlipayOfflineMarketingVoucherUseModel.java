@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayOfflineMarketingVoucherUseModel extends AlipayObject {
 
-  private static final long serialVersionUID = 8359844614853937585L;
+	private static final long serialVersionUID = 6251335693751825545L;
 
-  /**
-   * 约定的扩展参数
-   */
-  @ApiField("extend_params")
-  private String extendParams;
+	/**
+	 * 约定的扩展参数
+	 */
+	@ApiField("extend_params")
+	private String extendParams;
 
-  /**
-   * 外部活动id
-   */
-  @ApiField("external_id")
-  private String externalId;
+	/**
+	 * 外部活动id
+	 */
+	@ApiField("external_id")
+	private String externalId;
 
-  /**
-   * 外部交易信息
-   */
-  @ApiField("external_trade_info")
-  private VoucherUserExternalTradeInfo externalTradeInfo;
+	/**
+	 * 外部交易信息
+	 */
+	@ApiField("external_trade_info")
+	private VoucherUserExternalTradeInfo externalTradeInfo;
 
-  /**
-   * 外部券码
-   */
-  @ApiField("external_voucher_code")
-  private String externalVoucherCode;
+	/**
+	 * 外部券码
+	 */
+	@ApiField("external_voucher_code")
+	private String externalVoucherCode;
 
-  public String getExtendParams() {
-    return this.extendParams;
-  }
+	public String getExtendParams() {
+		return this.extendParams;
+	}
+	public void setExtendParams(String extendParams) {
+		this.extendParams = extendParams;
+	}
 
-  public void setExtendParams(String extendParams) {
-    this.extendParams = extendParams;
-  }
+	public String getExternalId() {
+		return this.externalId;
+	}
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+	}
 
-  public String getExternalId() {
-    return this.externalId;
-  }
+	public VoucherUserExternalTradeInfo getExternalTradeInfo() {
+		return this.externalTradeInfo;
+	}
+	public void setExternalTradeInfo(VoucherUserExternalTradeInfo externalTradeInfo) {
+		this.externalTradeInfo = externalTradeInfo;
+	}
 
-  public void setExternalId(String externalId) {
-    this.externalId = externalId;
-  }
-
-  public VoucherUserExternalTradeInfo getExternalTradeInfo() {
-    return this.externalTradeInfo;
-  }
-
-  public void setExternalTradeInfo(VoucherUserExternalTradeInfo externalTradeInfo) {
-    this.externalTradeInfo = externalTradeInfo;
-  }
-
-  public String getExternalVoucherCode() {
-    return this.externalVoucherCode;
-  }
-
-  public void setExternalVoucherCode(String externalVoucherCode) {
-    this.externalVoucherCode = externalVoucherCode;
-  }
+	public String getExternalVoucherCode() {
+		return this.externalVoucherCode;
+	}
+	public void setExternalVoucherCode(String externalVoucherCode) {
+		this.externalVoucherCode = externalVoucherCode;
+	}
 
 }

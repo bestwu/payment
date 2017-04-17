@@ -11,62 +11,58 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayEcoMycarPromoTicketPushModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6716635524163788924L;
+	private static final long serialVersionUID = 6418592238884549947L;
 
-  /**
-   * 核销流水
-   */
-  @ApiField("apply_no")
-  private String applyNo;
+	/**
+	 * 核销流水
+	 */
+	@ApiField("apply_no")
+	private String applyNo;
 
-  /**
-   * 核销状态，0：成功，1：失败
-   */
-  @ApiField("apply_status")
-  private String applyStatus;
+	/**
+	 * 核销状态，0：成功，1：失败
+	 */
+	@ApiField("apply_status")
+	private String applyStatus;
 
-  /**
-   * 对应TP活动码
-   */
-  @ApiField("code_no")
-  private String codeNo;
+	/**
+	 * 对应TP活动码
+	 */
+	@ApiField("code_no")
+	private String codeNo;
 
-  /**
-   * 券ID
-   */
-  @ApiField("ticket_id")
-  private String ticketId;
+	/**
+	 * 券ID
+	 */
+	@ApiField("ticket_id")
+	private String ticketId;
 
-  public String getApplyNo() {
-    return this.applyNo;
-  }
+	public String getApplyNo() {
+		return this.applyNo;
+	}
+	public void setApplyNo(String applyNo) {
+		this.applyNo = applyNo;
+	}
 
-  public void setApplyNo(String applyNo) {
-    this.applyNo = applyNo;
-  }
+	public String getApplyStatus() {
+		return this.applyStatus;
+	}
+	public void setApplyStatus(String applyStatus) {
+		this.applyStatus = applyStatus;
+	}
 
-  public String getApplyStatus() {
-    return this.applyStatus;
-  }
+	public String getCodeNo() {
+		return this.codeNo;
+	}
+	public void setCodeNo(String codeNo) {
+		this.codeNo = codeNo;
+	}
 
-  public void setApplyStatus(String applyStatus) {
-    this.applyStatus = applyStatus;
-  }
-
-  public String getCodeNo() {
-    return this.codeNo;
-  }
-
-  public void setCodeNo(String codeNo) {
-    this.codeNo = codeNo;
-  }
-
-  public String getTicketId() {
-    return this.ticketId;
-  }
-
-  public void setTicketId(String ticketId) {
-    this.ticketId = ticketId;
-  }
+	public String getTicketId() {
+		return this.ticketId;
+	}
+	public void setTicketId(String ticketId) {
+		this.ticketId = ticketId;
+	}
 
 }

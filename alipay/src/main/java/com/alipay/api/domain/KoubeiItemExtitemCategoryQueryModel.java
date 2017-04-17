@@ -11,20 +11,19 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class KoubeiItemExtitemCategoryQueryModel extends AlipayObject {
 
-  private static final long serialVersionUID = 6779369839354152433L;
+	private static final long serialVersionUID = 4538547352787847271L;
 
-  /**
-   * 父品类编码. (查询顶级类目时值传0)
-   */
-  @ApiField("parent_id")
-  private String parentId;
+	/**
+	 * 父品类编码. (查询顶级类目时值传0)
+	 */
+	@ApiField("parent_id")
+	private String parentId;
 
-  public String getParentId() {
-    return this.parentId;
-  }
-
-  public void setParentId(String parentId) {
-    this.parentId = parentId;
-  }
+	public String getParentId() {
+		return this.parentId;
+	}
+	public void setParentId(String parentId) {
+		this.parentId = parentId;
+	}
 
 }

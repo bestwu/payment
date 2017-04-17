@@ -11,34 +11,32 @@ import com.alipay.api.internal.mapping.ApiField;
  */
 public class AlipayInsAutoCarSaveModel extends AlipayObject {
 
-  private static final long serialVersionUID = 5493474941558748482L;
+	private static final long serialVersionUID = 4487147987156999652L;
 
-  /**
-   * 车牌号
-   */
-  @ApiField("car_no")
-  private String carNo;
+	/**
+	 * 车牌号
+	 */
+	@ApiField("car_no")
+	private String carNo;
 
-  /**
-   * 用户ID,车主会员ID
-   */
-  @ApiField("user_id")
-  private String userId;
+	/**
+	 * 用户ID,车主会员ID
+	 */
+	@ApiField("user_id")
+	private String userId;
 
-  public String getCarNo() {
-    return this.carNo;
-  }
+	public String getCarNo() {
+		return this.carNo;
+	}
+	public void setCarNo(String carNo) {
+		this.carNo = carNo;
+	}
 
-  public void setCarNo(String carNo) {
-    this.carNo = carNo;
-  }
-
-  public String getUserId() {
-    return this.userId;
-  }
-
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+	public String getUserId() {
+		return this.userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 }

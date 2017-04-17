@@ -10,39 +10,37 @@ import com.alipay.api.internal.mapping.ApiListField;
  * 招商pid和pid对应的门第列表
  *
  * @author auto create
- * @since 1.0, 2016-10-31 12:00:31
+ * @since 1.0, 2017-04-01 21:21:04
  */
 public class PidShopInfo extends AlipayObject {
 
-  private static final long serialVersionUID = 4896363384276769615L;
+	private static final long serialVersionUID = 4212326978492279864L;
 
-  /**
-   * 商户pid
-   */
-  @ApiField("pid")
-  private String pid;
+	/**
+	 * 商户pid
+	 */
+	@ApiField("pid")
+	private String pid;
 
-  /**
-   * pid下的门店列表
-   */
-  @ApiListField("shop_ids")
-  @ApiField("string")
-  private List<String> shopIds;
+	/**
+	 * pid下的门店列表
+	 */
+	@ApiListField("shop_ids")
+	@ApiField("string")
+	private List<String> shopIds;
 
-  public String getPid() {
-    return this.pid;
-  }
+	public String getPid() {
+		return this.pid;
+	}
+	public void setPid(String pid) {
+		this.pid = pid;
+	}
 
-  public void setPid(String pid) {
-    this.pid = pid;
-  }
-
-  public List<String> getShopIds() {
-    return this.shopIds;
-  }
-
-  public void setShopIds(List<String> shopIds) {
-    this.shopIds = shopIds;
-  }
+	public List<String> getShopIds() {
+		return this.shopIds;
+	}
+	public void setShopIds(List<String> shopIds) {
+		this.shopIds = shopIds;
+	}
 
 }
