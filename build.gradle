@@ -1,5 +1,6 @@
 plugins {
     id 'org.springframework.boot' version '1.4.2.RELEASE'
+    id 'cn.bestwu.publish' version '0.0.1'
 }
 
 allprojects{
@@ -23,13 +24,14 @@ allprojects{
 }
 
 dependencies {
+    compile project(':alipay')
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.hateoas:spring-hateoas'
     compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
     compile 'org.codehaus.woodstox:woodstox-core-asl:4.4.1'
     compile 'cn.bestwu:common-lang:1.0.5'
-    compile fileTree(dir:'lib', include: '*.jar',exclude:'*-source.jar')
 
+    testCompile fileTree(dir:'lib', include: '*.jar',exclude:'*-source.jar')
     testCompile 'cn.bestwu:test:1.1'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }

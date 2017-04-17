@@ -1,0 +1,3 @@
+dependencies {
+    compile 'commons-logging:commons-logging:1.1.1'
+}
