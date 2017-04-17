@@ -37,7 +37,7 @@ public interface Pay {
    * @param order 订单
    * @return 是否支付完成
    */
-  boolean checkOrder(Order order, OrderHandler orderHandler) throws PayException;
+  boolean checkOrder(Order order, OrderHandler orderHandler);
 
   /**
    * 异步通知回调

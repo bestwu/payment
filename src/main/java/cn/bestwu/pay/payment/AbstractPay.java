@@ -1,9 +1,9 @@
 package cn.bestwu.pay.payment;
 
 import cn.bestwu.pay.payment.PayConfiguration.PayNotifyController;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,10 +63,17 @@ public abstract class AbstractPay<P extends PayProperties> implements Pay {
    */
   protected Map<String, String> toParams(HttpServletRequest request) {
     Map<String, String> params = new HashMap<>();
-    Enumeration<String> parameterNames = request.getParameterNames();
-    while (parameterNames.hasMoreElements()) {
-      String key = parameterNames.nextElement();
-      params.put(key, request.getParameter(key));
+    Map<String, String[]> parameterMap = request.getParameterMap();
+    for (Entry<String, String[]> entry : parameterMap.entrySet()) {
+      String[] values = entry.getValue();
+      String valueStr = "";
+      for (int i = 0; i < values.length; i++) {
+        valueStr = (i == values.length - 1) ? valueStr + values[i]
+            : valueStr + values[i] + ",";
+      }
+      //乱码解决，这段代码在出现乱码时使用。
+      //valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");
+      params.put(entry.getKey(), valueStr);
     }
     return params;
   }

@@ -13,5 +13,5 @@ public enum PayType {
   /**
    * 扫码支付
    */
-  SCAN_CODE
+  QR_CODE
 }

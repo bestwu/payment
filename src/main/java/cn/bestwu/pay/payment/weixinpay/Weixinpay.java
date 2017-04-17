@@ -129,8 +129,8 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
     switch (payType) {
       case APP:
         return appPlaceOrder(order);
-      case SCAN_CODE:
-        return scanCodePlaceOrder(order);
+      case QR_CODE:
+        return qrCodePlaceOrder(order);
       default:
         throw new PayException("不支持的支付方式");
     }
@@ -143,7 +143,7 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
    * @param order 订单
    * @return 下单结果
    */
-  private String scanCodePlaceOrder(Order order) throws PayException {
+  private String qrCodePlaceOrder(Order order) throws PayException {
 
     try {
       Map<String, String> params = new HashMap<>();
@@ -234,12 +234,13 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
   }
 
   @Override
-  public boolean checkOrder(Order order, OrderHandler orderHandler) throws PayException {
+  public boolean checkOrder(Order order, OrderHandler orderHandler) {
     try {
       Map<String, String> params = new HashMap<>();
       params.put("appid", properties.getAppid());
       params.put("mch_id", properties.getMch_id());
-      params.put("out_trade_no", order.getNo());
+      String out_trade_no = order.getNo();
+      params.put("out_trade_no", out_trade_no);
       params.put("nonce_str", RandomUtil.nextString2(32));
       params.put("sign", getSign(params));
 
@@ -256,24 +257,35 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
             String appid = params.get("appid");
             if (properties.getMch_id().equals(mch_id) && properties.getAppid()
                 .equals(appid)) {
-              int total_fee = Integer.parseInt(params.get("total_fee"));
-              if (order.getTotalAmount() == total_fee) {
-                orderHandler.complete(order, getProvider());
-                return true;
+              if (out_trade_no.equals(params.get("out_trade_no"))) {
+                int total_fee = Integer.parseInt(params.get("total_fee"));
+                if (order.getTotalAmount() == total_fee) {
+                  if (!order.isCompleted()) {
+                    orderHandler.complete(order, getProvider());
+                  }
+                  return true;
+                } else {
+                  log.debug("查询失败，金额不匹配，服务器金额：{},本地订单金额：{}", total_fee, order.getTotalAmount());
+                }
+              } else {
+                log.debug("查询失败，订单不匹配，响应订单号：{}，本地订单号：{}", params.get("out_trade_no"), out_trade_no);
               }
+            } else {
+              log.debug("查询失败，商户/应用不匹配,响应商户：{},本地商户：{},响应应用ID：{},本地应用ID：{}",
+                  mch_id, properties.getMch_id(), appid, properties.getAppid());
             }
           } else {
             String err_code_des = entity.get("err_code_des");
-            throw new PayException(entity.get("err_code") + ":" + err_code_des);
+            log.debug(entity.get("err_code") + ":" + err_code_des);
           }
         } else {
-          throw new PayException(entity.get("return_msg"));
+          log.debug(entity.get("return_msg"));
         }
       } else {
-        throw new PayException("查询失败");
+        log.debug("查询失败");
       }
     } catch (Exception e) {
-      throw new PayException("查询失败", e);
+      log.debug("查询失败", e);
     }
     return false;
   }
@@ -304,10 +316,11 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
                   return new NotifyResult("SUCCESS");
                 }
               } else {
-                log.error("微信支付异步通知，不是系统订单：{}", StringUtil.valueOf(params, true));
+                log.error("查询失败，金额不匹配，服务器金额：{},本地订单金额：{}", total_fee, order.getTotalAmount());
               }
             } else {
-              log.error("微信支付异步通知，不是系统订单：{}", StringUtil.valueOf(params, true));
+              log.error("查询失败，商户/应用不匹配,响应商户：{},本地商户：{},响应应用ID：{},本地应用ID：{}", mch_id,
+                  properties.getMch_id(), appid, properties.getAppid());
             }
           } else {
             log.error("微信支付失败，{}", params.get("err_code_des"));
