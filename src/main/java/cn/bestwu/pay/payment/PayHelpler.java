@@ -73,4 +73,38 @@ public class PayHelpler {
     }
   }
 
+  /**
+   * 订单退款
+   *
+   * @param order 订单
+   * @param orderHandler 订单处理类
+   * @return 订单
+   * @throws PayException PayException
+   */
+  public Order refund(String provider, Order order, OrderHandler orderHandler) throws PayException {
+    AbstractPay<? extends PayProperties> payProvider = payProviders.get(provider);
+    if (payProvider == null) {
+      throw new PayException("不支持的支付方式");
+    } else {
+      return payProvider.refund(order, orderHandler);
+    }
+  }
+
+  /**
+   * 订单退款结果查询
+   *
+   * @param order 订单
+   * @param orderHandler 订单处理类
+   * @return 退款是否成功
+   */
+  public boolean refundQuery(String provider, Order order, OrderHandler orderHandler)
+      throws PayException {
+    AbstractPay<? extends PayProperties> payProvider = payProviders.get(provider);
+    if (payProvider == null) {
+      throw new PayException("不支持的支付方式");
+    } else {
+      return payProvider.refundQuery(order, orderHandler);
+    }
+  }
+
 }
