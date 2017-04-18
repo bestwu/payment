@@ -56,6 +56,16 @@ public class MyOrder implements Order {
     return totalAmount;
   }
 
+  @Override
+  public long getRefundAmount() {
+    return 0;
+  }
+
+  @Override
+  public String getRefundNo() {
+    return null;
+  }
+
   public void setTotalAmount(long totalAmount) {
     this.totalAmount = totalAmount;
   }
@@ -99,5 +109,10 @@ public class MyOrder implements Order {
   @Override
   public Object getExtra(String key) {
     return null;
+  }
+
+  @Override
+  public boolean isRefundCompleted() {
+    return false;
   }
 }

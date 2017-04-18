@@ -33,6 +33,16 @@ public interface Order {
   long getTotalAmount();
 
   /**
+   * @return 需要退款的金额，该金额不能大于订单金（单位：分）
+   */
+  long getRefundAmount();
+
+  /**
+   * @return 退款唯一标识
+   */
+  String getRefundNo();
+
+  /**
    * @return 下单客户端IP
    */
   String getSpbillCreateIp();
@@ -57,4 +67,10 @@ public interface Order {
    * @return 扩展字段值
    */
   Object getExtra(String key);
+
+  /**
+   * @return 退款是否完成
+   */
+  boolean isRefundCompleted();
+
 }

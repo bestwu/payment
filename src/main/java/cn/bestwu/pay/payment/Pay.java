@@ -20,6 +20,7 @@ public interface Pay {
    * @param order 订单
    * @param payType 支付方式：APP,扫码支付
    * @return 下单结果，客户端调起支付使用的信息
+   * @throws PayException PayException
    */
   Object placeOrder(Order order, PayType payType) throws PayException;
 
@@ -45,7 +46,19 @@ public interface Pay {
    *
    * @param order 订单
    * @param orderHandler 订单处理类
-   * @return 退款结果
+   * @return 订单
+   * @throws PayException PayException
    */
-  Object refund(Order order, OrderHandler orderHandler);
+  Order refund(Order order, OrderHandler orderHandler) throws PayException;
+
+  /**
+   * 订单退款结果查询
+   *
+   * @param order 订单
+   * @param orderHandler 订单处理类
+   * @return 退款是否成功
+   */
+  boolean refundQuery(Order order, OrderHandler orderHandler);
+
+
 }

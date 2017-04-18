@@ -39,10 +39,6 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
    * 统一下单地址
    */
   private static final String UNIFIEDORDER_URL = "https://api.mch.weixin.qq.com/pay/unifiedorder";
-  /**
-   * 订单查询地址
-   */
-  private static final String ORDERQUERY_URL = "https://api.mch.weixin.qq.com/pay/orderquery";
 
 
   @Autowired
@@ -173,16 +169,17 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
             return entity.get("code_url");
           } else {
             String err_code_des = entity.get("err_code_des");
-            throw new PayException(entity.get("err_code") + ":" + err_code_des);
+            throw new PayException(
+                "订单：" + order.getNo() + "下单失败" + entity.get("err_code") + ":" + err_code_des);
           }
         } else {
-          throw new PayException(entity.get("return_msg"));
+          throw new PayException("订单：" + order.getNo() + "下单失败" + entity.get("return_msg"));
         }
       } else {
-        throw new PayException("下单失败");
+        throw new PayException("订单：" + order.getNo() + "下单失败");
       }
     } catch (Exception e) {
-      throw new PayException("下单失败", e);
+      throw new PayException("订单：" + order.getNo() + "下单失败", e);
     }
   }
 
@@ -220,16 +217,17 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
             return getPayInfo(entity);
           } else {
             String err_code_des = entity.get("err_code_des");
-            throw new PayException(entity.get("err_code") + ":" + err_code_des);
+            throw new PayException(
+                "订单：" + order.getNo() + "下单失败" + entity.get("err_code") + ":" + err_code_des);
           }
         } else {
-          throw new PayException(entity.get("return_msg"));
+          throw new PayException("订单：" + order.getNo() + "下单失败" + entity.get("return_msg"));
         }
       } else {
-        throw new PayException("下单失败");
+        throw new PayException("订单：" + order.getNo() + "下单失败");
       }
     } catch (Exception e) {
-      throw new PayException("下单失败", e);
+      throw new PayException("订单：" + order.getNo() + "下单失败", e);
     }
   }
 
@@ -245,7 +243,8 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
       params.put("sign", getSign(params));
 
       @SuppressWarnings("unchecked")
-      Map<String, String> entity = restTemplate.postForObject(ORDERQUERY_URL, params, Map.class);
+      Map<String, String> entity = restTemplate
+          .postForObject("https://api.mch.weixin.qq.com/pay/orderquery", params, Map.class);
 
       if (log.isDebugEnabled()) {
         log.debug(StringUtil.valueOf(entity));
@@ -265,27 +264,29 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
                   }
                   return true;
                 } else {
-                  log.debug("查询失败，金额不匹配，服务器金额：{},本地订单金额：{}", total_fee, order.getTotalAmount());
+                  log.error("订单：{}查询失败，金额不匹配，服务器金额：{},本地订单金额：{}", order.getNo(), total_fee,
+                      order.getTotalAmount());
                 }
               } else {
-                log.debug("查询失败，订单不匹配，响应订单号：{}，本地订单号：{}", params.get("out_trade_no"), out_trade_no);
+                log.error("订单：{}查询失败，订单不匹配，响应订单号：{}，本地订单号：{}", order.getNo(),
+                    params.get("out_trade_no"), out_trade_no);
               }
             } else {
-              log.debug("查询失败，商户/应用不匹配,响应商户：{},本地商户：{},响应应用ID：{},本地应用ID：{}",
+              log.error("订单：{}查询失败，商户/应用不匹配,响应商户：{},本地商户：{},响应应用ID：{},本地应用ID：{}", order.getNo(),
                   mch_id, properties.getMch_id(), appid, properties.getAppid());
             }
           } else {
             String err_code_des = entity.get("err_code_des");
-            log.debug(entity.get("err_code") + ":" + err_code_des);
+            log.error("订单：{}查询失败" + entity.get("err_code") + ":" + err_code_des, order.getNo());
           }
         } else {
-          log.debug(entity.get("return_msg"));
+          log.error("订单：{}查询失败" + entity.get("return_msg"), order.getNo());
         }
       } else {
-        log.debug("查询失败");
+        log.error("订单：{}查询失败", order.getNo());
       }
     } catch (Exception e) {
-      log.debug("查询失败", e);
+      log.error("订单：" + order.getNo() + "查询失败", e);
     }
     return false;
   }
@@ -313,8 +314,8 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
               if (order != null && order.getTotalAmount() == total_fee) {
                 if (!order.isCompleted()) {
                   orderHandler.complete(order, getProvider());
-                  return new NotifyResult("SUCCESS");
                 }
+                return new NotifyResult("SUCCESS");
               } else {
                 log.error("查询失败，金额不匹配，服务器金额：{},本地订单金额：{}", total_fee, order.getTotalAmount());
               }
@@ -338,8 +339,107 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
   }
 
   @Override
-  public Object refund(Order order, OrderHandler orderHandler) {
-    //todo 待实现
-    return null;
+  public Order refund(Order order, OrderHandler orderHandler) throws PayException {
+    try {
+      Map<String, String> params = new HashMap<>();
+      params.put("appid", properties.getAppid());
+      params.put("mch_id", properties.getMch_id());
+      params.put("nonce_str", RandomUtil.nextString2(32));
+      params.put("out_trade_no", order.getNo());
+      params.put("out_refund_no", order.getRefundNo());
+      params.put("total_fee", String.valueOf(order.getTotalAmount()));
+      params.put("refund_fee", String.valueOf(order.getRefundAmount()));
+      params.put("op_user_id", properties.getMch_id());
+
+      params.put("sign", getSign(params));
+
+      @SuppressWarnings("unchecked")
+      Map<String, String> entity = restTemplate
+          .postForObject("https://api.mch.weixin.qq.com/secapi/pay/refund", params, Map.class);
+
+      if (log.isDebugEnabled()) {
+        log.debug(StringUtil.valueOf(entity));
+      }
+      if (verify(entity, entity.get("sign"))) {
+        if ("SUCCESS".equals(entity.get("return_code"))) {
+          if ("SUCCESS".equals(entity.get("result_code"))) {
+            return orderHandler.refund(order, getProvider());
+          } else {
+            String err_code_des = entity.get("err_code_des");
+            throw new PayException(
+                "订单：" + order.getNo() + "退款失败，" + entity.get("err_code") + ":" + err_code_des);
+          }
+        } else {
+          throw new PayException("订单：" + order.getNo() + "退款失败，" + entity.get("return_msg"));
+        }
+      } else {
+        throw new PayException("订单：" + order.getNo() + "退款失败，");
+      }
+    } catch (Exception e) {
+      throw new PayException("订单：" + order.getNo() + "退款失败", e);
+    }
+  }
+
+  @Override
+  public boolean refundQuery(Order order, OrderHandler orderHandler) {
+    try {
+      Map<String, String> params = new HashMap<>();
+      params.put("appid", properties.getAppid());
+      params.put("mch_id", properties.getMch_id());
+      params.put("nonce_str", RandomUtil.nextString2(32));
+      params.put("out_refund_no", order.getRefundNo());
+      params.put("sign", getSign(params));
+
+      @SuppressWarnings("unchecked")
+      Map<String, String> entity = restTemplate
+          .postForObject("https://api.mch.weixin.qq.com/pay/refundquery", params, Map.class);
+
+      if (log.isDebugEnabled()) {
+        log.debug(StringUtil.valueOf(entity));
+      }
+      if (verify(entity, entity.get("sign"))) {
+        if ("SUCCESS".equals(entity.get("return_code"))) {
+          if ("SUCCESS".equals(entity.get("result_code"))) {
+            String mch_id = params.get("mch_id");
+            String appid = params.get("appid");
+            if (properties.getMch_id().equals(mch_id) && properties.getAppid()
+                .equals(appid)) {
+              if (order.getNo().equals(params.get("out_trade_no")) && order.getRefundNo()
+                  .equals(params.get("out_refund_no_0"))) {
+                int total_fee = Integer.parseInt(params.get("total_fee"));
+                int refund_fee = Integer.parseInt(params.get("refund_fee_0"));
+                if (order.getTotalAmount() == total_fee && order.getRefundAmount() == refund_fee) {
+                  if (!order.isRefundCompleted()) {
+                    orderHandler.refundComplete(order, getProvider());
+                  }
+                  return true;
+                } else {
+                  log.error("订单：{}退款查询失败，金额不匹配，服务器金额：{}/{},本地订单金额：{}/{}", order.getNo(), total_fee,
+                      refund_fee,
+                      order.getTotalAmount(), order.getRefundAmount());
+                }
+              } else {
+                log.error("订单：{}退款查询失败，订单不匹配，响应订单号：{}/{}，本地订单号：{}/{}", order.getNo(),
+                    params.get("out_trade_no"),
+                    params.get("out_refund_no_0"), order.getNo(), order.getRefundNo());
+              }
+            } else {
+              log.error("订单：{}退款查询失败，商户/应用不匹配,响应商户：{},本地商户：{},响应应用ID：{},本地应用ID：{}", order.getNo(),
+                  mch_id, properties.getMch_id(), appid, properties.getAppid());
+            }
+          } else {
+            String err_code_des = entity.get("err_code_des");
+            log.error(entity.get("err_code") + ":" + err_code_des);
+          }
+        } else {
+          log.error(entity.get("return_msg"));
+        }
+      } else {
+        log.error("订单：{}退款查询失败", order.getNo());
+      }
+    } catch (Exception e) {
+      log.error("订单：" + order.getNo() + "退款查询失败", e);
+    }
+    return false;
   }
 }

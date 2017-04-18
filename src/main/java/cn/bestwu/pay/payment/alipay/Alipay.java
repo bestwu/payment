@@ -10,10 +10,14 @@ import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.internal.util.AlipaySignature;
+import com.alipay.api.request.AlipayTradeFastpayRefundQueryRequest;
 import com.alipay.api.request.AlipayTradePrecreateRequest;
 import com.alipay.api.request.AlipayTradeQueryRequest;
+import com.alipay.api.request.AlipayTradeRefundRequest;
+import com.alipay.api.response.AlipayTradeFastpayRefundQueryResponse;
 import com.alipay.api.response.AlipayTradePrecreateResponse;
 import com.alipay.api.response.AlipayTradeQueryResponse;
+import com.alipay.api.response.AlipayTradeRefundResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import java.net.URLEncoder;
@@ -114,12 +118,12 @@ public class Alipay extends AbstractPay<AliPayProperties> {
           .append(URLEncoder.encode(AlipaySignature.rsaSign(params, privateKey, charset), charset));
 
       if (log.isDebugEnabled()) {
-        log.debug("订单参数字符串:{}", orderStr.toString());
+        log.debug("订单：{}订单参数字符串:{}", order.getNo(), orderStr.toString());
       }
 
       return orderStr.toString();
     } catch (Exception e) {
-      throw new PayException("下单失败", e);
+      throw new PayException("订单：" + order.getNo() + "下单失败", e);
     }
   }
 
@@ -148,10 +152,10 @@ public class Alipay extends AbstractPay<AliPayProperties> {
       if ("10000".equals(response.getCode()) && "10000".equals(response.getSubCode())) {
         return response.getQrCode();
       } else {
-        throw new PayException("下单失败，支付宝响应：" + response.getBody());
+        throw new PayException("订单：" + order.getNo() + "下单失败，支付宝响应：" + response.getBody());
       }
     } catch (Exception e) {
-      throw new PayException("下单失败", e);
+      throw new PayException("订单：" + order.getNo() + "下单失败", e);
     }
   }
 
@@ -173,20 +177,21 @@ public class Alipay extends AbstractPay<AliPayProperties> {
               }
               return true;
             } else {
-              log.debug("查询失败，金额不匹配，服务器金额：{},本地订单金额：{}",
+              log.error("订单：{}查询失败，金额不匹配，服务器金额：{},本地订单金额：{}", order.getNo(),
                   total_amount.multiply(BigDecimal.valueOf(100)), order.getTotalAmount());
             }
           } else {
-            log.debug("查询失败，订单不匹配，服务器订单号：{},本地订单号：{}", response.getOutTradeNo(), out_trade_no);
+            log.error("订单：{}查询失败，订单不匹配，服务器订单号：{},本地订单号：{}", order.getNo(), response.getOutTradeNo(),
+                out_trade_no);
           }
         } else {
-          log.debug("支付未成功");
+          log.error("支付未成功");
         }
       } else {
-        log.debug("查询失败，支付宝响应：" + response.getBody());
+        log.error("订单：{}查询失败，支付宝响应：{}", order.getNo(), response.getBody());
       }
     } catch (Exception e) {
-      log.debug("查询失败", e);
+      log.error("订单：" + order.getNo() + "查询失败", e);
     }
     return false;
   }
@@ -234,8 +239,8 @@ public class Alipay extends AbstractPay<AliPayProperties> {
                 .equals(total_amount.multiply(BigDecimal.valueOf(100)))) {
               if (!order.isCompleted()) {
                 orderHandler.complete(order, getProvider());
-                return "success";
               }
+              return "success";
             } else {
               log.error(
                   "微信支付异步通知，" + "金额不匹配，服务器金额：" + total_amount.multiply(BigDecimal.valueOf(100))
@@ -260,9 +265,72 @@ public class Alipay extends AbstractPay<AliPayProperties> {
   }
 
   @Override
-  public Object refund(Order order, OrderHandler orderHandler) {
-    //todo 待实现
-    return null;
+  public Order refund(Order order, OrderHandler orderHandler) throws PayException {
+    try {
+      AlipayTradeRefundRequest request = new AlipayTradeRefundRequest();
+      Map<String, String> biz_content = new HashMap<>();
+      String out_trade_no = order.getNo();
+      biz_content.put("out_trade_no", out_trade_no);
+      String refundAmount = new BigDecimal(order.getRefundAmount())
+          .divide(new BigDecimal(100), 2, BigDecimal.ROUND_UNNECESSARY).toString();
+      biz_content.put("refund_amount", refundAmount);
+      biz_content.put("out_request_no", order.getRefundNo());
+      request.setBizContent(objectMapper.writeValueAsString(biz_content));
+      AlipayTradeRefundResponse response = alipayClient.execute(request);
+      if ("10000".equals(response.getCode()) && "10000".equals(response.getSubCode())) {
+        return orderHandler.refund(order, getProvider());
+      } else {
+        throw new PayException("订单：" + order.getNo() + "退款失败，支付宝响应：" + response.getBody());
+      }
+    } catch (Exception e) {
+      throw new PayException("订单：" + order.getNo() + "退款失败", e);
+    }
+  }
+
+  @Override
+  public boolean refundQuery(Order order, OrderHandler orderHandler) {
+    try {
+      AlipayTradeFastpayRefundQueryRequest request = new AlipayTradeFastpayRefundQueryRequest();
+      Map<String, String> biz_content = new HashMap<>();
+      String out_trade_no = order.getNo();
+      biz_content.put("out_trade_no", out_trade_no);
+      String outRequestNo = order.getRefundNo();
+      biz_content.put("out_request_no", outRequestNo);
+      request.setBizContent(objectMapper.writeValueAsString(biz_content));
+      ////该接口的返回码10000，仅代表本次查询操作成功，不代表退款成功。如果该接口返回了查询数据，则代表退款成功，如果没有查询到则代表未退款成功，可以调用退款接口进行重试。
+      AlipayTradeFastpayRefundQueryResponse response = alipayClient.execute(request);
+      if ("10000".equals(response.getCode()) && "10000".equals(response.getSubCode())) {
+        if (out_trade_no.equals(response.getOutTradeNo()) && outRequestNo
+            .equals(response.getOutRequestNo())) {
+          BigDecimal response_refund_fee = new BigDecimal(response.getRefundAmount());
+          if (order != null && new BigDecimal(order.getRefundAmount())
+              .equals(response_refund_fee.multiply(BigDecimal.valueOf(100))) && new BigDecimal(
+              order.getTotalAmount())
+              .equals(
+                  new BigDecimal(response.getTotalAmount()).multiply(BigDecimal.valueOf(100)))) {
+            if (!order.isRefundCompleted()) {
+              orderHandler.refundComplete(order, getProvider());
+            }
+            return true;
+          } else {
+            log.error(
+                "订单：{}退款失败，金额不匹配，服务器金额：{}/{} 分,本地订单金额：{}/{} 分", order.getNo(),
+                new BigDecimal(response.getTotalAmount()).multiply(BigDecimal.valueOf(100)),
+                response_refund_fee.multiply(BigDecimal.valueOf(100))
+                , order.getTotalAmount(), order.getRefundAmount());
+          }
+        } else {
+          log.error(
+              "订单：{}退款查询失败，订单不匹配，服务器订单号：{}/{},本地订单号：{}/{}", order.getNo(), response.getOutTradeNo(),
+              response.getOutRequestNo(), out_trade_no, outRequestNo);
+        }
+      } else {
+        log.error("订单：{}退款查询失败,{}", order.getNo(), response.getBody());
+      }
+    } catch (Exception e) {
+      log.error("订单：" + order.getNo() + "退款查询失败", e);
+    }
+    return false;
   }
 
 
