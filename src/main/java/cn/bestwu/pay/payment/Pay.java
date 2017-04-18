@@ -9,17 +9,9 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface Pay {
 
-
   /**
-   * 支付宝支付
+   * @return 第三方支付提供方
    */
-  String ALIPAY = "alipay";
-  /**
-   * 微信支付
-   */
-  String WEIXINPAY = "weixinpay";
-
-
   String getProvider();
 
   /**
@@ -40,7 +32,7 @@ public interface Pay {
   boolean checkOrder(Order order, OrderHandler orderHandler);
 
   /**
-   * 异步通知回调
+   * 异步通知回调处理
    *
    * @param request 回调参数
    * @param orderHandler 订单处理类
@@ -48,5 +40,12 @@ public interface Pay {
    */
   Object payNotify(HttpServletRequest request, OrderHandler orderHandler);
 
-
+  /**
+   * 订单退款
+   *
+   * @param order 订单
+   * @param orderHandler 订单处理类
+   * @return 退款结果
+   */
+  Object refund(Order order, OrderHandler orderHandler);
 }

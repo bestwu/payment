@@ -43,7 +43,7 @@ public class Alipay extends AbstractPay<AliPayProperties> {
 
   @Autowired
   public Alipay(AliPayProperties properties) {
-    super(ALIPAY, properties);
+    super("alipay", properties);
     dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
     alipayClient = new DefaultAlipayClient("https://openapi.alipay.com/gateway.do",
         properties.getApp_id(), properties.getPrivateKey(), "json", charset,
@@ -257,6 +257,12 @@ public class Alipay extends AbstractPay<AliPayProperties> {
       log.error(e.getMessage(), e);
     }
     return "fail";
+  }
+
+  @Override
+  public Object refund(Order order, OrderHandler orderHandler) {
+    //todo 待实现
+    return null;
   }
 
 

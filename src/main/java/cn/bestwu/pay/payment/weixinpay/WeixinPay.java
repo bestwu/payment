@@ -28,7 +28,7 @@ import org.springframework.web.client.RestTemplate;
  *
  * @author Peter Wu
  */
-public class Weixinpay extends AbstractPay<WeixinpayProperties> {
+public class WeixinPay extends AbstractPay<WeixinpayProperties> {
 
 
   private final MapType mapType = TypeFactory.defaultInstance()
@@ -46,8 +46,8 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
 
 
   @Autowired
-  public Weixinpay(WeixinpayProperties properties) {
-    super(WEIXINPAY, properties);
+  public WeixinPay(WeixinpayProperties properties) {
+    super("weixin", properties);
     messageConverter = new MappingJackson2XmlHttpMessageConverter() {
       @Override
       protected boolean canRead(MediaType mediaType) {
@@ -335,5 +335,11 @@ public class Weixinpay extends AbstractPay<WeixinpayProperties> {
       log.error(e.getMessage(), e);
     }
     return new NotifyResult("FAIL");
+  }
+
+  @Override
+  public Object refund(Order order, OrderHandler orderHandler) {
+    //todo 待实现
+    return null;
   }
 }

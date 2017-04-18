@@ -23,4 +23,13 @@ public interface OrderHandler {
    * @return 订单
    */
   Order complete(Order order, String provider);
+
+  /**
+   * 处理退款业务逻辑
+   *
+   * @param order 订单
+   * @param provider 第三方支付提供方
+   * @return 订单
+   */
+  Order refund(Order order, String provider);
 }

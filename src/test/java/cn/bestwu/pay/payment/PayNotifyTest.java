@@ -49,7 +49,7 @@ public class PayNotifyTest extends BaseWebTest {
         + "</xml>", headers);
 
     ResponseEntity<String> entity = restTemplate
-        .postForEntity(expandUrl("/payNotifies/weixinpay"), requestEntity, String.class);
+        .postForEntity(expandUrl("/payNotifies/weixin"), requestEntity, String.class);
     System.err.println(StringUtil.valueOf(entity.getBody(), true));
     Assert.assertEquals(HttpStatus.OK, entity.getStatusCode());
   }

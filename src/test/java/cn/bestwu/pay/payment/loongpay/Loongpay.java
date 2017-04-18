@@ -239,4 +239,10 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
     return "error";
   }
 
+  @Override
+  public Object refund(Order order, OrderHandler orderHandler) {
+    //todo 待实现
+    return null;
+  }
+
 }

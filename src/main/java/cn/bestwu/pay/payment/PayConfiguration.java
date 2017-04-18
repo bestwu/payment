@@ -2,7 +2,7 @@ package cn.bestwu.pay.payment;
 
 import cn.bestwu.pay.payment.alipay.AliPayProperties;
 import cn.bestwu.pay.payment.alipay.Alipay;
-import cn.bestwu.pay.payment.weixinpay.Weixinpay;
+import cn.bestwu.pay.payment.weixinpay.WeixinPay;
 import cn.bestwu.pay.payment.weixinpay.WeixinpayProperties;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -30,8 +30,8 @@ public class PayConfiguration {
 
   @ConditionalOnProperty(prefix = "weixinpay", value = "api_key")
   @Bean
-  public Weixinpay weixinpay(WeixinpayProperties properties) {
-    return new Weixinpay(properties);
+  public WeixinPay weixinpay(WeixinpayProperties properties) {
+    return new WeixinPay(properties);
   }
 
 
