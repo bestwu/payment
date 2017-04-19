@@ -331,8 +331,8 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
             //验证成功  更新该订单的支付状态 并把对应的金额添加给用户
             String orderid = params.get("ORDERID");
             //金额
-            double PAYMENT = Double.parseDouble(params.get("PAYMENT"));
-            long money = (long) (PAYMENT * 100);
+            BigDecimal PAYMENT = new BigDecimal(params.get("PAYMENT"));
+            long money = PAYMENT.multiply(new BigDecimal(100)).longValue();
             Order order = orderHandler.findByNo(orderid);
             if (order != null && order.getTotalAmount() == money) {
               if (!order.isCompleted()) {
