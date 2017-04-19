@@ -192,7 +192,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
   }
 
   @Override
-  public boolean checkOrder(Order order, OrderHandler orderHandler) {
+  public boolean checkOrder(String orderNo, OrderHandler orderHandler) {
     return false;
   }
 
@@ -245,7 +245,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
   }
 
   @Override
-  public boolean refundQuery(Order order, OrderHandler orderHandler) {
+  public boolean refundQuery(String orderNo, OrderHandler orderHandler) {
     return false;
   }
 

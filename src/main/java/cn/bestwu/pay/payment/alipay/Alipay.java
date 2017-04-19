@@ -160,8 +160,12 @@ public class Alipay extends AbstractPay<AliPayProperties> {
   }
 
   @Override
-  public boolean checkOrder(Order order, OrderHandler orderHandler) {
+  public boolean checkOrder(String orderNo, OrderHandler orderHandler) {
+    Order order = orderHandler.findByNo(orderNo);
     try {
+      if (order.isCompleted()) {
+        return true;
+      }
       AlipayTradeQueryRequest request = new AlipayTradeQueryRequest();
       String out_trade_no = order.getNo();
       request.setBizContent("{\"out_trade_no\":\"" + out_trade_no + "\"}");
@@ -288,8 +292,12 @@ public class Alipay extends AbstractPay<AliPayProperties> {
   }
 
   @Override
-  public boolean refundQuery(Order order, OrderHandler orderHandler) {
+  public boolean refundQuery(String orderNo, OrderHandler orderHandler) {
+    Order order = orderHandler.findByNo(orderNo);
     try {
+      if (order.isRefundCompleted()) {
+        return true;
+      }
       AlipayTradeFastpayRefundQueryRequest request = new AlipayTradeFastpayRefundQueryRequest();
       Map<String, String> biz_content = new HashMap<>();
       String out_trade_no = order.getNo();
