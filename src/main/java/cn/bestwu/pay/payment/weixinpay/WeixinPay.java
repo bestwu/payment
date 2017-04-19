@@ -161,7 +161,7 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
       Map<String, String> entity = restTemplate.postForObject(UNIFIEDORDER_URL, params, Map.class);
 
       if (log.isDebugEnabled()) {
-        log.debug(StringUtil.valueOf(entity));
+        log.debug("查询结果：" + StringUtil.valueOf(entity));
       }
       if (verify(entity, entity.get("sign"))) {
         if ("SUCCESS".equals(entity.get("return_code"))) {
@@ -256,28 +256,11 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
       if (verify(entity, entity.get("sign"))) {
         if ("SUCCESS".equals(entity.get("return_code"))) {
           if ("SUCCESS".equals(entity.get("result_code"))) {
-            String mch_id = params.get("mch_id");
-            String appid = params.get("appid");
-            if (properties.getMch_id().equals(mch_id) && properties.getAppid()
-                .equals(appid)) {
-              if (out_trade_no.equals(params.get("out_trade_no"))) {
-                int total_fee = Integer.parseInt(params.get("total_fee"));
-                if (order.getTotalAmount() == total_fee) {
-                  if (!order.isCompleted()) {
-                    orderHandler.complete(order, getProvider());
-                  }
-                  return true;
-                } else {
-                  log.error("订单：{}查询失败，金额不匹配，服务器金额：{},本地订单金额：{}", order.getNo(), total_fee,
-                      order.getTotalAmount());
-                }
-              } else {
-                log.error("订单：{}查询失败，订单不匹配，响应订单号：{}，本地订单号：{}", order.getNo(),
-                    params.get("out_trade_no"), out_trade_no);
+            if ("SUCCESS".equals(entity.get("trade_state"))) {
+              if (!order.isCompleted()) {
+                orderHandler.complete(order, getProvider());
               }
-            } else {
-              log.error("订单：{}查询失败，商户/应用不匹配,响应商户：{},本地商户：{},响应应用ID：{},本地应用ID：{}", order.getNo(),
-                  mch_id, properties.getMch_id(), appid, properties.getAppid());
+              return true;
             }
           } else {
             String err_code_des = entity.get("err_code_des");
@@ -408,32 +391,11 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
       if (verify(entity, entity.get("sign"))) {
         if ("SUCCESS".equals(entity.get("return_code"))) {
           if ("SUCCESS".equals(entity.get("result_code"))) {
-            String mch_id = params.get("mch_id");
-            String appid = params.get("appid");
-            if (properties.getMch_id().equals(mch_id) && properties.getAppid()
-                .equals(appid)) {
-              if (order.getNo().equals(params.get("out_trade_no")) && order.getRefundNo()
-                  .equals(params.get("out_refund_no_0"))) {
-                int total_fee = Integer.parseInt(params.get("total_fee"));
-                int refund_fee = Integer.parseInt(params.get("refund_fee_0"));
-                if (order.getTotalAmount() == total_fee && order.getRefundAmount() == refund_fee) {
-                  if (!order.isRefundCompleted()) {
-                    orderHandler.refundComplete(order, getProvider());
-                  }
-                  return true;
-                } else {
-                  log.error("订单：{}退款查询失败，金额不匹配，服务器金额：{}/{},本地订单金额：{}/{}", order.getNo(), total_fee,
-                      refund_fee,
-                      order.getTotalAmount(), order.getRefundAmount());
-                }
-              } else {
-                log.error("订单：{}退款查询失败，订单不匹配，响应订单号：{}/{}，本地订单号：{}/{}", order.getNo(),
-                    params.get("out_trade_no"),
-                    params.get("out_refund_no_0"), order.getNo(), order.getRefundNo());
+            if ("SUCCESS".equals(entity.get("refund_status_0"))) {//退款成功
+              if (!order.isRefundCompleted()) {
+                orderHandler.refundComplete(order, getProvider());
               }
-            } else {
-              log.error("订单：{}退款查询失败，商户/应用不匹配,响应商户：{},本地商户：{},响应应用ID：{},本地应用ID：{}", order.getNo(),
-                  mch_id, properties.getMch_id(), appid, properties.getAppid());
+              return true;
             }
           } else {
             String err_code_des = entity.get("err_code_des");

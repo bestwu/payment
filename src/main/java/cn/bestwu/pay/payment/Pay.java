@@ -28,6 +28,7 @@ public interface Pay {
    * 主动查询订单是否支付
    *
    * @param orderNo 订单号
+   * @param orderHandler 订单处理类
    * @return 是否支付完成
    */
   boolean checkOrder(String orderNo, OrderHandler orderHandler);

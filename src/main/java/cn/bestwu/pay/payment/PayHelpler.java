@@ -42,16 +42,16 @@ public class PayHelpler {
    * 主动查询订单是否支付
    *
    * @param provider 第三方支付提供方
-   * @param order 订单
+   * @param orderNo 订单号
    * @return 是否支付完成
    */
-  public boolean checkOrder(String provider, Order order, OrderHandler orderHandler)
+  public boolean checkOrder(String provider, String orderNo, OrderHandler orderHandler)
       throws PayException {
     AbstractPay<? extends PayProperties> payProvider = payProviders.get(provider);
     if (payProvider == null) {
       throw new PayException("不支持的支付方式");
     } else {
-      return payProvider.checkOrder(order, orderHandler);
+      return payProvider.checkOrder(orderNo, orderHandler);
     }
   }
 
@@ -93,17 +93,17 @@ public class PayHelpler {
   /**
    * 订单退款结果查询
    *
-   * @param order 订单
+   * @param orderNo 订单号
    * @param orderHandler 订单处理类
    * @return 退款是否成功
    */
-  public boolean refundQuery(String provider, Order order, OrderHandler orderHandler)
+  public boolean refundQuery(String provider, String orderNo, OrderHandler orderHandler)
       throws PayException {
     AbstractPay<? extends PayProperties> payProvider = payProviders.get(provider);
     if (payProvider == null) {
       throw new PayException("不支持的支付方式");
     } else {
-      return payProvider.refundQuery(order, orderHandler);
+      return payProvider.refundQuery(orderNo, orderHandler);
     }
   }
 

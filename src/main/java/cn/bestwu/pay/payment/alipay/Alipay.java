@@ -172,22 +172,10 @@ public class Alipay extends AbstractPay<AliPayProperties> {
       AlipayTradeQueryResponse response = alipayClient.execute(request);
       if ("10000".equals(response.getCode()) && "10000".equals(response.getSubCode())) {
         if ("TRADE_SUCCESS".equals(response.getTradeStatus())) {
-          if (out_trade_no.equals(response.getOutTradeNo())) {
-            BigDecimal total_amount = new BigDecimal(response.getTotalAmount());
-            if (order != null && new BigDecimal(order.getTotalAmount())
-                .equals(total_amount.multiply(BigDecimal.valueOf(100)))) {
-              if (!order.isCompleted()) {
-                orderHandler.complete(order, getProvider());
-              }
-              return true;
-            } else {
-              log.error("订单：{}查询失败，金额不匹配，服务器金额：{},本地订单金额：{}", order.getNo(),
-                  total_amount.multiply(BigDecimal.valueOf(100)), order.getTotalAmount());
-            }
-          } else {
-            log.error("订单：{}查询失败，订单不匹配，服务器订单号：{},本地订单号：{}", order.getNo(), response.getOutTradeNo(),
-                out_trade_no);
+          if (!order.isCompleted()) {
+            orderHandler.complete(order, getProvider());
           }
+          return true;
         } else {
           log.error("支付未成功");
         }
