@@ -325,27 +325,36 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
         if ("Y".equalsIgnoreCase(params.get("SUCCESS"))) {
           String POSID = params.get("POSID");
           String BRANCHID = params.get("BRANCHID");
-          if (properties.getMerchantid().equals(params.get("MERCHANTID")) && properties.getPosid()
-              .equals(POSID) && properties.getBranchid()
+          String merchantid = properties.getMerchantid();
+          String branchid = properties.getBranchid();
+          String posid = properties.getPosid();
+          String MERCHANTID = params.get("MERCHANTID");
+          if (merchantid.equals(MERCHANTID) && posid
+              .equals(POSID) && branchid
               .equals(BRANCHID)) {
             //验证成功  更新该订单的支付状态 并把对应的金额添加给用户
             String orderid = params.get("ORDERID");
             //金额
-            BigDecimal PAYMENT = new BigDecimal(params.get("PAYMENT"));
-            long money = PAYMENT.multiply(new BigDecimal(100)).longValue();
             Order order = orderHandler.findByNo(orderid);
-            if (order != null && order.getTotalAmount() == money) {
-              if (!order.isCompleted()) {
-                orderHandler.complete(order, getProvider());
+            if (order != null) {
+              BigDecimal payment = new BigDecimal(params.get("PAYMENT"))
+                  .multiply(BigDecimal.valueOf(100));
+              long totalAmount = order.getTotalAmount();
+              if (new BigDecimal(totalAmount).equals(payment)) {
+                if (!order.isCompleted()) {
+                  orderHandler.complete(order, getProvider());
+                }
+                return "success";
+              } else {
+                log.error("龙支付异步通知失败，金额不匹配，服务器金额：{}分,本地订单金额：{}分",
+                    payment, totalAmount);
               }
-              return "success";
             } else {
-              log.error("龙支付异步通知，不是系统订单：{}", StringUtil.valueOf(params, true));
+              log.error("龙支付异步通知失败，不是系统订单：{}", StringUtil.valueOf(params, true));
             }
           } else {
-            log.error("龙支付异步通知，商户不匹配,响应商户：{}/{}/{},本地商户：{}/{}/{}",
-                params.get("MERCHANTID"), BRANCHID, POSID, properties.getMerchantid(),
-                properties.getBranchid(), properties.getPosid());
+            log.error("龙支付异步通知失败，商户不匹配,响应商户：{}/{}/{},本地商户：{}/{}/{}",
+                MERCHANTID, BRANCHID, POSID, merchantid, branchid, posid);
           }
         } else {
           log.error("龙支付失败，{}", params.get("ERRMSG"));

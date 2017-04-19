@@ -168,9 +168,9 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
           if ("SUCCESS".equals(entity.get("result_code"))) {
             return entity.get("code_url");
           } else {
-            String err_code_des = entity.get("err_code_des");
             throw new PayException(
-                "订单：" + order.getNo() + "下单失败" + entity.get("err_code") + ":" + err_code_des);
+                "订单：" + order.getNo() + "下单失败" + entity.get("err_code") + ":" + entity
+                    .get("err_code_des"));
           }
         } else {
           throw new PayException("订单：" + order.getNo() + "下单失败" + entity.get("return_msg"));
@@ -216,9 +216,8 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
           if ("SUCCESS".equals(entity.get("result_code"))) {
             return getPayInfo(entity);
           } else {
-            String err_code_des = entity.get("err_code_des");
             throw new PayException(
-                "订单：" + order.getNo() + "下单失败" + entity.get("err_code") + ":" + err_code_des);
+                "订单：" + order.getNo() + "下单失败" + entity.get("err_code") + ":" + entity.get("err_code_des"));
           }
         } else {
           throw new PayException("订单：" + order.getNo() + "下单失败" + entity.get("return_msg"));
@@ -263,11 +262,11 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
               return true;
             }
           } else {
-            String err_code_des = entity.get("err_code_des");
-            log.error("订单：{}查询失败" + entity.get("err_code") + ":" + err_code_des, order.getNo());
+            log.error("订单：{}查询失败,{}:{}", order.getNo(), entity.get("err_code"),
+                entity.get("err_code_des"));
           }
         } else {
-          log.error("订单：{}查询失败" + entity.get("return_msg"), order.getNo());
+          log.error("订单：{}查询失败{}", order.getNo(), entity.get("return_msg"));
         }
       } else {
         log.error("订单：{}查询失败", order.getNo());
@@ -292,29 +291,36 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
           if ("SUCCESS".equals(params.get("result_code"))) {
             String mch_id = params.get("mch_id");
             String appid = params.get("appid");
-            if (properties.getMch_id().equals(mch_id) && properties.getAppid()
+            String local_mch_id = properties.getMch_id();
+            String local_appid = properties.getAppid();
+            if (local_mch_id.equals(mch_id) && local_appid
                 .equals(appid)) {
               String out_trade_no = params.get("out_trade_no");
               int total_fee = Integer.parseInt(params.get("total_fee"));
 
               Order order = orderHandler.findByNo(out_trade_no);
-              if (order != null && order.getTotalAmount() == total_fee) {
-                if (!order.isCompleted()) {
-                  orderHandler.complete(order, getProvider());
+              if (order != null) {
+                if (order.getTotalAmount() == total_fee) {
+                  if (!order.isCompleted()) {
+                    orderHandler.complete(order, getProvider());
+                  }
+                  return new NotifyResult("SUCCESS");
+                } else {
+                  log.error("微信支付异步通知失败，金额不匹配，服务器金额：{}分,本地订单金额：{}分", total_fee,
+                      order.getTotalAmount());
                 }
-                return new NotifyResult("SUCCESS");
               } else {
-                log.error("查询失败，金额不匹配，服务器金额：{},本地订单金额：{}", total_fee, order.getTotalAmount());
+                log.error("微信支付异步通知失败，不是系统订单：{}", StringUtil.valueOf(params, true));
               }
             } else {
-              log.error("查询失败，商户/应用不匹配,响应商户：{},本地商户：{},响应应用ID：{},本地应用ID：{}", mch_id,
-                  properties.getMch_id(), appid, properties.getAppid());
+              log.error("微信支付异步通知失败，商户/应用不匹配,响应商户：{},本地商户：{},响应应用ID：{},本地应用ID：{}", mch_id,
+                  local_mch_id, appid, local_appid);
             }
           } else {
-            log.error("微信支付失败，{}", params.get("err_code_des"));
+            log.error("微信支付异步通知失败，{}", params.get("err_code_des"));
           }
         } else {
-          log.error("微信支付失败，{}", params.get("return_msg"));
+          log.error("微信支付异步通知失败，{}", params.get("return_msg"));
         }
       } else {
         log.error("微信支付通知签名验证不通过：{}", StringUtil.valueOf(params, true));
@@ -398,8 +404,7 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
               return true;
             }
           } else {
-            String err_code_des = entity.get("err_code_des");
-            log.error(entity.get("err_code") + ":" + err_code_des);
+            log.error("{}:{}", entity.get("err_code"), entity.get("err_code_des"));
           }
         } else {
           log.error(entity.get("return_msg"));
