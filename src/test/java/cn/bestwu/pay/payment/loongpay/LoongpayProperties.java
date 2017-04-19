@@ -19,10 +19,6 @@ public class LoongpayProperties extends PayProperties {
    */
   private String branchid;
   /**
-   * 交易码 由建行统一分配为520100
-   */
-  private String txcode;
-  /**
    * 接口类型 0- 非钓鱼接口 1- 防钓鱼接口 目前该字段以银行开关为准，如果有该字段则需要传送以下字段。
    */
   private String type;
@@ -30,6 +26,10 @@ public class LoongpayProperties extends PayProperties {
    * 公钥
    */
   private String pub;
+  /**
+   * 查询密码
+   */
+  private String qupwd;
 
   public String getMerchantid() {
     return merchantid;
@@ -55,20 +55,20 @@ public class LoongpayProperties extends PayProperties {
     this.branchid = branchid;
   }
 
-  public String getTxcode() {
-    return txcode;
-  }
-
-  public void setTxcode(String txcode) {
-    this.txcode = txcode;
-  }
-
   public String getType() {
     return type;
   }
 
   public void setType(String type) {
     this.type = type;
+  }
+
+  public String getQupwd() {
+    return qupwd;
+  }
+
+  public void setQupwd(String qupwd) {
+    this.qupwd = qupwd;
   }
 
   public String getPub() {

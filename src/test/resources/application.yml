@@ -7,10 +7,21 @@ weixinpay:
   api_key: sdfsdf
   mch_id: sdfs
   appid: sdfsf
+#loongpay:
+#  pub: sdfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+#  merchantid: sdfs
+#  posid: sdfs
+#  branchid: sdfsd
+#  txcode: sdfs
+#  type: 1
+
 loongpay:
-  pub: sdfsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-  merchantid: sdfs
-  posid: sdfs
-  branchid: sdfsd
-  txcode: sdfs
+  pub: 30819d300d06092a864886f70d010101050003818b0030818702818100cd0b7cdab739d49af0ee8bf88f5bcfc8432d8c6818f0821d34e74bf52081977ec2a30cddba61b84fda72b6ec883283a14431410e7ff90449bd6e8fca88d3828a83d47a600e1e33881bcde003a65f9547acb998a0d971c4006e6c25222aed818d11b861381b7f80f8dc6d81303c25a8f17d35f2559a0802790f2b22c3dc5026c3020111
+  merchantid: 105510548160013
+  posid: 426295203
+  branchid: 510000000
   type: 1
+  qupwd: WBO123
+
+
+logging.level.cn.bestwu: DEBUG

@@ -8,6 +8,7 @@ import cn.bestwu.pay.payment.Order;
 import cn.bestwu.pay.payment.OrderHandler;
 import cn.bestwu.pay.payment.PayException;
 import cn.bestwu.pay.payment.PayType;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.security.InvalidKeyException;
@@ -21,8 +22,13 @@ import javax.crypto.NoSuchPaddingException;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.util.DigestUtils;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * 龙支付
@@ -34,6 +40,8 @@ import org.springframework.util.DigestUtils;
 public class Loongpay extends AbstractPay<LoongpayProperties> {
 
   private RSASig rsaSig = new RSASig();
+  private RestTemplate restTemplate = new RestTemplate();
+  private XmlMapper xmlMapper = new XmlMapper();
 
   @Autowired
   public Loongpay(LoongpayProperties properties) {
@@ -59,7 +67,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
    * @return 签名是否正确
    */
   private boolean verify(Map<String, String> params, String sign) {
-    String macStr =
+    String preMacStr =
         "&POSID=" + params.get("POSID") +
             "&BRANCHID=" + params.get("BRANCHID") +
             "&ORDERID=" + params.get("ORDERID") +
@@ -69,34 +77,34 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
             "&REMARK2=" + params.get("REMARK2");
     String ACC_TYPE = params.get("ACC_TYPE");
     if (ACC_TYPE != null) {
-      macStr += "&ACC_TYPE=" + ACC_TYPE;
+      preMacStr += "&ACC_TYPE=" + ACC_TYPE;
     }
-    macStr += "&SUCCESS=" + params.get("SUCCESS") +
+    preMacStr += "&SUCCESS=" + params.get("SUCCESS") +
         "&TYPE=" + params.get("TYPE") +
         "&REFERER=" + params.get("REFERER") +
         "&CLIENTIP=" + params.get("CLIENTIP");
     String ACCDATE = params.get("ACCDATE");
     if (ACCDATE != null) {
-      macStr += "&ACCDATE=" + ACCDATE;
+      preMacStr += "&ACCDATE=" + ACCDATE;
     }
     String USRMSG = params.get("USRMSG");
     if (USRMSG != null) {
-      macStr += "&USRMSG=" + USRMSG;
+      preMacStr += "&USRMSG=" + USRMSG;
     }
     String INSTALLNUM = params.get("INSTALLNUM");
     if (INSTALLNUM != null) {
-      macStr += "&INSTALLNUM=" + INSTALLNUM;
+      preMacStr += "&INSTALLNUM=" + INSTALLNUM;
     }
     String ERRMSG = params.get("ERRMSG");
     if (ERRMSG == null) {
       ERRMSG = "";
     }
-    macStr += "&ERRMSG=" + ERRMSG;
+    preMacStr += "&ERRMSG=" + ERRMSG;
     String USRINFO = params.get("USRINFO");
     if (USRINFO != null) {
-      macStr += "&USRINFO=" + USRINFO;
+      preMacStr += "&USRINFO=" + USRINFO;
     }
-    return rsaSig.verifySigature(sign, macStr);
+    return rsaSig.verifySigature(sign, preMacStr);
   }
 
   /**
@@ -149,7 +157,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
           "&ORDERID=" + order.getNo() +
           "&PAYMENT=" + total_amount +
           "&CURCODE=" + "01" +
-          "&TXCODE=" + properties.getTxcode() +
+          "&TXCODE=" + "520100" +
           "&REMARK1=" + attach +
           "&REMARK2=" + "" +
           "&TYPE=" + properties.getType() +
@@ -167,7 +175,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
           .append("&ORDERID=").append(order.getNo())
           .append("&PAYMENT=").append(total_amount)//金额
           .append("&CURCODE=").append("01")
-          .append("&TXCODE=").append(properties.getTxcode())
+          .append("&TXCODE=").append("520100")
           .append("&REMARK1=").append(attach)
           .append("&REMARK2=").append("")
           .append("&TYPE=").append(properties.getType())
@@ -193,6 +201,115 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
 
   @Override
   public boolean checkOrder(String orderNo, OrderHandler orderHandler) {
+    return orderQuery(orderNo, orderHandler, "0");
+  }
+
+  /**
+   * @param orderNo 订单号
+   * @param orderHandler 订单处理类
+   * @param type 查询类型 0：支付流水 1：退款流水
+   * @return 是否完成
+   */
+  private boolean orderQuery(String orderNo, OrderHandler orderHandler, String type) {
+    Order order = orderHandler.findByNo(orderNo);
+    try {
+      if ("0".equals(type) && order.isCompleted()) {
+        return true;
+      } else if ("1".equals(type) && order.isRefundCompleted()) {
+        return true;
+      }
+
+      String MERCHANTID = properties.getMerchantid();
+      String BRANCHID = properties.getBranchid();                 //分行代码
+      String POSID = properties.getPosid();                    //柜台号
+      String QUPWD = properties.getQupwd();
+      String TXCODE = "410408";
+      String SEL_TYPE = "3";//13.	查询方式SEL_TYPE   1页面形式 2文件返回形式 (提供TXT和XML格式文件的下载) 3 XML页面形式
+      String OPERATOR = "";//非必输项。OPERATOR元素必须有,但值可为空。主管查询的时候为空。
+      String STATUS = "3";//交易状态STATUS    0失败    1成功    2不确定    3全部（已结算流水查询不支持全部）
+      String KIND = "0";//必输项（当日只有未结算流水可供查询）    0 未结算流水    1 已结算流水
+      String PAGE = "1";//必输项，输入将要查询的页码。
+      String CHANNEL = "";//现值为空，但CHANNEL元素必须有。
+      String ORDERDATE = "";
+      String BEGORDERTIME = "";
+      String ENDORDERTIME = "";
+      //MERCHANTID=value&BRANCHID= value &POSID= value &ORDERDATE= value &BEGORDERTIME= value &ENDORDERTIME= value
+      // &ORDERID= value &QUPWD=&TXCODE=410408&TYPE= value &KIND= value &STATUS= value &SEL_TYPE= value
+      // &PAGE= value &OPERATOR= value &CHANNEL= value
+      String preSign =
+          "MERCHANTID=" + MERCHANTID + "&BRANCHID=" + BRANCHID + "&POSID=" + POSID + "&ORDERDATE="
+              + ORDERDATE + "&BEGORDERTIME=" + BEGORDERTIME + "&ENDORDERTIME=" + ENDORDERTIME
+              + "&ORDERID=" + orderNo
+              + "&QUPWD=&TXCODE=" + TXCODE + "&TYPE=" + type + "&KIND="
+              + KIND + "&STATUS=" + STATUS
+              + "&SEL_TYPE=" + SEL_TYPE + "&PAGE=" + PAGE + "&OPERATOR=" + OPERATOR + "&CHANNEL="
+              + CHANNEL;
+      if (log.isDebugEnabled()) {
+        log.debug("MAC:{}", DigestUtils.md5DigestAsHex(preSign.getBytes("UTF-8")));
+      }
+      MultiValueMap<String, Object> param = new LinkedMultiValueMap<>();
+      param.add("MERCHANTID", MERCHANTID);
+      param.add("BRANCHID", BRANCHID);
+      param.add("POSID", POSID);
+      param.add("STATUS", STATUS);
+      param.add("KIND", KIND);
+      param.add("ORDERDATE", ORDERDATE);
+      param.add("BEGORDERTIME", BEGORDERTIME);
+      param.add("ENDORDERTIME", ENDORDERTIME);
+      param.add("ORDERID", orderNo);
+      param.add("PAGE", PAGE);
+      param.add("QUPWD", QUPWD);
+      param.add("TXCODE", TXCODE);
+      param.add("CHANNEL", CHANNEL);
+      param.add("SEL_TYPE", SEL_TYPE);
+      param.add("OPERATOR", OPERATOR);
+      param.add("TYPE", type);
+      param.add("MAC", DigestUtils.md5DigestAsHex(preSign.getBytes("UTF-8")));
+
+      HttpHeaders httpHeaders = new HttpHeaders();
+      httpHeaders.set(HttpHeaders.USER_AGENT,
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36");
+      String result = restTemplate.postForObject("https://ibsbjstar.ccb.com.cn/CCBIS/ccbMain",
+          new HttpEntity<>(param, httpHeaders), String.class)
+          .replaceAll("[\n\r\t]", "");//返回的数据去除\n换行等符号，建行渣渣接口
+      if (log.isDebugEnabled()) {
+        log.debug("查询结果：{}", StringUtil.valueOf(result));
+      }
+
+      LoongQueryResult loongQueryResult = xmlMapper.readValue(result, LoongQueryResult.class);
+
+      if ("000000".equals(loongQueryResult.isSuccess())) {
+        QueryOrder queryorder = loongQueryResult.QUERYORDER;
+        if (queryorder.MERCHANTID.equals(MERCHANTID) && queryorder.BRANCHID.equals(BRANCHID)
+            && queryorder.POSID.equals(POSID)) {
+          if (queryorder.ORDERID.equals(orderNo)) {
+            if (queryorder.verify(rsaSig)) {
+              if (queryorder.isSuccess()) {
+                if ("0".equals(type) && !order.isCompleted()) {
+                  orderHandler.complete(order, getProvider());
+                } else if ("1".equals(type) && !order.isRefundCompleted()) {
+                  orderHandler.refundComplete(order, getProvider());
+                }
+                return true;
+              }
+            } else {
+              log.error("验签失败，{}", result);
+            }
+          } else {
+            log.error("订单：{}查询失败，订单不匹配，响应订单号：{}，本地订单号：{}", order.getNo(),
+                queryorder.ORDERID, orderNo);
+          }
+        } else {
+          log.error("订单：{}查询失败，商户不匹配,响应商户：{}/{}/{},本地商户：{}/{}/{}", order.getNo(),
+              queryorder.MERCHANTID, queryorder.BRANCHID, queryorder.POSID, MERCHANTID, BRANCHID,
+              POSID);
+        }
+      } else {
+        log.error("订单：" + order.getNo() + "查询失败,{}", loongQueryResult.RETURN_MSG);
+      }
+    } catch (Exception e) {
+      log.error("订单：" + order.getNo() + "查询失败", e);
+    }
     return false;
   }
 
@@ -208,7 +325,8 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
         if ("Y".equalsIgnoreCase(params.get("SUCCESS"))) {
           String POSID = params.get("POSID");
           String BRANCHID = params.get("BRANCHID");
-          if (properties.getPosid().equals(POSID) && properties.getBranchid()
+          if (properties.getMerchantid().equals(params.get("MERCHANTID")) && properties.getPosid()
+              .equals(POSID) && properties.getBranchid()
               .equals(BRANCHID)) {
             //验证成功  更新该订单的支付状态 并把对应的金额添加给用户
             String orderid = params.get("ORDERID");
@@ -219,13 +337,15 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
             if (order != null && order.getTotalAmount() == money) {
               if (!order.isCompleted()) {
                 orderHandler.complete(order, getProvider());
-                return "success";
               }
+              return "success";
             } else {
               log.error("龙支付异步通知，不是系统订单：{}", StringUtil.valueOf(params, true));
             }
           } else {
-            log.error("龙支付异步通知，不是系统订单：{}", StringUtil.valueOf(params, true));
+            log.error("龙支付异步通知，商户不匹配,响应商户：{}/{}/{},本地商户：{}/{}/{}",
+                params.get("MERCHANTID"), BRANCHID, POSID, properties.getMerchantid(),
+                properties.getBranchid(), properties.getPosid());
           }
         } else {
           log.error("龙支付失败，{}", params.get("ERRMSG"));
@@ -240,13 +360,13 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
   }
 
   @Override
-  public Order refund(Order order, OrderHandler orderHandler) {
-    return null;
+  public Order refund(Order order, OrderHandler orderHandler) throws PayException {
+    throw new PayException("龙支付不支持退款");
   }
 
   @Override
   public boolean refundQuery(String orderNo, OrderHandler orderHandler) {
-    return false;
+    return orderQuery(orderNo, orderHandler, "1");
   }
 
 }

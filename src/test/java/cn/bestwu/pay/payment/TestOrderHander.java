@@ -10,7 +10,9 @@ public class TestOrderHander implements OrderHandler {
 
   @Override
   public Order findByNo(String orderNo) {
-    return new  MyOrder();
+    MyOrder myOrder = new MyOrder();
+    myOrder.setNo(orderNo);
+    return myOrder;
   }
 
   @Override

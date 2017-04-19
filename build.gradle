@@ -3,7 +3,7 @@ plugins {
     id 'cn.bestwu.publish' version '0.0.1'
 }
 
-allprojects{
+allprojects {
     group 'cn.bestwu.pay'
     version '0.0.1'
 
@@ -25,13 +25,13 @@ allprojects{
 
 dependencies {
     compile project(':alipay')
-    compile 'org.springframework.boot:spring-boot-starter-web'
-    compile 'org.springframework.hateoas:spring-hateoas'
+    compile 'cn.bestwu:common-lang:1.0.5'
     compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
     compile 'org.codehaus.woodstox:woodstox-core-asl:4.4.1'
-    compile 'cn.bestwu:common-lang:1.0.5'
-
-    testCompile fileTree(dir:'lib', include: '*.jar',exclude:'*-source.jar')
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.hateoas:spring-hateoas'
+    testCompile 'commons-httpclient:commons-httpclient:3.1'
+    testCompile fileTree(dir: 'lib', include: '*.jar', exclude: '*-source.jar')
     testCompile 'cn.bestwu:test:1.1'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
