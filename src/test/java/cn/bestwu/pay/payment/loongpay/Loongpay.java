@@ -137,6 +137,9 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
 
   @Override
   public Object placeOrder(Order order, PayType payType) throws PayException {
+    if (order.isCompleted()) {
+      throw new PayException("订单已支付");
+    }
     try {
       String pub = properties.getPub();
       pub = pub.substring(pub.length() - 30, pub.length());

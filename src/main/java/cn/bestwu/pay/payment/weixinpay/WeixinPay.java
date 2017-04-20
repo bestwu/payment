@@ -122,6 +122,9 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
 
   @Override
   public Object placeOrder(Order order, PayType payType) throws PayException {
+    if (order.isCompleted()) {
+      throw new PayException("订单已支付");
+    }
     switch (payType) {
       case APP:
         return appPlaceOrder(order);
