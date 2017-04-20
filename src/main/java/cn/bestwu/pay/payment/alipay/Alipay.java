@@ -45,6 +45,10 @@ public class Alipay extends AbstractPay<AliPayProperties> {
   private ObjectMapper objectMapper = new ObjectMapper();
   AlipayClient alipayClient;
 
+  public ObjectMapper getObjectMapper() {
+    return objectMapper;
+  }
+
   @Autowired
   public Alipay(AliPayProperties properties) {
     super("alipay", properties);
@@ -340,11 +344,50 @@ public class Alipay extends AbstractPay<AliPayProperties> {
    * @return 是否合法
    * @throws AlipayApiException 验证异常
    */
-  public boolean checkClientResult(AliClientResult result) throws AlipayApiException {
-    String publicKey = properties.getPublicKey();
-    return AlipaySignature
-        .rsaCheck(result.getAlipay_trade_app_pay_response(), result.getSign(), publicKey, charset,
-            result.getSign_type());
+  public boolean checkClientResult(AliClientResult result, OrderHandler orderHandler)
+      throws AlipayApiException {
+    try {
+      if (AlipaySignature
+          .rsaCheck(result.getAlipay_trade_app_pay_response(), result.getSign(),
+              properties.getPublicKey(), charset,
+              result.getSign_type())) {
+        PayResponse payResponse = objectMapper
+            .readValue(result.getAlipay_trade_app_pay_response(), PayResponse.class);
+        if ("10000".equals(payResponse.getCode())) {
+          String localSellerId = properties.getSeller_id();
+          String seller_id = payResponse.getSeller_id();
+          String localAppId = properties.getApp_id();
+          String app_id = payResponse.getApp_id();
+          if (localSellerId.equals(seller_id) && localAppId.equals(app_id)) {
+            Order order = orderHandler.findByNo(payResponse.getOut_trade_no());
+            if (order != null) {
+              BigDecimal outTotalAmount = new BigDecimal(payResponse.getTotal_amount())
+                  .multiply(BigDecimal.valueOf(100));
+              long totalAmount = order.getTotalAmount();
+              if (new BigDecimal(totalAmount).equals(outTotalAmount)) {
+                if (!order.isCompleted()) {
+                  orderHandler.complete(order, getProvider());
+                }
+                return true;
+              } else {
+                log.error(
+                    "支付宝异步通知失败，金额不匹配，服务器金额：{}分,本地订单金额：{}", outTotalAmount, totalAmount);
+              }
+            } else {
+              log.error(
+                  "支付宝异步通知失败，不是系统订单：{}", StringUtil.valueOf(result, true));
+            }
+          } else {
+            log.error(
+                "支付宝异步通知失败，商户/应用不匹配,响应商户：{},本地商户：{},响应应用ID：{},本地应用ID：{}", seller_id,
+                localSellerId, app_id, localAppId);
+          }
+        }
+      }
+    } catch (Exception e) {
+      log.error("客户端结果验证失败：" + StringUtil.valueOf(result), e);
+    }
+    return false;
   }
 
 }
