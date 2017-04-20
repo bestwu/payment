@@ -78,4 +78,22 @@ public abstract class AbstractPay<P extends PayProperties> implements Pay {
     return params;
   }
 
+  /**
+   * 完成订单
+   *
+   * @param order 订单
+   * @param orderHandler 订单处理类
+   */
+  protected void complete(Order order, OrderHandler orderHandler) {
+    String provider = getProvider();
+    if (order.isCompleted()) {
+      String payProvider = order.getPayProvider();
+      if (!payProvider.equals(provider)) {
+        order.setException("paid by" + payProvider);
+        orderHandler.completed(order, provider);
+      }
+    } else {
+      orderHandler.complete(order, provider);
+    }
+  }
 }

@@ -179,9 +179,7 @@ public class Alipay extends AbstractPay<AliPayProperties> {
       AlipayTradeQueryResponse response = alipayClient.execute(request);
       if ("10000".equals(response.getCode()) && "10000".equals(response.getSubCode())) {
         if ("TRADE_SUCCESS".equals(response.getTradeStatus())) {
-          if (!order.isCompleted()) {
-            orderHandler.complete(order, getProvider());
-          }
+          complete(order, orderHandler);
           return true;
         } else {
           log.error("支付未成功");
@@ -238,9 +236,7 @@ public class Alipay extends AbstractPay<AliPayProperties> {
                   .multiply(BigDecimal.valueOf(100));
               long totalAmount = order.getTotalAmount();
               if (new BigDecimal(totalAmount).equals(outTotalAmount)) {
-                if (!order.isCompleted()) {
-                  orderHandler.complete(order, getProvider());
-                }
+                complete(order, orderHandler);
                 return "success";
               } else {
                 log.error(
@@ -268,6 +264,9 @@ public class Alipay extends AbstractPay<AliPayProperties> {
   @Override
   public Order refund(Order order, OrderHandler orderHandler) throws PayException {
     try {
+      if (order.isRefundCompleted()) {
+        throw new PayException("订单：" + order.getNo() + "已退款");
+      }
       AlipayTradeRefundRequest request = new AlipayTradeRefundRequest();
       Map<String, String> biz_content = new HashMap<>();
       String out_trade_no = order.getNo();
@@ -368,9 +367,7 @@ public class Alipay extends AbstractPay<AliPayProperties> {
                   .multiply(BigDecimal.valueOf(100));
               long totalAmount = order.getTotalAmount();
               if (new BigDecimal(totalAmount).equals(outTotalAmount)) {
-                if (!order.isCompleted()) {
-                  orderHandler.complete(order, getProvider());
-                }
+                complete(order, orderHandler);
                 return true;
               } else {
                 log.error(

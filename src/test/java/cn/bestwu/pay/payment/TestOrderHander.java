@@ -21,12 +21,17 @@ public class TestOrderHander implements OrderHandler {
   }
 
   @Override
+  public Order completed(Order order, String provider) {
+    return order;
+  }
+
+  @Override
   public Order refund(Order order, String provider) {
-    return null;
+    return order;
   }
 
   @Override
   public Order refundComplete(Order order, String provider) {
-    return null;
+    return order;
   }
 }

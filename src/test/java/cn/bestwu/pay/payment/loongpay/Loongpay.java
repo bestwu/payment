@@ -137,10 +137,10 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
 
   @Override
   public Object placeOrder(Order order, PayType payType) throws PayException {
-    if (order.isCompleted()) {
-      throw new PayException("订单已支付");
-    }
     try {
+      if (order.isCompleted()) {
+        throw new PayException("订单已支付");
+      }
       String pub = properties.getPub();
       pub = pub.substring(pub.length() - 30, pub.length());
       String total_amount = new BigDecimal(order.getTotalAmount())
@@ -288,8 +288,8 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
           if (queryorder.ORDERID.equals(orderNo)) {
             if (queryorder.verify(rsaSig)) {
               if (queryorder.isSuccess()) {
-                if ("0".equals(type) && !order.isCompleted()) {
-                  orderHandler.complete(order, getProvider());
+                if ("0".equals(type)) {
+                  complete(order, orderHandler);
                 } else if ("1".equals(type) && !order.isRefundCompleted()) {
                   orderHandler.refundComplete(order, getProvider());
                 }
@@ -344,9 +344,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
                   .multiply(BigDecimal.valueOf(100));
               long totalAmount = order.getTotalAmount();
               if (new BigDecimal(totalAmount).equals(payment)) {
-                if (!order.isCompleted()) {
-                  orderHandler.complete(order, getProvider());
-                }
+                complete(order, orderHandler);
                 return "success";
               } else {
                 log.error("龙支付异步通知失败，金额不匹配，服务器金额：{}分,本地订单金额：{}分",

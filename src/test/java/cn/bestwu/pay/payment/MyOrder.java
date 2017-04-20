@@ -14,10 +14,26 @@ public class MyOrder implements Order {
   private long currentTimeMillis;
   private String deviceInfo;
   private String attach;
+  private String payProvider;
 
   @Override
   public boolean isCompleted() {
     return completed;
+  }
+
+  @Override
+  public void setException(String exception) {
+
+  }
+
+  @Override
+  public String getPayProvider() {
+    return payProvider;
+  }
+
+  @Override
+  public void setPayProvider(String payProvider) {
+    this.payProvider = payProvider;
   }
 
   public void setCompleted(boolean completed) {

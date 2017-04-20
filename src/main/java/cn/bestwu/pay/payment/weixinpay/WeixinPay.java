@@ -143,7 +143,6 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
    * @return 下单结果
    */
   private String qrCodePlaceOrder(Order order) throws PayException {
-
     try {
       Map<String, String> params = new HashMap<>();
       params.put("appid", properties.getAppid());
@@ -259,9 +258,7 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
         if ("SUCCESS".equals(entity.get("return_code"))) {
           if ("SUCCESS".equals(entity.get("result_code"))) {
             if ("SUCCESS".equals(entity.get("trade_state"))) {
-              if (!order.isCompleted()) {
-                orderHandler.complete(order, getProvider());
-              }
+              complete(order,orderHandler);
               return true;
             }
           } else {
@@ -304,9 +301,7 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
               Order order = orderHandler.findByNo(out_trade_no);
               if (order != null) {
                 if (order.getTotalAmount() == total_fee) {
-                  if (!order.isCompleted()) {
-                    orderHandler.complete(order, getProvider());
-                  }
+                  complete(order,orderHandler);
                   return new NotifyResult("SUCCESS");
                 } else {
                   log.error("微信支付异步通知失败，金额不匹配，服务器金额：{}分,本地订单金额：{}分", total_fee,
@@ -337,6 +332,9 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
   @Override
   public Order refund(Order order, OrderHandler orderHandler) throws PayException {
     try {
+      if (order.isRefundCompleted()) {
+        throw new PayException("订单：" + order.getNo() + "已退款");
+      }
       Map<String, String> params = new HashMap<>();
       params.put("appid", properties.getAppid());
       params.put("mch_id", properties.getMch_id());

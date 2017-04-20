@@ -13,6 +13,23 @@ public interface Order {
   boolean isCompleted();
 
   /**
+   * @param exception 异常标记
+   */
+  void setException(String exception);
+
+  /**
+   * @return 第三方支付提供方
+   */
+  String getPayProvider();
+
+  /**
+   * 设置支付方式
+   *
+   * @param provider 第三方支付提供方
+   */
+  void setPayProvider(String provider);
+
+  /**
    * @return 订单号
    */
   String getNo();
