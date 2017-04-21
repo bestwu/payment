@@ -219,7 +219,8 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
             return getPayInfo(entity);
           } else {
             throw new PayException(
-                "订单：" + order.getNo() + "下单失败" + entity.get("err_code") + ":" + entity.get("err_code_des"));
+                "订单：" + order.getNo() + "下单失败" + entity.get("err_code") + ":" + entity
+                    .get("err_code_des"));
           }
         } else {
           throw new PayException("订单：" + order.getNo() + "下单失败" + entity.get("return_msg"));
@@ -258,7 +259,7 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
         if ("SUCCESS".equals(entity.get("return_code"))) {
           if ("SUCCESS".equals(entity.get("result_code"))) {
             if ("SUCCESS".equals(entity.get("trade_state"))) {
-              complete(order,orderHandler);
+              complete(order, orderHandler);
               return true;
             }
           } else {
@@ -301,7 +302,7 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
               Order order = orderHandler.findByNo(out_trade_no);
               if (order != null) {
                 if (order.getTotalAmount() == total_fee) {
-                  complete(order,orderHandler);
+                  complete(order, orderHandler);
                   return new NotifyResult("SUCCESS");
                 } else {
                   log.error("微信支付异步通知失败，金额不匹配，服务器金额：{}分,本地订单金额：{}分", total_fee,
@@ -330,7 +331,7 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
   }
 
   @Override
-  public Order refund(Order order, OrderHandler orderHandler) throws PayException {
+  public void refund(Order order, OrderHandler orderHandler) throws PayException {
     try {
       if (order.isRefundCompleted()) {
         throw new PayException("订单：" + order.getNo() + "已退款");
@@ -357,7 +358,7 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
       if (verify(entity, entity.get("sign"))) {
         if ("SUCCESS".equals(entity.get("return_code"))) {
           if ("SUCCESS".equals(entity.get("result_code"))) {
-            return orderHandler.refund(order, getProvider());
+            orderHandler.refund(order, getProvider());
           } else {
             String err_code_des = entity.get("err_code_des");
             throw new PayException(

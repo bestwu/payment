@@ -262,7 +262,7 @@ public class Alipay extends AbstractPay<AliPayProperties> {
   }
 
   @Override
-  public Order refund(Order order, OrderHandler orderHandler) throws PayException {
+  public void refund(Order order, OrderHandler orderHandler) throws PayException {
     try {
       if (order.isRefundCompleted()) {
         throw new PayException("订单：" + order.getNo() + "已退款");
@@ -278,7 +278,7 @@ public class Alipay extends AbstractPay<AliPayProperties> {
       request.setBizContent(objectMapper.writeValueAsString(biz_content));
       AlipayTradeRefundResponse response = alipayClient.execute(request);
       if ("10000".equals(response.getCode()) && "10000".equals(response.getSubCode())) {
-        return orderHandler.refund(order, getProvider());
+        orderHandler.refund(order, getProvider());
       } else {
         throw new PayException("订单：" + order.getNo() + "退款失败，支付宝响应：" + response.getBody());
       }

@@ -47,10 +47,9 @@ public interface Pay {
    *
    * @param order 订单
    * @param orderHandler 订单处理类
-   * @return 订单
    * @throws PayException PayException
    */
-  Order refund(Order order, OrderHandler orderHandler) throws PayException;
+  void refund(Order order, OrderHandler orderHandler) throws PayException;
 
   /**
    * 订单退款结果查询

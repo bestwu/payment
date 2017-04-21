@@ -370,7 +370,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
   }
 
   @Override
-  public Order refund(Order order, OrderHandler orderHandler) throws PayException {
+  public void refund(Order order, OrderHandler orderHandler) throws PayException {
     throw new PayException("龙支付不支持退款");
   }
 

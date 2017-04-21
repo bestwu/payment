@@ -16,22 +16,24 @@ public class TestOrderHander implements OrderHandler {
   }
 
   @Override
-  public Order complete(Order order, String provider) {
-    return order;
+  public void complete(Order order, String provider) {
+
   }
 
   @Override
-  public Order completed(Order order, String provider) {
-    return order;
+  public void completed(Order order, String provider) {
+
   }
 
   @Override
-  public Order refund(Order order, String provider) {
-    return order;
+  public void refund(Order order, String provider) {
+
   }
 
   @Override
-  public Order refundComplete(Order order, String provider) {
-    return order;
+  public void refundComplete(Order order, String provider) {
+
   }
+
+
 }
