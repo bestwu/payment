@@ -147,7 +147,7 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
       Map<String, String> params = new HashMap<>();
       params.put("appid", properties.getAppid());
       params.put("mch_id", properties.getMch_id());
-      params.put("attach", order.getAttach());
+//      params.put("attach", order.getAttach());
       params.put("body", order.getBody());
       params.put("nonce_str", RandomUtil.nextString2(32));
       params.put("out_trade_no", order.getNo());

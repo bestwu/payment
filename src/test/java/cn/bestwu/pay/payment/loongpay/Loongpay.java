@@ -146,10 +146,6 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
       String total_amount = new BigDecimal(order.getTotalAmount())
           .divide(new BigDecimal(100), 2, BigDecimal.ROUND_UNNECESSARY).toString();
 
-      String attach = order.getAttach();
-      if (attach == null) {
-        attach = "";
-      }
       String subject = order.getSubject();
       if (subject == null) {
         subject = "";
@@ -161,7 +157,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
           "&PAYMENT=" + total_amount +
           "&CURCODE=" + "01" +
           "&TXCODE=" + "520100" +
-          "&REMARK1=" + attach +
+          "&REMARK1=" + "" +
           "&REMARK2=" + "" +
           "&TYPE=" + properties.getType() +
           "&PUB=" + pub +
@@ -179,7 +175,7 @@ public class Loongpay extends AbstractPay<LoongpayProperties> {
           .append("&PAYMENT=").append(total_amount)//金额
           .append("&CURCODE=").append("01")
           .append("&TXCODE=").append("520100")
-          .append("&REMARK1=").append(attach)
+          .append("&REMARK1=").append("")
           .append("&REMARK2=").append("")
           .append("&TYPE=").append(properties.getType())
           .append("&GATEWAY=").append("W1")

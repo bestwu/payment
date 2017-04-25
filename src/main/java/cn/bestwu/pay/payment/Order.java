@@ -75,17 +75,6 @@ public interface Order {
   String getDeviceInfo();
 
   /**
-   * @return 附加数据
-   */
-  String getAttach();
-
-  /**
-   * @param key 字段名
-   * @return 扩展字段值
-   */
-  Object getExtra(String key);
-
-  /**
    * @return 退款是否完成
    */
   boolean isRefundCompleted();

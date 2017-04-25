@@ -93,6 +93,7 @@ public abstract class AbstractPay<P extends PayProperties> implements Pay {
         orderHandler.completed(order, provider);
       }
     } else {
+      order.setPayProvider(provider);
       orderHandler.complete(order, provider);
     }
   }

@@ -13,7 +13,6 @@ public class MyOrder implements Order {
   private String spbillCreateIp;
   private long currentTimeMillis;
   private String deviceInfo;
-  private String attach;
   private String payProvider;
 
   @Override
@@ -111,20 +110,6 @@ public class MyOrder implements Order {
 
   public void setDeviceInfo(String deviceInfo) {
     this.deviceInfo = deviceInfo;
-  }
-
-  @Override
-  public String getAttach() {
-    return attach;
-  }
-
-  public void setAttach(String attach) {
-    this.attach = attach;
-  }
-
-  @Override
-  public Object getExtra(String key) {
-    return null;
   }
 
   @Override
