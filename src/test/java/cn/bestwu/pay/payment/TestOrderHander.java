@@ -9,6 +9,11 @@ import org.springframework.stereotype.Component;
 public class TestOrderHander implements OrderHandler {
 
   @Override
+  public String getHandlerType() {
+    return "default";
+  }
+
+  @Override
   public Order findByNo(String orderNo) {
     MyOrder myOrder = new MyOrder();
     myOrder.setNo(orderNo);

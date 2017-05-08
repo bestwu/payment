@@ -13,12 +13,25 @@ import javax.servlet.http.HttpServletRequest;
 public class PayHelpler {
 
   private Map<String, AbstractPay<? extends PayProperties>> payProviders = new HashMap<>();
+  private Map<String, OrderHandler> orderHandlers = new HashMap<>();
 
 
-  public PayHelpler(List<AbstractPay<? extends PayProperties>> payProviders) {
+  public PayHelpler(List<AbstractPay<? extends PayProperties>> payProviders,
+      List<OrderHandler> orderHandlers) {
     for (AbstractPay<? extends PayProperties> payProvider : payProviders) {
       this.payProviders.put(payProvider.getProvider(), payProvider);
     }
+    for (OrderHandler orderHandler : orderHandlers) {
+      this.orderHandlers.put(orderHandler.getHandlerType(), orderHandler);
+    }
+  }
+
+  /**
+   * @param handlerType 处理类型
+   * @return 订单处理类
+   */
+  public OrderHandler getOrderHandler(String handlerType) {
+    return this.orderHandlers.get(handlerType);
   }
 
   /**

@@ -15,11 +15,13 @@ public class DragonpayTest extends BaseWebTest {
   public void placeOrder() throws Exception {
     MyOrder order = new MyOrder();
     order.setNo("123");
-    System.err.println(payHelpler.placeOrder("loongpay",order,PayType.APP));
+    order.setTotalAmount(1);
+    System.err.println(payHelpler.placeOrder("loongpay", order, PayType.APP));
   }
+
   @Test
   public void checkOrder() throws Exception {
     TestOrderHander testOrderHander = new TestOrderHander();
-    System.err.println(payHelpler.checkOrder("loongpay","2017041816202235",testOrderHander));
+    System.err.println(payHelpler.checkOrder("loongpay", "2017041816202235", testOrderHander));
   }
 }

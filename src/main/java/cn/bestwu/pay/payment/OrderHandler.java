@@ -8,6 +8,11 @@ package cn.bestwu.pay.payment;
 public interface OrderHandler {
 
   /**
+   * @return 处理类型 不能为空或空白字符串
+   */
+  String getHandlerType();
+
+  /**
    * 根据订单号查询订单
    *
    * @param orderNo 订单号

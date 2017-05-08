@@ -49,8 +49,9 @@ public class PayConfiguration {
   }
 
   @Bean
-  public PayHelpler payHelpler(List<AbstractPay<? extends PayProperties>> payProviders) {
-    return new PayHelpler(payProviders);
+  public PayHelpler payHelpler(List<AbstractPay<? extends PayProperties>> payProviders,
+      List<OrderHandler> orderHandlers) {
+    return new PayHelpler(payProviders, orderHandlers);
   }
 
   /**
@@ -63,19 +64,18 @@ public class PayConfiguration {
   @RestController
   public static class PayNotifyController {
 
-    private OrderHandler orderHandler;
     private PayHelpler payHelpler;
 
     @Autowired
-    public PayNotifyController(OrderHandler orderHandler, PayHelpler payHelpler) {
-      this.orderHandler = orderHandler;
+    public PayNotifyController(PayHelpler payHelpler) {
       this.payHelpler = payHelpler;
     }
 
-    @RequestMapping(name = "支付异步通知接口", value = "/payNotifies/{provider}")
-    public Object payNotify(@PathVariable("provider") String provider, HttpServletRequest request)
+    @RequestMapping(name = "支付异步通知接口", value = "/payNotifies/{handlerType}/{provider}")
+    public Object payNotify(@PathVariable("handlerType") String handlerType,
+        @PathVariable("provider") String provider, HttpServletRequest request)
         throws PayException {
-      return payHelpler.payNotify(provider, request, orderHandler);
+      return payHelpler.payNotify(provider, request, payHelpler.getOrderHandler(handlerType));
     }
 
   }
@@ -94,7 +94,7 @@ public class PayConfiguration {
     @Autowired
     private Alipay alipay;
     @Autowired
-    private OrderHandler orderHandler;
+    private PayHelpler payHelpler;
 
     /**
      * 1、商户需要验证该通知数据中的out_trade_no是否为商户系统中创建的订单号；
@@ -108,11 +108,13 @@ public class PayConfiguration {
      * 上述1、2、3、4有任何一个验证不通过，则表明同步校验结果是无效的，只有全部验证通过后，才可以认定买家付款成功。
      */
 
-    @RequestMapping(name = "alipay客户端结果验签", value = "/alipay/checkClientResult", method = RequestMethod.GET)
-    public Object checkClientResult(@Validated AliClientResult result)
+    @RequestMapping(name = "alipay客户端结果验签", value = "/alipay/{handlerType}/checkClientResult", method = RequestMethod.GET)
+    public Object checkClientResult(@PathVariable("handlerType") String handlerType,
+        @Validated AliClientResult result)
         throws AlipayApiException, IOException {
       return ResponseEntity.ok(Collections
-          .singletonMap("validated", alipay.checkClientResult(result, orderHandler)));
+          .singletonMap("validated",
+              alipay.checkClientResult(result, payHelpler.getOrderHandler(handlerType))));
     }
 
 
