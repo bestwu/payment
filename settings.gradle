@@ -1,2 +1,5 @@
 rootProject.name = 'payment'
 include 'alipay'
+include 'core'
+include 'loongpay'
+

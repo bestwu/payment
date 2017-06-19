@@ -1,0 +1,11 @@
+alipay:
+  app_id: dsf
+  seller_id: sdfsfs
+  publicKey: sadfsf
+  privateKey: sdfsdf
+weixinpay:
+  api_key: sdfsdf
+  mch_id: sdfs
+  appid: sdfsf
+
+logging.level.cn.bestwu: DEBUG

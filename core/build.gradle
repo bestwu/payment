@@ -1,0 +1,16 @@
+apply plugin: 'cn.bestwu.publish'
+apply plugin: 'org.springframework.boot'
+
+description '核心功能，支付宝、微信支付'
+
+dependencies {
+    compile project(':alipay')
+    compile 'cn.bestwu:common-lang:1.0.5'
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
+    compile 'org.codehaus.woodstox:woodstox-core-asl:4.4.1'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.hateoas:spring-hateoas'
+
+    testCompile 'cn.bestwu:test:1.1'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}

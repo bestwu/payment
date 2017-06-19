@@ -1,0 +1,13 @@
+apply plugin: 'cn.bestwu.publish'
+apply plugin: 'org.springframework.boot'
+
+description '核心功能，支付宝、微信支付'
+
+dependencies {
+    compile project(':core')
+    compile fileTree(dir: 'lib', include: '*.jar', exclude: '*-source.jar')
+
+    testCompile 'commons-httpclient:commons-httpclient:3.1'
+    testCompile 'cn.bestwu:test:1.1'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
