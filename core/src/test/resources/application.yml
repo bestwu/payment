@@ -3,7 +3,7 @@ alipay:
   seller_id: sdfsfs
   publicKey: sadfsf
   privateKey: sdfsdf
-weixinpay:
+wechatpay:
   api_key: sdfsdf
   mch_id: sdfs
   appid: sdfsf

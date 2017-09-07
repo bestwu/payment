@@ -3,4 +3,4 @@
  *
  * @author Peter Wu
  */
-package cn.bestwu.pay.payment.weixinpay;
+package cn.bestwu.pay.payment.wechatpay;

@@ -25,7 +25,7 @@ public class PayNotifyTest extends BaseWebTest {
   }
 
   @Test
-  public void weixin() throws Exception {
+  public void wechatpay() throws Exception {
     LinkedMultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
     headers.add(HttpHeaders.CONTENT_TYPE, "application/xml;charset=UTF-8");
     HttpEntity<String> requestEntity = new HttpEntity<>("<xml>\n"
@@ -49,7 +49,7 @@ public class PayNotifyTest extends BaseWebTest {
         + "</xml>", headers);
 
     ResponseEntity<String> entity = restTemplate
-        .postForEntity(expandUrl("/payNotifies/weixin"), requestEntity, String.class);
+        .postForEntity(expandUrl("/payNotifies/wechatpay"), requestEntity, String.class);
     System.err.println(StringUtil.valueOf(entity.getBody(), true));
     Assert.assertEquals(HttpStatus.OK, entity.getStatusCode());
   }

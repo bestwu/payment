@@ -1,4 +1,4 @@
-package cn.bestwu.pay.payment.weixinpay;
+package cn.bestwu.pay.payment.wechatpay;
 
 import com.fasterxml.jackson.annotation.JsonRootName;
 

@@ -3,8 +3,6 @@ package cn.bestwu.pay.payment;
 import cn.bestwu.pay.payment.alipay.AliClientResult;
 import cn.bestwu.pay.payment.alipay.AliPayProperties;
 import cn.bestwu.pay.payment.alipay.Alipay;
-import cn.bestwu.pay.payment.weixinpay.WeixinPay;
-import cn.bestwu.pay.payment.weixinpay.WeixinpayProperties;
 import com.alipay.api.AlipayApiException;
 import java.io.IOException;
 import java.util.Collections;
@@ -32,13 +30,14 @@ import org.springframework.web.bind.annotation.RestController;
 @Configuration
 @ConditionalOnWebApplication
 @ConditionalOnBean(OrderHandler.class)
-@EnableConfigurationProperties({WeixinpayProperties.class, AliPayProperties.class})
+@EnableConfigurationProperties({cn.bestwu.pay.payment.wechatpay.WechatPayProperties.class, AliPayProperties.class})
 public class PayConfiguration {
 
-  @ConditionalOnProperty(prefix = "weixinpay", value = "api_key")
+  @ConditionalOnProperty(prefix = "wechatpay", value = "api_key")
   @Bean
-  public WeixinPay weixinpay(WeixinpayProperties properties) {
-    return new WeixinPay(properties);
+  public cn.bestwu.pay.payment.wechatpay.WechatPay wechatpay(
+      cn.bestwu.pay.payment.wechatpay.WechatPayProperties properties) {
+    return new cn.bestwu.pay.payment.wechatpay.WechatPay(properties);
   }
 
 

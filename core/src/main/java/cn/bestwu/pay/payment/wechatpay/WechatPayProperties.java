@@ -1,14 +1,13 @@
-package cn.bestwu.pay.payment.weixinpay;
+package cn.bestwu.pay.payment.wechatpay;
 
 import cn.bestwu.pay.payment.PayProperties;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * 微售支付配置
  */
-@ConfigurationProperties(prefix = "weixinpay")
-public class WeixinpayProperties extends PayProperties {
+@ConfigurationProperties(prefix = "wechatpay")
+public class WechatPayProperties extends PayProperties {
 
   /**
    * API密钥

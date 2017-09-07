@@ -1,4 +1,4 @@
-package cn.bestwu.pay.payment.weixinpay;
+package cn.bestwu.pay.payment.wechatpay;
 
 import cn.bestwu.lang.util.RandomUtil;
 import cn.bestwu.lang.util.StringUtil;
@@ -28,7 +28,7 @@ import org.springframework.web.client.RestTemplate;
  *
  * @author Peter Wu
  */
-public class WeixinPay extends AbstractPay<WeixinpayProperties> {
+public class WechatPay extends AbstractPay<WechatPayProperties> {
 
 
   private final MapType mapType = TypeFactory.defaultInstance()
@@ -42,8 +42,8 @@ public class WeixinPay extends AbstractPay<WeixinpayProperties> {
 
 
   @Autowired
-  public WeixinPay(WeixinpayProperties properties) {
-    super("weixin", properties);
+  public WechatPay(WechatPayProperties properties) {
+    super("wechatpay", properties);
     messageConverter = new MappingJackson2XmlHttpMessageConverter() {
       @Override
       protected boolean canRead(MediaType mediaType) {

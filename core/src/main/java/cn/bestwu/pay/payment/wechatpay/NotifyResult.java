@@ -1,4 +1,4 @@
-package cn.bestwu.pay.payment.weixinpay;
+package cn.bestwu.pay.payment.wechatpay;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
